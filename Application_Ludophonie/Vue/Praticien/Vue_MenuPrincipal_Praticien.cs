@@ -21,5 +21,10 @@ namespace Application_Ludophonie.Vue.Praticien
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

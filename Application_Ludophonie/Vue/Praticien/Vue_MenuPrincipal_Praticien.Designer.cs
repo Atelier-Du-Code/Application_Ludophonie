@@ -29,33 +29,19 @@ namespace Application_Ludophonie.Vue.Praticien
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDeconnexion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitrePrincipal = new System.Windows.Forms.Label();
             this.tbc_MenuPrincipal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblNbSerieEffectuees = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvDernieresSeries = new System.Windows.Forms.DataGridView();
             this.C_Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,22 +50,36 @@ namespace Application_Ludophonie.Vue.Praticien
             this.C_NbErreurs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_Timer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblNbSerieEffectuees = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnCarnetDeQuetes = new System.Windows.Forms.Button();
+            this.btnVoir = new System.Windows.Forms.Button();
+            this.lblTitreLstPatients = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTitreLstPatients = new System.Windows.Forms.Label();
-            this.btnVoir = new System.Windows.Forms.Button();
-            this.btnCarnetDeQuetes = new System.Windows.Forms.Button();
-            this.btnSupprimer = new System.Windows.Forms.Button();
-            this.btnAjouter = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAccueil = new System.Windows.Forms.Button();
+            this.btnCatalogue = new System.Windows.Forms.Button();
+            this.BtnNeewPatient = new System.Windows.Forms.Button();
+            this.btnGestion = new System.Windows.Forms.Button();
             this.tbc_MenuPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDernieresSeries)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDeconnexion
@@ -144,117 +144,116 @@ namespace Application_Ludophonie.Vue.Praticien
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
-            // tabPage2
+            // dgvDernieresSeries
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.tabPage2.Controls.Add(this.btnAjouter);
-            this.tabPage2.Controls.Add(this.btnSupprimer);
-            this.tabPage2.Controls.Add(this.btnCarnetDeQuetes);
-            this.tabPage2.Controls.Add(this.btnVoir);
-            this.tabPage2.Controls.Add(this.lblTitreLstPatients);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1154, 592);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.dgvDernieresSeries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDernieresSeries.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvDernieresSeries.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.dgvDernieresSeries.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDernieresSeries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDernieresSeries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDernieresSeries.ColumnHeadersHeight = 65;
+            this.dgvDernieresSeries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.C_Nom,
+            this.C_Prenom,
+            this.C_Nom_Du_Jeu,
+            this.C_NbQuestionsDeLaSerie,
+            this.C_NbErreurs,
+            this.C_Timer,
+            this.C_Date});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDernieresSeries.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDernieresSeries.EnableHeadersVisualStyles = false;
+            this.dgvDernieresSeries.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvDernieresSeries.Location = new System.Drawing.Point(90, 186);
+            this.dgvDernieresSeries.MultiSelect = false;
+            this.dgvDernieresSeries.Name = "dgvDernieresSeries";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDernieresSeries.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDernieresSeries.RowHeadersVisible = false;
+            this.dgvDernieresSeries.RowHeadersWidth = 120;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.dgvDernieresSeries.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDernieresSeries.RowTemplate.Height = 24;
+            this.dgvDernieresSeries.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvDernieresSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDernieresSeries.Size = new System.Drawing.Size(866, 352);
+            this.dgvDernieresSeries.TabIndex = 20;
             // 
-            // tabPage3
+            // C_Nom
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.tabPage3.Location = new System.Drawing.Point(4, 27);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1154, 592);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.C_Nom.HeaderText = "Date";
+            this.C_Nom.MinimumWidth = 6;
+            this.C_Nom.Name = "C_Nom";
             // 
-            // tabPage4
+            // C_Prenom
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.tabPage4.Location = new System.Drawing.Point(4, 27);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1154, 592);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            this.C_Prenom.HeaderText = "Nom";
+            this.C_Prenom.MinimumWidth = 6;
+            this.C_Prenom.Name = "C_Prenom";
             // 
-            // flowLayoutPanel1
+            // C_Nom_Du_Jeu
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button8);
-            this.flowLayoutPanel1.Controls.Add(this.button9);
-            this.flowLayoutPanel1.Controls.Add(this.button10);
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Lucida Bright", 8F);
-            this.flowLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(52, 106);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1190, 50);
-            this.flowLayoutPanel1.TabIndex = 12;
+            this.C_Nom_Du_Jeu.HeaderText = "Prénom";
+            this.C_Nom_Du_Jeu.MinimumWidth = 6;
+            this.C_Nom_Du_Jeu.Name = "C_Nom_Du_Jeu";
             // 
-            // button5
+            // C_NbQuestionsDeLaSerie
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.button5.Location = new System.Drawing.Point(3, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(267, 45);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Accueil";
-            this.button5.UseVisualStyleBackColor = false;
+            this.C_NbQuestionsDeLaSerie.HeaderText = "Jeu";
+            this.C_NbQuestionsDeLaSerie.MinimumWidth = 6;
+            this.C_NbQuestionsDeLaSerie.Name = "C_NbQuestionsDeLaSerie";
             // 
-            // button8
+            // C_NbErreurs
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.button8.FlatAppearance.BorderSize = 2;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.button8.Location = new System.Drawing.Point(276, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(267, 45);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "Catalogue des patients";
-            this.button8.UseVisualStyleBackColor = false;
+            this.C_NbErreurs.HeaderText = "Nombre de questions";
+            this.C_NbErreurs.MinimumWidth = 6;
+            this.C_NbErreurs.Name = "C_NbErreurs";
             // 
-            // button9
+            // C_Timer
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.button9.FlatAppearance.BorderSize = 2;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.button9.Location = new System.Drawing.Point(549, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(267, 45);
-            this.button9.TabIndex = 2;
-            this.button9.Text = "Nouveau patient";
-            this.button9.UseVisualStyleBackColor = false;
+            this.C_Timer.HeaderText = "Nombre d\'erreur(s)";
+            this.C_Timer.MinimumWidth = 6;
+            this.C_Timer.Name = "C_Timer";
             // 
-            // button10
+            // C_Date
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.button10.FlatAppearance.BorderSize = 2;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.button10.Location = new System.Drawing.Point(822, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(340, 45);
-            this.button10.TabIndex = 3;
-            this.button10.Text = "Gestion des jeux";
-            this.button10.UseVisualStyleBackColor = false;
+            this.C_Date.HeaderText = "Chrono";
+            this.C_Date.MinimumWidth = 6;
+            this.C_Date.Name = "C_Date";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Lucida Bright", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1025, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 55);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Nombre de séries effectuées ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button13
             // 
@@ -316,116 +315,102 @@ namespace Application_Ludophonie.Vue.Praticien
             this.lblNbSerieEffectuees.Text = "        20";
             this.lblNbSerieEffectuees.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // label3
+            // tabPage2
             // 
-            this.label3.Font = new System.Drawing.Font("Lucida Bright", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1025, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 55);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Nombre de séries effectuées ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.tabPage2.Controls.Add(this.btnAjouter);
+            this.tabPage2.Controls.Add(this.btnSupprimer);
+            this.tabPage2.Controls.Add(this.btnCarnetDeQuetes);
+            this.tabPage2.Controls.Add(this.btnVoir);
+            this.tabPage2.Controls.Add(this.lblTitreLstPatients);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1154, 592);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
             // 
-            // dgvDernieresSeries
+            // btnAjouter
             // 
-            this.dgvDernieresSeries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDernieresSeries.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvDernieresSeries.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.dgvDernieresSeries.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDernieresSeries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDernieresSeries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvDernieresSeries.ColumnHeadersHeight = 65;
-            this.dgvDernieresSeries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.C_Nom,
-            this.C_Prenom,
-            this.C_Nom_Du_Jeu,
-            this.C_NbQuestionsDeLaSerie,
-            this.C_NbErreurs,
-            this.C_Timer,
-            this.C_Date});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDernieresSeries.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvDernieresSeries.EnableHeadersVisualStyles = false;
-            this.dgvDernieresSeries.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvDernieresSeries.Location = new System.Drawing.Point(90, 186);
-            this.dgvDernieresSeries.MultiSelect = false;
-            this.dgvDernieresSeries.Name = "dgvDernieresSeries";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDernieresSeries.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvDernieresSeries.RowHeadersVisible = false;
-            this.dgvDernieresSeries.RowHeadersWidth = 120;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Montserrat", 12F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.dgvDernieresSeries.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.dgvDernieresSeries.RowTemplate.Height = 24;
-            this.dgvDernieresSeries.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvDernieresSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDernieresSeries.Size = new System.Drawing.Size(866, 352);
-            this.dgvDernieresSeries.TabIndex = 20;
+            this.btnAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnAjouter.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjouter.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.btnAjouter.Location = new System.Drawing.Point(761, 282);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(140, 48);
+            this.btnAjouter.TabIndex = 28;
+            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.UseVisualStyleBackColor = false;
             // 
-            // C_Nom
+            // btnSupprimer
             // 
-            this.C_Nom.HeaderText = "Date";
-            this.C_Nom.MinimumWidth = 6;
-            this.C_Nom.Name = "C_Nom";
+            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnSupprimer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupprimer.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.btnSupprimer.Location = new System.Drawing.Point(761, 402);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(140, 48);
+            this.btnSupprimer.TabIndex = 27;
+            this.btnSupprimer.Text = "Supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = false;
             // 
-            // C_Prenom
+            // btnCarnetDeQuetes
             // 
-            this.C_Prenom.HeaderText = "Nom";
-            this.C_Prenom.MinimumWidth = 6;
-            this.C_Prenom.Name = "C_Prenom";
+            this.btnCarnetDeQuetes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnCarnetDeQuetes.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnCarnetDeQuetes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarnetDeQuetes.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.btnCarnetDeQuetes.Location = new System.Drawing.Point(761, 336);
+            this.btnCarnetDeQuetes.Name = "btnCarnetDeQuetes";
+            this.btnCarnetDeQuetes.Size = new System.Drawing.Size(140, 60);
+            this.btnCarnetDeQuetes.TabIndex = 26;
+            this.btnCarnetDeQuetes.Text = "Carnet de missions";
+            this.btnCarnetDeQuetes.UseVisualStyleBackColor = false;
             // 
-            // C_Nom_Du_Jeu
+            // btnVoir
             // 
-            this.C_Nom_Du_Jeu.HeaderText = "Prénom";
-            this.C_Nom_Du_Jeu.MinimumWidth = 6;
-            this.C_Nom_Du_Jeu.Name = "C_Nom_Du_Jeu";
+            this.btnVoir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
+            this.btnVoir.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnVoir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoir.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.btnVoir.Location = new System.Drawing.Point(761, 175);
+            this.btnVoir.Name = "btnVoir";
+            this.btnVoir.Size = new System.Drawing.Size(140, 48);
+            this.btnVoir.TabIndex = 25;
+            this.btnVoir.Text = "Voir";
+            this.btnVoir.UseVisualStyleBackColor = false;
             // 
-            // C_NbQuestionsDeLaSerie
+            // lblTitreLstPatients
             // 
-            this.C_NbQuestionsDeLaSerie.HeaderText = "Jeu";
-            this.C_NbQuestionsDeLaSerie.MinimumWidth = 6;
-            this.C_NbQuestionsDeLaSerie.Name = "C_NbQuestionsDeLaSerie";
+            this.lblTitreLstPatients.AutoSize = true;
+            this.lblTitreLstPatients.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTitreLstPatients.Location = new System.Drawing.Point(386, 61);
+            this.lblTitreLstPatients.Name = "lblTitreLstPatients";
+            this.lblTitreLstPatients.Size = new System.Drawing.Size(261, 37);
+            this.lblTitreLstPatients.TabIndex = 24;
+            this.lblTitreLstPatients.Text = "Liste des patients";
             // 
-            // C_NbErreurs
+            // label4
             // 
-            this.C_NbErreurs.HeaderText = "Nombre de questions";
-            this.C_NbErreurs.MinimumWidth = 6;
-            this.C_NbErreurs.Name = "C_NbErreurs";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(396, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(247, 20);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Recherche par nom et/ou prénom";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // C_Timer
+            // textBox1
             // 
-            this.C_Timer.HeaderText = "Nombre d\'erreur(s)";
-            this.C_Timer.MinimumWidth = 6;
-            this.C_Timer.Name = "C_Timer";
-            // 
-            // C_Date
-            // 
-            this.C_Date.HeaderText = "Chrono";
-            this.C_Date.MinimumWidth = 6;
-            this.C_Date.Name = "C_Date";
+            this.textBox1.Location = new System.Drawing.Point(349, 162);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(340, 23);
+            this.textBox1.TabIndex = 22;
             // 
             // dataGridView1
             // 
@@ -434,47 +419,47 @@ namespace Application_Ludophonie.Vue.Praticien
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 65;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView1.Location = new System.Drawing.Point(349, 191);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Montserrat", 12F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -493,84 +478,100 @@ namespace Application_Ludophonie.Vue.Praticien
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // textBox1
+            // tabPage3
             // 
-            this.textBox1.Location = new System.Drawing.Point(349, 162);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(340, 23);
-            this.textBox1.TabIndex = 22;
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1154, 592);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
             // 
-            // label4
+            // tabPage4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(396, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(247, 20);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Recherche par nom et/ou prénom";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1154, 592);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
             // 
-            // lblTitreLstPatients
+            // flowLayoutPanel1
             // 
-            this.lblTitreLstPatients.AutoSize = true;
-            this.lblTitreLstPatients.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitreLstPatients.Location = new System.Drawing.Point(386, 61);
-            this.lblTitreLstPatients.Name = "lblTitreLstPatients";
-            this.lblTitreLstPatients.Size = new System.Drawing.Size(261, 37);
-            this.lblTitreLstPatients.TabIndex = 24;
-            this.lblTitreLstPatients.Text = "Liste des patients";
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.flowLayoutPanel1.Controls.Add(this.btnAccueil);
+            this.flowLayoutPanel1.Controls.Add(this.btnCatalogue);
+            this.flowLayoutPanel1.Controls.Add(this.BtnNeewPatient);
+            this.flowLayoutPanel1.Controls.Add(this.btnGestion);
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Lucida Bright", 8F);
+            this.flowLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(52, 128);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1190, 50);
+            this.flowLayoutPanel1.TabIndex = 12;
             // 
-            // btnVoir
+            // btnAccueil
             // 
-            this.btnVoir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
-            this.btnVoir.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.btnVoir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoir.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnVoir.Location = new System.Drawing.Point(761, 175);
-            this.btnVoir.Name = "btnVoir";
-            this.btnVoir.Size = new System.Drawing.Size(140, 48);
-            this.btnVoir.TabIndex = 25;
-            this.btnVoir.Text = "Voir";
-            this.btnVoir.UseVisualStyleBackColor = false;
+            this.btnAccueil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnAccueil.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnAccueil.FlatAppearance.BorderSize = 2;
+            this.btnAccueil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccueil.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.btnAccueil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.btnAccueil.Location = new System.Drawing.Point(3, 3);
+            this.btnAccueil.Name = "btnAccueil";
+            this.btnAccueil.Size = new System.Drawing.Size(267, 45);
+            this.btnAccueil.TabIndex = 0;
+            this.btnAccueil.Text = "Accueil";
+            this.btnAccueil.UseVisualStyleBackColor = false;
+            this.btnAccueil.Click += new System.EventHandler(this.button5_Click);
             // 
-            // btnCarnetDeQuetes
+            // btnCatalogue
             // 
-            this.btnCarnetDeQuetes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            this.btnCarnetDeQuetes.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.btnCarnetDeQuetes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCarnetDeQuetes.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnCarnetDeQuetes.Location = new System.Drawing.Point(761, 336);
-            this.btnCarnetDeQuetes.Name = "btnCarnetDeQuetes";
-            this.btnCarnetDeQuetes.Size = new System.Drawing.Size(140, 60);
-            this.btnCarnetDeQuetes.TabIndex = 26;
-            this.btnCarnetDeQuetes.Text = "Carnet de missions";
-            this.btnCarnetDeQuetes.UseVisualStyleBackColor = false;
+            this.btnCatalogue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnCatalogue.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnCatalogue.FlatAppearance.BorderSize = 2;
+            this.btnCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatalogue.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.btnCatalogue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.btnCatalogue.Location = new System.Drawing.Point(276, 3);
+            this.btnCatalogue.Name = "btnCatalogue";
+            this.btnCatalogue.Size = new System.Drawing.Size(267, 45);
+            this.btnCatalogue.TabIndex = 1;
+            this.btnCatalogue.Text = "Catalogue des patients";
+            this.btnCatalogue.UseVisualStyleBackColor = false;
             // 
-            // btnSupprimer
+            // BtnNeewPatient
             // 
-            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnSupprimer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupprimer.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnSupprimer.Location = new System.Drawing.Point(761, 402);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(140, 48);
-            this.btnSupprimer.TabIndex = 27;
-            this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = false;
+            this.BtnNeewPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.BtnNeewPatient.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.BtnNeewPatient.FlatAppearance.BorderSize = 2;
+            this.BtnNeewPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNeewPatient.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.BtnNeewPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.BtnNeewPatient.Location = new System.Drawing.Point(549, 3);
+            this.BtnNeewPatient.Name = "BtnNeewPatient";
+            this.BtnNeewPatient.Size = new System.Drawing.Size(267, 45);
+            this.BtnNeewPatient.TabIndex = 2;
+            this.BtnNeewPatient.Text = "Nouveau patient";
+            this.BtnNeewPatient.UseVisualStyleBackColor = false;
             // 
-            // btnAjouter
+            // btnGestion
             // 
-            this.btnAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            this.btnAjouter.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjouter.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnAjouter.Location = new System.Drawing.Point(761, 282);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(140, 48);
-            this.btnAjouter.TabIndex = 28;
-            this.btnAjouter.Text = "Ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = false;
+            this.btnGestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnGestion.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnGestion.FlatAppearance.BorderSize = 2;
+            this.btnGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestion.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.btnGestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.btnGestion.Location = new System.Drawing.Point(822, 3);
+            this.btnGestion.Name = "btnGestion";
+            this.btnGestion.Size = new System.Drawing.Size(340, 45);
+            this.btnGestion.TabIndex = 3;
+            this.btnGestion.Text = "Gestion des jeux";
+            this.btnGestion.UseVisualStyleBackColor = false;
             // 
             // Vue_MenuPrincipal_Praticien
             // 
@@ -591,11 +592,11 @@ namespace Application_Ludophonie.Vue.Praticien
             this.tbc_MenuPrincipal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDernieresSeries)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDernieresSeries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -626,10 +627,10 @@ namespace Application_Ludophonie.Vue.Praticien
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNbSerieEffectuees;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnAccueil;
+        private System.Windows.Forms.Button btnCatalogue;
+        private System.Windows.Forms.Button BtnNeewPatient;
+        private System.Windows.Forms.Button btnGestion;
         private System.Windows.Forms.Label lblTitreLstPatients;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
