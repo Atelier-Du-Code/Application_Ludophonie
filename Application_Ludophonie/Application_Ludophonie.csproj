@@ -46,14 +46,86 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Vue\Authentification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vue\Authentification.Designer.cs">
+      <DependentUpon>Authentification.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vue\Jeux\Jeu de la syllabe\Vue_GestionnaireDeSerie_JeuDeLaSyllabe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Jeux\Jeu de la syllabe\Vue_GestionnaireDeSerie_JeuDeLaSyllabe.Designer.cs">
+      <DependentUpon>Vue_GestionnaireDeSerie_JeuDeLaSyllabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Jeux\Jeu de la syllabe\Vue_Jeu_LaSyllabe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Jeux\Jeu de la syllabe\Vue_Jeu_LaSyllabe.Designer.cs">
+      <DependentUpon>Vue_Jeu_LaSyllabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuLot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuLot.Designer.cs">
+      <DependentUpon>Vue_GestionnaireDeSerie_JeuDuLot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Jeux\Jeu du mot\Vue_Jeu_DuMot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Jeux\Jeu du mot\Vue_Jeu_DuMot.Designer.cs">
+      <DependentUpon>Vue_Jeu_DuMot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Patient\Vue_Carnet_De_Quetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Patient\Vue_Carnet_De_Quetes.Designer.cs">
+      <DependentUpon>Vue_Carnet_De_Quetes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Patient\Vue_MenuPrincipal_Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Patient\Vue_MenuPrincipal_Patient.Designer.cs">
+      <DependentUpon>Vue_MenuPrincipal_Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Patient\Vue_ModificationAvatar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Patient\Vue_ModificationAvatar.Designer.cs">
+      <DependentUpon>Vue_ModificationAvatar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLaSyllabe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLaSyllabe.Designer.cs">
+      <DependentUpon>Vue_Gestionnaire_JeuLaSyllabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLeMot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLeMot.Designer.cs">
+      <DependentUpon>Vue_Gestionnaire_JeuLeMot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Praticien\Vue_Detail_Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Praticien\Vue_Detail_Patient.Designer.cs">
+      <DependentUpon>Vue_Detail_Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Praticien\Vue_Gestion_Carnets_De_Quetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Praticien\Vue_Gestion_Carnets_De_Quetes.Designer.cs">
+      <DependentUpon>Vue_Gestion_Carnets_De_Quetes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Praticien\Vue_MenuPrincipal_Praticien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Praticien\Vue_MenuPrincipal_Praticien.Designer.cs">
+      <DependentUpon>Vue_MenuPrincipal_Praticien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +135,45 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vue\Authentification.resx">
+      <DependentUpon>Authentification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Jeux\Jeu de la syllabe\Vue_GestionnaireDeSerie_JeuDeLaSyllabe.resx">
+      <DependentUpon>Vue_GestionnaireDeSerie_JeuDeLaSyllabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Jeux\Jeu de la syllabe\Vue_Jeu_LaSyllabe.resx">
+      <DependentUpon>Vue_Jeu_LaSyllabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuLot.resx">
+      <DependentUpon>Vue_GestionnaireDeSerie_JeuDuLot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Jeux\Jeu du mot\Vue_Jeu_DuMot.resx">
+      <DependentUpon>Vue_Jeu_DuMot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Patient\Vue_Carnet_De_Quetes.resx">
+      <DependentUpon>Vue_Carnet_De_Quetes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Patient\Vue_MenuPrincipal_Patient.resx">
+      <DependentUpon>Vue_MenuPrincipal_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Patient\Vue_ModificationAvatar.resx">
+      <DependentUpon>Vue_ModificationAvatar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLaSyllabe.resx">
+      <DependentUpon>Vue_Gestionnaire_JeuLaSyllabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLeMot.resx">
+      <DependentUpon>Vue_Gestionnaire_JeuLeMot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Praticien\Vue_Detail_Patient.resx">
+      <DependentUpon>Vue_Detail_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Praticien\Vue_Gestion_Carnets_De_Quetes.resx">
+      <DependentUpon>Vue_Gestion_Carnets_De_Quetes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Praticien\Vue_MenuPrincipal_Praticien.resx">
+      <DependentUpon>Vue_MenuPrincipal_Praticien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +186,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BDD\" />
+    <Folder Include="Controleur\Jeux\" />
+    <Folder Include="Controleur\Patient\" />
+    <Folder Include="Controleur\Praticien\" />
+    <Folder Include="Metier\" />
+    <Folder Include="Modele\Jeux\" />
+    <Folder Include="Modele\Patient\" />
+    <Folder Include="Modele\Praticien\" />
+    <Folder Include="Vue\Elements_Interface_Divers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

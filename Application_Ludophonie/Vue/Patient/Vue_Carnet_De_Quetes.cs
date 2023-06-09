@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Application_Ludophonie
+namespace Application_Ludophonie.Vue.Patient
 {
-    public partial class Form1 : Form
+    public partial class Vue_Carnet_De_Quetes : Form
     {
-        public Form1()
+        public Vue_Carnet_De_Quetes()
         {
             InitializeComponent();
         }
