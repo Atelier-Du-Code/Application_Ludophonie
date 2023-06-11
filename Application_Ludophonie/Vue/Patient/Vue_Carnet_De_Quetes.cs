@@ -12,9 +12,14 @@ namespace Application_Ludophonie.Vue.Patient
 {
     public partial class Vue_Carnet_De_Quetes : Form
     {
-        public Vue_Carnet_De_Quetes()
+        public Vue_Carnet_De_Quetes(int idUtilisateur)
         {
             InitializeComponent();
+        }
+
+        private void btnJeuDuMot_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

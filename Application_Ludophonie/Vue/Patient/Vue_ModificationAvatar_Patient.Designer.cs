@@ -1,7 +1,7 @@
 ﻿
 namespace Application_Ludophonie.Vue.Patient
 {
-    partial class Vue_ModificationAvatar
+    partial class Vue_ModificationAvatar_Patient
     {
         /// <summary>
         /// Required designer variable.

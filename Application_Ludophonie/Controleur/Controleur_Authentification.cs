@@ -14,10 +14,10 @@ namespace Application_Ludophonie.Controleur
         {
             Utilisateur utilisateurAControler = new Utilisateur(0, null, null, null, null, null, null, null);
 
-            utilisateurAControler = Modele_Test.ControleIdentite(unIdentifiant);
+            utilisateurAControler = Modele_Authentification.ControleIdentite(unIdentifiant);
 
             return utilisateurAControler;
-        }
+        }        
     }
 
 }

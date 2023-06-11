@@ -95,9 +95,21 @@
   <ItemGroup>
     <Compile Include="BDD\BddMySql.cs" />
     <Compile Include="Controleur\Controleur_Authentification.cs" />
+    <Compile Include="Controleur\Praticien\Controleur_Detail_Patient.cs" />
+    <Compile Include="Controleur\Praticien\Controleur_Gestion_Carnet _De_Mission.cs" />
+    <Compile Include="Controleur\Praticien\Controleur_MenuPrincipal_Praticien.cs" />
+    <Compile Include="Controleur\Praticien\Gestion\Controleur_Gestion_JeuDuMot.cs" />
+    <Compile Include="Metier\DistributionSecurite.cs" />
+    <Compile Include="Metier\HashMotDePasse_Singleton.cs" />
+    <Compile Include="Metier\Mot.cs" />
+    <Compile Include="Metier\Serie.cs" />
     <Compile Include="Metier\Utilisateur.cs" />
     <Compile Include="Modele\Modele_Authentification.cs" />
     <Compile Include="Modele\modele_test.cs" />
+    <Compile Include="Modele\Praticien\Gestion\Modele_Gestion_JeuDuMot.cs" />
+    <Compile Include="Modele\Praticien\Modele_Detail_Patient.cs" />
+    <Compile Include="Modele\Praticien\Modele_Gestion_Carnet_de_Missions.cs" />
+    <Compile Include="Modele\Praticien\Modele_MenuPrincipal_Praticien.cs" />
     <Compile Include="Vue\Authentification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,18 +118,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vue\Jeux\Jeu de la syllabe\Vue_GestionnaireDeSerie_JeuDeLaSyllabe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vue\Jeux\Jeu de la syllabe\Vue_GestionnaireDeSerie_JeuDeLaSyllabe.Designer.cs">
-      <DependentUpon>Vue_GestionnaireDeSerie_JeuDeLaSyllabe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vue\Jeux\Jeu de la syllabe\Vue_Jeu_LaSyllabe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vue\Jeux\Jeu de la syllabe\Vue_Jeu_LaSyllabe.Designer.cs">
-      <DependentUpon>Vue_Jeu_LaSyllabe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuLot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,17 +142,11 @@
     <Compile Include="Vue\Patient\Vue_MenuPrincipal_Patient.Designer.cs">
       <DependentUpon>Vue_MenuPrincipal_Patient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vue\Patient\Vue_ModificationAvatar.cs">
+    <Compile Include="Vue\Patient\Vue_ModificationAvatar_Patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vue\Patient\Vue_ModificationAvatar.Designer.cs">
-      <DependentUpon>Vue_ModificationAvatar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLaSyllabe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLaSyllabe.Designer.cs">
-      <DependentUpon>Vue_Gestionnaire_JeuLaSyllabe.cs</DependentUpon>
+    <Compile Include="Vue\Patient\Vue_ModificationAvatar_Patient.Designer.cs">
+      <DependentUpon>Vue_ModificationAvatar_Patient.cs</DependentUpon>
     </Compile>
     <Compile Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLeMot.cs">
       <SubType>Form</SubType>
@@ -186,15 +180,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vue\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vue\Jeux\Jeu de la syllabe\Vue_GestionnaireDeSerie_JeuDeLaSyllabe.resx">
-      <DependentUpon>Vue_GestionnaireDeSerie_JeuDeLaSyllabe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vue\Jeux\Jeu de la syllabe\Vue_Jeu_LaSyllabe.resx">
-      <DependentUpon>Vue_Jeu_LaSyllabe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuLot.resx">
       <DependentUpon>Vue_GestionnaireDeSerie_JeuDuLot.cs</DependentUpon>
@@ -208,11 +197,8 @@
     <EmbeddedResource Include="Vue\Patient\Vue_MenuPrincipal_Patient.resx">
       <DependentUpon>Vue_MenuPrincipal_Patient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vue\Patient\Vue_ModificationAvatar.resx">
-      <DependentUpon>Vue_ModificationAvatar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLaSyllabe.resx">
-      <DependentUpon>Vue_Gestionnaire_JeuLaSyllabe.cs</DependentUpon>
+    <EmbeddedResource Include="Vue\Patient\Vue_ModificationAvatar_Patient.resx">
+      <DependentUpon>Vue_ModificationAvatar_Patient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vue\Praticien\Gestion_des_jeux\Vue_Gestionnaire_JeuLeMot.resx">
       <DependentUpon>Vue_Gestionnaire_JeuLeMot.cs</DependentUpon>
@@ -243,11 +229,29 @@
   <ItemGroup>
     <Folder Include="Controleur\Jeux\" />
     <Folder Include="Controleur\Patient\" />
-    <Folder Include="Controleur\Praticien\" />
     <Folder Include="Modele\Jeux\" />
     <Folder Include="Modele\Patient\" />
-    <Folder Include="Modele\Praticien\" />
-    <Folder Include="Vue\Elements_Interface_Divers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar par defaut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jaune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plan de travail 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vert.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

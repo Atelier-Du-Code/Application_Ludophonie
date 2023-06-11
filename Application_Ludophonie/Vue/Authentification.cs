@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,25 +18,24 @@ namespace Application_Ludophonie
     public partial class Authentification : Form
     {
         Controleur_Authentification controleur = new Controleur_Authentification();
+        
+        Utilisateur utilisateurAIdentifier = new Utilisateur(0, null, null, null, null, null, null, null);
 
-        //A décommenter si BDD connectée
-        //Utilisateur utilisateurAIdentifier = new Utilisateur(0, null, null, null, null, null, null, null, null);
-
-        //A décommenter si BDD non connectée       
-        Utilisateur utilisateurAIdentifier = new Utilisateur(1, "praticien","Jade_Vidal", "Vidal", "Jade", "CE2","5w+rcRi29F6*H", "https://i.pinimg.com/564x/8f/cc/6e/8fcc6e362c58546f130310c97ad0df39.jpg");
+        
 
         public Authentification()
         {
             InitializeComponent();
             lblMessage.Text = "";
+            
         }        
 
         private void btnValider_Click(object sender, EventArgs e)
         {
             //A décommenter si BDD connectée
-            //utilisateurAIdentifier = controleur.controleIdentite(txtbIdentifiant.Text);
+            utilisateurAIdentifier = controleur.controleIdentite(txtbIdentifiant.Text);
 
-            lblMessage.Text = utilisateurAIdentifier.Identifiant;
+            
 
             if(txtbIdentifiant.Text != "")
             {
@@ -65,24 +65,25 @@ namespace Application_Ludophonie
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            if(txtbMotDePasse.Text != utilisateurAIdentifier.Password)
+            string motDePasseHash = HashMotDePasse_Singleton.GetInstance().HashMotDePasse(txtbMotDePasse.Text);
+
+            //string motDePasseSaisi = DistributionSecurite.Instance.HashMotDePasse_Singleton.HashDeMotDePasse(txtbMotDePasse.Text);
+
+            if (motDePasseHash.Equals(utilisateurAIdentifier.Password))
             {
-                lblMessageMDP.Text = "Votre mot de passe est incorrect";
-            }
-            else
-            {
-                if(utilisateurAIdentifier.Type_Utilisateur == "patient")
+
+                if (utilisateurAIdentifier.Type_Utilisateur == "patient")
                 {
-                    Vue_MenuPrincipal_Patient fenetre_MenuPrincipal_Patient = new Vue_MenuPrincipal_Patient();
+                    Vue_MenuPrincipal_Patient fenetre_MenuPrincipal_Patient = new Vue_MenuPrincipal_Patient(utilisateurAIdentifier);
                     fenetre_MenuPrincipal_Patient.Show();
                     txtbMotDePasse.Text = "";
                     //Close();
                 }
                 else
                 {
-                    if(utilisateurAIdentifier.Type_Utilisateur == "praticien")
+                    if (utilisateurAIdentifier.Type_Utilisateur == "praticien")
                     {
-                        Vue_MenuPrincipal_Praticien fenetre_MenuPrincipal_Praticien = new Vue_MenuPrincipal_Praticien();
+                        Vue_MenuPrincipal_Praticien fenetre_MenuPrincipal_Praticien = new Vue_MenuPrincipal_Praticien(utilisateurAIdentifier);
                         fenetre_MenuPrincipal_Praticien.Show();
                         txtbMotDePasse.Text = "";
                         //Close();
@@ -92,7 +93,28 @@ namespace Application_Ludophonie
                         lblMessageMDP.Text = "Vous n'êtes pas autorisé à utiliser cette application";
                     }
                 }
+                
+            }
+            else
+            {
+                lblMessageMDP.Text = "Votre mot de passe est incorrect";
+            }
+        }
 
+        private string hashMotDePasse(string motDePasse)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(motDePasse));
+
+                //Permet de concaténer des chaine et des valeurs de variables
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashedBytes.Length; i++)
+                {
+                    sb.Append(hashedBytes[i].ToString("x2"));
+                }
+
+                return sb.ToString();
             }
         }
 

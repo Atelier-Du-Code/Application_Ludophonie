@@ -34,7 +34,6 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnModifAvatar = new System.Windows.Forms.Button();
             this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.btnCarnetDeMission = new System.Windows.Forms.Button();
-            this.btnJeuLaSyllabe = new System.Windows.Forms.Button();
             this.btnJeuDuMot = new System.Windows.Forms.Button();
             this.txtTitrePrincipal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
@@ -89,19 +88,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnCarnetDeMission.TabIndex = 10;
             this.btnCarnetDeMission.Text = "Carnet de quêtes";
             this.btnCarnetDeMission.UseVisualStyleBackColor = false;
-            // 
-            // btnJeuLaSyllabe
-            // 
-            this.btnJeuLaSyllabe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            this.btnJeuLaSyllabe.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.btnJeuLaSyllabe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJeuLaSyllabe.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.btnJeuLaSyllabe.Location = new System.Drawing.Point(436, 587);
-            this.btnJeuLaSyllabe.Name = "btnJeuLaSyllabe";
-            this.btnJeuLaSyllabe.Size = new System.Drawing.Size(159, 107);
-            this.btnJeuLaSyllabe.TabIndex = 9;
-            this.btnJeuLaSyllabe.Text = "Jeu de la syllabe";
-            this.btnJeuLaSyllabe.UseVisualStyleBackColor = false;
+            this.btnCarnetDeMission.Click += new System.EventHandler(this.btnCarnetDeMission_Click);
             // 
             // btnJeuDuMot
             // 
@@ -109,12 +96,13 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnJeuDuMot.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnJeuDuMot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJeuDuMot.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.btnJeuDuMot.Location = new System.Drawing.Point(244, 587);
+            this.btnJeuDuMot.Location = new System.Drawing.Point(353, 590);
             this.btnJeuDuMot.Name = "btnJeuDuMot";
             this.btnJeuDuMot.Size = new System.Drawing.Size(151, 107);
             this.btnJeuDuMot.TabIndex = 8;
             this.btnJeuDuMot.Text = "Jeu du mot";
             this.btnJeuDuMot.UseVisualStyleBackColor = false;
+            this.btnJeuDuMot.Click += new System.EventHandler(this.btnJeuDuMot_Click);
             // 
             // txtTitrePrincipal
             // 
@@ -136,7 +124,6 @@ namespace Application_Ludophonie.Vue.Patient
             this.Controls.Add(this.btnModifAvatar);
             this.Controls.Add(this.pbAvatar);
             this.Controls.Add(this.btnCarnetDeMission);
-            this.Controls.Add(this.btnJeuLaSyllabe);
             this.Controls.Add(this.btnJeuDuMot);
             this.Controls.Add(this.txtTitrePrincipal);
             this.Font = new System.Drawing.Font("Montserrat", 9F);
@@ -156,7 +143,6 @@ namespace Application_Ludophonie.Vue.Patient
         private System.Windows.Forms.Button btnModifAvatar;
         private System.Windows.Forms.PictureBox pbAvatar;
         private System.Windows.Forms.Button btnCarnetDeMission;
-        private System.Windows.Forms.Button btnJeuLaSyllabe;
         private System.Windows.Forms.Button btnJeuDuMot;
         private System.Windows.Forms.Label txtTitrePrincipal;
     }

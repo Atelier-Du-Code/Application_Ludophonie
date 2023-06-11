@@ -55,6 +55,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnJeuDuMot.TabIndex = 9;
             this.btnJeuDuMot.Text = "Ok !";
             this.btnJeuDuMot.UseVisualStyleBackColor = false;
+            this.btnJeuDuMot.Click += new System.EventHandler(this.btnJeuDuMot_Click);
             // 
             // Vue_Carnet_De_Quetes
             // 
@@ -66,7 +67,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.Controls.Add(this.txtTitrePrincipal);
             this.Font = new System.Drawing.Font("Montserrat", 9F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Vue_Carnet_De_Quetes";
             this.Text = "Vue_Carnet_De_Quetes";
             this.ResumeLayout(false);

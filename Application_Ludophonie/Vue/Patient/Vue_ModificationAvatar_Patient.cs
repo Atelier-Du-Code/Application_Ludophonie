@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Application_Ludophonie.Vue.Patient
 {
-    public partial class Vue_ModificationAvatar : Form
+    public partial class Vue_ModificationAvatar_Patient : Form
     {
-        public Vue_ModificationAvatar()
+        public Vue_ModificationAvatar_Patient(int idutilisateur)
         {
             InitializeComponent();
         }
