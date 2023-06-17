@@ -8,17 +8,25 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Controleur
 {
-    class Controleur_Authentification
+    public class Controleur_Authentification
     {
+        /// <summary>
+        /// Permet de récupérer les informations d'un patient
+        /// </summary>
+        /// <param name="unIdentifiant"></param>
+        /// <returns></returns>
         public Utilisateur recupereUtilisateur(string unIdentifiant)
         {
-            Utilisateur utilisateurAControler = new Utilisateur(0, null, null, null, null, null, null, null);
-
-            utilisateurAControler = Modele_Authentification.recupereUtilisateur(unIdentifiant);
+            Utilisateur utilisateurAControler = Modele_Authentification.recupereUtilisateur(unIdentifiant);
 
             return utilisateurAControler;
         }
 
+        /// <summary>
+        /// Permet de vérifier si un utilisateur existe
+        /// </summary>
+        /// <param name="unIdentifiant"></param>
+        /// <returns></returns>
         public bool utilisateurExiste(string unIdentifiant)
         {
             bool bExiste = Modele_Authentification.utilisateurExiste(unIdentifiant);

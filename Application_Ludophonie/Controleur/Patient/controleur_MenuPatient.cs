@@ -10,6 +10,11 @@ namespace Application_Ludophonie.Controleur.Patient
 {
     public class controleur_MenuPatient
     {
+        /// <summary>
+        /// Permet de récupérer un avatar
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
+        /// <returns></returns>
         public Avatar recupereAvatar(int idUtilisateur)
         {
             Avatar unAvatar = Modele_MenuPrincipal_Patient.recupereAvatar(idUtilisateur);

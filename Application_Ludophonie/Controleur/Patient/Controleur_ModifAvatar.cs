@@ -10,14 +10,23 @@ namespace Application_Ludophonie.Controleur.Patient
 {
     public class Controleur_ModifAvatar
     {
+        /// <summary>
+        /// Permet de récupérer la liste de tous les avatars 
+        /// </summary>
+        /// <returns></returns>
         public List<Avatar> recuperelstAvatar()
         {
-            List<Avatar> lstAvatar = new List<Avatar>();
-            lstAvatar = Modele_ModifAvatar.recupereLstAvatar();
+            List<Avatar> lstAvatar = Modele_ModifAvatar.recupereLstAvatar();
 
             return lstAvatar;
         }
 
+        /// <summary>
+        /// Permet de modifier l'avatar d'un patient dans la base
+        /// </summary>
+        /// <param name="idAvatar"></param>
+        /// <param name="idUtilisateur"></param>
+        /// <returns></returns>
         public bool modifAvatar(int idAvatar, int idUtilisateur)
         {
             bool bModif = Modele_ModifAvatar.modifAvatar(idAvatar, idUtilisateur);

@@ -9,10 +9,13 @@ namespace Application_Ludophonie.Controleur.Jeux
 {
     public class Controleur_Gestionnaire_De_Serie_Mot
     {
+        /// <summary>
+        /// Permet de récupere tous les niveaux de listes 
+        /// </summary>
+        /// <returns></returns>
         public List<string> recupereToutesListes()
         {
-            List<string> toutesListes = new List<string>();
-            toutesListes = Modele_Gestionnaire_De_Serie_Mot.recupereToutesLesListes();
+            List<string> toutesListes = Modele_Gestionnaire_De_Serie_Mot.recupereToutesLesListes();
 
             return toutesListes;
         }
