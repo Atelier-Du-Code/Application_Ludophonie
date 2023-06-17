@@ -331,6 +331,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.Name = "Vue_Gestionnaire_JeuLeMot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vue_Gestionnaire_JeuLeMot";
+            this.Load += new System.EventHandler(this.Vue_Gestionnaire_JeuLeMot_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLstMots)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

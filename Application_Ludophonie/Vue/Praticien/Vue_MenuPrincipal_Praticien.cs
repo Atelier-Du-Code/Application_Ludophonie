@@ -13,6 +13,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Serilog;
 
 namespace Application_Ludophonie.Vue.Praticien
 {
@@ -51,9 +52,12 @@ namespace Application_Ludophonie.Vue.Praticien
         public Vue_MenuPrincipal_Praticien(Utilisateur utilisateurEnCours)
         {
             InitializeComponent();
+            this.utilisateurEnCours = utilisateurEnCours;
 
-            this.utilisateurEnCours = utilisateurEnCours;            
+        }
 
+        private void Vue_MenuPrincipal_Praticien_Load(object sender, EventArgs e)
+        {
             lblBienvenue.Text = "Bienvenue " + utilisateurEnCours.Prenom + " !";
 
             //Initialisation tabPage 1
@@ -63,10 +67,16 @@ namespace Application_Ludophonie.Vue.Praticien
 
             pNouveauPatient.Visible = false;
             lblMessage.Text = "";
-            
+
             actualiseDgvPatient();
 
-            dgvPatients.ClearSelection();            
+            dgvPatients.ClearSelection();
+
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.File("logs/logs_Utilisateurs.txt",
+                rollingInterval: RollingInterval.Day)
+                .CreateLogger();
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,7 +84,7 @@ namespace Application_Ludophonie.Vue.Praticien
         //////////////////////////////////////////////////////////////////////////////////////////////////
 
         //Initialisation tabPage 1 - Accueil
-        
+
         private void actualiseDgvSeriesEffectuees()
         {
             lstToutesSeriesEffectuees = controleur.recupereToutesLesSeries();
@@ -343,11 +353,14 @@ namespace Application_Ludophonie.Vue.Praticien
                                 actualiseDgvPatient();
 
                                 dgvPatients.Rows[dgvPatients.RowCount - 2].Selected = true;
+
+                                Log.Information("Un patient à été créé");
                             }
                             else
                             {
                                
                                 lblMessage.Text = "Le nouveau patient n'a pas pus être créé";
+                                Log.Error("la création d'un nouveau patient a échouée");
                             }
                         }
                         else
@@ -763,6 +776,8 @@ namespace Application_Ludophonie.Vue.Praticien
             Vue_Gestionnaire_JeuLeMot fenetre_Gestionnaire_JeuDuMot = new Vue_Gestionnaire_JeuLeMot();
             fenetre_Gestionnaire_JeuDuMot.ShowDialog();
             
-        }       
+        }
+
+        
     }
 }

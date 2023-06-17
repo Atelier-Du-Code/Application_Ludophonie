@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Serilog;
 
 namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
 {
@@ -25,6 +26,15 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
 
             actualiseDgvLstMots();
             rempliCbx();
+        }
+
+        private void Vue_Gestionnaire_JeuLeMot_Load(object sender, EventArgs e)
+        {
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.File("logs/logs_CreationMots.txt",
+                rollingInterval: RollingInterval.Day)
+                .CreateLogger();
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -48,20 +58,22 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
 
                 if (bEnregistrer)
                 {
-                    lblMessage.Text = "Le mot a bien été ajouté";
+                    //Pour tous les utilisateurs de la base, ajouter un tuple pour le nouveau mot
+                    ajoutTupleBDD();
+                    actualiseDgvParListe(liste);
+
+                    Log.Information("Un mot a bien été créé : " + txtbMot.Text);
+
+                    lblMessage.Text = "Le mot '" + txtbMot.Text + "'a bien été ajouté";
                     txtbMot.Text = "";
                     txtbContexte.Text = "";
                     cbxTypeListe.SelectedIndex = 0;
-
-                    //Pour tous les utilisateurs de la base, ajouter un tuple pour le nouveau mot
-                    ajoutTupleBDD();
-
-                    actualiseDgvParListe(liste);
-
                 }
                 else
                 {
-                    lblMessage.Text = "Le mot n'a pas pus etre ajouté";
+                    lblMessage.Text = "Le mot '" + txtbMot.Text + "'n'a pas été ajouté";
+                    Log.Error("Le mot '" + txtbMot.Text + "'n'a pas été ajouté");
+
                 }
             }
             else
@@ -231,5 +243,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         {
             Close();
         }
+
+        
     }
 }

@@ -271,6 +271,7 @@ namespace Application_Ludophonie
             this.Name = "Authentification";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentification";
+            this.Load += new System.EventHandler(this.Authentification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatarIdentifie)).EndInit();
             this.pIdentifiant.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
