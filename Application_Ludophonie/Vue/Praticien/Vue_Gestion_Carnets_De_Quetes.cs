@@ -14,12 +14,16 @@ namespace Application_Ludophonie.Vue.Praticien
 {
     public partial class Vue_Gestion_Carnets_De_Quetes : Form
     {
-        Controleur_Gestion_Carnet__De_Mission controleur = new Controleur_Gestion_Carnet__De_Mission();
+        private Controleur_Gestion_Carnet__De_Mission controleur = new Controleur_Gestion_Carnet__De_Mission();
 
-        List<string> lstMissions = new List<string>();
+        private List<string> lstMissions = new List<string>();
 
-        int idUtilisateurEnCours;
+        private int idUtilisateurEnCours;
 
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="idUtilisateurEnCours"></param>
         public Vue_Gestion_Carnets_De_Quetes(int idUtilisateurEnCours)
         {
             InitializeComponent();
@@ -27,26 +31,24 @@ namespace Application_Ludophonie.Vue.Praticien
 
             this.idUtilisateurEnCours = idUtilisateurEnCours;
             actualiseListeMissions();            
-        }
+        }        
 
-        private void actualiseListeMissions()
-        {
-            lstMissions.Clear();
-            lstMissions = controleur.recupereToutesMissions(idUtilisateurEnCours);
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///Gestion de l'ajout d'une mission
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            lstBMissions.Items.Clear();
-            for (int i = 0; i < lstMissions.Count; i++)
-            {
-                lstBMissions.Items.Add(lstMissions[i]);
-            }            
-        }
+        /// <summary>
+        /// Permet d'enregistrer une nouvelle mission pour le patient en cours
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
             string mission = txtbMission.Text;
             txtbMission.Text = "";
 
             bool bEnregistrer = controleur.enregistreMissions(mission, idUtilisateurEnCours);
-            if(bEnregistrer == true)
+            if(bEnregistrer)
             {
                 lblMessage.Text = "La mission a bien été enregistrée";
             }
@@ -58,15 +60,9 @@ namespace Application_Ludophonie.Vue.Praticien
             actualiseListeMissions();
         }
 
-        private void btnRetour_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void txtbMission_TextChanged(object sender, EventArgs e)
-        {
-            lblMessage.Text = "";
-        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///Gestion de la suppression d'une mission
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
@@ -74,7 +70,7 @@ namespace Application_Ludophonie.Vue.Praticien
             {
                 bool bSupprimer = controleur.supprimeUneMission(lstBMissions.SelectedItem.ToString(), idUtilisateurEnCours);
 
-                if(bSupprimer == true)
+                if(bSupprimer)
                 {
                     lblMessage.Text = "La mission a bien été supprimée";
                     actualiseListeMissions();
@@ -90,7 +86,7 @@ namespace Application_Ludophonie.Vue.Praticien
         {
             bool bSupprimerToutes = controleur.supprimeToutesMissions(idUtilisateurEnCours);
 
-            if (bSupprimerToutes == true)
+            if (bSupprimerToutes)
             {
                 lblMessage.Text = "Les missions ont bien été supprimées";
                 actualiseListeMissions();
@@ -99,6 +95,45 @@ namespace Application_Ludophonie.Vue.Praticien
             {
                 lblMessage.Text = "Les missions n'ont pas pus être supprimées";
             }
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///Méthode de gestion + Interface
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /// <summary>
+        /// Permet d'actualiser la listBox contenant les missions du patient en cours
+        /// </summary>
+        private void actualiseListeMissions()
+        {
+            lstMissions.Clear();
+            lstMissions = controleur.recupereToutesMissions(idUtilisateurEnCours);
+
+            lstBMissions.Items.Clear();
+            for (int i = 0; i < lstMissions.Count; i++)
+            {
+                lstBMissions.Items.Add(lstMissions[i]);
+            }
+        }
+
+        /// <summary>
+        /// Permet de vider le label de message lorsqu'une lettre est écrite dans le textBox d'ajout de mission
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtbMission_TextChanged(object sender, EventArgs e)
+        {
+            lblMessage.Text = "";
+        }
+
+        /// <summary>
+        /// Permet de fermer la page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

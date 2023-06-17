@@ -10,14 +10,20 @@ namespace Application_Ludophonie.Controleur
 {
     class Controleur_Authentification
     {
-        public Utilisateur controleIdentite(string unIdentifiant)
+        public Utilisateur recupereUtilisateur(string unIdentifiant)
         {
             Utilisateur utilisateurAControler = new Utilisateur(0, null, null, null, null, null, null, null);
 
-            utilisateurAControler = Modele_Authentification.ControleIdentite(unIdentifiant);
+            utilisateurAControler = Modele_Authentification.recupereUtilisateur(unIdentifiant);
 
             return utilisateurAControler;
-        }        
+        }
+
+        public bool utilisateurExiste(string unIdentifiant)
+        {
+            bool bExiste = Modele_Authentification.utilisateurExiste(unIdentifiant);
+            return bExiste;
+        }
     }
 
 }

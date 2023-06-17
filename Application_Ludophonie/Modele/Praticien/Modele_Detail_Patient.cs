@@ -17,6 +17,10 @@ namespace Application_Ludophonie.Modele.Praticien
 
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password + ";database=" + database + ";SslMode=none";
 
+        /// <summary>
+        /// Permet de récupérer tous les noms de jeux
+        /// </summary>
+        /// <returns></returns>
         public static List<string> recupereTousLesJeux()
         {
             List<string> lstJeux = new List<string>();
@@ -38,6 +42,11 @@ namespace Application_Ludophonie.Modele.Praticien
             return lstJeux;
         }
 
+        /// <summary>
+        /// Permet de récupérer toutes les séries effectuées par un utilisateur
+        /// </summary>
+        /// <param name="unIdUtilisateur"></param>
+        /// <returns></returns>
         public static List<Serie> recupereToutesSeriesUtilisateur(int unIdUtilisateur)
         {
             List<Serie> lstToutesSeriesUtilisateur = new List<Serie>();
@@ -75,6 +84,12 @@ namespace Application_Ludophonie.Modele.Praticien
 
         }
 
+        /// <summary>
+        /// Permet de récupérer toutes les séries d'un utilisateur sur un jeu spécifique
+        /// </summary>
+        /// <param name="unIdUtilisateur"></param>
+        /// <param name="nomJeu"></param>
+        /// <returns></returns>
         public static List<Serie> recupereToutesSeriesJeu(int unIdUtilisateur, string nomJeu)
         {
             List<Serie> lstToutesSeriesJeu = new List<Serie>();

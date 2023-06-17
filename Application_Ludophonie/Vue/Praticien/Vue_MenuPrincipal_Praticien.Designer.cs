@@ -29,14 +29,14 @@ namespace Application_Ludophonie.Vue.Praticien
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDeconnexion = new System.Windows.Forms.Button();
             this.lblBienvenue = new System.Windows.Forms.Label();
             this.txtTitrePrincipal = new System.Windows.Forms.Label();
@@ -63,10 +63,10 @@ namespace Application_Ludophonie.Vue.Praticien
             this.pNouveauPatient = new System.Windows.Forms.Panel();
             this.pBtnEnregistrerModif = new System.Windows.Forms.Panel();
             this.btnEnregistrerModification = new System.Windows.Forms.Button();
-            this.btnClosePanel = new System.Windows.Forms.Button();
-            this.btnEnregistrer_Ajout = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.btnEnregistrer_Ajout = new System.Windows.Forms.Button();
             this.lblConfirmation = new System.Windows.Forms.Label();
+            this.btnClosePanel = new System.Windows.Forms.Button();
             this.txtbMotDePasseConfirmation = new System.Windows.Forms.TextBox();
             this.lblMotDePasse = new System.Windows.Forms.Label();
             this.txtbMotDePasse = new System.Windows.Forms.TextBox();
@@ -114,7 +114,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnDeconnexion.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnDeconnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeconnexion.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnDeconnexion.Location = new System.Drawing.Point(1110, 21);
+            this.btnDeconnexion.Location = new System.Drawing.Point(876, 11);
             this.btnDeconnexion.Name = "btnDeconnexion";
             this.btnDeconnexion.Size = new System.Drawing.Size(140, 48);
             this.btnDeconnexion.TabIndex = 10;
@@ -126,7 +126,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.lblBienvenue.AutoSize = true;
             this.lblBienvenue.Font = new System.Drawing.Font("Montserrat", 9F);
-            this.lblBienvenue.Location = new System.Drawing.Point(369, 104);
+            this.lblBienvenue.Location = new System.Drawing.Point(372, 88);
             this.lblBienvenue.Name = "lblBienvenue";
             this.lblBienvenue.Size = new System.Drawing.Size(203, 21);
             this.lblBienvenue.TabIndex = 9;
@@ -136,7 +136,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.txtTitrePrincipal.AutoSize = true;
             this.txtTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitrePrincipal.Location = new System.Drawing.Point(354, 43);
+            this.txtTitrePrincipal.Location = new System.Drawing.Point(354, 32);
             this.txtTitrePrincipal.Name = "txtTitrePrincipal";
             this.txtTitrePrincipal.Size = new System.Drawing.Size(384, 60);
             this.txtTitrePrincipal.TabIndex = 8;
@@ -147,10 +147,10 @@ namespace Application_Ludophonie.Vue.Praticien
             this.tbc_MenuPrincipal.Controls.Add(this.tabPage1);
             this.tbc_MenuPrincipal.Controls.Add(this.tabPage2);
             this.tbc_MenuPrincipal.Controls.Add(this.tabPage3);
-            this.tbc_MenuPrincipal.Location = new System.Drawing.Point(52, 185);
+            this.tbc_MenuPrincipal.Location = new System.Drawing.Point(12, 125);
             this.tbc_MenuPrincipal.Name = "tbc_MenuPrincipal";
             this.tbc_MenuPrincipal.SelectedIndex = 0;
-            this.tbc_MenuPrincipal.Size = new System.Drawing.Size(1162, 586);
+            this.tbc_MenuPrincipal.Size = new System.Drawing.Size(1007, 634);
             this.tbc_MenuPrincipal.TabIndex = 11;
             // 
             // tabPage1
@@ -167,7 +167,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1154, 555);
+            this.tabPage1.Size = new System.Drawing.Size(999, 603);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
@@ -177,9 +177,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnTriMois.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnTriMois.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTriMois.Font = new System.Drawing.Font("Montserrat", 8F);
-            this.btnTriMois.Location = new System.Drawing.Point(720, 123);
+            this.btnTriMois.Location = new System.Drawing.Point(645, 109);
             this.btnTriMois.Name = "btnTriMois";
-            this.btnTriMois.Size = new System.Drawing.Size(140, 27);
+            this.btnTriMois.Size = new System.Drawing.Size(140, 30);
             this.btnTriMois.TabIndex = 21;
             this.btnTriMois.Text = "Mois";
             this.btnTriMois.UseVisualStyleBackColor = false;
@@ -187,19 +187,23 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // dgvDernieresSeries
             // 
+            this.dgvDernieresSeries.AllowUserToAddRows = false;
+            this.dgvDernieresSeries.AllowUserToDeleteRows = false;
+            this.dgvDernieresSeries.AllowUserToResizeColumns = false;
+            this.dgvDernieresSeries.AllowUserToResizeRows = false;
             this.dgvDernieresSeries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDernieresSeries.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDernieresSeries.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.dgvDernieresSeries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDernieresSeries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDernieresSeries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDernieresSeries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvDernieresSeries.ColumnHeadersHeight = 65;
             this.dgvDernieresSeries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.C_Nom,
@@ -209,39 +213,40 @@ namespace Application_Ludophonie.Vue.Praticien
             this.C_NbErreurs,
             this.C_Timer,
             this.C_Date});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDernieresSeries.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDernieresSeries.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvDernieresSeries.EnableHeadersVisualStyles = false;
             this.dgvDernieresSeries.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvDernieresSeries.Location = new System.Drawing.Point(90, 170);
+            this.dgvDernieresSeries.Location = new System.Drawing.Point(34, 157);
             this.dgvDernieresSeries.MultiSelect = false;
             this.dgvDernieresSeries.Name = "dgvDernieresSeries";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDernieresSeries.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDernieresSeries.ReadOnly = true;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDernieresSeries.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvDernieresSeries.RowHeadersVisible = false;
             this.dgvDernieresSeries.RowHeadersWidth = 120;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.dgvDernieresSeries.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Montserrat", 12F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.dgvDernieresSeries.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDernieresSeries.RowTemplate.Height = 24;
             this.dgvDernieresSeries.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDernieresSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDernieresSeries.Size = new System.Drawing.Size(866, 352);
+            this.dgvDernieresSeries.Size = new System.Drawing.Size(893, 402);
             this.dgvDernieresSeries.TabIndex = 20;
             // 
             // C_Nom
@@ -249,51 +254,58 @@ namespace Application_Ludophonie.Vue.Praticien
             this.C_Nom.HeaderText = "Date";
             this.C_Nom.MinimumWidth = 6;
             this.C_Nom.Name = "C_Nom";
+            this.C_Nom.ReadOnly = true;
             // 
             // C_Prenom
             // 
             this.C_Prenom.HeaderText = "Nom";
             this.C_Prenom.MinimumWidth = 6;
             this.C_Prenom.Name = "C_Prenom";
+            this.C_Prenom.ReadOnly = true;
             // 
             // C_Nom_Du_Jeu
             // 
             this.C_Nom_Du_Jeu.HeaderText = "Prénom";
             this.C_Nom_Du_Jeu.MinimumWidth = 6;
             this.C_Nom_Du_Jeu.Name = "C_Nom_Du_Jeu";
+            this.C_Nom_Du_Jeu.ReadOnly = true;
             // 
             // C_NbQuestionsDeLaSerie
             // 
             this.C_NbQuestionsDeLaSerie.HeaderText = "Jeu";
             this.C_NbQuestionsDeLaSerie.MinimumWidth = 6;
             this.C_NbQuestionsDeLaSerie.Name = "C_NbQuestionsDeLaSerie";
+            this.C_NbQuestionsDeLaSerie.ReadOnly = true;
             // 
             // C_NbErreurs
             // 
             this.C_NbErreurs.HeaderText = "Nombre de questions";
             this.C_NbErreurs.MinimumWidth = 6;
             this.C_NbErreurs.Name = "C_NbErreurs";
+            this.C_NbErreurs.ReadOnly = true;
             // 
             // C_Timer
             // 
             this.C_Timer.HeaderText = "Nombre d\'erreur(s)";
             this.C_Timer.MinimumWidth = 6;
             this.C_Timer.Name = "C_Timer";
+            this.C_Timer.ReadOnly = true;
             // 
             // C_Date
             // 
             this.C_Date.HeaderText = "Chrono";
             this.C_Date.MinimumWidth = 6;
             this.C_Date.Name = "C_Date";
+            this.C_Date.ReadOnly = true;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Lucida Bright", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1025, 53);
+            this.label3.Font = new System.Drawing.Font("Montserrat", 9F);
+            this.label3.Location = new System.Drawing.Point(879, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 55);
+            this.label3.Size = new System.Drawing.Size(98, 42);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Nombre de séries effectuées ";
+            this.label3.Text = "Séries effectuées ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnTout
@@ -302,9 +314,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnTout.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnTout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTout.Font = new System.Drawing.Font("Montserrat", 8F);
-            this.btnTout.Location = new System.Drawing.Point(188, 123);
+            this.btnTout.Location = new System.Drawing.Point(113, 109);
             this.btnTout.Name = "btnTout";
-            this.btnTout.Size = new System.Drawing.Size(140, 27);
+            this.btnTout.Size = new System.Drawing.Size(140, 30);
             this.btnTout.TabIndex = 17;
             this.btnTout.Text = "Tout";
             this.btnTout.UseVisualStyleBackColor = false;
@@ -316,9 +328,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnJMoins7.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnJMoins7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJMoins7.Font = new System.Drawing.Font("Montserrat", 8F);
-            this.btnJMoins7.Location = new System.Drawing.Point(531, 123);
+            this.btnJMoins7.Location = new System.Drawing.Point(456, 109);
             this.btnJMoins7.Name = "btnJMoins7";
-            this.btnJMoins7.Size = new System.Drawing.Size(140, 27);
+            this.btnJMoins7.Size = new System.Drawing.Size(140, 30);
             this.btnJMoins7.TabIndex = 16;
             this.btnJMoins7.Text = "7 derniers jours";
             this.btnJMoins7.UseVisualStyleBackColor = false;
@@ -330,9 +342,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnTriDateAujourd_hui.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnTriDateAujourd_hui.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTriDateAujourd_hui.Font = new System.Drawing.Font("Montserrat", 8F);
-            this.btnTriDateAujourd_hui.Location = new System.Drawing.Point(360, 123);
+            this.btnTriDateAujourd_hui.Location = new System.Drawing.Point(285, 109);
             this.btnTriDateAujourd_hui.Name = "btnTriDateAujourd_hui";
-            this.btnTriDateAujourd_hui.Size = new System.Drawing.Size(140, 27);
+            this.btnTriDateAujourd_hui.Size = new System.Drawing.Size(140, 30);
             this.btnTriDateAujourd_hui.TabIndex = 15;
             this.btnTriDateAujourd_hui.Text = "Aujourd\'hui";
             this.btnTriDateAujourd_hui.UseVisualStyleBackColor = false;
@@ -342,7 +354,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(320, 64);
+            this.label2.Location = new System.Drawing.Point(245, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(403, 39);
             this.label2.TabIndex = 14;
@@ -352,11 +364,11 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.lblNbSerieEffectuees.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNbSerieEffectuees.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Bold);
-            this.lblNbSerieEffectuees.Location = new System.Drawing.Point(1024, 52);
+            this.lblNbSerieEffectuees.Location = new System.Drawing.Point(876, 47);
             this.lblNbSerieEffectuees.Name = "lblNbSerieEffectuees";
-            this.lblNbSerieEffectuees.Size = new System.Drawing.Size(89, 97);
+            this.lblNbSerieEffectuees.Size = new System.Drawing.Size(102, 73);
             this.lblNbSerieEffectuees.TabIndex = 18;
-            this.lblNbSerieEffectuees.Text = "        20";
+            this.lblNbSerieEffectuees.Text = " 20";
             this.lblNbSerieEffectuees.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // tabPage2
@@ -374,18 +386,19 @@ namespace Application_Ludophonie.Vue.Praticien
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1154, 555);
+            this.tabPage2.Size = new System.Drawing.Size(999, 603);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
             // lblMeessageSuppression
             // 
-            this.lblMeessageSuppression.AutoSize = true;
-            this.lblMeessageSuppression.Location = new System.Drawing.Point(175, 108);
+            this.lblMeessageSuppression.Font = new System.Drawing.Font("Montserrat", 9F);
+            this.lblMeessageSuppression.Location = new System.Drawing.Point(40, 83);
             this.lblMeessageSuppression.Name = "lblMeessageSuppression";
-            this.lblMeessageSuppression.Size = new System.Drawing.Size(47, 20);
+            this.lblMeessageSuppression.Size = new System.Drawing.Size(372, 25);
             this.lblMeessageSuppression.TabIndex = 49;
             this.lblMeessageSuppression.Text = "label1";
+            this.lblMeessageSuppression.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnModifierPatient
             // 
@@ -393,9 +406,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnModifierPatient.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnModifierPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifierPatient.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnModifierPatient.Location = new System.Drawing.Point(463, 287);
+            this.btnModifierPatient.Location = new System.Drawing.Point(407, 329);
             this.btnModifierPatient.Name = "btnModifierPatient";
-            this.btnModifierPatient.Size = new System.Drawing.Size(140, 48);
+            this.btnModifierPatient.Size = new System.Drawing.Size(119, 35);
             this.btnModifierPatient.TabIndex = 48;
             this.btnModifierPatient.Text = "Modifier";
             this.btnModifierPatient.UseVisualStyleBackColor = false;
@@ -403,11 +416,12 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // pNouveauPatient
             // 
+            this.pNouveauPatient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pNouveauPatient.Controls.Add(this.pBtnEnregistrerModif);
-            this.pNouveauPatient.Controls.Add(this.btnClosePanel);
-            this.pNouveauPatient.Controls.Add(this.btnEnregistrer_Ajout);
             this.pNouveauPatient.Controls.Add(this.lblMessage);
+            this.pNouveauPatient.Controls.Add(this.btnEnregistrer_Ajout);
             this.pNouveauPatient.Controls.Add(this.lblConfirmation);
+            this.pNouveauPatient.Controls.Add(this.btnClosePanel);
             this.pNouveauPatient.Controls.Add(this.txtbMotDePasseConfirmation);
             this.pNouveauPatient.Controls.Add(this.lblMotDePasse);
             this.pNouveauPatient.Controls.Add(this.txtbMotDePasse);
@@ -421,17 +435,17 @@ namespace Application_Ludophonie.Vue.Praticien
             this.pNouveauPatient.Controls.Add(this.txtbIdentifiant);
             this.pNouveauPatient.Controls.Add(this.lblTitrePModifAjoutPatient);
             this.pNouveauPatient.Controls.Add(this.pictureBox2);
-            this.pNouveauPatient.Location = new System.Drawing.Point(663, 16);
+            this.pNouveauPatient.Location = new System.Drawing.Point(557, 19);
             this.pNouveauPatient.Name = "pNouveauPatient";
-            this.pNouveauPatient.Size = new System.Drawing.Size(473, 531);
+            this.pNouveauPatient.Size = new System.Drawing.Size(420, 578);
             this.pNouveauPatient.TabIndex = 47;
             // 
             // pBtnEnregistrerModif
             // 
             this.pBtnEnregistrerModif.Controls.Add(this.btnEnregistrerModification);
-            this.pBtnEnregistrerModif.Location = new System.Drawing.Point(139, 464);
+            this.pBtnEnregistrerModif.Location = new System.Drawing.Point(124, 522);
             this.pBtnEnregistrerModif.Name = "pBtnEnregistrerModif";
-            this.pBtnEnregistrerModif.Size = new System.Drawing.Size(208, 52);
+            this.pBtnEnregistrerModif.Size = new System.Drawing.Size(147, 46);
             this.pBtnEnregistrerModif.TabIndex = 61;
             // 
             // btnEnregistrerModification
@@ -440,7 +454,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnEnregistrerModification.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnEnregistrerModification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnregistrerModification.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnEnregistrerModification.Location = new System.Drawing.Point(41, 11);
+            this.btnEnregistrerModification.Location = new System.Drawing.Point(4, 3);
             this.btnEnregistrerModification.Name = "btnEnregistrerModification";
             this.btnEnregistrerModification.Size = new System.Drawing.Size(140, 38);
             this.btnEnregistrerModification.TabIndex = 60;
@@ -448,16 +462,16 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnEnregistrerModification.UseVisualStyleBackColor = false;
             this.btnEnregistrerModification.Click += new System.EventHandler(this.btnEnregistrerModification_Click);
             // 
-            // btnClosePanel
+            // lblMessage
             // 
-            this.btnClosePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnClosePanel.Location = new System.Drawing.Point(436, 3);
-            this.btnClosePanel.Name = "btnClosePanel";
-            this.btnClosePanel.Size = new System.Drawing.Size(34, 30);
-            this.btnClosePanel.TabIndex = 62;
-            this.btnClosePanel.Text = "X";
-            this.btnClosePanel.UseVisualStyleBackColor = false;
-            this.btnClosePanel.Click += new System.EventHandler(this.btnClosePanel_Click);
+            this.lblMessage.Font = new System.Drawing.Font("Montserrat", 8F);
+            this.lblMessage.Location = new System.Drawing.Point(14, 451);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(392, 68);
+            this.lblMessage.TabIndex = 60;
+            this.lblMessage.Text = "Le mot de passe doit contenir au moins 12 caractères dont une majuscule, une minu" +
+    "sucle, un chiffre et un caractère spécial autorisé(@#$%^&*+$)";
+            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnEnregistrer_Ajout
             // 
@@ -465,7 +479,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnEnregistrer_Ajout.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnEnregistrer_Ajout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnregistrer_Ajout.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnEnregistrer_Ajout.Location = new System.Drawing.Point(183, 478);
+            this.btnEnregistrer_Ajout.Location = new System.Drawing.Point(128, 525);
             this.btnEnregistrer_Ajout.Name = "btnEnregistrer_Ajout";
             this.btnEnregistrer_Ajout.Size = new System.Drawing.Size(140, 38);
             this.btnEnregistrer_Ajout.TabIndex = 61;
@@ -473,37 +487,43 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnEnregistrer_Ajout.UseVisualStyleBackColor = false;
             this.btnEnregistrer_Ajout.Click += new System.EventHandler(this.btnEnregistrer_Ajout_Click);
             // 
-            // lblMessage
-            // 
-            this.lblMessage.Font = new System.Drawing.Font("Montserrat", 9F);
-            this.lblMessage.Location = new System.Drawing.Point(3, 403);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(470, 72);
-            this.lblMessage.TabIndex = 60;
-            this.lblMessage.Text = "label1";
-            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblConfirmation
             // 
             this.lblConfirmation.AutoSize = true;
-            this.lblConfirmation.Location = new System.Drawing.Point(292, 353);
+            this.lblConfirmation.Location = new System.Drawing.Point(160, 391);
             this.lblConfirmation.Name = "lblConfirmation";
             this.lblConfirmation.Size = new System.Drawing.Size(103, 20);
             this.lblConfirmation.TabIndex = 58;
             this.lblConfirmation.Text = "Confirmation";
             // 
+            // btnClosePanel
+            // 
+            this.btnClosePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(174)))), ((int)(((byte)(131)))));
+            this.btnClosePanel.Location = new System.Drawing.Point(377, 4);
+            this.btnClosePanel.Name = "btnClosePanel";
+            this.btnClosePanel.Size = new System.Drawing.Size(36, 30);
+            this.btnClosePanel.TabIndex = 62;
+            this.btnClosePanel.Text = "X";
+            this.btnClosePanel.UseVisualStyleBackColor = false;
+            this.btnClosePanel.Click += new System.EventHandler(this.btnClosePanel_Click);
+            // 
             // txtbMotDePasseConfirmation
             // 
-            this.txtbMotDePasseConfirmation.Location = new System.Drawing.Point(293, 377);
+            this.txtbMotDePasseConfirmation.Font = new System.Drawing.Font("Montserrat", 9F);
+            this.txtbMotDePasseConfirmation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtbMotDePasseConfirmation.Location = new System.Drawing.Point(30, 415);
             this.txtbMotDePasseConfirmation.Name = "txtbMotDePasseConfirmation";
-            this.txtbMotDePasseConfirmation.Size = new System.Drawing.Size(100, 23);
+            this.txtbMotDePasseConfirmation.ShortcutsEnabled = false;
+            this.txtbMotDePasseConfirmation.Size = new System.Drawing.Size(363, 26);
             this.txtbMotDePasseConfirmation.TabIndex = 57;
+            this.txtbMotDePasseConfirmation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtbMotDePasseConfirmation.UseSystemPasswordChar = true;
             this.txtbMotDePasseConfirmation.TextChanged += new System.EventHandler(this.txtbMotDePasseConfirmation_TextChanged);
             // 
             // lblMotDePasse
             // 
             this.lblMotDePasse.AutoSize = true;
-            this.lblMotDePasse.Location = new System.Drawing.Point(293, 302);
+            this.lblMotDePasse.Location = new System.Drawing.Point(161, 338);
             this.lblMotDePasse.Name = "lblMotDePasse";
             this.lblMotDePasse.Size = new System.Drawing.Size(101, 20);
             this.lblMotDePasse.TabIndex = 56;
@@ -511,16 +531,21 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // txtbMotDePasse
             // 
-            this.txtbMotDePasse.Location = new System.Drawing.Point(293, 326);
+            this.txtbMotDePasse.Font = new System.Drawing.Font("Montserrat", 9F);
+            this.txtbMotDePasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtbMotDePasse.Location = new System.Drawing.Point(30, 360);
             this.txtbMotDePasse.Name = "txtbMotDePasse";
-            this.txtbMotDePasse.Size = new System.Drawing.Size(100, 23);
+            this.txtbMotDePasse.ShortcutsEnabled = false;
+            this.txtbMotDePasse.Size = new System.Drawing.Size(363, 26);
             this.txtbMotDePasse.TabIndex = 55;
+            this.txtbMotDePasse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtbMotDePasse.UseSystemPasswordChar = true;
             this.txtbMotDePasse.TextChanged += new System.EventHandler(this.txtbMotDePasse_TextChanged);
             // 
             // lblClasse
             // 
             this.lblClasse.AutoSize = true;
-            this.lblClasse.Location = new System.Drawing.Point(131, 353);
+            this.lblClasse.Location = new System.Drawing.Point(88, 281);
             this.lblClasse.Name = "lblClasse";
             this.lblClasse.Size = new System.Drawing.Size(53, 20);
             this.lblClasse.TabIndex = 54;
@@ -528,16 +553,18 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // txtbClasse
             // 
-            this.txtbClasse.Location = new System.Drawing.Point(107, 377);
+            this.txtbClasse.Font = new System.Drawing.Font("Montserrat", 9F);
+            this.txtbClasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtbClasse.Location = new System.Drawing.Point(30, 302);
             this.txtbClasse.Name = "txtbClasse";
-            this.txtbClasse.Size = new System.Drawing.Size(100, 23);
+            this.txtbClasse.Size = new System.Drawing.Size(168, 26);
             this.txtbClasse.TabIndex = 53;
             this.txtbClasse.TextChanged += new System.EventHandler(this.txtbClasse_TextChanged);
             // 
             // lblPrenom
             // 
             this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Location = new System.Drawing.Point(124, 302);
+            this.lblPrenom.Location = new System.Drawing.Point(272, 226);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(66, 20);
             this.lblPrenom.TabIndex = 52;
@@ -545,16 +572,18 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // txtbPrenom
             // 
-            this.txtbPrenom.Location = new System.Drawing.Point(107, 326);
+            this.txtbPrenom.Font = new System.Drawing.Font("Montserrat", 9F);
+            this.txtbPrenom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtbPrenom.Location = new System.Drawing.Point(221, 248);
             this.txtbPrenom.Name = "txtbPrenom";
-            this.txtbPrenom.Size = new System.Drawing.Size(100, 23);
+            this.txtbPrenom.Size = new System.Drawing.Size(168, 26);
             this.txtbPrenom.TabIndex = 51;
             this.txtbPrenom.TextChanged += new System.EventHandler(this.txtbPrenom_TextChanged);
             // 
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(135, 251);
+            this.lblNom.Location = new System.Drawing.Point(92, 226);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(44, 20);
             this.lblNom.TabIndex = 50;
@@ -562,16 +591,18 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // txtbNom
             // 
-            this.txtbNom.Location = new System.Drawing.Point(107, 275);
+            this.txtbNom.Font = new System.Drawing.Font("Montserrat", 9F);
+            this.txtbNom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtbNom.Location = new System.Drawing.Point(30, 248);
             this.txtbNom.Name = "txtbNom";
-            this.txtbNom.Size = new System.Drawing.Size(100, 23);
+            this.txtbNom.Size = new System.Drawing.Size(168, 26);
             this.txtbNom.TabIndex = 49;
             this.txtbNom.TextChanged += new System.EventHandler(this.txtbNom_TextChanged);
             // 
             // lblIdentifiant
             // 
             this.lblIdentifiant.AutoSize = true;
-            this.lblIdentifiant.Location = new System.Drawing.Point(303, 251);
+            this.lblIdentifiant.Location = new System.Drawing.Point(265, 279);
             this.lblIdentifiant.Name = "lblIdentifiant";
             this.lblIdentifiant.Size = new System.Drawing.Size(81, 20);
             this.lblIdentifiant.TabIndex = 48;
@@ -579,28 +610,31 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // txtbIdentifiant
             // 
-            this.txtbIdentifiant.Location = new System.Drawing.Point(293, 275);
+            this.txtbIdentifiant.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtbIdentifiant.Font = new System.Drawing.Font("Montserrat", 9F);
+            this.txtbIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtbIdentifiant.Location = new System.Drawing.Point(221, 301);
             this.txtbIdentifiant.Name = "txtbIdentifiant";
-            this.txtbIdentifiant.Size = new System.Drawing.Size(100, 23);
+            this.txtbIdentifiant.Size = new System.Drawing.Size(168, 26);
             this.txtbIdentifiant.TabIndex = 47;
             this.txtbIdentifiant.TextChanged += new System.EventHandler(this.txtbIdentifiant_TextChanged);
             // 
             // lblTitrePModifAjoutPatient
             // 
             this.lblTitrePModifAjoutPatient.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitrePModifAjoutPatient.Location = new System.Drawing.Point(22, 37);
+            this.lblTitrePModifAjoutPatient.Location = new System.Drawing.Point(44, 1);
             this.lblTitrePModifAjoutPatient.Name = "lblTitrePModifAjoutPatient";
-            this.lblTitrePModifAjoutPatient.Size = new System.Drawing.Size(437, 37);
+            this.lblTitrePModifAjoutPatient.Size = new System.Drawing.Size(334, 95);
             this.lblTitrePModifAjoutPatient.TabIndex = 46;
-            this.lblTitrePModifAjoutPatient.Text = "Création d\'un nouveau patient";
+            this.lblTitrePModifAjoutPatient.Text = "Création d\'un patient nouveau";
             this.lblTitrePModifAjoutPatient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Application_Ludophonie.Properties.Resources.avatar_par_defaut;
-            this.pictureBox2.Location = new System.Drawing.Point(170, 92);
+            this.pictureBox2.Location = new System.Drawing.Point(157, 99);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(153, 147);
+            this.pictureBox2.Size = new System.Drawing.Size(109, 119);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 45;
             this.pictureBox2.TabStop = false;
@@ -611,9 +645,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnAjouter.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAjouter.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnAjouter.Location = new System.Drawing.Point(463, 233);
+            this.btnAjouter.Location = new System.Drawing.Point(407, 289);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(140, 48);
+            this.btnAjouter.Size = new System.Drawing.Size(119, 35);
             this.btnAjouter.TabIndex = 28;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = false;
@@ -621,13 +655,13 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(174)))), ((int)(((byte)(131)))));
             this.btnSupprimer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupprimer.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnSupprimer.Location = new System.Drawing.Point(463, 406);
+            this.btnSupprimer.Location = new System.Drawing.Point(407, 369);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(140, 48);
+            this.btnSupprimer.Size = new System.Drawing.Size(119, 46);
             this.btnSupprimer.TabIndex = 27;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = false;
@@ -639,9 +673,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnCarnetDeQuetes.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnCarnetDeQuetes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarnetDeQuetes.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnCarnetDeQuetes.Location = new System.Drawing.Point(463, 340);
+            this.btnCarnetDeQuetes.Location = new System.Drawing.Point(407, 226);
             this.btnCarnetDeQuetes.Name = "btnCarnetDeQuetes";
-            this.btnCarnetDeQuetes.Size = new System.Drawing.Size(140, 60);
+            this.btnCarnetDeQuetes.Size = new System.Drawing.Size(119, 58);
             this.btnCarnetDeQuetes.TabIndex = 26;
             this.btnCarnetDeQuetes.Text = "Carnet de missions";
             this.btnCarnetDeQuetes.UseVisualStyleBackColor = false;
@@ -653,9 +687,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnVoir.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnVoir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoir.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnVoir.Location = new System.Drawing.Point(463, 179);
+            this.btnVoir.Location = new System.Drawing.Point(407, 186);
             this.btnVoir.Name = "btnVoir";
-            this.btnVoir.Size = new System.Drawing.Size(140, 48);
+            this.btnVoir.Size = new System.Drawing.Size(119, 35);
             this.btnVoir.TabIndex = 25;
             this.btnVoir.Text = "Voir";
             this.btnVoir.UseVisualStyleBackColor = false;
@@ -665,7 +699,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.lblTitreLstPatients.AutoSize = true;
             this.lblTitreLstPatients.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitreLstPatients.Location = new System.Drawing.Point(116, 53);
+            this.lblTitreLstPatients.Location = new System.Drawing.Point(102, 41);
             this.lblTitreLstPatients.Name = "lblTitreLstPatients";
             this.lblTitreLstPatients.Size = new System.Drawing.Size(261, 37);
             this.lblTitreLstPatients.TabIndex = 24;
@@ -673,76 +707,85 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // dgvPatients
             // 
+            this.dgvPatients.AllowUserToAddRows = false;
+            this.dgvPatients.AllowUserToDeleteRows = false;
+            this.dgvPatients.AllowUserToResizeColumns = false;
+            this.dgvPatients.AllowUserToResizeRows = false;
             this.dgvPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPatients.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPatients.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.dgvPatients.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPatients.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPatients.ColumnHeadersHeight = 65;
             this.dgvPatients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.C_Identifiant,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatients.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatients.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPatients.EnableHeadersVisualStyles = false;
             this.dgvPatients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvPatients.Location = new System.Drawing.Point(54, 136);
+            this.dgvPatients.Location = new System.Drawing.Point(40, 114);
             this.dgvPatients.MultiSelect = false;
             this.dgvPatients.Name = "dgvPatients";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatients.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPatients.ReadOnly = true;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Montserrat", 7.8F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatients.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvPatients.RowHeadersVisible = false;
             this.dgvPatients.RowHeadersWidth = 120;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.dgvPatients.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Montserrat", 12F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.dgvPatients.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvPatients.RowTemplate.Height = 24;
             this.dgvPatients.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatients.Size = new System.Drawing.Size(372, 352);
+            this.dgvPatients.Size = new System.Drawing.Size(343, 469);
             this.dgvPatients.TabIndex = 21;
+            this.dgvPatients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPatients_CellClick);
             // 
             // C_Identifiant
             // 
             this.C_Identifiant.HeaderText = "Identifiant";
             this.C_Identifiant.MinimumWidth = 6;
             this.C_Identifiant.Name = "C_Identifiant";
+            this.C_Identifiant.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Prénom";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Nom";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -752,7 +795,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1154, 555);
+            this.tabPage3.Size = new System.Drawing.Size(999, 603);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
@@ -762,9 +805,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnGestion_JeuDuMot.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnGestion_JeuDuMot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestion_JeuDuMot.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.btnGestion_JeuDuMot.Location = new System.Drawing.Point(509, 190);
+            this.btnGestion_JeuDuMot.Location = new System.Drawing.Point(381, 174);
             this.btnGestion_JeuDuMot.Name = "btnGestion_JeuDuMot";
-            this.btnGestion_JeuDuMot.Size = new System.Drawing.Size(155, 147);
+            this.btnGestion_JeuDuMot.Size = new System.Drawing.Size(200, 78);
             this.btnGestion_JeuDuMot.TabIndex = 26;
             this.btnGestion_JeuDuMot.Text = "Jeu du mot";
             this.btnGestion_JeuDuMot.UseVisualStyleBackColor = false;
@@ -774,7 +817,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.lblTitreGestionDesJeux.AutoSize = true;
             this.lblTitreGestionDesJeux.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitreGestionDesJeux.Location = new System.Drawing.Point(450, 90);
+            this.lblTitreGestionDesJeux.Location = new System.Drawing.Point(359, 96);
             this.lblTitreGestionDesJeux.Name = "lblTitreGestionDesJeux";
             this.lblTitreGestionDesJeux.Size = new System.Drawing.Size(245, 37);
             this.lblTitreGestionDesJeux.TabIndex = 25;
@@ -788,9 +831,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.flowLayoutPanel1.Controls.Add(this.btnGestion);
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Lucida Bright", 8F);
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(52, 168);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 128);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1190, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 50);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // btnAccueil
@@ -846,7 +889,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(1291, 794);
+            this.ClientSize = new System.Drawing.Size(1031, 771);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tbc_MenuPrincipal);
             this.Controls.Add(this.btnDeconnexion);

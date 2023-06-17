@@ -45,12 +45,13 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnDeconnexion.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnDeconnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeconnexion.Font = new System.Drawing.Font("Montserrat", 9F);
-            this.btnDeconnexion.Location = new System.Drawing.Point(786, 34);
+            this.btnDeconnexion.Location = new System.Drawing.Point(545, 9);
             this.btnDeconnexion.Name = "btnDeconnexion";
-            this.btnDeconnexion.Size = new System.Drawing.Size(140, 43);
+            this.btnDeconnexion.Size = new System.Drawing.Size(140, 36);
             this.btnDeconnexion.TabIndex = 13;
             this.btnDeconnexion.Text = "Déconnexion";
             this.btnDeconnexion.UseVisualStyleBackColor = false;
+            this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
             // 
             // btnModifAvatar
             // 
@@ -58,19 +59,20 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnModifAvatar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnModifAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifAvatar.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnModifAvatar.Location = new System.Drawing.Point(309, 422);
+            this.btnModifAvatar.Location = new System.Drawing.Point(245, 372);
             this.btnModifAvatar.Name = "btnModifAvatar";
-            this.btnModifAvatar.Size = new System.Drawing.Size(207, 39);
+            this.btnModifAvatar.Size = new System.Drawing.Size(185, 39);
             this.btnModifAvatar.TabIndex = 12;
             this.btnModifAvatar.Text = "Modifie ton avatar !";
             this.btnModifAvatar.UseVisualStyleBackColor = false;
+            this.btnModifAvatar.Click += new System.EventHandler(this.btnModifAvatar_Click);
             // 
             // pbAvatar
             // 
             this.pbAvatar.Image = ((System.Drawing.Image)(resources.GetObject("pbAvatar.Image")));
-            this.pbAvatar.Location = new System.Drawing.Point(309, 225);
+            this.pbAvatar.Location = new System.Drawing.Point(248, 209);
             this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(207, 191);
+            this.pbAvatar.Size = new System.Drawing.Size(179, 164);
             this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAvatar.TabIndex = 11;
             this.pbAvatar.TabStop = false;
@@ -82,9 +84,9 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnCarnetDeMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarnetDeMission.Font = new System.Drawing.Font("Montserrat", 19F);
             this.btnCarnetDeMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
-            this.btnCarnetDeMission.Location = new System.Drawing.Point(244, 506);
+            this.btnCarnetDeMission.Location = new System.Drawing.Point(150, 457);
             this.btnCarnetDeMission.Name = "btnCarnetDeMission";
-            this.btnCarnetDeMission.Size = new System.Drawing.Size(351, 62);
+            this.btnCarnetDeMission.Size = new System.Drawing.Size(374, 62);
             this.btnCarnetDeMission.TabIndex = 10;
             this.btnCarnetDeMission.Text = "Carnet de quêtes";
             this.btnCarnetDeMission.UseVisualStyleBackColor = false;
@@ -96,7 +98,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnJeuDuMot.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnJeuDuMot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJeuDuMot.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.btnJeuDuMot.Location = new System.Drawing.Point(353, 590);
+            this.btnJeuDuMot.Location = new System.Drawing.Point(262, 539);
             this.btnJeuDuMot.Name = "btnJeuDuMot";
             this.btnJeuDuMot.Size = new System.Drawing.Size(151, 107);
             this.btnJeuDuMot.TabIndex = 8;
@@ -108,7 +110,7 @@ namespace Application_Ludophonie.Vue.Patient
             // 
             this.txtTitrePrincipal.AutoSize = true;
             this.txtTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.txtTitrePrincipal.Location = new System.Drawing.Point(223, 121);
+            this.txtTitrePrincipal.Location = new System.Drawing.Point(145, 105);
             this.txtTitrePrincipal.Name = "txtTitrePrincipal";
             this.txtTitrePrincipal.Size = new System.Drawing.Size(384, 60);
             this.txtTitrePrincipal.TabIndex = 7;
@@ -119,7 +121,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(952, 743);
+            this.ClientSize = new System.Drawing.Size(697, 704);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.btnModifAvatar);
             this.Controls.Add(this.pbAvatar);
@@ -130,6 +132,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Vue_MenuPrincipal_Patient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vue_MenuPrincipal_Patient";
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.ResumeLayout(false);
@@ -141,9 +144,9 @@ namespace Application_Ludophonie.Vue.Patient
 
         private System.Windows.Forms.Button btnDeconnexion;
         private System.Windows.Forms.Button btnModifAvatar;
-        private System.Windows.Forms.PictureBox pbAvatar;
         private System.Windows.Forms.Button btnCarnetDeMission;
         private System.Windows.Forms.Button btnJeuDuMot;
         private System.Windows.Forms.Label txtTitrePrincipal;
+        public System.Windows.Forms.PictureBox pbAvatar;
     }
 }

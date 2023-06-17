@@ -36,6 +36,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.cbxNiveau = new System.Windows.Forms.ComboBox();
             this.txtTitrePrincipal = new System.Windows.Forms.Label();
             this.btnDebutSerie = new System.Windows.Forms.Button();
+            this.btnQuitter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRetour
@@ -50,82 +51,100 @@ namespace Application_Ludophonie.Vue.Jeux
             // 
             // cbxNbQuestions
             // 
+            this.cbxNbQuestions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNbQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxNbQuestions.Font = new System.Drawing.Font("Montserrat", 10F);
             this.cbxNbQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.cbxNbQuestions.FormattingEnabled = true;
-            this.cbxNbQuestions.Location = new System.Drawing.Point(290, 354);
+            this.cbxNbQuestions.Location = new System.Drawing.Point(267, 369);
             this.cbxNbQuestions.Margin = new System.Windows.Forms.Padding(4);
             this.cbxNbQuestions.Name = "cbxNbQuestions";
-            this.cbxNbQuestions.Size = new System.Drawing.Size(150, 29);
+            this.cbxNbQuestions.Size = new System.Drawing.Size(218, 32);
             this.cbxNbQuestions.TabIndex = 12;
-            this.cbxNbQuestions.SelectedIndexChanged += new System.EventHandler(this.cbxNbQuestions_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(343, 216);
+            this.label3.Font = new System.Drawing.Font("Montserrat", 11F);
+            this.label3.Location = new System.Drawing.Point(348, 236);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 21);
+            this.label3.Size = new System.Drawing.Size(56, 26);
             this.label3.TabIndex = 11;
             this.label3.Text = "Liste";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtNbQuestions
             // 
             this.txtNbQuestions.AutoSize = true;
-            this.txtNbQuestions.Location = new System.Drawing.Point(280, 318);
+            this.txtNbQuestions.Font = new System.Drawing.Font("Montserrat", 11F);
+            this.txtNbQuestions.Location = new System.Drawing.Point(267, 340);
             this.txtNbQuestions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtNbQuestions.Name = "txtNbQuestions";
-            this.txtNbQuestions.Size = new System.Drawing.Size(171, 21);
+            this.txtNbQuestions.Size = new System.Drawing.Size(218, 26);
             this.txtNbQuestions.TabIndex = 10;
             this.txtNbQuestions.Text = "Nombre de questions";
-            this.txtNbQuestions.Click += new System.EventHandler(this.txtNbQuestions_Click);
             // 
             // cbxNiveau
             // 
+            this.cbxNiveau.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNiveau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxNiveau.Font = new System.Drawing.Font("Montserrat", 10F);
             this.cbxNiveau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.cbxNiveau.FormattingEnabled = true;
-            this.cbxNiveau.Location = new System.Drawing.Point(290, 241);
+            this.cbxNiveau.Location = new System.Drawing.Point(270, 267);
             this.cbxNiveau.Margin = new System.Windows.Forms.Padding(4);
             this.cbxNiveau.Name = "cbxNiveau";
-            this.cbxNiveau.Size = new System.Drawing.Size(150, 29);
+            this.cbxNiveau.Size = new System.Drawing.Size(213, 32);
             this.cbxNiveau.TabIndex = 9;
-            this.cbxNiveau.SelectedIndexChanged += new System.EventHandler(this.cbxNiveau_SelectedIndexChanged);
             // 
             // txtTitrePrincipal
             // 
             this.txtTitrePrincipal.AutoSize = true;
             this.txtTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.txtTitrePrincipal.Location = new System.Drawing.Point(157, 103);
+            this.txtTitrePrincipal.Location = new System.Drawing.Point(148, 128);
             this.txtTitrePrincipal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtTitrePrincipal.Name = "txtTitrePrincipal";
             this.txtTitrePrincipal.Size = new System.Drawing.Size(456, 60);
             this.txtTitrePrincipal.TabIndex = 8;
             this.txtTitrePrincipal.Text = "Paramètre ta série !";
-            this.txtTitrePrincipal.Click += new System.EventHandler(this.txtTitrePrincipal_Click);
             // 
             // btnDebutSerie
             // 
-            this.btnDebutSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnDebutSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
             this.btnDebutSerie.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnDebutSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDebutSerie.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnDebutSerie.Location = new System.Drawing.Point(265, 456);
+            this.btnDebutSerie.Location = new System.Drawing.Point(267, 440);
             this.btnDebutSerie.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDebutSerie.Name = "btnDebutSerie";
-            this.btnDebutSerie.Size = new System.Drawing.Size(219, 43);
+            this.btnDebutSerie.Size = new System.Drawing.Size(218, 43);
             this.btnDebutSerie.TabIndex = 15;
             this.btnDebutSerie.Text = "Commencer";
             this.btnDebutSerie.UseVisualStyleBackColor = false;
+            this.btnDebutSerie.Click += new System.EventHandler(this.btnDebutSerie_Click);
+            // 
+            // btnQuitter
+            // 
+            this.btnQuitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnQuitter.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitter.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.btnQuitter.Location = new System.Drawing.Point(559, 13);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(162, 43);
+            this.btnQuitter.TabIndex = 16;
+            this.btnQuitter.Text = "Quitter le jeu";
+            this.btnQuitter.UseVisualStyleBackColor = false;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
             // Vue_GestionnaireDeSerie_JeuDuLot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(802, 636);
+            this.ClientSize = new System.Drawing.Size(735, 689);
+            this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnDebutSerie);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.cbxNbQuestions);
@@ -153,5 +172,6 @@ namespace Application_Ludophonie.Vue.Jeux
         private System.Windows.Forms.ComboBox cbxNiveau;
         private System.Windows.Forms.Label txtTitrePrincipal;
         private System.Windows.Forms.Button btnDebutSerie;
+        private System.Windows.Forms.Button btnQuitter;
     }
 }

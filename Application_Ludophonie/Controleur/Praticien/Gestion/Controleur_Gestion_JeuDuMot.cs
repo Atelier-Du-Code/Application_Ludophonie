@@ -48,6 +48,39 @@ namespace Application_Ludophonie.Controleur.Praticien.Gestion
             return bSupprime;
         }
 
+        public int recupereDernierMotCree()
+        {
+            int idMot = Modele_Gestion_JeuDuMot.recupereDernierMotCree();
+            return idMot;
+        }
+
+        public List<int> lstidPatient()
+        {
+            List<int> lstIdPatients = new List<int>();
+            lstIdPatients = Modele_Gestion_JeuDuMot.lstidPatient();
+            return lstIdPatients;
+        }
+
+        public bool creationAcquisition_leMot(int idUtilisateur, int idMot, int idNiveauAcquisition)
+        {
+            bool bCreation = Modele_Gestion_JeuDuMot.creationAcquisition_leMot(idUtilisateur, idMot, idNiveauAcquisition);
+            return bCreation;
+
+        }
+
+        public Mot recupereUnmot(string mot)
+        {
+            Mot leMot = Modele_Gestion_JeuDuMot.recupereUnmot(mot);
+
+            return leMot;
+        }
+
+        public bool supprimeTuplesBDD(int idPatient, int idMot)
+        {
+            bool bSuppression = Modele_Gestion_JeuDuMot.supprimeTuplesBDD(idPatient, idMot);
+
+            return bSuppression;
+        }
     }
 }
         

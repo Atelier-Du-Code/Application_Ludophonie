@@ -84,9 +84,9 @@ namespace Application_Ludophonie.Controleur.Praticien
             return bModification;
         }
 
-        public bool SupprimeUtilisateur(Utilisateur utilisateurASupprimer)
+        public bool SupprimeUtilisateur(int idUtilisateur)
         {
-            bool bSuppression = Modele_MenuPrincipal_Praticien.SupprimeUtilisateur(utilisateurASupprimer);
+            bool bSuppression = Modele_MenuPrincipal_Praticien.SupprimeUtilisateur(idUtilisateur);
             return bSuppression;
         }
 
@@ -96,8 +96,60 @@ namespace Application_Ludophonie.Controleur.Praticien
             return bSuppression;
         }
 
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Gestion des jeux - tabPage 
-        //////////////////////////////////////////////////////////////////////////////////////////////////
+        public int compteCombienPatientDansBDD()
+        {
+            int nbPatients = Modele_MenuPrincipal_Praticien.compteCombienPatientDansBDD();
+            return nbPatients;
+        }
+
+        public int compteCombienMotsDansBDD()
+        {
+            int nbMots = Modele_MenuPrincipal_Praticien.compteCombienMotsDansBDD();
+            return nbMots;
+        }
+
+        public List<int> recupereTousIdLesMots()
+        {
+            List<int> idLesMots = new List<int>();
+            idLesMots = Modele_MenuPrincipal_Praticien.recupereTousLesMots();
+            return idLesMots;
+        }
+
+        public bool creationAcquisition_leMot(int idUtilisateur, int idMot, int idNiveauAcquisition)
+        {
+            bool bcreation = Modele_MenuPrincipal_Praticien.creationAcquisition_leMot(idUtilisateur, idMot, idNiveauAcquisition);
+
+            return bcreation;
+
+        }
+
+        public List<int> recupererTouslstidPatient()
+        {
+            List<int> idpatients = new List<int>();
+
+            idpatients = Modele_MenuPrincipal_Praticien.recupererTouslstidPatient();
+            return idpatients;
+        }
+
+        public bool supprimeAcquisitionLeMot(int idUtilisateur)
+        {
+            bool bSupprime = Modele_MenuPrincipal_Praticien.supprimeAcquisitionLeMot(idUtilisateur);
+            return bSupprime;
+        }
+
+        public bool supprimeMissionsCarnet(int idUtilisateur)
+        {
+            bool bSupprime = Modele_MenuPrincipal_Praticien.supprimeMissionsCarnet(idUtilisateur);
+            return bSupprime;
+        }
+
+        public int recuperePlusGrandIdPatient()
+        {
+            int plusGrandIdPatient = Modele_MenuPrincipal_Praticien.recuperePlusGrandIdPatient();
+            return plusGrandIdPatient;
+        }
     }
+
+
+
 }

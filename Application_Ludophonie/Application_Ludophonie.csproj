@@ -95,17 +95,29 @@
   <ItemGroup>
     <Compile Include="BDD\BddMySql.cs" />
     <Compile Include="Controleur\Controleur_Authentification.cs" />
+    <Compile Include="Controleur\Jeux\Controleur_Gestionnaire_De_Serie_Mot.cs" />
+    <Compile Include="Controleur\Jeux\Controleur_JeuDuMot.cs" />
+    <Compile Include="Controleur\Patient\Controleur_Carnet_De_Quetes.cs" />
+    <Compile Include="Controleur\Patient\controleur_MenuPatient.cs" />
+    <Compile Include="Controleur\Patient\Controleur_ModifAvatar.cs" />
     <Compile Include="Controleur\Praticien\Controleur_Detail_Patient.cs" />
     <Compile Include="Controleur\Praticien\Controleur_Gestion_Carnet _De_Mission.cs" />
     <Compile Include="Controleur\Praticien\Controleur_MenuPrincipal_Praticien.cs" />
     <Compile Include="Controleur\Praticien\Gestion\Controleur_Gestion_JeuDuMot.cs" />
-    <Compile Include="Metier\DistributionSecurite.cs" />
-    <Compile Include="Metier\HashMotDePasse_Singleton.cs" />
+    <Compile Include="Metier\Avatar.cs" />
+    <Compile Include="Metier\Chrono.cs" />
+    <Compile Include="Metier\Image.cs" />
+    <Compile Include="Metier\MelangeurDeListe.cs" />
     <Compile Include="Metier\Mot.cs" />
     <Compile Include="Metier\Serie.cs" />
+    <Compile Include="Metier\Son.cs" />
     <Compile Include="Metier\Utilisateur.cs" />
+    <Compile Include="Modele\Jeux\Modele_Gestionnaire_De_Serie_Mot.cs" />
+    <Compile Include="Modele\Jeux\Modele_JeuDuMot.cs" />
     <Compile Include="Modele\Modele_Authentification.cs" />
-    <Compile Include="Modele\modele_test.cs" />
+    <Compile Include="Modele\Patient\Modele_ModifAvatar.cs" />
+    <Compile Include="Modele\Patient\Modele_Carnet_de_quetes.cs" />
+    <Compile Include="Modele\Patient\Modele_MenuPrincipal_Patient.cs" />
     <Compile Include="Modele\Praticien\Gestion\Modele_Gestion_JeuDuMot.cs" />
     <Compile Include="Modele\Praticien\Modele_Detail_Patient.cs" />
     <Compile Include="Modele\Praticien\Modele_Gestion_Carnet_de_Missions.cs" />
@@ -118,11 +130,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuLot.cs">
+    <Compile Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuMot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuLot.Designer.cs">
-      <DependentUpon>Vue_GestionnaireDeSerie_JeuDuLot.cs</DependentUpon>
+    <Compile Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuMot.Designer.cs">
+      <DependentUpon>Vue_GestionnaireDeSerie_JeuDuMot.cs</DependentUpon>
     </Compile>
     <Compile Include="Vue\Jeux\Jeu du mot\Vue_Jeu_DuMot.cs">
       <SubType>Form</SubType>
@@ -185,8 +197,8 @@
     <EmbeddedResource Include="Vue\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuLot.resx">
-      <DependentUpon>Vue_GestionnaireDeSerie_JeuDuLot.cs</DependentUpon>
+    <EmbeddedResource Include="Vue\Jeux\Jeu du mot\Vue_GestionnaireDeSerie_JeuDuMot.resx">
+      <DependentUpon>Vue_GestionnaireDeSerie_JeuDuMot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vue\Jeux\Jeu du mot\Vue_Jeu_DuMot.resx">
       <DependentUpon>Vue_Jeu_DuMot.cs</DependentUpon>
@@ -227,10 +239,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controleur\Jeux\" />
-    <Folder Include="Controleur\Patient\" />
-    <Folder Include="Modele\Jeux\" />
-    <Folder Include="Modele\Patient\" />
+    <COMReference Include="SpeechLib">
+      <Guid>{C866CA3A-32F7-11D2-9602-00C04F8EE628}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avatar par defaut.png" />
@@ -252,6 +269,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\vert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\pluie.wav" />
+    <Content Include="Resources\rebond.wav" />
+    <Content Include="Resources\reussite.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

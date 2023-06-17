@@ -21,6 +21,10 @@ namespace Application_Ludophonie.Modele.Praticien
         /// Page d'accueil - tabPage 1
         //////////////////////////////////////////////////////////////////////////////////////////////////
         
+        /// <summary>
+        /// Permet de récupérer toutes les séries effectuées pour tous les utilisateurs
+        /// </summary>
+        /// <returns></returns>
         public static List<Serie> recupereToutesLesSeries()
         {
             List<Serie> lstToutesSeriesEffectuees = new List<Serie>();
@@ -53,6 +57,11 @@ namespace Application_Ludophonie.Modele.Praticien
             return lstToutesSeriesEffectuees;
         }
 
+        /// <summary>
+        /// Permet de récupérer toutes les séries effectuées pour tous les utilisateurs
+        /// effectuées aujourd'hui
+        /// </summary>
+        /// <returns></returns>
         public static List<Serie> recupereLesSeriesEffectueesAujourdhui()
         {
             List<Serie> lstSeriesEffectueesAujourdhui = new List<Serie>();
@@ -86,6 +95,11 @@ namespace Application_Ludophonie.Modele.Praticien
             return lstSeriesEffectueesAujourdhui;
         }
 
+        /// <summary>
+        /// Permet de récupérer toutes les séries effectuées pour tous les utilisateurs
+        /// effectuées il y a jusqu'à une semaine avant aujourd'hui
+        /// </summary>
+        /// <returns></returns>
         public static List<Serie> recupereLesSeriesEffectueesSemaine()
         {
             List<Serie> lstSeriesEffectueesSemaine = new List<Serie>();
@@ -119,6 +133,11 @@ namespace Application_Ludophonie.Modele.Praticien
             return lstSeriesEffectueesSemaine;
         }
 
+        /// <summary>
+        /// Permet de récupérer toutes les séries effectuées pour tous les utilisateurs
+        /// effectuées jusqu'à 30 jours avant aujourd'hui
+        /// </summary>
+        /// <returns></returns>
         public static List<Serie> recupereLesSeriesEffectueesMois()
         {
             List<Serie> lstSeriesEffectueesMois = new List<Serie>();
@@ -156,8 +175,12 @@ namespace Application_Ludophonie.Modele.Praticien
         //////////////////////////////////////////////////////////////////////////////////////////////////
         /// Catalogue des patients - tabPage 2
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        
-
+               
+        /// <summary>
+        /// Permet de récupérer toutes les informations d'un patient grâce à son identifiant
+        /// </summary>
+        /// <param name="unIdentifiant"></param>
+        /// <returns></returns>
         public static Utilisateur recuperePatient(string unIdentifiant)
         {
 
@@ -197,6 +220,10 @@ namespace Application_Ludophonie.Modele.Praticien
             return patientRecupere;
         }
 
+        /// <summary>
+        /// Permet de récupérer tous les patients
+        /// </summary>
+        /// <returns></returns>
         public static List<Utilisateur> recupereTousLesPatients()
         {
 
@@ -231,6 +258,11 @@ namespace Application_Ludophonie.Modele.Praticien
             return lstTousLesPatients;
         }
 
+        /// <summary>
+        /// Permet de récupérer tous les patients
+        /// </summary>
+        /// <param name="nouvelUtilisateur"></param>
+        /// <returns></returns>
         public static bool creeUtilisateur(Utilisateur nouvelUtilisateur)
         {
             try
@@ -261,15 +293,20 @@ namespace Application_Ludophonie.Modele.Praticien
             }
         }
 
+        /// <summary>
+        /// Permet de modifier un utilisateur
+        /// </summary>
+        /// <param name="UtilisateurAModifier"></param>
+        /// <returns></returns>
         public static bool ModifieUtilisateur(Utilisateur UtilisateurAModifier)
         {
             try
             {
-                string req = "INSERT INTO `utilisateurs`(`identifiant`, `nom`, `prenom`, `classe`, `password`, `idAvatar`, `idTypeUtilisateur`, `date_inscription`) VALUES ";
-                req += "(@identifiant, @nom, @prenom, @classe, @password, 1, 1, CURRENT_DATE())";
+                string req = "UPDATE utilisateurs SET identifiant = @identifiant, nom = @nom, prenom = @prenom, classe = @classe, password = @password WHERE utilisateurs.idUtilisateur = @idUtilisateur;";
 
-                Dictionary<string, object> parameters = new Dictionary<string, object>
+                        Dictionary<string, object> parameters = new Dictionary<string, object>
                         {
+                            {"@idUtilisateur", UtilisateurAModifier.IdUtilisateur},
                             {"@identifiant", UtilisateurAModifier.Identifiant},
                             {"@nom", UtilisateurAModifier.Nom},
                             {"@prenom", UtilisateurAModifier.Prenom},
@@ -291,15 +328,20 @@ namespace Application_Ludophonie.Modele.Praticien
             }
         }
 
-        public static bool SupprimeUtilisateur(Utilisateur utilisateurASupprimer)
+        /// <summary>
+        /// Permet de supprimer un utilisateur
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
+        /// <returns></returns>
+        public static bool SupprimeUtilisateur(int idUtilisateur)
         {
             try
             {
-                string req1 = "DELETE utilisateurs FROM `utilisateurs` WHERE utilisateurs.identifiant = @identifiant;";
+                string req1 = "DELETE FROM utilisateurs WHERE utilisateurs.idUtilisateur = @idUtilisateur;";
 
                 Dictionary<string, object> parameters1 = new Dictionary<string, object>
                         {
-                            {"@identifiant", utilisateurASupprimer.Identifiant},
+                            {"@idUtilisateur", idUtilisateur},
                             
                         };
                 BddMySql curs = BddMySql.GetInstance(connectionString);
@@ -316,12 +358,19 @@ namespace Application_Ludophonie.Modele.Praticien
             }
         }
 
+        /// <summary>
+        /// Permet de supprimer les séries effectuées d'un patient
+        /// </summary>
+        /// <param name="utilisateurASupprimer"></param>
+        /// <returns></returns>
         public static bool SupprimeSesSeries(Utilisateur utilisateurASupprimer)
         {
             try
             {
                
-                string req2 = "DELETE series_effectuees FROM `series_effectuees INNER JOIN utilisateurs ON series_effectuees.idUtilisateur = utilisateurs.idUtilisateur WHERE utilisateurs.idUtilisateur = idUtilisateur";
+                string req2 = "DELETE " +
+                    "FROM series_effectuees " +
+                    "WHERE series_effectuees.idUtilisateur = @idUtilisateur";
 
                 Dictionary<string, object> parameters2 = new Dictionary<string, object>
                         {
@@ -343,5 +392,228 @@ namespace Application_Ludophonie.Modele.Praticien
                 return false;
             }
         }
+
+        /// <summary>
+        /// Récupère le nombre de patients enregistrés
+        /// </summary>
+        /// <returns></returns>
+        public static int compteCombienPatientDansBDD()
+        {
+            int nbPatients = 0; 
+
+            string req = "SELECT COUNT(identifiant) AS nbPatients " +
+                "FROM utilisateurs " +
+                "WHERE utilisateurs.idTypeUtilisateur = 1; ";
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+
+            if (curs.Read())
+            {
+                nbPatients = ((int)curs.Field("nbPatients"));                
+            }
+
+            curs.Close();
+
+            return nbPatients;
+        }
+
+        /// <summary>
+        /// Permer de récupérer la liste de tous les n° d'identification des patients
+        /// </summary>
+        /// <returns></returns>
+        public static List<int>recupererTouslstidPatient()
+        {
+            List<int> lstIdPatient = new List<int>();
+
+            string req = "SELECT utilisateurs.idUtilisateur FROM utilisateurs WHERE utilisateurs.idTypeUtilisateur = 1;";
+
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+
+            while (curs.Read())
+            {
+                int idPatients = ((int)curs.Field("idUtilisateur"));
+
+                lstIdPatient.Add(idPatients);
+            }
+
+            curs.Close();
+
+            return lstIdPatient;
+        }
+
+        /// <summary>
+        /// Permet de récupérer le n° identifiant du dernier patient créé
+        /// </summary>
+        /// <returns></returns>
+        public static int recuperePlusGrandIdPatient()
+        {
+            int plusGrandIdPatitent = 0;
+            string req = "SELECT Max(idUtilisateur) AS idMaxPatient FROM utilisateurs;";
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+
+            while (curs.Read())
+            {
+                plusGrandIdPatitent = ((int)curs.Field("idMaxPatient"));
+            }
+
+            curs.Close();
+
+            return plusGrandIdPatitent;
+        }
+
+        /// <summary>
+        /// Peremt de récupérer le nombre de mots enregistrés
+        /// </summary>
+        /// <returns></returns>
+        public static int compteCombienMotsDansBDD()
+        {
+            int nbMots = 0;
+
+            string req = "SELECT COUNT(mot) AS nbMots FROM lesmots;";
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+
+            while (curs.Read())
+            {
+                nbMots = ((int)curs.Field("nbMots"));
+            }
+
+            curs.Close();
+
+            return nbMots;
+        }
+
+        /// <summary>
+        /// Permet de récupérer tous les mots enregistrés
+        /// </summary>
+        /// <returns></returns>
+        public static List<int> recupereTousLesMots()
+        {
+            List<int> lstidMots = new List<int>();
+
+            string req = "SELECT idMot FROM lesmots; ";
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+
+            while (curs.Read())
+            {
+                int idMot = ((int)curs.Field("idMot"));
+
+                lstidMots.Add(idMot);
+            }
+
+            curs.Close();
+
+            return lstidMots;
+        }
+
+        /// <summary>
+        /// Permet de créer des tuples dans la table acquisition_lemot permettant 
+        /// de stocker le niveau d'acquisition de chaque mot pour chaque patient 
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
+        /// <param name="idMot"></param>
+        /// <param name="idNiveauAcquisition"></param>
+        /// <returns></returns>
+        
+        public static bool creationAcquisition_leMot(int idUtilisateur, int idMot, int idNiveauAcquisition)
+        {
+            try
+            {               
+                string req = "INSERT INTO acquisition_lemot(idUtilisateur, idMot, idNiveauAcquisition) VALUES (@idUtilisateur,@idMot,@idNiveauAcquisition);";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+             {
+                 {"@idUtilisateur", idUtilisateur},
+                 {"@idMot", idMot},
+                 {"@idNiveauAcquisition", idNiveauAcquisition}
+
+             };
+
+                BddMySql curs = BddMySql.GetInstance(connectionString);
+                curs.ReqUpdate(req, parameters);
+
+                curs.Close();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }           
+        }
+
+        /// <summary>
+        /// Permet de supprimer les tuples d'un utilisateur de la table acquisition_lemot
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
+        /// <returns></returns>
+        public static bool supprimeAcquisitionLeMot(int idUtilisateur)
+        {
+            try
+            {
+                string req = "DELETE FROM acquisition_lemot WHERE acquisition_lemot.idUtilisateur = @idUtilisateur;";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                     {"@idUtilisateur", idUtilisateur}
+                     
+
+                };
+
+                BddMySql curs = BddMySql.GetInstance(connectionString);
+                curs.ReqUpdate(req, parameters);
+
+                curs.Close();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
+
+        /// <summary>
+        /// Permet de supprimer toutes les missions d'un utilisateur
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
+        /// <returns></returns>
+        public static bool supprimeMissionsCarnet(int idUtilisateur)
+        {
+            try
+            {
+                string req = "DELETE FROM carnet_de_mission WHERE carnet_de_mission.idUtilisateur = @idUtilisateur;";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                     {"@idUtilisateur", idUtilisateur}
+                };
+
+                BddMySql curs = BddMySql.GetInstance(connectionString);
+                curs.ReqUpdate(req, parameters);
+
+                curs.Close();
+
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
+            
+
+
+        }
+       
     }
 }

@@ -16,6 +16,9 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
     {
         Controleur_Gestion_JeuDuMot controleur = new Controleur_Gestion_JeuDuMot();
 
+        /// <summary>
+        /// Constructeur
+        /// </summary>
         public Vue_Gestionnaire_JeuLeMot()
         {
             InitializeComponent();
@@ -24,91 +27,15 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             rempliCbx();
         }
 
-        private void rempliCbx()
-        {
-            List<string> lstTouteslistes = new List<string>();
-            lstTouteslistes = controleur.recupereToutesListes();
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ///Gestion du CRUD
+        //////////////////////////////////////////////////////////////////////////////////////////////
 
-            for(int i = 0; i < lstTouteslistes.Count; i++)
-            {
-                cbxTriListes.Items.Add(lstTouteslistes[i]);
-                cbxTypeListe.Items.Add(lstTouteslistes[i]);
-            }
-        }
-
-        private void actualiseDgvLstMots()
-        {
-            dgvLstMots.Rows.Clear();
-
-            List<Mot> lstTousLesMots = new List<Mot>();
-
-            lstTousLesMots.Clear();
-            lstTousLesMots = controleur.recupereTousLesMots();
-
-            for (int i = 0; i < lstTousLesMots.Count; i++)
-            {
-                dgvLstMots.Rows.Add(lstTousLesMots[i].LeMot, lstTousLesMots[i].Contexte, lstTousLesMots[i].Liste);
-            }
-        }
-
-        private void cbxTriListes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string liste = cbxTriListes.SelectedItem.ToString();          
-
-            actualiseDgvParListe(liste);
-        }
-
-        private void actualiseDgvParListe(string liste)
-        {
-            dgvLstMots.Rows.Clear();
-
-            List<Mot> lstTousLesMotsListe = new List<Mot>();
-
-            lstTousLesMotsListe.Clear();
-            lstTousLesMotsListe = controleur.recupereTousLesMotsDelaListe(liste);
-
-            for (int i = 0; i < lstTousLesMotsListe.Count; i++)
-            {
-                dgvLstMots.Rows.Add(lstTousLesMotsListe[i].LeMot, lstTousLesMotsListe[i].Contexte, lstTousLesMotsListe[i].Liste);
-            }
-        }
-
-        
-
-        void btnSupprimer_Click(object sender, EventArgs e)
-        {
-            string motAsupprimer = "";
-
-            if (dgvLstMots.SelectedRows.Count == 1)
-            {
-                motAsupprimer = dgvLstMots.CurrentRow.Cells["C_Mot"].Value.ToString();
-
-                bool bSupprimer = controleur.supprimeUnMot(motAsupprimer);
-
-                if (bSupprimer == true)
-                {
-                    lblMessage.Text = "Le mot a bien été supprimé";
-                    txtbMot.Text = "";
-                    txtbContexte.Text = "";
-                    cbxTypeListe.SelectedIndex = 0;
-
-                    actualiseDgvLstMots();
-                    
-                    //mettre a jour le dgv 
-                }
-                else
-                {
-                    lblMessage.Text = "Le mot n'a pas pus etre supprimé";
-                }
-            }
-            else
-            {
-                lblMessage.Text = "Selectionnez un mot à supprimer";
-            }    
-
-           
-        }
-
+        /// <summary>
+        /// Permet d'enregistrer de nouveaux mots 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEnregistrerNewMot_Click(object sender, EventArgs e)
         {
             string liste = "";
@@ -119,14 +46,18 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
 
                 bool bEnregistrer = controleur.enregistreUnMot(txtbMot.Text, txtbContexte.Text, cbxTypeListe.SelectedIndex + 1);
 
-                if (bEnregistrer == true)
+                if (bEnregistrer)
                 {
                     lblMessage.Text = "Le mot a bien été ajouté";
                     txtbMot.Text = "";
                     txtbContexte.Text = "";
                     cbxTypeListe.SelectedIndex = 0;
+
+                    //Pour tous les utilisateurs de la base, ajouter un tuple pour le nouveau mot
+                    ajoutTupleBDD();
+
                     actualiseDgvParListe(liste);
-                    
+
                 }
                 else
                 {
@@ -138,6 +69,167 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
                 lblMessage.Text = "Au moins un champs du formulaire est vide";
             }
 
+        }
+
+        /// <summary>
+        /// Permet de supprimer un mot ainsi que toutes les informations qui lui sont ratachées
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            string motAsupprimer = "";
+
+            if (dgvLstMots.SelectedRows.Count == 1)
+            {
+                motAsupprimer = dgvLstMots.CurrentRow.Cells["C_Mot"].Value.ToString();
+
+                supprimeTupleBDD(motAsupprimer);
+
+                bool bSupprimer = controleur.supprimeUnMot(motAsupprimer);
+
+                if (bSupprimer)
+                {
+                    lblMessage.Text = "Le mot a bien été supprimé";
+                    txtbMot.Text = "";
+                    txtbContexte.Text = "";
+                    cbxTypeListe.SelectedIndex = 0;
+
+                    if (cbxTriListes.SelectedItem == null)
+                    {
+                        actualiseDgvLstMots();
+                    }
+                    else
+                    {
+                        actualiseDgvParListe(cbxTriListes.SelectedItem.ToString());
+                    }
+                }
+                else
+                {
+                    lblMessage.Text = "Le mot n'a pas pus etre supprimé";
+                }
+            }
+            else
+            {
+                lblMessage.Text = "Selectionnez un mot à supprimer";
+            }
+
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ///Méthodes outils
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        /// <summary>
+        /// Permet de créer des tuples dans la table qui gère l'acquisition des mots
+        /// </summary>
+        private void ajoutTupleBDD()
+        {
+            //recupererle nouveau mot
+            int idDernierMot = controleur.recupereDernierMotCree();
+
+            //recuperer la liste des id d'utilisateur de la base            
+            List<int> lstIdPatients = controleur.lstidPatient();
+
+            for (int j = 0; j < lstIdPatients.Count; j++)
+            {
+                controleur.creationAcquisition_leMot(lstIdPatients[j], idDernierMot, 1);
+            }
+        }
+
+        /// <summary>
+        /// Permet de supprimer des tuples dans la table qui gère l'acquisition des mots
+        /// </summary>
+        private void supprimeTupleBDD(string mot)
+        {
+            //recuperer le mot selectionné 
+            Mot motASupprimer = controleur.recupereUnmot(mot);
+
+            //recuperer la liste des id d'utilisateur de la base
+            List<int> lstIdDespatients = controleur.lstidPatient();
+
+            //boucle de suppression
+            for (int j = 0; j < lstIdDespatients.Count; j++)
+            {
+                controleur.supprimeTuplesBDD(lstIdDespatients[j], motASupprimer.IdMot);
+            }
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ///Gestion de l'interface
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+        /// <summary>
+        /// Permet de remplir le comboBox contenant les niveaux de liste
+        /// </summary>
+        private void rempliCbx()
+        {            
+            List<string> lstTouteslistes = controleur.recupereToutesListes();
+
+            for(int i = 0; i < lstTouteslistes.Count; i++)
+            {
+                cbxTriListes.Items.Add(lstTouteslistes[i]);
+                cbxTypeListe.Items.Add(lstTouteslistes[i]);
+            }
+        }
+
+        /// <summary>
+        /// Permet d'actualiser le datagridview contenant les mots qui seront proposés en exercice
+        /// avec tous les mots de la base, sans filtrage
+        /// </summary>
+        private void actualiseDgvLstMots()
+        {
+            List<Mot> lstTousLesMots = new List<Mot>();
+            lstTousLesMots.Clear();
+            dgvLstMots.Rows.Clear();
+
+            lstTousLesMots = controleur.recupereTousLesMots();
+
+            for (int i = 0; i < lstTousLesMots.Count; i++)
+            {
+                dgvLstMots.Rows.Add(lstTousLesMots[i].LeMot, lstTousLesMots[i].Contexte, lstTousLesMots[i].Liste);
+            }
+        }
+
+        /// <summary>
+        /// Permet de changer le paramètre de tri des séries sur un critère de liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbxTriListes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string liste = cbxTriListes.SelectedItem.ToString();          
+
+            actualiseDgvParListe(liste);
+        }
+
+        /// <summary>
+        /// Permet d'actualiser le datagridview contenant les mots qui seront proposés en exercice
+        /// avec tous les mots d'une liste
+        /// </summary>
+        private void actualiseDgvParListe(string liste)
+        {
+            List<Mot> lstTousLesMotsListe = new List<Mot>();
+            lstTousLesMotsListe.Clear();
+            dgvLstMots.Rows.Clear();
+
+            lstTousLesMotsListe = controleur.recupereTousLesMotsDelaListe(liste);
+
+            for (int i = 0; i < lstTousLesMotsListe.Count; i++)
+            {
+                dgvLstMots.Rows.Add(lstTousLesMotsListe[i].LeMot, lstTousLesMotsListe[i].Contexte, lstTousLesMotsListe[i].Liste);
+            }
+        }
+
+        /// <summary>
+        /// Permet de fermer la fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -17,6 +17,10 @@ namespace Application_Ludophonie.Vue.Praticien
         Utilisateur patientEnCours;
         Controleur_Detail_Patient controleur = new Controleur_Detail_Patient();
 
+        /// <summary>
+        /// Constructeur 
+        /// </summary>
+        /// <param name="patientEnCours"></param>
         public Vue_Detail_Patient(Utilisateur patientEnCours)
         {
             InitializeComponent();
@@ -28,6 +32,9 @@ namespace Application_Ludophonie.Vue.Praticien
 
         }
 
+        /// <summary>
+        /// Permet d'actualiser les textBox renseignant les informations du patient en cours
+        /// </summary>
         private void actualiseInfosPatient()
         {
             pbxAvatar.ImageLocation = patientEnCours.urlAvatar;
@@ -37,6 +44,9 @@ namespace Application_Ludophonie.Vue.Praticien
             lblClasse.Text = patientEnCours.Classe;
         }
 
+        /// <summary>
+        /// Permet de remplir le comboBox contenant le nom des jeux
+        /// </summary>
         private void remplisCbxJeux()
         {
             List<string> lstJeux = new List<string>();
@@ -51,14 +61,16 @@ namespace Application_Ludophonie.Vue.Praticien
             }
         }
 
-
-
+        /// <summary>
+        /// Permet d'actualiser le DataGriedView contenant toutes les séries 
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
+        /// <param name="nomDuJeu"></param>
         private void actualiseDgvSeries_Jeu(int idUtilisateur, string nomDuJeu)
         {
             dgvSeries.Rows.Clear();
-
-            List<Serie> lstSerieDuJeu = new List<Serie>();
-            lstSerieDuJeu = controleur.recupereToutesSeriesJeu(idUtilisateur, nomDuJeu);
+            
+            List<Serie> lstSerieDuJeu = controleur.recupereToutesSeriesJeu(idUtilisateur, nomDuJeu);
 
             for (int i = 0; i < lstSerieDuJeu.Count; i++)
             {
@@ -66,12 +78,15 @@ namespace Application_Ludophonie.Vue.Praticien
             }
         }
 
+        /// <summary>
+        /// Permet d'actualiser le DataGriedView contenant toutes les séries avec toutes les séries d'un utilisateur
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
         private void actualiseDgvSeries_Neutre(int idUtilisateur)
         {
             dgvSeries.Rows.Clear();
 
-            List<Serie> lstSerieDuJeu = new List<Serie>();
-            lstSerieDuJeu = controleur.recupereToutesSeriesUtilisateur(idUtilisateur);
+            List<Serie> lstSerieDuJeu = controleur.recupereToutesSeriesUtilisateur(idUtilisateur);
 
             for (int i = 0; i < lstSerieDuJeu.Count; i++)
             {
@@ -79,6 +94,11 @@ namespace Application_Ludophonie.Vue.Praticien
             }
         }
 
+        /// <summary>
+        /// Permet d'actualiser le DataGriedView contenant toutes les séries avec toutes les séries d'un utilisateur 
+        /// sur le critère de filtrage du jeu
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
         private void cbxJeux_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cbxJeux.SelectedItem.ToString() == "Tous")
@@ -89,6 +109,16 @@ namespace Application_Ludophonie.Vue.Praticien
             {
                 actualiseDgvSeries_Jeu(patientEnCours.IdUtilisateur, cbxJeux.SelectedItem.ToString());
             }
+        }
+
+        /// <summary>
+        /// Permet de fermer la fenêtre en cours
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

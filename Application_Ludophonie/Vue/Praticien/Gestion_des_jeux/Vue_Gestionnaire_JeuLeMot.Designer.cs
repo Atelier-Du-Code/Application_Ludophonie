@@ -47,16 +47,21 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.txtbMot = new System.Windows.Forms.TextBox();
             this.lblMot = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblTitreCbxTitre = new System.Windows.Forms.Label();
             this.cbxTriListes = new System.Windows.Forms.ComboBox();
             this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnRetour = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLstMots)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvLstMots
             // 
+            this.dgvLstMots.AllowUserToAddRows = false;
+            this.dgvLstMots.AllowUserToDeleteRows = false;
+            this.dgvLstMots.AllowUserToResizeColumns = false;
+            this.dgvLstMots.AllowUserToResizeRows = false;
             this.dgvLstMots.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLstMots.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvLstMots.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
@@ -85,7 +90,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.dgvLstMots.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLstMots.EnableHeadersVisualStyles = false;
             this.dgvLstMots.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvLstMots.Location = new System.Drawing.Point(36, 452);
+            this.dgvLstMots.Location = new System.Drawing.Point(104, 214);
             this.dgvLstMots.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvLstMots.MultiSelect = false;
             this.dgvLstMots.Name = "dgvLstMots";
@@ -140,19 +145,19 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtbMot);
             this.panel1.Controls.Add(this.lblMot);
-            this.panel1.Location = new System.Drawing.Point(36, 128);
+            this.panel1.Location = new System.Drawing.Point(104, 525);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(830, 172);
+            this.panel1.Size = new System.Drawing.Size(830, 154);
             this.panel1.TabIndex = 24;
             // 
             // btnEnregistrerNewMot
             // 
-            this.btnEnregistrerNewMot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnEnregistrerNewMot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
             this.btnEnregistrerNewMot.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnEnregistrerNewMot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnregistrerNewMot.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnEnregistrerNewMot.Location = new System.Drawing.Point(325, 123);
+            this.btnEnregistrerNewMot.Location = new System.Drawing.Point(337, 108);
             this.btnEnregistrerNewMot.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEnregistrerNewMot.Name = "btnEnregistrerNewMot";
             this.btnEnregistrerNewMot.Size = new System.Drawing.Size(154, 36);
@@ -163,9 +168,9 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             // 
             // lblMessage
             // 
-            this.lblMessage.Location = new System.Drawing.Point(28, 92);
+            this.lblMessage.Location = new System.Drawing.Point(-1, 76);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(766, 28);
+            this.lblMessage.Size = new System.Drawing.Size(830, 28);
             this.lblMessage.TabIndex = 18;
             this.lblMessage.Text = "label3";
             this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,61 +178,66 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             // lblTitreListe
             // 
             this.lblTitreListe.AutoSize = true;
-            this.lblTitreListe.Location = new System.Drawing.Point(696, 25);
+            this.lblTitreListe.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.lblTitreListe.Location = new System.Drawing.Point(712, 10);
             this.lblTitreListe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitreListe.Name = "lblTitreListe";
-            this.lblTitreListe.Size = new System.Drawing.Size(45, 21);
+            this.lblTitreListe.Size = new System.Drawing.Size(50, 24);
             this.lblTitreListe.TabIndex = 15;
             this.lblTitreListe.Text = "Liste";
             // 
             // cbxTypeListe
             // 
+            this.cbxTypeListe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTypeListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxTypeListe.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cbxTypeListe.FormattingEnabled = true;
-            this.cbxTypeListe.Location = new System.Drawing.Point(625, 53);
+            this.cbxTypeListe.Location = new System.Drawing.Point(656, 37);
             this.cbxTypeListe.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxTypeListe.Name = "cbxTypeListe";
-            this.cbxTypeListe.Size = new System.Drawing.Size(186, 35);
+            this.cbxTypeListe.Size = new System.Drawing.Size(157, 35);
             this.cbxTypeListe.TabIndex = 12;
             // 
             // txtbContexte
             // 
             this.txtbContexte.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbContexte.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.txtbContexte.Location = new System.Drawing.Point(175, 56);
+            this.txtbContexte.Font = new System.Drawing.Font("Montserrat", 14F);
+            this.txtbContexte.Location = new System.Drawing.Point(200, 41);
             this.txtbContexte.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtbContexte.Name = "txtbContexte";
-            this.txtbContexte.Size = new System.Drawing.Size(428, 25);
+            this.txtbContexte.Size = new System.Drawing.Size(428, 29);
             this.txtbContexte.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(350, 25);
+            this.label7.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.label7.Location = new System.Drawing.Point(375, 10);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 21);
+            this.label7.Size = new System.Drawing.Size(87, 24);
             this.label7.TabIndex = 10;
             this.label7.Text = "Contexte";
             // 
             // txtbMot
             // 
             this.txtbMot.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbMot.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.txtbMot.Location = new System.Drawing.Point(28, 55);
+            this.txtbMot.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtbMot.Font = new System.Drawing.Font("Montserrat", 14F);
+            this.txtbMot.Location = new System.Drawing.Point(28, 40);
             this.txtbMot.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtbMot.Name = "txtbMot";
-            this.txtbMot.Size = new System.Drawing.Size(125, 25);
+            this.txtbMot.Size = new System.Drawing.Size(125, 29);
             this.txtbMot.TabIndex = 9;
             // 
             // lblMot
             // 
             this.lblMot.AutoSize = true;
-            this.lblMot.Location = new System.Drawing.Point(71, 25);
+            this.lblMot.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.lblMot.Location = new System.Drawing.Point(71, 10);
             this.lblMot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMot.Name = "lblMot";
-            this.lblMot.Size = new System.Drawing.Size(39, 21);
+            this.lblMot.Size = new System.Drawing.Size(44, 24);
             this.lblMot.TabIndex = 5;
             this.lblMot.Text = "Mot";
             // 
@@ -235,48 +245,41 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(171, 45);
+            this.label1.Location = new System.Drawing.Point(233, 44);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(561, 60);
             this.label1.TabIndex = 23;
             this.label1.Text = "Gestionnaire jeu du mot";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(245, 335);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(395, 37);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Listes des mots enregistrés";
-            // 
             // lblTitreCbxTitre
             // 
             this.lblTitreCbxTitre.AutoSize = true;
-            this.lblTitreCbxTitre.Location = new System.Drawing.Point(248, 381);
+            this.lblTitreCbxTitre.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.lblTitreCbxTitre.Location = new System.Drawing.Point(316, 143);
             this.lblTitreCbxTitre.Name = "lblTitreCbxTitre";
-            this.lblTitreCbxTitre.Size = new System.Drawing.Size(52, 21);
+            this.lblTitreCbxTitre.Size = new System.Drawing.Size(58, 24);
             this.lblTitreCbxTitre.TabIndex = 27;
             this.lblTitreCbxTitre.Text = "Listes";
             // 
             // cbxTriListes
             // 
+            this.cbxTriListes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTriListes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxTriListes.FormattingEnabled = true;
-            this.cbxTriListes.Location = new System.Drawing.Point(212, 405);
+            this.cbxTriListes.Location = new System.Drawing.Point(266, 172);
             this.cbxTriListes.Name = "cbxTriListes";
-            this.cbxTriListes.Size = new System.Drawing.Size(121, 29);
+            this.cbxTriListes.Size = new System.Drawing.Size(153, 29);
             this.cbxTriListes.TabIndex = 28;
             this.cbxTriListes.SelectedIndexChanged += new System.EventHandler(this.cbxTriListes_SelectedIndexChanged);
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(174)))), ((int)(((byte)(131)))));
             this.btnSupprimer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupprimer.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnSupprimer.Location = new System.Drawing.Point(520, 405);
+            this.btnSupprimer.Location = new System.Drawing.Point(587, 165);
             this.btnSupprimer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(154, 36);
@@ -285,22 +288,48 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.btnSupprimer.UseVisualStyleBackColor = false;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
+            // btnRetour
+            // 
+            this.btnRetour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnRetour.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetour.Font = new System.Drawing.Font("Montserrat", 10.2F);
+            this.btnRetour.Location = new System.Drawing.Point(880, 12);
+            this.btnRetour.Name = "btnRetour";
+            this.btnRetour.Size = new System.Drawing.Size(139, 39);
+            this.btnRetour.TabIndex = 29;
+            this.btnRetour.Text = "Retour";
+            this.btnRetour.UseVisualStyleBackColor = false;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(313, 474);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(393, 37);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Création d\'un nouveau mot";
+            // 
             // Vue_Gestionnaire_JeuLeMot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(907, 713);
+            this.ClientSize = new System.Drawing.Size(1031, 716);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.cbxTriListes);
             this.Controls.Add(this.lblTitreCbxTitre);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvLstMots);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Montserrat", 9F);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Vue_Gestionnaire_JeuLeMot";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vue_Gestionnaire_JeuLeMot";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLstMots)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -321,7 +350,6 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         private System.Windows.Forms.TextBox txtbMot;
         private System.Windows.Forms.Label lblMot;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTitreCbxTitre;
         private System.Windows.Forms.ComboBox cbxTriListes;
         private System.Windows.Forms.Label lblMessage;
@@ -330,5 +358,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         private System.Windows.Forms.DataGridViewTextBoxColumn C_Piege1;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_Piege2;
         private System.Windows.Forms.Button btnEnregistrerNewMot;
+        private System.Windows.Forms.Button btnRetour;
+        private System.Windows.Forms.Label label3;
     }
 }

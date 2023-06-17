@@ -37,24 +37,30 @@ namespace Application_Ludophonie
             this.lblBienvenue = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pIdentifiant = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtbIdentifiant = new System.Windows.Forms.TextBox();
+            this.txtIdentifiant = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
-            this.txtIdentifiant = new System.Windows.Forms.Label();
-            this.txtbIdentifiant = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblMessageMDP = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.btnRetourPanel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatarIdentifie)).BeginInit();
             this.pIdentifiant.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtbMotDePasse
             // 
-            this.txtbMotDePasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtbMotDePasse.Font = new System.Drawing.Font("Montserrat", 10F);
             this.txtbMotDePasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.txtbMotDePasse.Location = new System.Drawing.Point(286, 547);
+            this.txtbMotDePasse.Location = new System.Drawing.Point(286, 531);
             this.txtbMotDePasse.Name = "txtbMotDePasse";
-            this.txtbMotDePasse.Size = new System.Drawing.Size(221, 30);
+            this.txtbMotDePasse.Size = new System.Drawing.Size(221, 28);
             this.txtbMotDePasse.TabIndex = 12;
+            this.txtbMotDePasse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtbMotDePasse.UseSystemPasswordChar = true;
             this.txtbMotDePasse.TextChanged += new System.EventHandler(this.txtbMotDePasse_TextChanged);
             // 
             // btnConnexion
@@ -64,7 +70,7 @@ namespace Application_Ludophonie
             this.btnConnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConnexion.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnexion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnConnexion.Location = new System.Drawing.Point(286, 628);
+            this.btnConnexion.Location = new System.Drawing.Point(286, 613);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(220, 44);
             this.btnConnexion.TabIndex = 11;
@@ -74,9 +80,9 @@ namespace Application_Ludophonie
             // 
             // lblMdp
             // 
-            this.lblMdp.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMdp.Font = new System.Drawing.Font("Montserrat", 11F);
             this.lblMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.lblMdp.Location = new System.Drawing.Point(-5, 496);
+            this.lblMdp.Location = new System.Drawing.Point(-5, 492);
             this.lblMdp.Name = "lblMdp";
             this.lblMdp.Size = new System.Drawing.Size(803, 35);
             this.lblMdp.TabIndex = 10;
@@ -95,9 +101,9 @@ namespace Application_Ludophonie
             // 
             // pbxAvatarIdentifie
             // 
-            this.pbxAvatarIdentifie.Location = new System.Drawing.Point(280, 265);
+            this.pbxAvatarIdentifie.Location = new System.Drawing.Point(271, 265);
             this.pbxAvatarIdentifie.Name = "pbxAvatarIdentifie";
-            this.pbxAvatarIdentifie.Size = new System.Drawing.Size(233, 207);
+            this.pbxAvatarIdentifie.Size = new System.Drawing.Size(251, 207);
             this.pbxAvatarIdentifie.TabIndex = 13;
             this.pbxAvatarIdentifie.TabStop = false;
             // 
@@ -126,23 +132,56 @@ namespace Application_Ludophonie
             // pIdentifiant
             // 
             this.pIdentifiant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.pIdentifiant.Controls.Add(this.lblMessage);
-            this.pIdentifiant.Controls.Add(this.btnValider);
-            this.pIdentifiant.Controls.Add(this.txtIdentifiant);
-            this.pIdentifiant.Controls.Add(this.txtbIdentifiant);
+            this.pIdentifiant.Controls.Add(this.panel1);
+            this.pIdentifiant.Controls.Add(this.label2);
             this.pIdentifiant.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            this.pIdentifiant.Location = new System.Drawing.Point(12, 136);
+            this.pIdentifiant.Location = new System.Drawing.Point(12, 12);
             this.pIdentifiant.Name = "pIdentifiant";
-            this.pIdentifiant.Size = new System.Drawing.Size(778, 536);
+            this.pIdentifiant.Size = new System.Drawing.Size(778, 657);
             this.pIdentifiant.TabIndex = 16;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtbIdentifiant);
+            this.panel1.Controls.Add(this.txtIdentifiant);
+            this.panel1.Controls.Add(this.lblMessage);
+            this.panel1.Controls.Add(this.btnValider);
+            this.panel1.Location = new System.Drawing.Point(95, 182);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(603, 205);
+            this.panel1.TabIndex = 9;
+            // 
+            // txtbIdentifiant
+            // 
+            this.txtbIdentifiant.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtbIdentifiant.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.txtbIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtbIdentifiant.Location = new System.Drawing.Point(208, 73);
+            this.txtbIdentifiant.Name = "txtbIdentifiant";
+            this.txtbIdentifiant.Size = new System.Drawing.Size(181, 28);
+            this.txtbIdentifiant.TabIndex = 4;
+            this.txtbIdentifiant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtbIdentifiant.TextChanged += new System.EventHandler(this.txtbIdentifiant_TextChanged);
+            // 
+            // txtIdentifiant
+            // 
+            this.txtIdentifiant.AutoSize = true;
+            this.txtIdentifiant.Font = new System.Drawing.Font("Montserrat", 11F);
+            this.txtIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtIdentifiant.Location = new System.Drawing.Point(223, 35);
+            this.txtIdentifiant.Name = "txtIdentifiant";
+            this.txtIdentifiant.Size = new System.Drawing.Size(151, 26);
+            this.txtIdentifiant.TabIndex = 1;
+            this.txtIdentifiant.Text = "Ton identifiant";
             // 
             // lblMessage
             // 
             this.lblMessage.Font = new System.Drawing.Font("Montserrat", 10F);
             this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.lblMessage.Location = new System.Drawing.Point(33, 231);
+            this.lblMessage.Location = new System.Drawing.Point(17, 110);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(683, 24);
+            this.lblMessage.Size = new System.Drawing.Size(562, 24);
             this.lblMessage.TabIndex = 7;
             this.lblMessage.Text = "label1";
             this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,40 +193,30 @@ namespace Application_Ludophonie
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValider.Font = new System.Drawing.Font("Montserrat", 10.2F);
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnValider.Location = new System.Drawing.Point(264, 273);
+            this.btnValider.Location = new System.Drawing.Point(208, 141);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(221, 40);
+            this.btnValider.Size = new System.Drawing.Size(181, 40);
             this.btnValider.TabIndex = 6;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
-            // txtIdentifiant
+            // label2
             // 
-            this.txtIdentifiant.AutoSize = true;
-            this.txtIdentifiant.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold);
-            this.txtIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.txtIdentifiant.Location = new System.Drawing.Point(296, 135);
-            this.txtIdentifiant.Name = "txtIdentifiant";
-            this.txtIdentifiant.Size = new System.Drawing.Size(157, 35);
-            this.txtIdentifiant.TabIndex = 1;
-            this.txtIdentifiant.Text = "Identifiant";
-            // 
-            // txtbIdentifiant
-            // 
-            this.txtbIdentifiant.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.txtbIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.txtbIdentifiant.Location = new System.Drawing.Point(264, 182);
-            this.txtbIdentifiant.Name = "txtbIdentifiant";
-            this.txtbIdentifiant.Size = new System.Drawing.Size(221, 28);
-            this.txtbIdentifiant.TabIndex = 4;
-            this.txtbIdentifiant.TextChanged += new System.EventHandler(this.txtbIdentifiant_TextChanged);
+            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 20F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.label2.Location = new System.Drawing.Point(229, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(356, 69);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Authentification";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMessageMDP
             // 
             this.lblMessageMDP.Font = new System.Drawing.Font("Montserrat", 10F);
             this.lblMessageMDP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.lblMessageMDP.Location = new System.Drawing.Point(-3, 584);
+            this.lblMessageMDP.Location = new System.Drawing.Point(-3, 578);
             this.lblMessageMDP.Name = "lblMessageMDP";
             this.lblMessageMDP.Size = new System.Drawing.Size(798, 23);
             this.lblMessageMDP.TabIndex = 17;
@@ -208,6 +237,20 @@ namespace Application_Ludophonie
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
+            // btnRetourPanel
+            // 
+            this.btnRetourPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnRetourPanel.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnRetourPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetourPanel.Font = new System.Drawing.Font("Montserrat", 10.2F);
+            this.btnRetourPanel.Location = new System.Drawing.Point(641, 31);
+            this.btnRetourPanel.Name = "btnRetourPanel";
+            this.btnRetourPanel.Size = new System.Drawing.Size(139, 42);
+            this.btnRetourPanel.TabIndex = 18;
+            this.btnRetourPanel.Text = "Retour";
+            this.btnRetourPanel.UseVisualStyleBackColor = false;
+            this.btnRetourPanel.Click += new System.EventHandler(this.btnRetourPanel_Click);
+            // 
             // Authentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,6 +258,7 @@ namespace Application_Ludophonie
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(802, 743);
             this.Controls.Add(this.pIdentifiant);
+            this.Controls.Add(this.btnRetourPanel);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.lblMessageMDP);
             this.Controls.Add(this.label1);
@@ -229,7 +273,8 @@ namespace Application_Ludophonie
             this.Text = "Authentification";
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatarIdentifie)).EndInit();
             this.pIdentifiant.ResumeLayout(false);
-            this.pIdentifiant.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,6 +296,9 @@ namespace Application_Ludophonie
         private System.Windows.Forms.TextBox txtbIdentifiant;
         private System.Windows.Forms.Label lblMessageMDP;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnRetourPanel;
     }
 }
 

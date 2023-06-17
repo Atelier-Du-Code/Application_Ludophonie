@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele
 {
-    public static class Modele_Authentification   {
+    public static class Modele_Authentification   
+    {
         
         private static string server = "127.0.0.1";
         private static string userid = "root";
@@ -16,9 +17,48 @@ namespace Application_Ludophonie.Modele
         private static string database="ludophonie";
 
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password + ";database=" + database + ";SslMode=none";
-        
 
-        public static Utilisateur ControleIdentite(string unIdentifiant)
+        /// <summary>
+        /// Permet de vérifier si un utilisateur existe
+        /// </summary>
+        /// <param name="unIdentifiant"></param>
+        /// <returns></returns>
+        public static bool utilisateurExiste(string unIdentifiant)
+        {
+            string nom = "";
+
+            string req = "SELECT nom FROM utilisateurs WHERE utilisateurs.identifiant = @identifiant;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                        {
+                            {"@identifiant", unIdentifiant}
+                        };
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, parameters);
+
+            if (curs.Read())
+            {
+                nom = ((string)curs.Field("nom"));
+            }
+
+            curs.Close();
+
+            if (nom == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Permet de récupérer toutes les informations d'un patient
+        /// </summary>
+        /// <param name="unIdentifiant"></param>
+        /// <returns></returns>
+        public static Utilisateur recupereUtilisateur(string unIdentifiant)
         {
 
             Utilisateur UtilisateurAControler = null;
@@ -56,6 +96,8 @@ namespace Application_Ludophonie.Modele
             curs.Close();
             return UtilisateurAControler;
         }
-              
+
+        
+
     }
 }

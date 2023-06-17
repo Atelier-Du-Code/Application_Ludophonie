@@ -50,80 +50,83 @@ namespace Application_Ludophonie.Vue.Praticien
             this.cbxJeux = new System.Windows.Forms.ComboBox();
             this.lblCboxJeux = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRetour = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeries)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxAvatar
             // 
-            this.pbxAvatar.Location = new System.Drawing.Point(132, 129);
+            this.pbxAvatar.Image = global::Application_Ludophonie.Properties.Resources.brun;
+            this.pbxAvatar.Location = new System.Drawing.Point(197, 128);
             this.pbxAvatar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pbxAvatar.Name = "pbxAvatar";
-            this.pbxAvatar.Size = new System.Drawing.Size(160, 178);
+            this.pbxAvatar.Size = new System.Drawing.Size(128, 133);
+            this.pbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxAvatar.TabIndex = 0;
             this.pbxAvatar.TabStop = false;
             // 
             // lblLeNom
             // 
-            this.lblLeNom.Location = new System.Drawing.Point(320, 129);
+            this.lblLeNom.Location = new System.Drawing.Point(398, 131);
             this.lblLeNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLeNom.Name = "lblLeNom";
-            this.lblLeNom.Size = new System.Drawing.Size(56, 22);
+            this.lblLeNom.Size = new System.Drawing.Size(83, 22);
             this.lblLeNom.TabIndex = 1;
             this.lblLeNom.Text = "Nom :";
             // 
             // lblNom
             // 
             this.lblNom.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.lblNom.Location = new System.Drawing.Point(320, 152);
+            this.lblNom.Location = new System.Drawing.Point(396, 154);
             this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(168, 41);
+            this.lblNom.Size = new System.Drawing.Size(170, 41);
             this.lblNom.TabIndex = 2;
             this.lblNom.Text = "lilou";
             // 
             // lblLePrenom
             // 
-            this.lblLePrenom.Location = new System.Drawing.Point(319, 198);
+            this.lblLePrenom.Location = new System.Drawing.Point(612, 130);
             this.lblLePrenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLePrenom.Name = "lblLePrenom";
-            this.lblLePrenom.Size = new System.Drawing.Size(160, 33);
+            this.lblLePrenom.Size = new System.Drawing.Size(160, 30);
             this.lblLePrenom.TabIndex = 3;
             this.lblLePrenom.Text = "Prénom :";
             // 
             // lblPrenom
             // 
             this.lblPrenom.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.lblPrenom.Location = new System.Drawing.Point(319, 222);
+            this.lblPrenom.Location = new System.Drawing.Point(612, 154);
             this.lblPrenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrenom.Name = "lblPrenom";
-            this.lblPrenom.Size = new System.Drawing.Size(168, 40);
+            this.lblPrenom.Size = new System.Drawing.Size(168, 37);
             this.lblPrenom.TabIndex = 4;
             this.lblPrenom.Text = "Lilou";
             // 
             // lblLaClasse
             // 
-            this.lblLaClasse.Location = new System.Drawing.Point(512, 130);
+            this.lblLaClasse.Location = new System.Drawing.Point(818, 128);
             this.lblLaClasse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLaClasse.Name = "lblLaClasse";
-            this.lblLaClasse.Size = new System.Drawing.Size(111, 22);
+            this.lblLaClasse.Size = new System.Drawing.Size(63, 22);
             this.lblLaClasse.TabIndex = 5;
             this.lblLaClasse.Text = "Classe :";
             // 
             // lblClasse
             // 
             this.lblClasse.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.lblClasse.Location = new System.Drawing.Point(512, 155);
+            this.lblClasse.Location = new System.Drawing.Point(818, 153);
             this.lblClasse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClasse.Name = "lblClasse";
-            this.lblClasse.Size = new System.Drawing.Size(152, 38);
+            this.lblClasse.Size = new System.Drawing.Size(144, 38);
             this.lblClasse.TabIndex = 6;
             this.lblClasse.Text = "CM2";
             // 
             // lblIdentifiant
             // 
             this.lblIdentifiant.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.lblIdentifiant.Location = new System.Drawing.Point(100, 310);
+            this.lblIdentifiant.Location = new System.Drawing.Point(147, 261);
             this.lblIdentifiant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIdentifiant.Name = "lblIdentifiant";
             this.lblIdentifiant.Size = new System.Drawing.Size(229, 30);
@@ -163,7 +166,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.dgvSeries.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSeries.EnableHeadersVisualStyles = false;
             this.dgvSeries.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvSeries.Location = new System.Drawing.Point(38, 422);
+            this.dgvSeries.Location = new System.Drawing.Point(93, 320);
             this.dgvSeries.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvSeries.MultiSelect = false;
             this.dgvSeries.Name = "dgvSeries";
@@ -186,7 +189,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.dgvSeries.RowTemplate.Height = 24;
             this.dgvSeries.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeries.Size = new System.Drawing.Size(839, 260);
+            this.dgvSeries.Size = new System.Drawing.Size(839, 359);
             this.dgvSeries.TabIndex = 21;
             // 
             // C_Nom
@@ -225,7 +228,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.cbxJeux.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxJeux.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.cbxJeux.FormattingEnabled = true;
-            this.cbxJeux.Location = new System.Drawing.Point(379, 370);
+            this.cbxJeux.Location = new System.Drawing.Point(434, 268);
             this.cbxJeux.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxJeux.Name = "cbxJeux";
             this.cbxJeux.Size = new System.Drawing.Size(150, 29);
@@ -235,7 +238,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // lblCboxJeux
             // 
             this.lblCboxJeux.AutoSize = true;
-            this.lblCboxJeux.Location = new System.Drawing.Point(394, 346);
+            this.lblCboxJeux.Location = new System.Drawing.Point(449, 244);
             this.lblCboxJeux.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCboxJeux.Name = "lblCboxJeux";
             this.lblCboxJeux.Size = new System.Drawing.Size(110, 21);
@@ -246,18 +249,33 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(284, 37);
+            this.label1.Location = new System.Drawing.Point(339, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(316, 60);
             this.label1.TabIndex = 28;
             this.label1.Text = "Fiche patient";
+            // 
+            // btnRetour
+            // 
+            this.btnRetour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnRetour.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetour.Font = new System.Drawing.Font("Montserrat", 10.2F);
+            this.btnRetour.Location = new System.Drawing.Point(880, 12);
+            this.btnRetour.Name = "btnRetour";
+            this.btnRetour.Size = new System.Drawing.Size(139, 42);
+            this.btnRetour.TabIndex = 30;
+            this.btnRetour.Text = "Quitter";
+            this.btnRetour.UseVisualStyleBackColor = false;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
             // Vue_Detail_Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(907, 713);
+            this.ClientSize = new System.Drawing.Size(1031, 716);
+            this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCboxJeux);
             this.Controls.Add(this.cbxJeux);
@@ -302,5 +320,6 @@ namespace Application_Ludophonie.Vue.Praticien
         private System.Windows.Forms.ComboBox cbxJeux;
         private System.Windows.Forms.Label lblCboxJeux;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRetour;
     }
 }

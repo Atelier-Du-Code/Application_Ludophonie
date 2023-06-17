@@ -16,7 +16,11 @@ namespace Application_Ludophonie.Modele.Praticien
 
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password + ";database=" + database + ";SslMode=none";
 
-
+        /// <summary>
+        /// Récupère toutes les missions d'un utilisateur
+        /// </summary>
+        /// <param name="unIdUtilisateur"></param>
+        /// <returns></returns>
         public static List<string> recupereToutesMissions(int unIdUtilisateur)
         {
             List<string> lstToutesMissions = new List<string>();
@@ -44,7 +48,12 @@ namespace Application_Ludophonie.Modele.Praticien
 
             return lstToutesMissions;
         }
-
+        /// <summary>
+        /// Permet d'enregistrer une nouvelle mission
+        /// </summary>
+        /// <param name="mission"></param>
+        /// <param name="idUtilisateur"></param>
+        /// <returns></returns>
         public static bool enregistreUneMission(string mission, int idUtilisateur)
         {
             try
@@ -70,6 +79,12 @@ namespace Application_Ludophonie.Modele.Praticien
             }
         }
 
+        /// <summary>
+        /// Permet de supprimer une mission du patient en cours 
+        /// </summary>
+        /// <param name="mission"></param>
+        /// <param name="idUtilisateur"></param>
+        /// <returns></returns>
         public static bool supprimeUneMission(string mission, int idUtilisateur)
         {
             try
@@ -95,6 +110,11 @@ namespace Application_Ludophonie.Modele.Praticien
             }
         }
 
+        /// <summary>
+        /// Permet de supprimer toutes les missions d'un utilisateur en cours
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
+        /// <returns></returns>
         public static bool supprimeToutesMissions(int idUtilisateur)
         {
             try

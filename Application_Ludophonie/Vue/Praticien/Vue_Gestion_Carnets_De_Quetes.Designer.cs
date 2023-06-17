@@ -43,11 +43,11 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // btnEnregistrer
             // 
-            this.btnEnregistrer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnEnregistrer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
             this.btnEnregistrer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnEnregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnregistrer.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnEnregistrer.Location = new System.Drawing.Point(290, 640);
+            this.btnEnregistrer.Location = new System.Drawing.Point(401, 638);
             this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(219, 43);
@@ -60,7 +60,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.lblTitrePrincipal.AutoSize = true;
             this.lblTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.lblTitrePrincipal.Location = new System.Drawing.Point(52, 74);
+            this.lblTitrePrincipal.Location = new System.Drawing.Point(163, 72);
             this.lblTitrePrincipal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTitrePrincipal.Name = "lblTitrePrincipal";
             this.lblTitrePrincipal.Size = new System.Drawing.Size(693, 60);
@@ -71,7 +71,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Montserrat SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(186, 457);
+            this.label9.Location = new System.Drawing.Point(297, 455);
             this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(427, 35);
@@ -82,7 +82,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Montserrat SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(252, 157);
+            this.label10.Location = new System.Drawing.Point(363, 155);
             this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(294, 35);
@@ -95,7 +95,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnRetour.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRetour.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnRetour.Location = new System.Drawing.Point(673, 13);
+            this.btnRetour.Location = new System.Drawing.Point(902, 13);
             this.btnRetour.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(115, 34);
@@ -106,16 +106,17 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // lstBMissions
             // 
+            this.lstBMissions.Font = new System.Drawing.Font("Montserrat", 14F);
             this.lstBMissions.FormattingEnabled = true;
-            this.lstBMissions.ItemHeight = 21;
-            this.lstBMissions.Location = new System.Drawing.Point(111, 230);
+            this.lstBMissions.ItemHeight = 32;
+            this.lstBMissions.Location = new System.Drawing.Point(222, 228);
             this.lstBMissions.Name = "lstBMissions";
-            this.lstBMissions.Size = new System.Drawing.Size(576, 172);
+            this.lstBMissions.Size = new System.Drawing.Size(576, 164);
             this.lstBMissions.TabIndex = 17;
             // 
             // txtbMission
             // 
-            this.txtbMission.Location = new System.Drawing.Point(111, 511);
+            this.txtbMission.Location = new System.Drawing.Point(222, 509);
             this.txtbMission.Name = "txtbMission";
             this.txtbMission.Size = new System.Drawing.Size(576, 85);
             this.txtbMission.TabIndex = 18;
@@ -124,7 +125,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // lblMessage
             // 
-            this.lblMessage.Location = new System.Drawing.Point(111, 602);
+            this.lblMessage.Location = new System.Drawing.Point(222, 600);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(576, 34);
             this.lblMessage.TabIndex = 19;
@@ -133,11 +134,11 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(174)))), ((int)(((byte)(131)))));
             this.btnSupprimer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupprimer.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnSupprimer.Location = new System.Drawing.Point(192, 409);
+            this.btnSupprimer.Location = new System.Drawing.Point(337, 399);
             this.btnSupprimer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(171, 33);
@@ -148,11 +149,11 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // btnToutSupprimer
             // 
-            this.btnToutSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnToutSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(174)))), ((int)(((byte)(131)))));
             this.btnToutSupprimer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnToutSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnToutSupprimer.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnToutSupprimer.Location = new System.Drawing.Point(375, 409);
+            this.btnToutSupprimer.Location = new System.Drawing.Point(520, 399);
             this.btnToutSupprimer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnToutSupprimer.Name = "btnToutSupprimer";
             this.btnToutSupprimer.Size = new System.Drawing.Size(171, 33);
@@ -166,7 +167,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(802, 713);
+            this.ClientSize = new System.Drawing.Size(1031, 716);
             this.Controls.Add(this.btnToutSupprimer);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.lblMessage);
@@ -181,6 +182,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Vue_Gestion_Carnets_De_Quetes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vue_Gestion_Carnets_De_Quetes";
             this.ResumeLayout(false);
             this.PerformLayout();

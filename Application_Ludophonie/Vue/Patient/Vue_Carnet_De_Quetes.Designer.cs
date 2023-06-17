@@ -30,53 +30,68 @@ namespace Application_Ludophonie.Vue.Patient
         private void InitializeComponent()
         {
             this.txtTitrePrincipal = new System.Windows.Forms.Label();
-            this.btnJeuDuMot = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lstbMissions = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // txtTitrePrincipal
             // 
-            this.txtTitrePrincipal.AutoSize = true;
             this.txtTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.txtTitrePrincipal.Location = new System.Drawing.Point(130, 106);
+            this.txtTitrePrincipal.Location = new System.Drawing.Point(87, 61);
             this.txtTitrePrincipal.Name = "txtTitrePrincipal";
-            this.txtTitrePrincipal.Size = new System.Drawing.Size(512, 60);
+            this.txtTitrePrincipal.Size = new System.Drawing.Size(538, 60);
             this.txtTitrePrincipal.TabIndex = 2;
             this.txtTitrePrincipal.Text = "Ton carnet de mission";
+            this.txtTitrePrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnJeuDuMot
+            // btnClose
             // 
-            this.btnJeuDuMot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
-            this.btnJeuDuMot.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.btnJeuDuMot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJeuDuMot.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.btnJeuDuMot.Location = new System.Drawing.Point(345, 572);
-            this.btnJeuDuMot.Name = "btnJeuDuMot";
-            this.btnJeuDuMot.Size = new System.Drawing.Size(82, 59);
-            this.btnJeuDuMot.TabIndex = 9;
-            this.btnJeuDuMot.Text = "Ok !";
-            this.btnJeuDuMot.UseVisualStyleBackColor = false;
-            this.btnJeuDuMot.Click += new System.EventHandler(this.btnJeuDuMot_Click);
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Montserrat", 14F);
+            this.btnClose.Location = new System.Drawing.Point(310, 508);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(82, 59);
+            this.btnClose.TabIndex = 9;
+            this.btnClose.Text = "Ok !";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnJeuDuMot_Click);
+            // 
+            // lstbMissions
+            // 
+            this.lstbMissions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.lstbMissions.Font = new System.Drawing.Font("Montserrat", 15F);
+            this.lstbMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.lstbMissions.FormattingEnabled = true;
+            this.lstbMissions.ItemHeight = 35;
+            this.lstbMissions.Location = new System.Drawing.Point(109, 156);
+            this.lstbMissions.Name = "lstbMissions";
+            this.lstbMissions.Size = new System.Drawing.Size(484, 319);
+            this.lstbMissions.TabIndex = 10;
             // 
             // Vue_Carnet_De_Quetes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(802, 743);
-            this.Controls.Add(this.btnJeuDuMot);
+            this.ClientSize = new System.Drawing.Size(697, 621);
+            this.Controls.Add(this.lstbMissions);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtTitrePrincipal);
             this.Font = new System.Drawing.Font("Montserrat", 9F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Vue_Carnet_De_Quetes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vue_Carnet_De_Quetes";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Label txtTitrePrincipal;
-        private System.Windows.Forms.Button btnJeuDuMot;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ListBox lstbMissions;
     }
 }
