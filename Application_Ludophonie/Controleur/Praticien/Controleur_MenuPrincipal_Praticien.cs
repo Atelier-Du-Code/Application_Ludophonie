@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Controleur.Praticien
 {
+    /// <summary>
+    /// Controleur - Classe de transition des données le menu principal - Côté particien
+    /// </summary>
     public class Controleur_MenuPrincipal_Praticien
     {
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Page d'accueil - tabPage 1
+        // Page d'accueil - tabPage 1
         //////////////////////////////////////////////////////////////////////////////////////////////////
         
         /// <summary>
@@ -58,7 +61,7 @@ namespace Application_Ludophonie.Controleur.Praticien
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Catalogue des patients - tabPage 2
+        // Catalogue des patients - tabPage 2
         //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -136,17 +139,7 @@ namespace Application_Ludophonie.Controleur.Praticien
         {
             int nbPatients = Modele_MenuPrincipal_Praticien.compteCombienPatientDansBDD();
             return nbPatients;
-        }
-
-        /// <summary>
-        /// Permet de récupérer le nombre de mots enregistrés
-        /// </summary>
-        /// <returns></returns>
-        public int compteCombienMotsDansBDD()
-        {
-            int nbMots = Modele_MenuPrincipal_Praticien.compteCombienMotsDansBDD();
-            return nbMots;
-        }
+        }      
 
         /// <summary>
         /// Permet de récupérer tous les n°identifiant des mots

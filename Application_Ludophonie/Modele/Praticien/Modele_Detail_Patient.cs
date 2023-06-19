@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele.Praticien
 {
+    /// <summary>
+    /// Modèle - Classe d'accès aux données pour la fiche patient - Côté praticien
+    /// </summary>
     public static class Modele_Detail_Patient
     {
         private static string server = "127.0.0.1";
@@ -51,7 +54,7 @@ namespace Application_Ludophonie.Modele.Praticien
         {
             List<Serie> lstToutesSeriesUtilisateur = new List<Serie>();
 
-            string req = "SELECT idUtilisateur, jeux.nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer " +
+            string req = "SELECT idSerieEffectuee, idUtilisateur, jeux.nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer " +
                 "FROM series_effectuees " +
                 "INNER JOIN jeux ON series_effectuees.idJeu = jeux.idJeu " +
                 "WHERE idUtilisateur=@idUtilisateur;";
@@ -66,15 +69,15 @@ namespace Application_Ludophonie.Modele.Praticien
 
             while (curs.Read())
             {
+                int idSerieEffectuee = ((int)curs.Field("idSerieEffectuee"));
                 int idUtilisateur = ((int)curs.Field("idUtilisateur"));
-
                 string jeu = ((string)curs.Field("nomJeu"));
                 int nbQuestions = ((int)curs.Field("nbQuestionsDeLaSerie"));
                 int nbErreur = ((int)curs.Field("nbErreur"));
                 DateTime dateDuJour = ((DateTime)curs.Field("dateDuJour"));
                 DateTime timer = ((DateTime)curs.Field("timer"));
 
-                lstToutesSeriesUtilisateur.Add(new Serie(idUtilisateur, null, null, jeu, nbQuestions, nbErreur, dateDuJour, timer));
+                lstToutesSeriesUtilisateur.Add(new Serie(idSerieEffectuee, idUtilisateur, null, null, jeu, nbQuestions, nbErreur, dateDuJour, timer));
 
             }
 
@@ -94,7 +97,7 @@ namespace Application_Ludophonie.Modele.Praticien
         {
             List<Serie> lstToutesSeriesJeu = new List<Serie>();
 
-            string req = "SELECT idUtilisateur, jeux.nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer " +
+            string req = "SELECT idSerieEffectuee, idUtilisateur, jeux.nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer " +
                 "FROM series_effectuees " +
                 "INNER JOIN jeux ON series_effectuees.idJeu = jeux.idJeu " +
                 "WHERE idUtilisateur=@idUtilisateur AND jeux.nomJeu = @nomJeu;";
@@ -110,6 +113,7 @@ namespace Application_Ludophonie.Modele.Praticien
 
             while (curs.Read())
             {
+                int idSerieEffectuee = ((int)curs.Field("idSerieEffectuee"));
                 int idUtilisateur = ((int)curs.Field("idUtilisateur"));
                 string jeu = ((string)curs.Field("nomJeu"));
                 int nbQuestions = ((int)curs.Field("nbQuestionsDeLaSerie"));
@@ -117,7 +121,7 @@ namespace Application_Ludophonie.Modele.Praticien
                 DateTime dateDuJour = ((DateTime)curs.Field("dateDuJour"));
                 DateTime timer = ((DateTime)curs.Field("timer"));
 
-                lstToutesSeriesJeu.Add(new Serie(idUtilisateur, null, null, jeu, nbQuestions, nbErreur, dateDuJour, timer));
+                lstToutesSeriesJeu.Add(new Serie(idSerieEffectuee, idUtilisateur, null, null, jeu, nbQuestions, nbErreur, dateDuJour, timer));
 
             }
 

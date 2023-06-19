@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele.Praticien
 {
+    /// <summary>
+    /// Modele - Classe d'accès aux données pour le menu principal - Côté praticien
+    /// </summary>
     public static class Modele_MenuPrincipal_Praticien
     {
         private static string server = "127.0.0.1";
@@ -18,7 +21,7 @@ namespace Application_Ludophonie.Modele.Praticien
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password + ";database=" + database + ";SslMode=none";
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Page d'accueil - tabPage 1
+        // Page d'accueil - tabPage 1
         //////////////////////////////////////////////////////////////////////////////////////////////////
         
         /// <summary>
@@ -29,17 +32,18 @@ namespace Application_Ludophonie.Modele.Praticien
         {
             List<Serie> lstToutesSeriesEffectuees = new List<Serie>();
 
-            string req = "SELECT utilisateurs.idUtilisateur, utilisateurs.nom, utilisateurs.prenom, jeux.nomJeu, s.nbQuestionsDeLaSerie, s.nbErreur, s.dateDuJour, s.timer ";
+            string req = "SELECT idSerieEffectuee, utilisateurs.idUtilisateur, utilisateurs.nom, utilisateurs.prenom, jeux.nomJeu, " +
+                "s.nbQuestionsDeLaSerie, s.nbErreur, s.dateDuJour, s.timer ";
             req += "FROM series_effectuees AS s ";
             req += "INNER JOIN utilisateurs ON s.idUtilisateur = utilisateurs.idUtilisateur ";
             req += "INNER JOIN jeux ON s.idJeu = jeux.idJeu ORDER BY s.dateDuJour DESC";
-
 
             BddMySql curs = BddMySql.GetInstance(connectionString);
             curs.ReqSelect(req, null);
 
             while (curs.Read())
             {
+                int idSerieEffectuee = ((int)curs.Field("idSerieEffectuee"));
                 int idUtilisateur = ((int)curs.Field("idUtilisateur"));
                 string nom = ((string)curs.Field("nom"));
                 string prenom = ((string)curs.Field("prenom"));
@@ -49,7 +53,7 @@ namespace Application_Ludophonie.Modele.Praticien
                 DateTime dateDuJour = ((DateTime)curs.Field("dateDuJour"));
                 DateTime timer = ((DateTime)curs.Field("timer"));
 
-                lstToutesSeriesEffectuees.Add(new Serie(idUtilisateur, nom, prenom, nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer));
+                lstToutesSeriesEffectuees.Add(new Serie(idSerieEffectuee, idUtilisateur, nom, prenom, nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer));
             }
 
             curs.Close();
@@ -66,7 +70,7 @@ namespace Application_Ludophonie.Modele.Praticien
         {
             List<Serie> lstSeriesEffectueesAujourdhui = new List<Serie>();
 
-            string req = "SELECT utilisateurs.idUtilisateur, utilisateurs.nom, utilisateurs.prenom, jeux.nomJeu, s.nbQuestionsDeLaSerie, s.nbErreur, s.dateDuJour, s.timer ";
+            string req = "SELECT idSerieEffectuee, utilisateurs.idUtilisateur, utilisateurs.nom, utilisateurs.prenom, jeux.nomJeu, s.nbQuestionsDeLaSerie, s.nbErreur, s.dateDuJour, s.timer ";
             req += "FROM series_effectuees AS s ";
             req += "INNER JOIN utilisateurs ON s.idUtilisateur = utilisateurs.idUtilisateur ";
             req += "INNER JOIN jeux ON s.idJeu = jeux.idJeu ";
@@ -78,6 +82,7 @@ namespace Application_Ludophonie.Modele.Praticien
 
             while (curs.Read())
             {
+                int idSerieEffectuee = ((int)curs.Field("idSerieEffectuee"));
                 int idUtilisateur = ((int)curs.Field("idUtilisateur"));
                 string nom = ((string)curs.Field("nom"));
                 string prenom = ((string)curs.Field("prenom"));
@@ -87,7 +92,7 @@ namespace Application_Ludophonie.Modele.Praticien
                 DateTime dateDuJour = ((DateTime)curs.Field("dateDuJour"));
                 DateTime timer = ((DateTime)curs.Field("timer"));
 
-                lstSeriesEffectueesAujourdhui.Add(new Serie(idUtilisateur, nom, prenom, nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer));
+                lstSeriesEffectueesAujourdhui.Add(new Serie(idSerieEffectuee, idUtilisateur, nom, prenom, nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer));
             }
 
             curs.Close();
@@ -104,7 +109,7 @@ namespace Application_Ludophonie.Modele.Praticien
         {
             List<Serie> lstSeriesEffectueesSemaine = new List<Serie>();
 
-            string req = "SELECT utilisateurs.idUtilisateur, utilisateurs.nom, utilisateurs.prenom, jeux.nomJeu, s.nbQuestionsDeLaSerie, s.nbErreur, s.dateDuJour, s.timer ";
+            string req = "SELECT idSerieEffectuee, utilisateurs.idUtilisateur, utilisateurs.nom, utilisateurs.prenom, jeux.nomJeu, s.nbQuestionsDeLaSerie, s.nbErreur, s.dateDuJour, s.timer ";
             req += "FROM series_effectuees AS s ";
             req += "INNER JOIN utilisateurs ON s.idUtilisateur = utilisateurs.idUtilisateur ";
             req += "INNER JOIN jeux ON s.idJeu = jeux.idJeu ";
@@ -116,6 +121,7 @@ namespace Application_Ludophonie.Modele.Praticien
 
             while (curs.Read())
             {
+                int idSerieEffectuee = ((int)curs.Field("idSerieEffectuee"));
                 int idUtilisateur = ((int)curs.Field("idUtilisateur"));
                 string nom = ((string)curs.Field("nom"));
                 string prenom = ((string)curs.Field("prenom"));
@@ -125,7 +131,7 @@ namespace Application_Ludophonie.Modele.Praticien
                 DateTime dateDuJour = ((DateTime)curs.Field("dateDuJour"));
                 DateTime timer = ((DateTime)curs.Field("timer"));
 
-                lstSeriesEffectueesSemaine.Add(new Serie(idUtilisateur, nom, prenom, nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer));
+                lstSeriesEffectueesSemaine.Add(new Serie(idSerieEffectuee, idUtilisateur, nom, prenom, nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer));
             }
 
             curs.Close();
@@ -142,7 +148,7 @@ namespace Application_Ludophonie.Modele.Praticien
         {
             List<Serie> lstSeriesEffectueesMois = new List<Serie>();
 
-            string req = "SELECT utilisateurs.idUtilisateur, utilisateurs.nom, utilisateurs.prenom, jeux.nomJeu, s.nbQuestionsDeLaSerie, s.nbErreur, s.dateDuJour, s.timer ";
+            string req = "SELECT idSerieEffectuee, utilisateurs.idUtilisateur, utilisateurs.nom, utilisateurs.prenom, jeux.nomJeu, s.nbQuestionsDeLaSerie, s.nbErreur, s.dateDuJour, s.timer ";
             req += "FROM series_effectuees AS s ";
             req += "INNER JOIN utilisateurs ON s.idUtilisateur = utilisateurs.idUtilisateur ";
             req += "INNER JOIN jeux ON s.idJeu = jeux.idJeu ";
@@ -154,6 +160,7 @@ namespace Application_Ludophonie.Modele.Praticien
 
             while (curs.Read())
             {
+                int idSerieEffectuee = ((int)curs.Field("idSerieEffectuee"));
                 int idUtilisateur = ((int)curs.Field("idUtilisateur"));
                 string nom = ((string)curs.Field("nom"));
                 string prenom = ((string)curs.Field("prenom"));
@@ -163,7 +170,7 @@ namespace Application_Ludophonie.Modele.Praticien
                 DateTime dateDuJour = ((DateTime)curs.Field("dateDuJour"));
                 DateTime timer = ((DateTime)curs.Field("timer"));
 
-                lstSeriesEffectueesMois.Add(new Serie(idUtilisateur, nom, prenom, nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer));
+                lstSeriesEffectueesMois.Add(new Serie(idSerieEffectuee, idUtilisateur, nom, prenom, nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer));
             }
 
             curs.Close();
@@ -173,7 +180,7 @@ namespace Application_Ludophonie.Modele.Praticien
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Catalogue des patients - tabPage 2
+        // Catalogue des patients - tabPage 2
         //////////////////////////////////////////////////////////////////////////////////////////////////
                
         /// <summary>
@@ -302,7 +309,8 @@ namespace Application_Ludophonie.Modele.Praticien
         {
             try
             {
-                string req = "UPDATE utilisateurs SET identifiant = @identifiant, nom = @nom, prenom = @prenom, classe = @classe, password = @password WHERE utilisateurs.idUtilisateur = @idUtilisateur;";
+                string req = "UPDATE utilisateurs SET identifiant = @identifiant, nom = @nom, prenom = @prenom, " +
+                    "classe = @classe, password = @password WHERE utilisateurs.idUtilisateur = @idUtilisateur;";
 
                         Dictionary<string, object> parameters = new Dictionary<string, object>
                         {
@@ -465,29 +473,7 @@ namespace Application_Ludophonie.Modele.Praticien
 
             return plusGrandIdPatitent;
         }
-
-        /// <summary>
-        /// Peremt de récupérer le nombre de mots enregistrés
-        /// </summary>
-        /// <returns></returns>
-        public static int compteCombienMotsDansBDD()
-        {
-            int nbMots = 0;
-
-            string req = "SELECT COUNT(mot) AS nbMots FROM lesmots;";
-
-            BddMySql curs = BddMySql.GetInstance(connectionString);
-            curs.ReqSelect(req, null);
-
-            while (curs.Read())
-            {
-                nbMots = ((int)curs.Field("nbMots"));
-            }
-
-            curs.Close();
-
-            return nbMots;
-        }
+        
 
         /// <summary>
         /// Permet de récupérer tous les mots enregistrés
@@ -551,6 +537,29 @@ namespace Application_Ludophonie.Modele.Praticien
         }
 
         /// <summary>
+        /// Permet de récupérer tous les n°identifiant des acquisitions de mot
+        /// </summary>
+        public static List<int> recupereTousIdAcquisitionLeMot()
+        {
+            List<int> lstIdAcquisitionLeMot = new List<int>();
+
+            string req = "SELECT idAcquis FROM acquisition_lemot;";
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+
+            while (curs.Read())
+            {
+                int idAcquisition = ((int)curs.Field("idAcquis"));
+
+                lstIdAcquisitionLeMot.Add(idAcquisition);
+            }
+
+            curs.Close();
+
+            return lstIdAcquisitionLeMot;
+        }
+        /// <summary>
         /// Permet de supprimer les tuples d'un utilisateur de la table acquisition_lemot
         /// </summary>
         /// <param name="idUtilisateur"></param>
@@ -563,8 +572,7 @@ namespace Application_Ludophonie.Modele.Praticien
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
-                     {"@idUtilisateur", idUtilisateur}
-                     
+                     {"@idUtilisateur", idUtilisateur}                    
 
                 };
 
@@ -604,16 +612,45 @@ namespace Application_Ludophonie.Modele.Praticien
                 curs.Close();
 
                 return true;
-
             }
             catch
             {
                 return false;
             }
-            
-
-
         }
+
+        /// <summary>
+        /// Permet de récupérer tous les numéros identifiant des missions de la base
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
+        /// <returns></returns>
+        public static List<int> recupereTousLesIdMissions(int idUtilisateur)
+        {
+            List<int> lstIdMissions = new List<int>();
+
+            string req = "SELECT idMission FROM carnet_de_mission WHERE idUtilisateur = @idUtilisateur;";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                     {"@idUtilisateur", idUtilisateur}
+                };
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, parameters);
+
+            while (curs.Read())
+            {
+                int idMissions = ((int)curs.Field("idMission"));
+
+                lstIdMissions.Add(idMissions);
+            }
+
+            curs.Close();
+
+            return lstIdMissions;
+        }
+
+        
        
     }
 }

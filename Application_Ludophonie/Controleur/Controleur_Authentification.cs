@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Controleur
 {
+    /// <summary>
+    /// Controleur - Classe de transition des données pour l'authentification
+    /// </summary>
     public class Controleur_Authentification
     {
         /// <summary>

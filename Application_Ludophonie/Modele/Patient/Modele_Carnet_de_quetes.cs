@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele.Patient
 {
+    /// <summary>
+    /// Modele - Classe d'accès aux données pour le carnet de missions - Côté patient 
+    /// </summary>
     public static class Modele_Carnet_de_quetes
     {
 

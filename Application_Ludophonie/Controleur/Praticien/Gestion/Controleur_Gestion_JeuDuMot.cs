@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Controleur.Praticien.Gestion
 {
+    /// <summary>
+    /// Controleur - Classe de transition des données pour la gestion des mots de ma base - Côté praticien
+    /// </summary>
     public class Controleur_Gestion_JeuDuMot
     {
         /// <summary>

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Controleur.Praticien
 {
+    /// <summary>
+    /// Controleur - Classe de transition des données pour la fiche d'un patient - Côté praticien
+    /// </summary>
     public class Controleur_Detail_Patient
     {
         /// <summary>

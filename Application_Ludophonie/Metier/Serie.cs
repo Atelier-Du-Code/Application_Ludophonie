@@ -7,10 +7,26 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Application_Ludophonie.Metier
 {
+    /// <summary>
+    /// Classe de définition d'une série
+    /// </summary>
     public class Serie
     {
-        public Serie(int idUtilisateur, string nom, string prenom, string jeu, int nbQuestionSerie, int nbErreurs, DateTime dateDuJour, DateTime timer)
+        /// <summary>
+        /// Constructeur de la classe série
+        /// </summary>
+        /// <param name="idSerie"></param>
+        /// <param name="idUtilisateur"></param>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="jeu"></param>
+        /// <param name="nbQuestionSerie"></param>
+        /// <param name="nbErreurs"></param>
+        /// <param name="dateDuJour"></param>
+        /// <param name="timer"></param>
+        public Serie(int idSerie, int idUtilisateur, string nom, string prenom, string jeu, int nbQuestionSerie, int nbErreurs, DateTime dateDuJour, DateTime timer)
         {
+            this.IdSerie = idSerie;
             this.IdUtilisateur = idUtilisateur;
             this.Nom = nom;
             this.Prenom = prenom;
@@ -21,20 +37,49 @@ namespace Application_Ludophonie.Metier
             this.Timer = timer;
         }
 
+        /// <summary>
+        /// Porte l'identifiant de la série
+        /// </summary>
+        public int IdSerie { get; set; }
+
+        /// <summary>
+        /// Porte le numéro d'identifiant d'une série
+        /// </summary>
         public int IdUtilisateur { get; set; }
 
+        /// <summary>
+        /// Porte le nom du patient qui a effectuée la série 
+        /// </summary>
         public string Nom { get; set; }
 
+        /// <summary>
+        /// Porte le prénom du patient qui a effectuée la série
+        /// </summary>
         public string Prenom { get; set; }
 
+        /// <summary>
+        /// Porte le nom du jeu de la série 
+        /// </summary>
         public string Jeu { get; set; }
 
+        /// <summary>
+        /// Porte le nombre de questions de la série 
+        /// </summary>
         public int NbQuestionSerie { get; set; }
 
+        /// <summary>
+        /// Porte le nombre d'erreur de la série 
+        /// </summary>
         public int NbErreurs { get; set; }
 
+        /// <summary>
+        /// Porte la date du jour de la série
+        /// </summary>
         public DateTime DateDuJour { get; set; }
 
+        /// <summary>
+        /// Porte le temps que le patient a mis pour résoudre la série
+        /// </summary>
         public DateTime Timer;
     }
 }

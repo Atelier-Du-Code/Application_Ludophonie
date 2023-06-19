@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele.Jeux
 {
+    /// <summary>
+    /// Modèle - Classe d'accès aux données pour le gestionnaire de série - Côté patient
+    /// </summary>
     public static class Modele_Gestionnaire_De_Serie_Mot
     {
 

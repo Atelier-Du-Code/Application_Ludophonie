@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele.Praticien
 {
+    /// <summary>
+    /// Modele - Classe d'accès aux données pour la gestion du carnet de mission - Coté patient
+    /// </summary>
     public static class Modele_Gestion_Carnet_de_Missions
     {
         private static string server = "127.0.0.1";

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele
 {
+    /// <summary>
+    /// Modele - Classe d'accès à la données pour la page de modification des avatars
+    /// </summary>
     public static class Modele_ModifAvatar
     {
         private static string server = "127.0.0.1";

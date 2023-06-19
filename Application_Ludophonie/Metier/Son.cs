@@ -9,17 +9,24 @@ using System.Windows.Forms;
 
 namespace Application_Ludophonie.Metier
 {
+    /// <summary>
+    /// Définition de la classe Son
+    /// </summary>
     public class Son
     {
-        static public string nomFichier = "";
+        /// <summary>
+        /// Porte l'url de l'emplacement du son
+        /// </summary>
         static public string url = "";
     }
 
+    /// <summary>
+    /// Définition de la classe SonSysteme
+    /// </summary>
     class SonSysteme : Son
     {
         public void ReponseVraie()
-        {
-            //url = Path.Combine(Application.StartupPath, "Resources", "pluie.wav");
+        {            
             url = "https://static.wixstatic.com/mp3/9fdfb6_8054ccd57c9445be8c5e175483747932.wav";
 
             SoundPlayer son = new SoundPlayer(url);
@@ -34,8 +41,7 @@ namespace Application_Ludophonie.Metier
             son.Play();
         }
         public void finDeSerie()
-        {
-            url = Path.Combine(Application.StartupPath, "Resources", "pluie.wav");
+        {            
             url = "https://static.wixstatic.com/mp3/9fdfb6_0a20d711a4614e09a2b44ef519e0ff6b.wav";
 
             SoundPlayer son = new SoundPlayer(url);

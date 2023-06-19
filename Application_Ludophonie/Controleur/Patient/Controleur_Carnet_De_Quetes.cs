@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Controleur.Patient
 {
+    /// <summary>
+    /// Controleur - Classe de transition des données pour le carnet de mission - Côté patient
+    /// </summary>
     public class Controleur_Carnet_De_Quetes
     {
         /// <summary>

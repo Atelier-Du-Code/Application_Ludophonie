@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Controleur.Jeux
 {
+    /// <summary>
+    /// Controleur - Classe de transition des données pour la gestion des séries du jeu du mot - Côté patient
+    /// </summary>
     public class Controleur_Gestionnaire_De_Serie_Mot
     {
         /// <summary>

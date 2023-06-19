@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele
 {
+    /// <summary>
+    /// Modele - Classe d'accès aux données pour l'authentification 
+    /// </summary>
     public static class Modele_Authentification   
     {
         

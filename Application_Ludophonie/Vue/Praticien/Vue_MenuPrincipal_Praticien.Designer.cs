@@ -61,10 +61,8 @@ namespace Application_Ludophonie.Vue.Praticien
             this.lblMeessageSuppression = new System.Windows.Forms.Label();
             this.btnModifierPatient = new System.Windows.Forms.Button();
             this.pNouveauPatient = new System.Windows.Forms.Panel();
-            this.pBtnEnregistrerModif = new System.Windows.Forms.Panel();
             this.btnEnregistrerModification = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.btnEnregistrer_Ajout = new System.Windows.Forms.Button();
             this.lblConfirmation = new System.Windows.Forms.Label();
             this.btnClosePanel = new System.Windows.Forms.Button();
             this.txtbMotDePasseConfirmation = new System.Windows.Forms.TextBox();
@@ -101,7 +99,6 @@ namespace Application_Ludophonie.Vue.Praticien
             ((System.ComponentModel.ISupportInitialize)(this.dgvDernieresSeries)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.pNouveauPatient.SuspendLayout();
-            this.pBtnEnregistrerModif.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -126,7 +123,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.lblBienvenue.AutoSize = true;
             this.lblBienvenue.Font = new System.Drawing.Font("Montserrat", 9F);
-            this.lblBienvenue.Location = new System.Drawing.Point(372, 88);
+            this.lblBienvenue.Location = new System.Drawing.Point(372, 84);
             this.lblBienvenue.Name = "lblBienvenue";
             this.lblBienvenue.Size = new System.Drawing.Size(203, 21);
             this.lblBienvenue.TabIndex = 9;
@@ -136,7 +133,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.txtTitrePrincipal.AutoSize = true;
             this.txtTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitrePrincipal.Location = new System.Drawing.Point(354, 32);
+            this.txtTitrePrincipal.Location = new System.Drawing.Point(354, 28);
             this.txtTitrePrincipal.Name = "txtTitrePrincipal";
             this.txtTitrePrincipal.Size = new System.Drawing.Size(384, 60);
             this.txtTitrePrincipal.TabIndex = 8;
@@ -147,7 +144,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.tbc_MenuPrincipal.Controls.Add(this.tabPage1);
             this.tbc_MenuPrincipal.Controls.Add(this.tabPage2);
             this.tbc_MenuPrincipal.Controls.Add(this.tabPage3);
-            this.tbc_MenuPrincipal.Location = new System.Drawing.Point(12, 125);
+            this.tbc_MenuPrincipal.Location = new System.Drawing.Point(12, 128);
             this.tbc_MenuPrincipal.Name = "tbc_MenuPrincipal";
             this.tbc_MenuPrincipal.SelectedIndex = 0;
             this.tbc_MenuPrincipal.Size = new System.Drawing.Size(1007, 634);
@@ -417,9 +414,8 @@ namespace Application_Ludophonie.Vue.Praticien
             // pNouveauPatient
             // 
             this.pNouveauPatient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pNouveauPatient.Controls.Add(this.pBtnEnregistrerModif);
+            this.pNouveauPatient.Controls.Add(this.btnEnregistrerModification);
             this.pNouveauPatient.Controls.Add(this.lblMessage);
-            this.pNouveauPatient.Controls.Add(this.btnEnregistrer_Ajout);
             this.pNouveauPatient.Controls.Add(this.lblConfirmation);
             this.pNouveauPatient.Controls.Add(this.btnClosePanel);
             this.pNouveauPatient.Controls.Add(this.txtbMotDePasseConfirmation);
@@ -440,21 +436,13 @@ namespace Application_Ludophonie.Vue.Praticien
             this.pNouveauPatient.Size = new System.Drawing.Size(420, 578);
             this.pNouveauPatient.TabIndex = 47;
             // 
-            // pBtnEnregistrerModif
-            // 
-            this.pBtnEnregistrerModif.Controls.Add(this.btnEnregistrerModification);
-            this.pBtnEnregistrerModif.Location = new System.Drawing.Point(124, 522);
-            this.pBtnEnregistrerModif.Name = "pBtnEnregistrerModif";
-            this.pBtnEnregistrerModif.Size = new System.Drawing.Size(147, 46);
-            this.pBtnEnregistrerModif.TabIndex = 61;
-            // 
             // btnEnregistrerModification
             // 
             this.btnEnregistrerModification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
             this.btnEnregistrerModification.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnEnregistrerModification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnregistrerModification.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnEnregistrerModification.Location = new System.Drawing.Point(4, 3);
+            this.btnEnregistrerModification.Location = new System.Drawing.Point(157, 525);
             this.btnEnregistrerModification.Name = "btnEnregistrerModification";
             this.btnEnregistrerModification.Size = new System.Drawing.Size(140, 38);
             this.btnEnregistrerModification.TabIndex = 60;
@@ -472,20 +460,6 @@ namespace Application_Ludophonie.Vue.Praticien
             this.lblMessage.Text = "Le mot de passe doit contenir au moins 12 caractères dont une majuscule, une minu" +
     "sucle, un chiffre et un caractère spécial autorisé(@#$%^&*+$)";
             this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnEnregistrer_Ajout
-            // 
-            this.btnEnregistrer_Ajout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
-            this.btnEnregistrer_Ajout.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.btnEnregistrer_Ajout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnregistrer_Ajout.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnEnregistrer_Ajout.Location = new System.Drawing.Point(128, 525);
-            this.btnEnregistrer_Ajout.Name = "btnEnregistrer_Ajout";
-            this.btnEnregistrer_Ajout.Size = new System.Drawing.Size(140, 38);
-            this.btnEnregistrer_Ajout.TabIndex = 61;
-            this.btnEnregistrer_Ajout.Text = "Enregistrer";
-            this.btnEnregistrer_Ajout.UseVisualStyleBackColor = false;
-            this.btnEnregistrer_Ajout.Click += new System.EventHandler(this.btnEnregistrer_Ajout_Click);
             // 
             // lblConfirmation
             // 
@@ -513,7 +487,6 @@ namespace Application_Ludophonie.Vue.Praticien
             this.txtbMotDePasseConfirmation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.txtbMotDePasseConfirmation.Location = new System.Drawing.Point(30, 415);
             this.txtbMotDePasseConfirmation.Name = "txtbMotDePasseConfirmation";
-            this.txtbMotDePasseConfirmation.ShortcutsEnabled = false;
             this.txtbMotDePasseConfirmation.Size = new System.Drawing.Size(363, 26);
             this.txtbMotDePasseConfirmation.TabIndex = 57;
             this.txtbMotDePasseConfirmation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -535,7 +508,6 @@ namespace Application_Ludophonie.Vue.Praticien
             this.txtbMotDePasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.txtbMotDePasse.Location = new System.Drawing.Point(30, 360);
             this.txtbMotDePasse.Name = "txtbMotDePasse";
-            this.txtbMotDePasse.ShortcutsEnabled = false;
             this.txtbMotDePasse.Size = new System.Drawing.Size(363, 26);
             this.txtbMotDePasse.TabIndex = 55;
             this.txtbMotDePasse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -622,17 +594,17 @@ namespace Application_Ludophonie.Vue.Praticien
             // lblTitrePModifAjoutPatient
             // 
             this.lblTitrePModifAjoutPatient.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitrePModifAjoutPatient.Location = new System.Drawing.Point(44, 1);
+            this.lblTitrePModifAjoutPatient.Location = new System.Drawing.Point(44, 16);
             this.lblTitrePModifAjoutPatient.Name = "lblTitrePModifAjoutPatient";
             this.lblTitrePModifAjoutPatient.Size = new System.Drawing.Size(334, 95);
             this.lblTitrePModifAjoutPatient.TabIndex = 46;
-            this.lblTitrePModifAjoutPatient.Text = "Création d\'un patient nouveau";
+            this.lblTitrePModifAjoutPatient.Text = "Modification d\'un patient";
             this.lblTitrePModifAjoutPatient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Application_Ludophonie.Properties.Resources.avatar_par_defaut;
-            this.pictureBox2.Location = new System.Drawing.Point(157, 99);
+            this.pictureBox2.Location = new System.Drawing.Point(157, 102);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(109, 119);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -831,9 +803,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.flowLayoutPanel1.Controls.Add(this.btnGestion);
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Lucida Bright", 8F);
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 128);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 116);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1006, 52);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // btnAccueil
@@ -846,7 +818,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnAccueil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.btnAccueil.Location = new System.Drawing.Point(3, 3);
             this.btnAccueil.Name = "btnAccueil";
-            this.btnAccueil.Size = new System.Drawing.Size(267, 45);
+            this.btnAccueil.Size = new System.Drawing.Size(304, 45);
             this.btnAccueil.TabIndex = 0;
             this.btnAccueil.Text = "Accueil";
             this.btnAccueil.UseVisualStyleBackColor = false;
@@ -860,9 +832,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCatalogue.Font = new System.Drawing.Font("Montserrat", 10F);
             this.btnCatalogue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnCatalogue.Location = new System.Drawing.Point(276, 3);
+            this.btnCatalogue.Location = new System.Drawing.Point(313, 3);
             this.btnCatalogue.Name = "btnCatalogue";
-            this.btnCatalogue.Size = new System.Drawing.Size(267, 45);
+            this.btnCatalogue.Size = new System.Drawing.Size(304, 45);
             this.btnCatalogue.TabIndex = 1;
             this.btnCatalogue.Text = "Catalogue des patients";
             this.btnCatalogue.UseVisualStyleBackColor = false;
@@ -876,9 +848,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestion.Font = new System.Drawing.Font("Montserrat", 10F);
             this.btnGestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnGestion.Location = new System.Drawing.Point(549, 3);
+            this.btnGestion.Location = new System.Drawing.Point(623, 3);
             this.btnGestion.Name = "btnGestion";
-            this.btnGestion.Size = new System.Drawing.Size(340, 45);
+            this.btnGestion.Size = new System.Drawing.Size(380, 45);
             this.btnGestion.TabIndex = 3;
             this.btnGestion.Text = "Gestion des jeux";
             this.btnGestion.UseVisualStyleBackColor = false;
@@ -909,7 +881,6 @@ namespace Application_Ludophonie.Vue.Praticien
             this.tabPage2.PerformLayout();
             this.pNouveauPatient.ResumeLayout(false);
             this.pNouveauPatient.PerformLayout();
-            this.pBtnEnregistrerModif.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).EndInit();
             this.tabPage3.ResumeLayout(false);
@@ -976,9 +947,7 @@ namespace Application_Ludophonie.Vue.Praticien
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button btnModifierPatient;
         private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.Panel pBtnEnregistrerModif;
         private System.Windows.Forms.Button btnEnregistrerModification;
-        private System.Windows.Forms.Button btnEnregistrer_Ajout;
         private System.Windows.Forms.Button btnClosePanel;
         private System.Windows.Forms.Label lblMeessageSuppression;
     }

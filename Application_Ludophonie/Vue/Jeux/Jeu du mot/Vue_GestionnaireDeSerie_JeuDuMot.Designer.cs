@@ -37,6 +37,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.txtTitrePrincipal = new System.Windows.Forms.Label();
             this.btnDebutSerie = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRetour
@@ -96,6 +97,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.cbxNiveau.Name = "cbxNiveau";
             this.cbxNiveau.Size = new System.Drawing.Size(213, 32);
             this.cbxNiveau.TabIndex = 9;
+            this.cbxNiveau.SelectedIndexChanged += new System.EventHandler(this.cbxNiveau_SelectedIndexChanged);
             // 
             // txtTitrePrincipal
             // 
@@ -114,7 +116,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.btnDebutSerie.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnDebutSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDebutSerie.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnDebutSerie.Location = new System.Drawing.Point(267, 440);
+            this.btnDebutSerie.Location = new System.Drawing.Point(267, 464);
             this.btnDebutSerie.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDebutSerie.Name = "btnDebutSerie";
             this.btnDebutSerie.Size = new System.Drawing.Size(218, 43);
@@ -138,12 +140,22 @@ namespace Application_Ludophonie.Vue.Jeux
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
+            // lblMessage
+            // 
+            this.lblMessage.Location = new System.Drawing.Point(56, 414);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(640, 45);
+            this.lblMessage.TabIndex = 17;
+            this.lblMessage.Text = "label1";
+            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Vue_GestionnaireDeSerie_JeuDuLot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(735, 689);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnDebutSerie);
             this.Controls.Add(this.btnRetour);
@@ -173,5 +185,6 @@ namespace Application_Ludophonie.Vue.Jeux
         private System.Windows.Forms.Label txtTitrePrincipal;
         private System.Windows.Forms.Button btnDebutSerie;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

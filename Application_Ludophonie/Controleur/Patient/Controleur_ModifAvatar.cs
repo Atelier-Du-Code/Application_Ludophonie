@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Controleur.Patient
 {
+    /// <summary>
+    /// Controleur - Classe de transition des données la modification de l'avatar - Côté patient
+    /// </summary>
     public class Controleur_ModifAvatar
     {
         /// <summary>

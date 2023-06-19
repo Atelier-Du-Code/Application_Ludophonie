@@ -165,6 +165,16 @@ namespace AppOrthophonie.BDD
         }
 
         /// <summary>
+        /// Exécution d'une requête de type LCT (begin transaction)
+        /// </summary>
+        /// <param name="stringQuery"></param>
+        public void ReqControle(string stringQuery)
+        {
+            MySqlCommand command = new MySqlCommand(stringQuery, connection);
+            command.ExecuteNonQuery();
+        }
+
+        /// <summary>
         /// Fermeture du curseur
         /// </summary>
         public void Close()

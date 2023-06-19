@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace Application_Ludophonie.Vue.Praticien
 {
+    /// <summary>
+    /// Vue - Carnet de missions - Côté patient
+    /// </summary>
     public partial class Vue_Gestion_Carnets_De_Quetes : Form
     {
         private Controleur_Gestion_Carnet__De_Mission controleur = new Controleur_Gestion_Carnet__De_Mission();
@@ -34,7 +37,7 @@ namespace Application_Ludophonie.Vue.Praticien
         }        
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///Gestion de l'ajout d'une mission
+        //Gestion de l'ajout d'une mission
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
@@ -98,7 +101,7 @@ namespace Application_Ludophonie.Vue.Praticien
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///Méthode de gestion + Interface
+        //Méthode de gestion + Interface
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>

@@ -1,0 +1,357 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Application_LudophonieTests</name>
+    </assembly>
+    <members>
+        <member name="T:Application_Ludophonie.Modele.Jeux.Tests.Modele_JeuDuMotTests">
+            <summary>
+            Classe de test du Modèle pour le jeu du mot
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Tests.Modele_JeuDuMotTests.DebutTransaction">
+            <summary>
+            Permet de désactiver l'autocommit, commencer la transaction et de désactiver le contrôle des clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Tests.Modele_JeuDuMotTests.FinTransaction">
+            <summary>
+            Permet d'annuler les tansactions initiées sur la base de données et de réactiver le contrôle des clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Tests.Modele_JeuDuMotTests.recupereImagesInterfaceTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie toutes les images necessaires à l'interface
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Tests.Modele_JeuDuMotTests.recupereMotsParListeNiveauAcquisitionIdUtilisateurTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie bien une liste de mots filtrés 
+            sur leur numero d'identifiant utilisateur ainsi que sur le niveau acquisition du mot par le patient 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Tests.Modele_JeuDuMotTests.updateDeLaBaseAvecMotsDeLaSerieTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle met correctement à jour les niveaux d'acquisition 
+            des mots suivant leur utilisateur après une série du jeu du mot 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Tests.Modele_JeuDuMotTests.creationSerieEffectueesTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle permet bien de créer une série effectuée pour un utilisateur 
+            après une série du jeu du mot
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Tests.Modele_AuthentificationTests">
+            <summary>
+            Classe de test du Modèle pour l'authentification
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Tests.Modele_AuthentificationTests.utilisateurExisteTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle retrouve efficacement un patient si il est enregistré dans la base
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Tests.Modele_ModifAvatarTests">
+            <summary>
+            Classe de test du Modèle pour la page de modification de l'avatar d'un patient
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Modele.Tests.Modele_ModifAvatarTests.server">
+            Connexion à la base de données
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Tests.Modele_ModifAvatarTests.DebutTransaction">
+            <summary>
+            Permet de désactiver l'autocommit, commencer la transaction et de désactiver le contrôle des clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Tests.Modele_ModifAvatarTests.FinTransaction">
+            <summary>
+            Permet d'annuler les tansactions initiées sur la base de données et de réactiver le contrôle des clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Tests.Modele_ModifAvatarTests.recupereLstAvatarTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie la liste de tous les avatars
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Tests.Modele_ModifAvatarTests.modifAvatarTest">
+            <summary>
+             Permet de vérifier que la méthode du modèle met correctement à jour l'avatar d'un patient après son changement
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Patient.Tests.Modele_Carnet_de_quetesTests">
+            <summary>
+            Classe de test du Modèle pour le carnet de missions
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Modele.Patient.Tests.Modele_Carnet_de_quetesTests.server">
+            Connexion à la base de données
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Patient.Tests.Modele_Carnet_de_quetesTests.recupereLstMissionsTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie toutes les missions de la base
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Patient.Tests.Modele_MenuPrincipal_PatientTests">
+            <summary>
+            Classe de test du Modèle pour le jeu du mot
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Modele.Patient.Tests.Modele_MenuPrincipal_PatientTests.server">
+            Connexion à la base de données
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Patient.Tests.Modele_MenuPrincipal_PatientTests.DebutTransaction">
+            <summary>
+            Permet de désactiver l'autocommit, commencer la transaction et de désactiver le contrôle des clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Patient.Tests.Modele_MenuPrincipal_PatientTests.FinTransaction">
+            <summary>
+            Permet d'annuler les tansactions initiées sur la base de données et de réactiver le contrôle des clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Patient.Tests.Modele_MenuPrincipal_PatientTests.recupereAvatarTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie bine l'avatar d'un patient donné
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Patient.Tests.Modele_MenuPrincipal_PatientTests.updateAvatarTest">
+            <summary>
+             Permet de vérifier que la méthode du modèle met correctement à jour l'avatar d'un patient lors de son changement
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests">
+            <summary>
+            Classe de test du Modèle pour l'espace de gestion des mots de la base
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.server">
+            Connexion à la base de données
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.DebutTransaction">
+            <summary>
+            Permet de désactiver l'auto-commit, de commencer une transaction et de déactiver les relation de clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.FinTransaction">
+            <summary>
+            Permet d'annuler les tansactions initiées sur la base de données et de réactiver le contrôle des clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.recupereTousLesMotsTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie tous les mots de la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.recupereToutesListesTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie tous les niveaux de liste de la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.recupereToutLesMotsDeLaListeTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie tous les mots d'une même liste
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.recupereUnmotTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie bien un mot demandé de la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.recupereDernierMotCreeTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie de ldernier mot créé
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.lstidPatientTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie tous les numéros d'identifiant des patients de la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.enregistreUnMotTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle enregistre correctement les mots 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.creationAcquisition_leMotTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle ajoute correctement les acquisitions de mots 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.supprimeUnMotTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle supprime correctement un mot doné
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Tests.Modele_Gestion_JeuDuMotTests.supprimeTuplesBDDTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle supprime efficacement les tuples concernant un utilisateur 
+            et un mot dans la base de données 
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Praticien.Tests.Modele_Detail_PatientTests">
+            <summary>
+            Classe de test du Modèle pour la fiche de détail d'un patient
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Modele.Praticien.Tests.Modele_Detail_PatientTests.server">
+            Connexion à la base de données
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_Detail_PatientTests.recupereTousLesJeuxTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie les noms de tous les jeux de la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_Detail_PatientTests.recupereToutesSeriesUtilisateurTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie toutes les séries effectuées concernant un utilisateur 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_Detail_PatientTests.recupereToutesSeriesJeuTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie toutes les séries dd'un utilisateur, pour un jeu précis
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Praticien.Tests.Modele_Gestion_Carnet_de_MissionsTests">
+            <summary>
+            Classe de test du Modèle pour la gestion du carnet de missions
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Modele.Praticien.Tests.Modele_Gestion_Carnet_de_MissionsTests.server">
+            Connexion à la base de données
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_Gestion_Carnet_de_MissionsTests.DebutTransaction">
+            <summary>
+            Permet de désactiver l'auto-commit, de commencer une transaction et de déactiver les relation de clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_Gestion_Carnet_de_MissionsTests.FinTransaction">
+            <summary>
+            Permet d'annuler les tansactions initiées sur la base de données et de réactiver le contrôle des clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_Gestion_Carnet_de_MissionsTests.recupereToutesMissionsTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie toutes les missions de la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_Gestion_Carnet_de_MissionsTests.enregistreUneMissionTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle enregistre correctement les missions demandées
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_Gestion_Carnet_de_MissionsTests.supprimeUneMissionTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle supprimer efficacement une mission donnée
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_Gestion_Carnet_de_MissionsTests.supprimeToutesMissionsTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle supprime efficacement toutes les missions d'un patient donné
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests" -->
+        <member name="F:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.idUtilisateur">
+            Utilisateur de test
+        </member>
+        <member name="F:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.server">
+            Connexion à la base de données
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.DebutTransaction">
+            <summary>
+            Permet de désactiver l'auto-commit, de commencer une transaction et de déactiver les relation de clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.FinTransaction">
+            <summary>
+            Permet le ROLLBACK et réactive les clés étrangères
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.recupereToutesLesSeriesTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie toutes les séries effectuées de la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.recupereLesSeriesEffectueesAujourdhuiTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie toutes les séries effectuées aujourd'hui
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.recupereLesSeriesEffectueesSemaineTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie toutes les séries effectuées il y a moins de 7 jours 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.recupereLesSeriesEffectueesMoisTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie toutes les séries effectuées il y a moins de 30 jours 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.recuperePatientTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie  un patient grace à son identifiant
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.recupereTousLesPatientsTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle renvoie tous les patients de la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.creeUtilisateurTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle crée correctement un utilisateur dans la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.ModifieUtilisateurTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle modifie efficacement un utilisateur dans la base 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.SupprimeUtilisateurTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle supprime efficacement un patient dans la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.SupprimeSesSeriesTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle supprime efficacement toutes les séries d'un utilisateur
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.compteCombienPatientDansBDDTest">
+            <summary>
+            Permet de vérifier si la méthode du modèle récupère bien le nombre de patients total de la base
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.recupererTouslstidPatientTest">
+            <summary>
+             Permet de vérifier si la méthode du modèle récupère bien la liste des numéros d'identifiant de tous les patients
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.recuperePlusGrandIdPatientTest">
+            <summary>
+             Permet de vérifier si la méthode du modèle récupère correctement le numero identifiant du patient le plus récent
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.recupereTousLesMotsTest">
+            <summary>
+             Permet de vérifier si la méthode du modèle récupère correctement la liste de tous les mots 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.creationAcquisition_leMotTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle créé correctement les acquisitions d'un utilisateur
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.supprimeAcquisitionLeMotTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle supprime efficacement toutes les acquisitions d'un utilisateur
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Tests.Modele_MenuPrincipal_PraticienTests.supprimeMissionsCarnetTest">
+            <summary>
+            Permet de vérifier que la méthode du modèle supprime efficacement toutes les missions d'un utilisateur
+            </summary>
+        </member>
+    </members>
+</doc>

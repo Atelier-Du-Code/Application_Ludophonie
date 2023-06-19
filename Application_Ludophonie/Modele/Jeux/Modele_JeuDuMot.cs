@@ -10,6 +10,9 @@ using System.Transactions;
 
 namespace Application_Ludophonie.Modele.Jeux
 {
+    /// <summary>
+    /// Modèle - Classe d'accès aux données pour le jeu du mot - Coté patient
+    /// </summary>
     public static class Modele_JeuDuMot
     {
 
@@ -84,7 +87,6 @@ namespace Application_Ludophonie.Modele.Jeux
                 string nomListe = ((string)curs.Field("nom_liste"));
                 int acquisition = ((int)curs.Field("idNiveauAcquisition"));
 
-
                 lstMots.Add(new Mot(idMot, mot, contexte, nomListe, acquisition));
             }
 
@@ -128,6 +130,41 @@ namespace Application_Ludophonie.Modele.Jeux
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Permet de récupérer le niveau d'acquisition d'un mot pour un patient donné
+        /// </summary>
+        /// <param name="idUtilisateur"></param>
+        /// <param name="idMot"></param>
+        /// <returns></returns>
+        public static int recuperelstNiveauxAcquisitionUtilisateur(int idUtilisateur, int idMot)
+        {
+            int idAcquisition = 0;
+
+            string req = "SELECT idNiveauAcquisition FROM acquisition_lemot WHERE idutilisateur = @idUtilisateur AND idMot = @idMot;";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    {"@idMot", idMot},                   
+                    {"@idUtilisateur", idUtilisateur}
+                };
+
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, parameters);
+
+            if (curs.Read())
+            {   
+                int idNiveauAcquisition = ((int)curs.Field("idNiveauAcquisition"));
+
+                idAcquisition = idNiveauAcquisition;
+            }
+
+            curs.Close();
+
+            return idAcquisition;
+
         }
 
         /// <summary>

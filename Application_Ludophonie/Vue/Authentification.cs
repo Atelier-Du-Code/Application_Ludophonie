@@ -16,6 +16,9 @@ using Serilog;
 
 namespace Application_Ludophonie
 {
+    /// <summary>
+    /// Vue - Authentification
+    /// </summary>
     public partial class Authentification : Form
     {
         Controleur_Authentification controleur = new Controleur_Authentification();
@@ -106,8 +109,7 @@ namespace Application_Ludophonie
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnConnexion_Click(object sender, EventArgs e)
-        {           
-
+        {
             if (txtbMotDePasse.Text == utilisateurAIdentifier.Password)
             {
                 txtbIdentifiant.Text = "";

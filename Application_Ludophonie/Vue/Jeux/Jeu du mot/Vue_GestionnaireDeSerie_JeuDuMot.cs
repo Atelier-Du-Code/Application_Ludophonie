@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace Application_Ludophonie.Vue.Jeux
 {
+    /// <summary>
+    /// Vue - Gestionnaire de série avant de débuter le jeu du mot - Côté patient
+    /// </summary>
     public partial class Vue_GestionnaireDeSerie_JeuDuLot : Form
     {
         Utilisateur utilisateur;
@@ -45,13 +48,25 @@ namespace Application_Ludophonie.Vue.Jeux
             for(int i=0; i<lstListes.Count; i++)
             {
                 cbxNiveau.Items.Add(lstListes[i]);
-            }
-            cbxNbQuestions.Items.Add(1);
-            cbxNbQuestions.Items.Add(5);
-            cbxNbQuestions.Items.Add(10);
-            cbxNbQuestions.Items.Add(15);
+            }           
         }
-        
+
+        private void cbxNiveau_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxNiveau.SelectedItem.ToString() == "Liste 2")
+            {
+                cbxNbQuestions.Items.Clear();
+                cbxNbQuestions.Items.Add(1);
+                cbxNbQuestions.Items.Add(5);
+            }
+            else
+            {
+                cbxNbQuestions.Items.Clear();
+                cbxNbQuestions.Items.Add(1);
+                cbxNbQuestions.Items.Add(5);
+                cbxNbQuestions.Items.Add(10);
+            }
+        }
         /// <summary>
         /// Permet de commencer un série du "Jeu du mot"
         /// </summary>
@@ -59,8 +74,16 @@ namespace Application_Ludophonie.Vue.Jeux
         /// <param name="e"></param>
         private void btnDebutSerie_Click(object sender, EventArgs e)
         {
-            Vue_Jeu_DuMot fenetre_Vue_JeuDuMot = new Vue_Jeu_DuMot(utilisateur, cbxNiveau.SelectedItem.ToString(), (int)cbxNbQuestions.SelectedItem);
-            fenetre_Vue_JeuDuMot.ShowDialog();
+            if(cbxNiveau.SelectedItem == null || cbxNbQuestions.SelectedItem == null)
+            {
+                lblMessage.Text = "Veillez à sélectionner un niveau de liste et un nombre de questions";
+            }
+            else
+            {
+                Vue_Jeu_DuMot fenetre_Vue_JeuDuMot = new Vue_Jeu_DuMot(utilisateur, cbxNiveau.SelectedItem.ToString(), (int)cbxNbQuestions.SelectedItem);
+                fenetre_Vue_JeuDuMot.ShowDialog();
+            }
+            
         }
 
         /// <summary>
@@ -72,5 +95,7 @@ namespace Application_Ludophonie.Vue.Jeux
         {
             Close();
         }
+
+        
     }
 }

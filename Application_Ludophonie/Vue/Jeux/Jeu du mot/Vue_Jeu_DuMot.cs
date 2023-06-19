@@ -14,6 +14,9 @@ using Image = Application_Ludophonie.Metier.Image;
 
 namespace Application_Ludophonie.Vue.Jeux
 {
+    /// <summary>
+    /// Vue - page du jeu du mot - Côté patient
+    /// </summary>
     public partial class Vue_Jeu_DuMot : Form
     {
         //Gestion de la configuration de la partie

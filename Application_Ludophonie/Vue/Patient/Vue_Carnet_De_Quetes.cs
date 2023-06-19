@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Application_Ludophonie.Vue.Patient
 {
+    /// <summary>
+    /// Vue - Carnet de missions - Côté patient
+    /// </summary>
     public partial class Vue_Carnet_De_Quetes : Form
     {
         Controleur_Carnet_De_Quetes controleur = new Controleur_Carnet_De_Quetes();

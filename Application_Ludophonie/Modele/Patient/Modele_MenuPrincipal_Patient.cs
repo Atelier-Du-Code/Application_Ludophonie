@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele.Patient
 {
+    /// <summary>
+    /// Modele - Classe d'accès aux données pour le menu principal - Côté patient 
+    /// </summary>
     public static class Modele_MenuPrincipal_Patient
     {
         private static string server = "127.0.0.1";

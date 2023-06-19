@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace Application_Ludophonie.Vue.Patient
 {
+    /// <summary>
+    /// Vue - Menu Principal - Côté patient
+    /// </summary>
     public partial class Vue_MenuPrincipal_Patient : Form
     {
         Utilisateur utilisateurEnCours;

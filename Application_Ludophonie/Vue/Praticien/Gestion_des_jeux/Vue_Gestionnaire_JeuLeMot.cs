@@ -13,6 +13,9 @@ using Serilog;
 
 namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
 {
+    /// <summary>
+    /// Vue - Gestionnaire des mots de la base - Côté particien
+    /// </summary>
     public partial class Vue_Gestionnaire_JeuLeMot : Form
     {
         Controleur_Gestion_JeuDuMot controleur = new Controleur_Gestion_JeuDuMot();
@@ -30,6 +33,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
 
         private void Vue_Gestionnaire_JeuLeMot_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnEnregistrerNewMot;
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .WriteTo.File("logs/logs_CreationMots.txt",
@@ -38,7 +42,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////
-        ///Gestion du CRUD
+        //Gestion du CRUD
         //////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
@@ -49,8 +53,9 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         private void btnEnregistrerNewMot_Click(object sender, EventArgs e)
         {
             string liste = "";
+            txtbMot.Focus();
 
-            if (txtbMot.Text != "" && txtbContexte.Text != "" && cbxTypeListe.SelectedItem.ToString() != "")
+            if (txtbMot.Text != "" && cbxTypeListe.SelectedItem.ToString() != "")
             {
                 liste = cbxTypeListe.SelectedItem.ToString();
 
@@ -67,7 +72,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
                     lblMessage.Text = "Le mot '" + txtbMot.Text + "'a bien été ajouté";
                     txtbMot.Text = "";
                     txtbContexte.Text = "";
-                    cbxTypeListe.SelectedIndex = 0;
+                    //cbxTypeListe.SelectedIndex = 0;
                 }
                 else
                 {
@@ -106,6 +111,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
                     txtbMot.Text = "";
                     txtbContexte.Text = "";
                     cbxTypeListe.SelectedIndex = 0;
+                    Log.Error("Le mot '" + txtbMot.Text + "' a été supprimé");
 
                     if (cbxTriListes.SelectedItem == null)
                     {
@@ -118,7 +124,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
                 }
                 else
                 {
-                    lblMessage.Text = "Le mot n'a pas pus etre supprimé";
+                    lblMessage.Text = "Le mot n'a pas pu etre supprimé";
                 }
             }
             else
@@ -129,7 +135,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////
-        ///Méthodes outils
+        //Méthodes outils
         //////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -169,7 +175,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////
-        ///Gestion de l'interface
+        //Gestion de l'interface
         //////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>

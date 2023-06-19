@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Controleur.Patient
 {
+    /// <summary>
+    /// Controleur - Classe de transition des données pour le menu principal - Côté patient
+    /// </summary>
     public class controleur_MenuPatient
     {
         /// <summary>

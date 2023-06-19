@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace Application_Ludophonie.Vue.Praticien
 {
+    /// <summary>
+    /// Vue - Fiche de patient - Côté praticien
+    /// </summary>
     public partial class Vue_Detail_Patient : Form
     {
         Utilisateur patientEnCours;
@@ -98,7 +101,8 @@ namespace Application_Ludophonie.Vue.Praticien
         /// Permet d'actualiser le DataGriedView contenant toutes les séries avec toutes les séries d'un utilisateur 
         /// sur le critère de filtrage du jeu
         /// </summary>
-        /// <param name="idUtilisateur"></param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>        
         private void cbxJeux_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cbxJeux.SelectedItem.ToString() == "Tous")

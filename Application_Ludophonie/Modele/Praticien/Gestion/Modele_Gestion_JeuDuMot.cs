@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application_Ludophonie.Modele.Praticien.Gestion
 {
+    /// <summary>
+    /// Modèle - Classe d'accès aux données pour la page de gestion des mots de la base - Côté praticien
+    /// </summary>
     public static class Modele_Gestion_JeuDuMot
     {
         private static string server = "127.0.0.1";
@@ -318,6 +321,31 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Permet de récupérer la liste de numéro identifiant de toutes les acquisitions de mots pour tous les patients 
+        /// </summary>
+        /// <returns></returns>
+        public static List<int> recupereLstIdAcquisitions()
+        {
+            List<int> lstIdAcquisitionLeMot = new List<int>();
+
+            string req = "SELECT idAcquis FROM acquisition_lemot;";
+
+            BddMySql curs = BddMySql.GetInstance(connectionString);
+            curs.ReqSelect(req, null);
+
+            while (curs.Read())
+            {
+                int idAcquisition = ((int)curs.Field("idAcquis"));
+
+                lstIdAcquisitionLeMot.Add(idAcquisition);
+            }
+
+            curs.Close();
+
+            return lstIdAcquisitionLeMot;
         }
     }
 }

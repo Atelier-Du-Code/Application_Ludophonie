@@ -147,6 +147,6 @@ namespace Application_Ludophonie.Vue.Patient
         private System.Windows.Forms.Button btnCarnetDeMission;
         private System.Windows.Forms.Button btnJeuDuMot;
         private System.Windows.Forms.Label txtTitrePrincipal;
-        public System.Windows.Forms.PictureBox pbAvatar;
+        private System.Windows.Forms.PictureBox pbAvatar;
     }
 }

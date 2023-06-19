@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace Application_Ludophonie.Vue.Patient
 {
+    /// <summary>
+    /// Vue - Page de modification de l'avatar - Côté patient
+    /// </summary>
     public partial class Vue_ModificationAvatar_Patient : Form
     {
         private int avatarchoisis;       

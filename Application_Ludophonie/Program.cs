@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Application_Ludophonie
 {
+    /// <summary>
+    /// C'est la classe du programme
+    /// </summary>
     static class Program
     {
         /// <summary>
@@ -20,15 +23,8 @@ namespace Application_Ludophonie
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Utilisateur utilisateurAControler = new Utilisateur(1, "patient", "Jade_Vidal", "Vidal", "Jade", "CE2", "000", "https://i.pinimg.com/564x/8f/cc/6e/8fcc6e362c58546f130310c97ad0df39.jpg");
-
-
-            Utilisateur utilisateurAControler2 = new Utilisateur(3, "praticien", "Felix_Pellerin", "Pellerin", "Felix", "", "0000", "https://i.pinimg.com/564x/8f/cc/6e/8fcc6e362c58546f130310c97ad0df39.jpg");
-
-            //Application.Run(new Vue_GestionnaireDeSerie_JeuDuLot(utilisateurAControler2));
-            Application.Run(new Authentification());
-            //Application.Run(new Vue_MenuPrincipal_Praticien(utilisateurAControler2));
+                        
+            Application.Run(new Authentification());            
         }
     }
 }

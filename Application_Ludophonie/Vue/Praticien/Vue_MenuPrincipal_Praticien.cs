@@ -17,6 +17,9 @@ using Serilog;
 
 namespace Application_Ludophonie.Vue.Praticien
 {
+    /// <summary>
+    /// Vue - Menu principal - Côté praticien
+    /// </summary>
     public partial class Vue_MenuPrincipal_Praticien : Form
     {
         Utilisateur utilisateurEnCours;
@@ -40,15 +43,24 @@ namespace Application_Ludophonie.Vue.Praticien
 
         Utilisateur patientEnCours;
         Utilisateur utilisateurAModifier;
+        /// <summary>
+        /// Permet l'échange du nouveau patient entre la vue de création d'un nouveau patient et du menu principal
+        /// </summary>
+        public Utilisateur nouvelUtilisateur;
 
-        private bool bIdentifiantValide = true;
+       // private bool bIdentifiantValide = true;
         private bool bInfosIdentifiant = true;
         private bool bInfosMotDePasse = true;
         private bool bUtilisateurCree;
 
-        string identifiantPatientEnCours;       
-         
 
+
+        string identifiantPatientEnCours;
+
+        /// <summary>
+        /// Contructeur de la classe : Vue_MenuPrincipal_Praticien
+        /// </summary>
+        /// <param name="utilisateurEnCours"></param>
         public Vue_MenuPrincipal_Praticien(Utilisateur utilisateurEnCours)
         {
             InitializeComponent();
@@ -71,6 +83,11 @@ namespace Application_Ludophonie.Vue.Praticien
             actualiseDgvPatient();
 
             dgvPatients.ClearSelection();
+
+            if(dgvPatients.SelectedRows.Count < 1)
+            {
+                btnModifierPatient.Enabled = false;
+            }
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
@@ -122,7 +139,7 @@ namespace Application_Ludophonie.Vue.Praticien
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Menu de navigation 
+        //Menu de navigation 
         //////////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
@@ -165,7 +182,7 @@ namespace Application_Ludophonie.Vue.Praticien
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Page d'accueil - tabPage 1
+        // Page d'accueil - tabPage 1
         //////////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
@@ -255,7 +272,7 @@ namespace Application_Ludophonie.Vue.Praticien
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Catalogue des patients - tabPage 2
+        // Catalogue des patients - tabPage 2
         //////////////////////////////////////////////////////////////////////////////////////////////////
 
        
@@ -269,8 +286,7 @@ namespace Application_Ludophonie.Vue.Praticien
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnVoir_Click(object sender, EventArgs e)
-        {
-            pBtnEnregistrerModif.Visible = false;
+        {         
             pNouveauPatient.Visible = false;
 
             identifiantPatientEnCours = dgvPatients.CurrentRow.Cells["C_Identifiant"].Value.ToString();
@@ -282,97 +298,41 @@ namespace Application_Ludophonie.Vue.Praticien
         }
 
         //******************************
-        //Gestion de l'ajour d'un nouveau patient
+        //Gestion de l'ajout d'un nouveau patient
         //*****************************
 
         /// <summary>
-        /// Permet de faire apparaître le panel permettant l'ajout d'un nouveau patient
+        /// Permet de faire apparaître la fenetre d'ajout d'un nouveau patient
+        /// Permet d'ajouter un patient
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAjouter_Click(object sender, EventArgs e)
-        {           
-            videLesChamps();
-
-            txtbMotDePasse.UseSystemPasswordChar = false;
-            txtbMotDePasseConfirmation.UseSystemPasswordChar = false;
-
-            pNouveauPatient.Visible = true;
-            pBtnEnregistrerModif.Visible = false;
-
-            lblTitrePModifAjoutPatient.Text = "Création d'un nouveau patient";
-            lblMeessageSuppression.Text = "";
-            btnEnregistrer_Ajout.Enabled = true;
-
-            btnAjouter.BackColor = Color.FromArgb(116, 159, 171);
-            btnModifierPatient.BackColor = Color.FromArgb(172, 215, 227);
-
-        }
-        
-        /// <summary>
-        /// Permet d'enregistrer un nouveau patient dans la base ainsi
-        /// que la création des tuples d'acquisition lui correspondant
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEnregistrer_Ajout_Click(object sender, EventArgs e)
         {
-            if (txtbNom.Text == "" || txtbPrenom.Text == "" || txtbClasse.Text == "" || txtbIdentifiant.Text == "" || txtbMotDePasse.Text == "" || txtbMotDePasseConfirmation.Text == "")
+            Vue_Ajout_De_Patient fenetreAjoutPatient = new Vue_Ajout_De_Patient(lstTousLesPatients, utilisateurEnCours);
+            fenetreAjoutPatient.ShowDialog();
+
+            nouvelUtilisateur = fenetreAjoutPatient.utilisateurAAjouter;
+            bUtilisateurCree = controleur.creeUtilisateur(nouvelUtilisateur);
+            if (bUtilisateurCree)
             {
-                lblMessage.Text = "Un des champs est vide";                
+                lblMessage.Text = "L'utilisateur a été créé";
+
+                creationTupleBdd();
+                videLesChamps();
+                actualiseDgvPatient();
+                btnModifierPatient.Enabled = false;
+
+                Log.Information("Un patient à été créé");
             }
             else
             {
-                verifieIdentifiant();                
 
-                if (!bIdentifiantValide)
-                {
-                    lblMessage.Text = "Identifiant non disponible";
-                }
-                else
-                {
-                    if (txtbMotDePasse.Text != txtbMotDePasseConfirmation.Text)
-                    {
-                        lblMessage.Text = "Mot de passe différents";
-                    }
-                    else
-                    {
-                        verifieMotDePasse();
+                lblMessage.Text = "Le nouveau patient n'a pas pus être créé";
+                Log.Error("la création d'un nouveau patient a échouée");
+            }
 
-                        if (verifieMotDePasse())
-                        {                            
-                            Utilisateur nouvelUtilisateur = new Utilisateur(0, "Patient", txtbIdentifiant.Text, txtbNom.Text, txtbPrenom.Text, txtbClasse.Text, txtbMotDePasse.Text, null);
-
-                            bUtilisateurCree = controleur.creeUtilisateur(nouvelUtilisateur);
-                            if (bUtilisateurCree)
-                            {
-                                lblMessage.Text = "L'utilisateur a été créé";
-
-                                creationTupleBdd();
-                                videLesChamps();
-                                actualiseDgvPatient();
-
-                                dgvPatients.Rows[dgvPatients.RowCount - 2].Selected = true;
-
-                                Log.Information("Un patient à été créé");
-                            }
-                            else
-                            {
-                               
-                                lblMessage.Text = "Le nouveau patient n'a pas pus être créé";
-                                Log.Error("la création d'un nouveau patient a échouée");
-                            }
-                        }
-                        else
-                        {
-                            lblMessage.Text = "Le mot de passe doit contenir au moins 12 caractères dont une majuscule, " +
-                                   "une minusucle, un chiffre et un caractère spécial autorisé(@#$%^&*+$)";                        }
-
-                    }
-                }               
-
-            }            
-        }
+        }   
 
         //******************************
         //Gestion de la modification d'un patient
@@ -384,8 +344,7 @@ namespace Application_Ludophonie.Vue.Praticien
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnModifierPatient_Click(object sender, EventArgs e)
-        {
-            pBtnEnregistrerModif.Visible = true;
+        {           
             pNouveauPatient.Visible = true;
             btnModifierPatient.BackColor = Color.FromArgb(116, 159, 171);
             btnAjouter.BackColor = Color.FromArgb(172, 215, 227);
@@ -396,12 +355,16 @@ namespace Application_Ludophonie.Vue.Praticien
             lblTitrePModifAjoutPatient.Text = "Modification d'un patient";
             lblMeessageSuppression.Text = ""; 
 
-            txtbNom.Text = utilisateurAModifier.Nom;
-            txtbPrenom.Text = utilisateurAModifier.Prenom;
-            txtbClasse.Text = utilisateurAModifier.Classe;
-            txtbIdentifiant.Text = utilisateurAModifier.Identifiant;
-            txtbMotDePasse.Text = utilisateurAModifier.Password;
-            txtbMotDePasseConfirmation.Text = utilisateurAModifier.Password;
+            if(dgvPatients.SelectedRows.Count > 0)
+            {
+                txtbNom.Text = utilisateurAModifier.Nom;
+                txtbPrenom.Text = utilisateurAModifier.Prenom;
+                txtbClasse.Text = utilisateurAModifier.Classe;
+                txtbIdentifiant.Text = utilisateurAModifier.Identifiant;
+                txtbMotDePasse.Text = utilisateurAModifier.Password;
+                txtbMotDePasseConfirmation.Text = utilisateurAModifier.Password;
+            }
+            
 
         }
 
@@ -480,12 +443,12 @@ namespace Application_Ludophonie.Vue.Praticien
 
                 actualiseDgvPatient();
 
-                videLesChamps();
-
+                videLesChamps();               
+                
                 btnModifierPatient.BackColor = Color.FromArgb(172, 215, 227);
-
-                pBtnEnregistrerModif.Visible = false;
                 pNouveauPatient.Visible = false;
+
+                Log.Information("l'utilisateur " + utilisateurAModifier.Identifiant + " a bien été modifié");
             }
             else
             {
@@ -501,12 +464,14 @@ namespace Application_Ludophonie.Vue.Praticien
         /// <param name="e"></param>
         private void dgvPatients_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnModifierPatient.Enabled = true;
+            lblMeessageSuppression.Text = "";
+
             if (dgvPatients.SelectedRows.Count == 1)
             {
                 btnModifierPatient.Enabled = true;
                 pNouveauPatient.Visible = true;
-                lblTitrePModifAjoutPatient.Text = "Modification du patient";
-                btnEnregistrer_Ajout.Enabled = true;
+                lblTitrePModifAjoutPatient.Text = "Modification d'un patient";
                 lblMeessageSuppression.Text = "";
 
                 txtbMotDePasse.UseSystemPasswordChar = true;
@@ -530,7 +495,11 @@ namespace Application_Ludophonie.Vue.Praticien
                 txtbIdentifiant.Text = utilisateurAModifier.Identifiant;
                 txtbMotDePasse.Text = utilisateurAModifier.Password;
                 txtbMotDePasseConfirmation.Text = utilisateurAModifier.Password;
-            }          
+            }     
+            else
+            {
+                videLesChamps();
+            }
         }
 
         //******************************
@@ -623,11 +592,10 @@ namespace Application_Ludophonie.Vue.Praticien
 
             videLesChamps();
             lblMessage.Text = "";
+            btnModifierPatient.Enabled = false;
 
             btnModifierPatient.BackColor = Color.FromArgb(172, 215, 227);
             btnAjouter.BackColor = Color.FromArgb(172, 215, 227);
-            pBtnEnregistrerModif.Visible = false; 
-
         }
 
         /// <summary>
@@ -715,7 +683,6 @@ namespace Application_Ludophonie.Vue.Praticien
         {
             if (dgvPatients.SelectedRows.Count == 1)
             {
-                pBtnEnregistrerModif.Visible = false;
                 pNouveauPatient.Visible = false;
                 identifiantPatientEnCours = dgvPatients.CurrentRow.Cells["C_Identifiant"].Value.ToString();
 
@@ -723,7 +690,11 @@ namespace Application_Ludophonie.Vue.Praticien
 
                 Vue_Gestion_Carnets_De_Quetes fenetre__Gestion_CarnetDeQuetes = new Vue_Gestion_Carnets_De_Quetes(patientEnCours.IdUtilisateur);
                 fenetre__Gestion_CarnetDeQuetes.ShowDialog();
-            }            
+            }     
+            else
+            {
+                lblMeessageSuppression.Text = "Veilliez à selectionner un patient dans la liste";
+            }
         }
 
         /// <summary>
@@ -748,20 +719,22 @@ namespace Application_Ludophonie.Vue.Praticien
 
                 if(bSupprimerSesAcquisitions && bSupprimerMissions && bSupprimeSesSeries && bSupprimeUtilisateur)
                 {
+                    Log.Information("l'utilisateur " + utilisateurAModifier.Identifiant + " a bien été supprimé");
+
                     lblMeessageSuppression.Text = "L'utilisateur a été supprimé";
                     actualiseDgvPatient();
-                    pNouveauPatient.Visible = false;
-                    pBtnEnregistrerModif.Visible = false;
+                    pNouveauPatient.Visible = false;                   
                 }
                 else
                 {
                     lblMeessageSuppression.Text = "L'utilisateur n'a pas pus être supprimé";
+                    Log.Error("l'utilisateur " + utilisateurAModifier.Identifiant + " n a pas été supprimé");
                 }                
             }
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Gestion des jeux - tabPage 3
+        // Gestion des jeux - tabPage 3
         //////////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>

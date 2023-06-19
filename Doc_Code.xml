@@ -1,0 +1,2109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Application_Ludophonie</name>
+    </assembly>
+    <members>
+        <member name="T:AppOrthophonie.BDD.BddMySql">
+            <summary>
+            Classe publique BddMySql
+            </summary>
+        </member>
+        <member name="F:AppOrthophonie.BDD.BddMySql.instance">
+            <summary>
+            Unique instance de la classe
+            </summary>
+        </member>
+        <member name="F:AppOrthophonie.BDD.BddMySql.connection">
+            <summary>
+            objet de connexion à la BDD à partir d'une chaîne de connexion
+            </summary>
+        </member>
+        <member name="F:AppOrthophonie.BDD.BddMySql.reader">
+            <summary>
+            objet contenant le résultat d'une requête "select" (curseur)
+            </summary>
+        </member>
+        <member name="M:AppOrthophonie.BDD.BddMySql.#ctor(System.String)">
+            <summary>
+            Constructeur privé pour créer la connexion à la BDD et l'ouvrir
+            </summary>
+            <param name="stringConnect">chaine de connexion</param>
+        </member>
+        <member name="M:AppOrthophonie.BDD.BddMySql.GetInstance(System.String)">
+            <summary>
+            Crée une instance unique de la classe
+            </summary>
+            <param name="stringConnect">chaine de connexion</param>
+            <returns>instance unique de la classe</returns>
+        </member>
+        <member name="M:AppOrthophonie.BDD.BddMySql.ReqSelect(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Exécute une requête type "select" et valorise le curseur
+            </summary>
+            <param name="stringQuery"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:AppOrthophonie.BDD.BddMySql.Read">
+            <summary>
+            Tente de lire la ligne suivante du curseur
+            </summary>
+            <returns>false si fin de curseur atteinte</returns>
+        </member>
+        <member name="M:AppOrthophonie.BDD.BddMySql.Field(System.String)">
+            <summary>
+            Retourne le contenu d'un champ dont le nom est passé en paramètre
+            </summary>
+            <param name="nameField">nom du champ</param>
+            <returns>valeur du champ</returns>
+        </member>
+        <member name="M:AppOrthophonie.BDD.BddMySql.ReqUpdate(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Exécution d'une requête autre que "select"
+            </summary>
+            <param name="stringQuery">requête autre que select</param>
+            <param name="parameters">dictionnire contenant les parametres</param>
+        </member>
+        <member name="M:AppOrthophonie.BDD.BddMySql.ReqControle(System.String)">
+            <summary>
+            Exécution d'une requête de type LCT (begin transaction)
+            </summary>
+            <param name="stringQuery"></param>
+        </member>
+        <member name="M:AppOrthophonie.BDD.BddMySql.Close">
+            <summary>
+            Fermeture du curseur
+            </summary>
+        </member>
+        <member name="M:AppOrthophonie.BDD.BddMySql.ErreurGraveBddNonAccessible(System.Exception)">
+            <summary>
+            Pas d'accès à la BDD : arrêt de l'application
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Controleur_Authentification">
+            <summary>
+            Controleur - Classe de transition des données pour l'authentification
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Controleur_Authentification.recupereUtilisateur(System.String)">
+            <summary>
+            Permet de récupérer les informations d'un patient
+            </summary>
+            <param name="unIdentifiant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Controleur_Authentification.utilisateurExiste(System.String)">
+            <summary>
+            Permet de vérifier si un utilisateur existe
+            </summary>
+            <param name="unIdentifiant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Jeux.Controleur_Gestionnaire_De_Serie_Mot">
+            <summary>
+            Controleur - Classe de transition des données pour la gestion des séries du jeu du mot - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Jeux.Controleur_Gestionnaire_De_Serie_Mot.recupereToutesListes">
+            <summary>
+            Permet de récupere tous les niveaux de listes 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Jeux.Controleur_JeuDuMot">
+            <summary>
+            Controleur - Classe de transition des données pour le jeu du mot - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Jeux.Controleur_JeuDuMot.recupereToutesImagesInterface">
+            <summary>
+            Permet de récupérer toutes les images de l'interface
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Jeux.Controleur_JeuDuMot.recupereMotsParListeNiveauAcquisitionIdUtilisateur(System.String,System.Int32,System.Int32)">
+            <summary>
+            Permet de récupérer les mots en fonction de leur liste d'appartenance et de leur niveau d'acquisition pour un patient
+            </summary>
+            <param name="liste"></param>
+            <param name="acquisition"></param>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Jeux.Controleur_JeuDuMot.updateDeLaBaseAvecMotsDeLaSerie(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Permet de mettre à jour le niveau d'acquisition des mots d'une série pour un patient 
+            </summary>
+            <param name="IdUtilisateur"></param>
+            <param name="idMot"></param>
+            <param name="acquisition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Jeux.Controleur_JeuDuMot.creationSerieEffectuees(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Permet de créer une série effectuées
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="idjeu"></param>
+            <param name="nbQuestionDeLaSerie"></param>
+            <param name="nbErreur"></param>
+            <param name="dateDuJour"></param>
+            <param name="timer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Patient.Controleur_Carnet_De_Quetes">
+            <summary>
+            Controleur - Classe de transition des données pour le carnet de mission - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Patient.Controleur_Carnet_De_Quetes.recupereLstMissions(System.Int32)">
+            <summary>
+            Permet de récupérer toutes les missions d'un patient
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Patient.controleur_MenuPatient">
+            <summary>
+            Controleur - Classe de transition des données pour le menu principal - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Patient.controleur_MenuPatient.recupereAvatar(System.Int32)">
+            <summary>
+            Permet de récupérer un avatar
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Patient.Controleur_ModifAvatar">
+            <summary>
+            Controleur - Classe de transition des données la modification de l'avatar - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Patient.Controleur_ModifAvatar.recuperelstAvatar">
+            <summary>
+            Permet de récupérer la liste de tous les avatars 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Patient.Controleur_ModifAvatar.modifAvatar(System.Int32,System.Int32)">
+            <summary>
+            Permet de modifier l'avatar d'un patient dans la base
+            </summary>
+            <param name="idAvatar"></param>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Praticien.Controleur_Detail_Patient">
+            <summary>
+            Controleur - Classe de transition des données pour la fiche d'un patient - Côté praticien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_Detail_Patient.recupereTousLesJeux">
+            <summary>
+            Permet de récupérer tous les noms de jeux
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_Detail_Patient.recupereToutesSeriesUtilisateur(System.Int32)">
+            <summary>
+            Permet de récupérer toutes les séries d'un utilisateur
+            </summary>
+            <param name="unIdUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_Detail_Patient.recupereToutesSeriesJeu(System.Int32,System.String)">
+            <summary>
+            Permet de récupérer toutes les séries d'un jeu pour un patient
+            </summary>
+            <param name="unIdUtilisateur"></param>
+            <param name="nomJeu"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Praticien.Controleur_Gestion_Carnet__De_Mission">
+            <summary>
+            Controleur - Classe de transition des données pour la gestion du carnet de mission - Côté particien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_Gestion_Carnet__De_Mission.recupereToutesMissions(System.Int32)">
+            <summary>
+            Permet de récupérer toutes les missions d'un patient
+            </summary>
+            <param name="unIdUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_Gestion_Carnet__De_Mission.enregistreMissions(System.String,System.Int32)">
+            <summary>
+            Permet de créer une nouvelle mission pour un patient
+            </summary>
+            <param name="mission"></param>
+            <param name="unIdUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_Gestion_Carnet__De_Mission.supprimeUneMission(System.String,System.Int32)">
+            <summary>
+            Permet de supprimer une mission pour un patient
+            </summary>
+            <param name="mission"></param>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_Gestion_Carnet__De_Mission.supprimeToutesMissions(System.Int32)">
+            <summary>
+            Permet de supprimer toutes les missions d'un patient
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien">
+            <summary>
+            Controleur - Classe de transition des données le menu principal - Côté particien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.recupereToutesLesSeries">
+            <summary>
+            Permet de récupérer toutes les séries effectuées enregistrées
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.recupereLesSeriesEffectueesAujourdhui">
+            <summary>
+            Permet de récupérer toutes les séries effectuées aujourd'hui
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.recupereLesSeriesEffectueesSemaine">
+            <summary>
+            Permet de récupérer toutes les séries effectuées entre aujourd'hui et sept jours avant
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.recupereLesSeriesEffectueesMois">
+            <summary>
+            Permet de récupérer toutes les séries effectuées entre aujourd'hui et trente jours avant
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.recuperePatient(System.String)">
+            <summary>
+            Permet de récupérer toutes les informations des patients
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.recupereTousLesPatients">
+            <summary>
+            Permet de récupérer tous les patients de la liste
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.creeUtilisateur(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Permet de créé un nouvel patient
+            </summary>
+            <param name="nouvelUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.ModifieUtilisateur(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Permet de modifier un patient
+            </summary>
+            <param name="UtilisateurAModifier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.SupprimeUtilisateur(System.Int32)">
+            <summary>
+            Permet de supprimer un patient
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.SupprimeSesSeries(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Permet de supprimer les séries d'un patient 
+            </summary>
+            <param name="utilisateurASupprimer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.compteCombienPatientDansBDD">
+             <summary>
+            Permet de récupérer le nombre de patients dans la base de données 
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.recupereTousIdLesMots">
+            <summary>
+            Permet de récupérer tous les n°identifiant des mots
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.creationAcquisition_leMot(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Permet de créer la création du tuples dans la table acquisition le mot 
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="idMot"></param>
+            <param name="idNiveauAcquisition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.recupererTouslstidPatient">
+            <summary>
+            Permet de récupérer la liste de tous les n°identifiant des mots enregistrés
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.supprimeAcquisitionLeMot(System.Int32)">
+            <summary>
+            Permet de supprimer tous les tuples d'un mot dans la table acquisition_lemot
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.supprimeMissionsCarnet(System.Int32)">
+            <summary>
+            Permet de supprimer une mission du carnet de mission d'un patient
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Controleur_MenuPrincipal_Praticien.recuperePlusGrandIdPatient">
+            <summary>
+            Permet de récupérer le dernier patient enregistré
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot">
+            <summary>
+            Controleur - Classe de transition des données pour la gestion des mots de ma base - Côté praticien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.recupereTousLesMots">
+            <summary>
+            Permet de récupérer tous les mots enregistrés
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.recupereToutesListes">
+            <summary>
+            Permet de récupérer tous les niveaux de liste
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.recupereTousLesMotsDelaListe(System.String)">
+            <summary>
+            Permet de récupérer tous les mots d'une liste
+            </summary>
+            <param name="liste"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.enregistreUnMot(System.String,System.String,System.Int32)">
+            <summary>
+            Permet d'enregistrer un nouveau mot
+            </summary>
+            <param name="mot"></param>
+            <param name="contexte"></param>
+            <param name="liste"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.supprimeUnMot(System.String)">
+            <summary>
+            Permet de supprimer un mot
+            </summary>
+            <param name="mot"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.recupereDernierMotCree">
+            <summary>
+            Permet de récupérer le dernier mot créé
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.lstidPatient">
+            <summary>
+            Pemret de récupérer tous les n° identifiant de tous les patients enregistrés
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.creationAcquisition_leMot(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Permet de créer les tuples dans la table acquisition_lemot permettant de stocké le niveau d'acquisition 
+            de chaque mot pour chaque patient
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="idMot"></param>
+            <param name="idNiveauAcquisition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.recupereUnmot(System.String)">
+            <summary>
+            Permet de récupérer un mot
+            </summary>
+            <param name="mot"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Controleur.Praticien.Gestion.Controleur_Gestion_JeuDuMot.supprimeTuplesBDD(System.Int32,System.Int32)">
+            <summary>
+            Permet de supprimer les tuples d'un mot dans la table acquisition_lemot
+            </summary>
+            <param name="idPatient"></param>
+            <param name="idMot"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Metier.Avatar">
+            <summary>
+            Classe de définition d'un avatar 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Metier.Avatar.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Constructeur de la classe Avatar
+            </summary>
+            <param name="idAvatar"></param>
+            <param name="nom"></param>
+            <param name="url"></param>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Avatar.IdAvatar">
+            <summary>
+            Porte le numéro identifiant de l'avatar
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Avatar.Nom">
+            <summary>
+            Porte le nom de l'avatar
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Avatar.Url">
+            <summary>
+            Porte l'url de localisation de l'avatar
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Metier.Image">
+            <summary>
+            Classe de définition d'une image 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Metier.Image.#ctor(System.String,System.String)">
+            <summary>
+            Constructeur de la classe Image
+            </summary>
+            <param name="nom"></param>
+            <param name="url"></param>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Image.Nom">
+            <summary>
+            Porte le nom de l'image 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Image.Url">
+            <summary>
+            Porte l'url de localisation de l'image
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Metier.Mot">
+            <summary>
+            Classe de définition d'un Mot
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Metier.Mot.#ctor(System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Constructeur de la classe : Mot
+            </summary>
+            <param name="idMot"></param>
+            <param name="mot"></param>
+            <param name="contexte"></param>
+            <param name="liste"></param>
+            <param name="acquisition"></param>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Mot.IdMot">
+            <summary>
+            Porte le numero identifiant du mot 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Mot.LeMot">
+            <summary>
+            Porte le mot
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Mot.Contexte">
+            <summary>
+            Porte le contexte du mot
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Mot.Liste">
+            <summary>
+            Porte le niveau de la liste du mot
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Mot.Acquisition">
+            <summary>
+            Porte le niveau d'acquisition du mot pour un patient
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Metier.Serie">
+            <summary>
+            Classe de définition d'une série
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Metier.Serie.#ctor(System.Int32,System.Int32,System.String,System.String,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Constructeur de la classe série
+            </summary>
+            <param name="idSerie"></param>
+            <param name="idUtilisateur"></param>
+            <param name="nom"></param>
+            <param name="prenom"></param>
+            <param name="jeu"></param>
+            <param name="nbQuestionSerie"></param>
+            <param name="nbErreurs"></param>
+            <param name="dateDuJour"></param>
+            <param name="timer"></param>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Serie.IdSerie">
+            <summary>
+            Porte l'identifiant de la série
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Serie.IdUtilisateur">
+            <summary>
+            Porte le numéro d'identifiant d'une série
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Serie.Nom">
+            <summary>
+            Porte le nom du patient qui a effectuée la série 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Serie.Prenom">
+            <summary>
+            Porte le prénom du patient qui a effectuée la série
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Serie.Jeu">
+            <summary>
+            Porte le nom du jeu de la série 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Serie.NbQuestionSerie">
+            <summary>
+            Porte le nombre de questions de la série 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Serie.NbErreurs">
+            <summary>
+            Porte le nombre d'erreur de la série 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Serie.DateDuJour">
+            <summary>
+            Porte la date du jour de la série
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Metier.Serie.Timer">
+            <summary>
+            Porte le temps que le patient a mis pour résoudre la série
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Metier.Son">
+            <summary>
+            Définition de la classe Son
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Metier.Son.url">
+            <summary>
+            Porte l'url de l'emplacement du son
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Metier.SonSysteme">
+            <summary>
+            Définition de la classe SonSysteme
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Metier.Utilisateur">
+            <summary>
+            Classe de définition de l'utilisateur
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Metier.Utilisateur.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructeur de la classe Utilisateur 
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="type_utilisateur"></param>
+            <param name="identifiant"></param>
+            <param name="nom"></param>
+            <param name="prenom"></param>
+            <param name="classe"></param>
+            <param name="password"></param>
+            <param name="urlAvatar"></param>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Utilisateur.IdUtilisateur">
+            <summary>
+            Porte le numéro d'identifiant d'un utilisateur
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Utilisateur.Type_Utilisateur">
+            <summary>
+            Porte le type de l'utilisateur (patient ou praticien)
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Utilisateur.Identifiant">
+            <summary>
+            Porte l'identifiant de connexion de l'utilisateur 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Utilisateur.Nom">
+            <summary>
+            Porte le nom de l'utilisateur 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Utilisateur.Prenom">
+            <summary>
+            Porte le prénom de l'utilisateur 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Utilisateur.Classe">
+            <summary>
+            Porte la classe de l'utilisateur 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Utilisateur.Password">
+            <summary>
+            Porte le mot de passe de l'utilisateur 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Utilisateur.urlAvatar">
+            <summary>
+            Porte l'url de localisation de l'avatar de l'utilisateur 
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Metier.Utilisateur.DateInscription">
+            <summary>
+            Porte la date d'inscription de l'utilisateur 
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Jeux.Modele_Gestionnaire_De_Serie_Mot">
+            <summary>
+            Modèle - Classe d'accès aux données pour le gestionnaire de série - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Modele_Gestionnaire_De_Serie_Mot.recupereToutesLesListes">
+            <summary>
+            Permet de récupérer toutes les niveaux de liste
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Jeux.Modele_JeuDuMot">
+            <summary>
+            Modèle - Classe d'accès aux données pour le jeu du mot - Coté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Modele_JeuDuMot.recupereImagesInterface">
+            <summary>
+            Permet de récupérer toutes les images d'interface
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Modele_JeuDuMot.recupereMotsParListeNiveauAcquisitionIdUtilisateur(System.String,System.Int32,System.Int32)">
+            <summary>
+            Permet de récupérer les mots suivant les critères de leur liste d'appartenance et de leur niveau d'acquisition pour le patient en cours
+            </summary>
+            <param name="liste"></param>
+            <param name="acquisitionDuMot"></param>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Modele_JeuDuMot.updateDeLaBaseAvecMotsDeLaSerie(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Permet de changer le niveau d'acquisition de mots en fin de série du "Jeu du Mot"
+            </summary>
+            <param name="IdUtilisateur"></param>
+            <param name="idMot"></param>
+            <param name="acquisition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Modele_JeuDuMot.recuperelstNiveauxAcquisitionUtilisateur(System.Int32,System.Int32)">
+            <summary>
+            Permet de récupérer le niveau d'acquisition d'un mot pour un patient donné
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="idMot"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Jeux.Modele_JeuDuMot.creationSerieEffectuees(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Permet la création d'une série du "Jeu du mot"
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="idjeu"></param>
+            <param name="nbQuestionDeLaSerie"></param>
+            <param name="nbErreur"></param>
+            <param name="dateDuJour"></param>
+            <param name="timer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Modele_Authentification">
+            <summary>
+            Modele - Classe d'accès aux données pour l'authentification 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Modele_Authentification.utilisateurExiste(System.String)">
+            <summary>
+            Permet de vérifier si un utilisateur existe
+            </summary>
+            <param name="unIdentifiant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Modele_Authentification.recupereUtilisateur(System.String)">
+            <summary>
+            Permet de récupérer toutes les informations d'un patient
+            </summary>
+            <param name="unIdentifiant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Modele_ModifAvatar">
+            <summary>
+            Modele - Classe d'accès à la données pour la page de modification des avatars
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Modele_ModifAvatar.recupereLstAvatar">
+            <summary>
+            Permet de récupérer tous les avatars
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Modele_ModifAvatar.modifAvatar(System.Int32,System.Int32)">
+            <summary>
+            Permet de modifier l'avatar d'un patient
+            </summary>
+            <param name="idAvatar"></param>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Patient.Modele_Carnet_de_quetes">
+            <summary>
+            Modele - Classe d'accès aux données pour le carnet de missions - Côté patient 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Patient.Modele_Carnet_de_quetes.recupereLstMissions(System.Int32)">
+            <summary>
+            Permet de récupérer toutes les missions pour un utilisateur
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Patient.Modele_MenuPrincipal_Patient">
+            <summary>
+            Modele - Classe d'accès aux données pour le menu principal - Côté patient 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Patient.Modele_MenuPrincipal_Patient.updateAvatar(System.Int32,System.Int32)">
+            <summary>
+            Permet de modifier l'avatar du patient en cours
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="idAvatar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Patient.Modele_MenuPrincipal_Patient.recupereAvatar(System.Int32)">
+            <summary>
+            permet de récupérer l'avatar actuel d'un patient
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot">
+            <summary>
+            Modèle - Classe d'accès aux données pour la page de gestion des mots de la base - Côté praticien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.recupereTousLesMots">
+            <summary>
+            Permet de récupérer tous les mots de la base de données
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.recupereToutesListes">
+            <summary>
+            Permet de récupérer tous les niveaux de liste
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.recupereToutLesMotsDeLaListe(System.String)">
+            <summary>
+            Permet de récupérer tous les mots d'une liste
+            </summary>
+            <param name="liste"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.recupereUnmot(System.String)">
+            <summary>
+            Permet de récupérer un mot
+            </summary>
+            <param name="leMot"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.enregistreUnMot(System.String,System.String,System.Int32)">
+            <summary>
+            Permet d'enregistrer un mot 
+            </summary>
+            <param name="mot"></param>
+            <param name="contexte"></param>
+            <param name="liste"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.supprimeUnMot(System.String)">
+            <summary>
+            Permet de supprimer un mot
+            </summary>
+            <param name="mot"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.recupereDernierMotCree">
+            <summary>
+            Permet de récuperer le dernier mot créé
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.lstidPatient">
+            <summary>
+            Permet de récupérer la liste de tout les n° identifiant des patients
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.creationAcquisition_leMot(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Permet de créer des tuples dans la table acquisition_lemot afin de stoker le niveau d'acquisition de chaque mot
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="idMot"></param>
+            <param name="idNiveauAcquisition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.supprimeTuplesBDD(System.Int32,System.Int32)">
+            <summary>
+            Permet de supprimer tous les tuples correspondant à ce mot dans la table acquisition_leMot
+            </summary>
+            <param name="idPatient"></param>
+            <param name="idMot"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Gestion.Modele_Gestion_JeuDuMot.recupereLstIdAcquisitions">
+            <summary>
+            Permet de récupérer la liste de numéro identifiant de toutes les acquisitions de mots pour tous les patients 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Praticien.Modele_Detail_Patient">
+            <summary>
+            Modèle - Classe d'accès aux données pour la fiche patient - Côté praticien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_Detail_Patient.recupereTousLesJeux">
+            <summary>
+            Permet de récupérer tous les noms de jeux
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_Detail_Patient.recupereToutesSeriesUtilisateur(System.Int32)">
+            <summary>
+            Permet de récupérer toutes les séries effectuées par un utilisateur
+            </summary>
+            <param name="unIdUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_Detail_Patient.recupereToutesSeriesJeu(System.Int32,System.String)">
+            <summary>
+            Permet de récupérer toutes les séries d'un utilisateur sur un jeu spécifique
+            </summary>
+            <param name="unIdUtilisateur"></param>
+            <param name="nomJeu"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Praticien.Modele_Gestion_Carnet_de_Missions">
+            <summary>
+            Modele - Classe d'accès aux données pour la gestion du carnet de mission - Coté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(System.Int32)">
+            <summary>
+            Récupère toutes les missions d'un utilisateur
+            </summary>
+            <param name="unIdUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_Gestion_Carnet_de_Missions.enregistreUneMission(System.String,System.Int32)">
+            <summary>
+            Permet d'enregistrer une nouvelle mission
+            </summary>
+            <param name="mission"></param>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_Gestion_Carnet_de_Missions.supprimeUneMission(System.String,System.Int32)">
+            <summary>
+            Permet de supprimer une mission du patient en cours 
+            </summary>
+            <param name="mission"></param>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_Gestion_Carnet_de_Missions.supprimeToutesMissions(System.Int32)">
+            <summary>
+            Permet de supprimer toutes les missions d'un utilisateur en cours
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien">
+            <summary>
+            Modele - Classe d'accès aux données pour le menu principal - Côté praticien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recupereToutesLesSeries">
+            <summary>
+            Permet de récupérer toutes les séries effectuées pour tous les utilisateurs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recupereLesSeriesEffectueesAujourdhui">
+            <summary>
+            Permet de récupérer toutes les séries effectuées pour tous les utilisateurs
+            effectuées aujourd'hui
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recupereLesSeriesEffectueesSemaine">
+            <summary>
+            Permet de récupérer toutes les séries effectuées pour tous les utilisateurs
+            effectuées il y a jusqu'à une semaine avant aujourd'hui
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recupereLesSeriesEffectueesMois">
+            <summary>
+            Permet de récupérer toutes les séries effectuées pour tous les utilisateurs
+            effectuées jusqu'à 30 jours avant aujourd'hui
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recuperePatient(System.String)">
+            <summary>
+            Permet de récupérer toutes les informations d'un patient grâce à son identifiant
+            </summary>
+            <param name="unIdentifiant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recupereTousLesPatients">
+            <summary>
+            Permet de récupérer tous les patients
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.creeUtilisateur(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Permet de récupérer tous les patients
+            </summary>
+            <param name="nouvelUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.ModifieUtilisateur(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Permet de modifier un utilisateur
+            </summary>
+            <param name="UtilisateurAModifier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.SupprimeUtilisateur(System.Int32)">
+            <summary>
+            Permet de supprimer un utilisateur
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.SupprimeSesSeries(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Permet de supprimer les séries effectuées d'un patient
+            </summary>
+            <param name="utilisateurASupprimer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.compteCombienPatientDansBDD">
+            <summary>
+            Récupère le nombre de patients enregistrés
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recupererTouslstidPatient">
+            <summary>
+            Permer de récupérer la liste de tous les n° d'identification des patients
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recuperePlusGrandIdPatient">
+            <summary>
+            Permet de récupérer le n° identifiant du dernier patient créé
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recupereTousLesMots">
+            <summary>
+            Permet de récupérer tous les mots enregistrés
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.creationAcquisition_leMot(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Permet de créer des tuples dans la table acquisition_lemot permettant 
+            de stocker le niveau d'acquisition de chaque mot pour chaque patient 
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="idMot"></param>
+            <param name="idNiveauAcquisition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recupereTousIdAcquisitionLeMot">
+            <summary>
+            Permet de récupérer tous les n°identifiant des acquisitions de mot
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.supprimeAcquisitionLeMot(System.Int32)">
+            <summary>
+            Permet de supprimer les tuples d'un utilisateur de la table acquisition_lemot
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.supprimeMissionsCarnet(System.Int32)">
+            <summary>
+            Permet de supprimer toutes les missions d'un utilisateur
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Modele.Praticien.Modele_MenuPrincipal_Praticien.recupereTousLesIdMissions(System.Int32)">
+            <summary>
+            Permet de récupérer tous les numéros identifiant des missions de la base
+            </summary>
+            <param name="idUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application_Ludophonie.Authentification">
+            <summary>
+            Vue - Authentification
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.Authentification_Load(System.Object,System.EventArgs)">
+            <summary>
+            Permet la mise en place d'instruction dès l'ouverture de la fenêtre
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.btnValider_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vérifier si un utilisateur existe vraiment
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.txtbIdentifiant_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vider le label de message d'erreur au niveau de l'identifiant
+            lorsqu'une nouvelle lettre est tapée dans le textBox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.btnConnexion_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vérifier si le mot de passe enté par un utilisateur reconnu est correcte
+            Gère l'aiguillage de l'utilisateur connecté.
+            Soit vers l'espace "patient".
+            Soit vers l'espace "praticien"
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.txtbMotDePasse_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vider le label de message d'erreur au niveau du mot de passe 
+            lorsqu'une nouvelle lettre est tapée dans le textBox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.btnQuitter_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de quitter complètement le programme
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.btnRetourPanel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet le switch entre le panneau de reconnaissance de l'identifiant et du mot de passe
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Authentification.components">
+            <summary>
+            Variable nécessaire au concepteur.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.Dispose(System.Boolean)">
+            <summary>
+            Nettoyage des ressources utilisées.
+            </summary>
+            <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Authentification.InitializeComponent">
+            <summary>
+            Méthode requise pour la prise en charge du concepteur - ne modifiez pas
+            le contenu de cette méthode avec l'éditeur de code.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Program">
+            <summary>
+            C'est la classe du programme
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Program.Main">
+            <summary>
+            Point d'entrée principal de l'application.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Jeux.Vue_GestionnaireDeSerie_JeuDuLot">
+            <summary>
+            Vue - Gestionnaire de série avant de débuter le jeu du mot - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_GestionnaireDeSerie_JeuDuLot.#ctor(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="utilisateur"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_GestionnaireDeSerie_JeuDuLot.rempliCbx">
+            <summary>
+            Permet de remplir le comboBox avec les listes
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_GestionnaireDeSerie_JeuDuLot.btnDebutSerie_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de commencer un série du "Jeu du mot"
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_GestionnaireDeSerie_JeuDuLot.btnQuitter_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de quitter la page
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Jeux.Vue_GestionnaireDeSerie_JeuDuLot.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_GestionnaireDeSerie_JeuDuLot.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_GestionnaireDeSerie_JeuDuLot.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot">
+            <summary>
+            Vue - page du jeu du mot - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.#ctor(Application_Ludophonie.Metier.Utilisateur,System.String,System.Int32)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="utilisateur"></param>
+            <param name="liste"></param>
+            <param name="nbQuestions"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.initialiseLesEtoiles(System.Int32)">
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Gestion du panneau des étoiles
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            <summary>
+            Gestion de la création du panneau des étoiles
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.passeLesEtoilesEnJaune">
+            <summary>
+            Gestion du changement de couleur des étoiles en fonction du score
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.passeToutesLesEtoilesEnNoir">
+            <summary>
+            Gestion du changement de la couleur des étoiles lors d'un échec
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.initialisationDesListes(System.String,System.Int32)">
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Création de la liste des mots de la partie
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            <summary>
+            Récupération des mots suivant leur liste et leur niveau d'acquisition du patient en cours
+            </summary>
+            <param name="listeChoisie"></param>
+            <param name="idUtilisateur"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.creationDeLaListeDeMotsDeLaSerie">
+            <summary>
+            Permet de créer la liste de mot de la série
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.chrono_Tick(System.Object,System.EventArgs)">
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Gestion du chronomètre
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            <summary>
+            Permet d'incrémenter le chronometre
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.ChronoStop">
+            <summary>
+            Permet d'arreter le chronomètre 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.btnEcouter_Click(System.Object,System.EventArgs)">
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Déroulement de la partie
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            <summary>
+            Permet d'écouter une nouvelle fois le mot en cours
+            Au premier clic, démarrer le chronomètre
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.btnValiderReponse_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de valider une réponse, 
+            gérer le niveau d'acquisition du mot qui vient d'être validé suivant si il est vrai ou faux 
+            gérer la fin de la série
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.updateDeLaBaseAvecMotsDeLaSerie">
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Gestion de l'après jeu
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            <summary>
+            Permet de mettre à jour les niveaux d'acquisition des mots étudiés dans la série 
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.creeLaSerie(System.Int32,System.DateTime)">
+            <summary>
+            Permet de créer la série dans la base de données
+            </summary>
+            <param name="nbErreur"></param>
+            <param name="temps"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.btnNewSerie_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de faire apparaître le panneau de configuration de série pour en faire une nouvelle
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.btnMenuPrincipal_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'accéder au menu principal 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.btnRetour_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'accéder au menu principal 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.txtbReponse_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Permet d'interdire les caratères d'espacement dans la zone de réponse
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Jeux.Vue_Jeu_DuMot.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Patient.Vue_Carnet_De_Quetes">
+            <summary>
+            Vue - Carnet de missions - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_Carnet_De_Quetes.#ctor(System.Int32)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="idUtilisateur"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_Carnet_De_Quetes.rempliLstb">
+            <summary>
+            Permet de récupérer toutes les missions du patient en cours
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_Carnet_De_Quetes.btnJeuDuMot_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de fermer le carnet de quête
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Patient.Vue_Carnet_De_Quetes.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_Carnet_De_Quetes.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_Carnet_De_Quetes.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Patient.Vue_MenuPrincipal_Patient">
+            <summary>
+            Vue - Menu Principal - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_MenuPrincipal_Patient.#ctor(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Constructeur 
+            </summary>
+            <param name="utilisateurEnCours"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_MenuPrincipal_Patient.btnCarnetDeMission_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'ouvrir le carnet de missions pour le patient en cours
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_MenuPrincipal_Patient.btnJeuDuMot_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'ouvrir le gestionnaire de séries du jeu du mot pour le patient en cours
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_MenuPrincipal_Patient.btnModifAvatar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'ouvrir le panneau de modification de l'avatar pour le patient en cours
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_MenuPrincipal_Patient.btnDeconnexion_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'accéder à l'authentification
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Patient.Vue_MenuPrincipal_Patient.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_MenuPrincipal_Patient.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_MenuPrincipal_Patient.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient">
+            <summary>
+            Vue - Page de modification de l'avatar - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.#ctor(System.Int32)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="idutilisateur"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.btnValideAvatar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de modifier l'avatar dans la base de données
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.donneLaPrio">
+            <summary>
+            Permet de changer la couleur des boutons suivant si ils ne sont pas cliqués
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.btnDefaut_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de selectionner l'avatar par défaut
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.btnBrun_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de selectionner l'avatar brun
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.btnJaune_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de selectionner l'avatar jaune
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.btnOrange_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de selectionner l'avatar orange
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.btnRose_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de selectionner l'avatar rose
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.btnVert_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de selectionner l'avatar vert
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.btnDeconnexion_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de quitter la page
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Patient.Vue_ModificationAvatar_Patient.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot">
+            <summary>
+            Vue - Gestionnaire des mots de la base - Côté particien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.btnEnregistrerNewMot_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'enregistrer de nouveaux mots 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.btnSupprimer_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de supprimer un mot ainsi que toutes les informations qui lui sont ratachées
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.ajoutTupleBDD">
+            <summary>
+            Permet de créer des tuples dans la table qui gère l'acquisition des mots
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.supprimeTupleBDD(System.String)">
+            <summary>
+            Permet de supprimer des tuples dans la table qui gère l'acquisition des mots
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.rempliCbx">
+            <summary>
+            Permet de remplir le comboBox contenant les niveaux de liste
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.actualiseDgvLstMots">
+            <summary>
+            Permet d'actualiser le datagridview contenant les mots qui seront proposés en exercice
+            avec tous les mots de la base, sans filtrage
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.cbxTriListes_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de changer le paramètre de tri des séries sur un critère de liste
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.actualiseDgvParListe(System.String)">
+            <summary>
+            Permet d'actualiser le datagridview contenant les mots qui seront proposés en exercice
+            avec tous les mots d'une liste
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.btnRetour_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de fermer la fenêtre
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Gestion_des_jeux.Vue_Gestionnaire_JeuLeMot.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient">
+            <summary>
+            Vue - Page d'ajout de patient - Côté praticien
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient.utilisateurAAjouter">
+            <summary>
+            Initialise le nouveau patient créé dans le menu principal praticien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient.#ctor(System.Collections.Generic.List{Application_Ludophonie.Metier.Utilisateur},Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Constructeur de la classe : Vue_Ajout_De_Patient
+            </summary>
+            <param name="lstPatients"></param>
+            <param name="utilisateurEnCours"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient.Vue_Ajout_De_Patient_Load(System.Object,System.EventArgs)">
+            <summary>
+            Méthode d'initialisation de l'interface
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient.verifieIdentifiant">
+            <summary>
+            Permet de vérifier si un identifiant n'est pas déjà inscrit dans la base
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient.verifieMotDePasse">
+            <summary>
+            Permet de vérifier la colposition des mots de passe enregistrés
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient.btnEnregistrer_Click(System.Object,System.EventArgs)">
+            <summary>
+            Méthode évènementielle permettant la construction d'un nouveau patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Ajout_De_Patient.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient">
+            <summary>
+            Vue - Fiche de patient - Côté praticien
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.#ctor(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Constructeur 
+            </summary>
+            <param name="patientEnCours"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.actualiseInfosPatient">
+            <summary>
+            Permet d'actualiser les textBox renseignant les informations du patient en cours
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.remplisCbxJeux">
+            <summary>
+            Permet de remplir le comboBox contenant le nom des jeux
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.actualiseDgvSeries_Jeu(System.Int32,System.String)">
+            <summary>
+            Permet d'actualiser le DataGriedView contenant toutes les séries 
+            </summary>
+            <param name="idUtilisateur"></param>
+            <param name="nomDuJeu"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.actualiseDgvSeries_Neutre(System.Int32)">
+            <summary>
+            Permet d'actualiser le DataGriedView contenant toutes les séries avec toutes les séries d'un utilisateur
+            </summary>
+            <param name="idUtilisateur"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.cbxJeux_SelectedValueChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'actualiser le DataGriedView contenant toutes les séries avec toutes les séries d'un utilisateur 
+            sur le critère de filtrage du jeu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>        
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.btnRetour_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de fermer la fenêtre en cours
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Detail_Patient.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes">
+            <summary>
+            Vue - Carnet de missions - Côté patient
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes.#ctor(System.Int32)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="idUtilisateurEnCours"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes.btnEnregistrer_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'enregistrer une nouvelle mission pour le patient en cours
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes.btnSupprimer_Click(System.Object,System.EventArgs)">
+            Gestion de la suppression d'une mission
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes.actualiseListeMissions">
+            <summary>
+            Permet d'actualiser la listBox contenant les missions du patient en cours
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes.txtbMission_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vider le label de message lorsqu'une lettre est écrite dans le textBox d'ajout de mission
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes.btnRetour_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de fermer la page
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_Gestion_Carnets_De_Quetes.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien">
+            <summary>
+            Vue - Menu principal - Côté praticien
+            </summary>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.lstToutesSeriesEffectuees">
+            Gestion des variables de l'accueil
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.lstTousLesPatients">
+            Gestion des variables du catalogue des patients
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.nouvelUtilisateur">
+            <summary>
+            Permet l'échange du nouveau patient entre la vue de création d'un nouveau patient et du menu principal
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.#ctor(Application_Ludophonie.Metier.Utilisateur)">
+            <summary>
+            Contructeur de la classe : Vue_MenuPrincipal_Praticien
+            </summary>
+            <param name="utilisateurEnCours"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.actualiseDgvSeriesEffectuees">
+            Initialisation de l'interface des différentes pages du panneau
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.actualiseDgvPatient">
+            <summary>
+            Permet d'actualiser le DataGridView contenant la liste des patients
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnAccueil_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'afficherla page d'accueil du menu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnCatalogue_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'afficher le catalogue des patients 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnGestion_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'afficher la page permettant d'accéder aux interface de gestion des différents jeux 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnDeconnexion_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de quitter le programme
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnTriDateAujourd_hui_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de n'afficher que les séries ayant été faites aujourd'hui
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnTout_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'afficher toutes les séries effectuées
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnJMoins7_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de n'afficher que les séries ayant été faites pendant les 7 derniers jours
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnTriMois_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de n'afficher que les séries ayant été faites pendant les 30 derniers jours
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnVoir_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'instancier la page de détail d'un patient séléctionné dans la liste
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnAjouter_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de faire apparaître la fenetre d'ajout d'un nouveau patient
+            Permet d'ajouter un patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnModifierPatient_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de faire apparaître le panel de modification d'un patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnEnregistrerModification_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de modifier un patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.dgvPatients_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Permet au clic sur une des cellules du datagriedview lisant les patients la selection en vue
+            de la modification
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.verifieIdentifiant">
+            <summary>
+            Permet de vérifier si un identifiant n'est pas déjà inscrit dans la base
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.verifieMotDePasse">
+            <summary>
+            Permet de vérifier que le mot de passe est bien composé de 12 caractères dont :
+            une majuscule, une minuscule, un chiffre et un caractètre spécial parmis les caractères autorisés 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.videLesChamps">
+            <summary>
+            Permet de vider tous les champs du formulaire d'ajout ou de modification
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.creationTupleBdd">
+            <summary>
+            Création des tuples correspondant à un profil qui viens d'être créé
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnClosePanel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de fermer le panneau d'ajout ou de modification d'un patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.txtbNom_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vider le label de message lors de l'ajout d'une lettre dans le textBox accueillant 
+            le nom du patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.txtbPrenom_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vider le label de message lors de l'ajout d'une lettre dans le textBox accueillant 
+            le prénom du patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.txtbClasse_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vider le label de message lors de l'ajout d'une lettre dans le textBox accueillant 
+            la classe du patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.txtbIdentifiant_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vider le label de message lors de l'ajout d'une lettre dans le textBox accueillant 
+            l'identifiant du patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.txtbMotDePasse_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vider le label de message lors de l'ajout d'une lettre dans le textBox accueillant 
+            le mot de passe du patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.txtbMotDePasseConfirmation_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Permet de vider le label de message lors de l'ajout d'une lettre dans le textBox accueillant 
+            la confirmation du mot de passe du patient
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnCarnetDeQuetes_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'instancier la page contenant le carnet de mission d'un patient sélectionné dans la liste
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnSupprimer_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet de supprimer un patient ainsi que toutes ses données de la base
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.btnGestion_JeuDuMot_Click(System.Object,System.EventArgs)">
+            <summary>
+            Permet d'instancier la fenêtre permettant la gestion des questions du "Jeu du Mot"
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Application_Ludophonie.Vue.Praticien.Vue_MenuPrincipal_Praticien.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Application_Ludophonie.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Properties.Resources.avatar_par_defaut">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Properties.Resources.brun">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Properties.Resources.jaune">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Properties.Resources.orange">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Properties.Resources.Plan_de_travail_1">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Properties.Resources.rose">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Application_Ludophonie.Properties.Resources.vert">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>
