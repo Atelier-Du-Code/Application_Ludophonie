@@ -94,6 +94,8 @@ namespace Application_Ludophonie.Vue.Praticien
                 .WriteTo.File("logs/logs_Utilisateurs.txt",
                 rollingInterval: RollingInterval.Day)
                 .CreateLogger();
+
+            lblMeessageSuppression.Text = "";
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////

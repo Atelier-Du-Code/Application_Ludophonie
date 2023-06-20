@@ -10,6 +10,7 @@ using Application_Ludophonie.Metier;
 
 namespace Application_Ludophonie.Tests
 {
+
     [TestClass()]
     public class AuthentificationTests
     {

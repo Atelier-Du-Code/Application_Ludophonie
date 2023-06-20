@@ -166,7 +166,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.dgvSeries.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSeries.EnableHeadersVisualStyles = false;
             this.dgvSeries.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvSeries.Location = new System.Drawing.Point(93, 320);
+            this.dgvSeries.Location = new System.Drawing.Point(39, 335);
             this.dgvSeries.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvSeries.MultiSelect = false;
             this.dgvSeries.Name = "dgvSeries";
@@ -189,7 +189,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.dgvSeries.RowTemplate.Height = 24;
             this.dgvSeries.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeries.Size = new System.Drawing.Size(839, 359);
+            this.dgvSeries.Size = new System.Drawing.Size(917, 393);
             this.dgvSeries.TabIndex = 21;
             // 
             // C_Nom
@@ -228,7 +228,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.cbxJeux.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxJeux.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.cbxJeux.FormattingEnabled = true;
-            this.cbxJeux.Location = new System.Drawing.Point(434, 268);
+            this.cbxJeux.Location = new System.Drawing.Point(434, 281);
             this.cbxJeux.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxJeux.Name = "cbxJeux";
             this.cbxJeux.Size = new System.Drawing.Size(150, 29);
@@ -238,7 +238,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // lblCboxJeux
             // 
             this.lblCboxJeux.AutoSize = true;
-            this.lblCboxJeux.Location = new System.Drawing.Point(449, 244);
+            this.lblCboxJeux.Location = new System.Drawing.Point(449, 257);
             this.lblCboxJeux.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCboxJeux.Name = "lblCboxJeux";
             this.lblCboxJeux.Size = new System.Drawing.Size(110, 21);
@@ -274,7 +274,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(1031, 716);
+            this.ClientSize = new System.Drawing.Size(1031, 771);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCboxJeux);

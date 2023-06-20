@@ -12,6 +12,7 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
 {
     /// <summary>
     ///  Classe de test du Modèle pour le menu principal - Côté praticien
+    /// <summary>
     [TestClass()]
     public class Modele_MenuPrincipal_PraticienTests
     {

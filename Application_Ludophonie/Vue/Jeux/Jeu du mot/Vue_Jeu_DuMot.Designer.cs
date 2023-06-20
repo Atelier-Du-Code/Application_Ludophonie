@@ -200,20 +200,20 @@ namespace Application_Ludophonie.Vue.Jeux
             this.panel2.Controls.Add(this.lblSecondesFIn);
             this.panel2.Controls.Add(this.lblMinureFin);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(279, 211);
+            this.panel2.Location = new System.Drawing.Point(256, 211);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(146, 63);
+            this.panel2.Size = new System.Drawing.Size(193, 63);
             this.panel2.TabIndex = 49;
             // 
             // lblSecondesFIn
             // 
             this.lblSecondesFIn.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecondesFIn.Location = new System.Drawing.Point(76, 8);
+            this.lblSecondesFIn.Location = new System.Drawing.Point(107, 8);
             this.lblSecondesFIn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSecondesFIn.Name = "lblSecondesFIn";
-            this.lblSecondesFIn.Size = new System.Drawing.Size(61, 46);
+            this.lblSecondesFIn.Size = new System.Drawing.Size(76, 46);
             this.lblSecondesFIn.TabIndex = 46;
-            this.lblSecondesFIn.Text = "10";
+            this.lblSecondesFIn.Text = "00";
             this.lblSecondesFIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMinureFin
@@ -222,15 +222,15 @@ namespace Application_Ludophonie.Vue.Jeux
             this.lblMinureFin.Location = new System.Drawing.Point(10, 8);
             this.lblMinureFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMinureFin.Name = "lblMinureFin";
-            this.lblMinureFin.Size = new System.Drawing.Size(58, 46);
+            this.lblMinureFin.Size = new System.Drawing.Size(76, 46);
             this.lblMinureFin.TabIndex = 45;
-            this.lblMinureFin.Text = "10";
+            this.lblMinureFin.Text = "00";
             this.lblMinureFin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(42, 6);
+            this.label8.Location = new System.Drawing.Point(62, 2);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 55);
@@ -315,7 +315,7 @@ namespace Application_Ludophonie.Vue.Jeux
             // flpDesEtoiles
             // 
             this.flpDesEtoiles.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flpDesEtoiles.Location = new System.Drawing.Point(533, 169);
+            this.flpDesEtoiles.Location = new System.Drawing.Point(526, 145);
             this.flpDesEtoiles.Name = "flpDesEtoiles";
             this.flpDesEtoiles.Size = new System.Drawing.Size(190, 424);
             this.flpDesEtoiles.TabIndex = 25;

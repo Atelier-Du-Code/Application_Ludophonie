@@ -33,7 +33,9 @@ namespace Application_Ludophonie.Vue.Praticien
             lblMessage.Text = "";
 
             this.idUtilisateurEnCours = idUtilisateurEnCours;
-            actualiseListeMissions();            
+            actualiseListeMissions();     
+            
+            lstBMissions.TextAl
         }        
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////

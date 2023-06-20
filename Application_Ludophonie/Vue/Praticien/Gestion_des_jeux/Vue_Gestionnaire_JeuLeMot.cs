@@ -34,11 +34,13 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         private void Vue_Gestionnaire_JeuLeMot_Load(object sender, EventArgs e)
         {
             AcceptButton = btnEnregistrerNewMot;
+            lblMessage.Text = "";
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .WriteTo.File("logs/logs_CreationMots.txt",
                 rollingInterval: RollingInterval.Day)
                 .CreateLogger();
+
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////

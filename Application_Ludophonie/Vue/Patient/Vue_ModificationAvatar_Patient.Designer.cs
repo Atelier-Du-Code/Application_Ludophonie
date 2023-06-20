@@ -49,7 +49,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.plAvatars.Controls.Add(this.btnOrange);
             this.plAvatars.Controls.Add(this.btnRose);
             this.plAvatars.Controls.Add(this.btnVert);
-            this.plAvatars.Location = new System.Drawing.Point(101, 126);
+            this.plAvatars.Location = new System.Drawing.Point(64, 165);
             this.plAvatars.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.plAvatars.Name = "plAvatars";
             this.plAvatars.Size = new System.Drawing.Size(583, 369);
@@ -144,7 +144,7 @@ namespace Application_Ludophonie.Vue.Patient
             // 
             this.lblTitrePrincipal.AutoSize = true;
             this.lblTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.lblTitrePrincipal.Location = new System.Drawing.Point(172, 44);
+            this.lblTitrePrincipal.Location = new System.Drawing.Point(135, 75);
             this.lblTitrePrincipal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitrePrincipal.Name = "lblTitrePrincipal";
             this.lblTitrePrincipal.Size = new System.Drawing.Size(441, 60);
@@ -157,7 +157,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnValideAvatar.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnValideAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValideAvatar.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnValideAvatar.Location = new System.Drawing.Point(305, 529);
+            this.btnValideAvatar.Location = new System.Drawing.Point(268, 585);
             this.btnValideAvatar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnValideAvatar.Name = "btnValideAvatar";
             this.btnValideAvatar.Size = new System.Drawing.Size(175, 46);
@@ -171,7 +171,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(802, 610);
+            this.ClientSize = new System.Drawing.Size(697, 704);
             this.Controls.Add(this.btnValideAvatar);
             this.Controls.Add(this.plAvatars);
             this.Controls.Add(this.lblTitrePrincipal);

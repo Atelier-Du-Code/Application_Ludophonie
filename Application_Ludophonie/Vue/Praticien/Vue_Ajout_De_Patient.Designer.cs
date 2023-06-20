@@ -30,6 +30,7 @@ namespace Application_Ludophonie.Vue.Praticien
         private void InitializeComponent()
         {
             this.pNouveauPatient = new System.Windows.Forms.Panel();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblConfirmation = new System.Windows.Forms.Label();
             this.txtbMotDePasseConfirmation = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@ namespace Application_Ludophonie.Vue.Praticien
             this.txtbIdentifiant = new System.Windows.Forms.TextBox();
             this.lblTitrePModifAjoutPatient = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnEnregistrer = new System.Windows.Forms.Button();
             this.pNouveauPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,20 @@ namespace Application_Ludophonie.Vue.Praticien
             this.pNouveauPatient.Name = "pNouveauPatient";
             this.pNouveauPatient.Size = new System.Drawing.Size(967, 727);
             this.pNouveauPatient.TabIndex = 48;
+            // 
+            // btnEnregistrer
+            // 
+            this.btnEnregistrer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
+            this.btnEnregistrer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnEnregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnregistrer.Font = new System.Drawing.Font("Montserrat", 10F);
+            this.btnEnregistrer.Location = new System.Drawing.Point(432, 672);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(140, 38);
+            this.btnEnregistrer.TabIndex = 62;
+            this.btnEnregistrer.Text = "Enregistrer";
+            this.btnEnregistrer.UseVisualStyleBackColor = false;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // lblMessage
             // 
@@ -230,20 +244,6 @@ namespace Application_Ludophonie.Vue.Praticien
             this.pictureBox2.TabIndex = 45;
             this.pictureBox2.TabStop = false;
             // 
-            // btnEnregistrer
-            // 
-            this.btnEnregistrer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(111)))));
-            this.btnEnregistrer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.btnEnregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnregistrer.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnEnregistrer.Location = new System.Drawing.Point(432, 672);
-            this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(140, 38);
-            this.btnEnregistrer.TabIndex = 62;
-            this.btnEnregistrer.Text = "Enregistrer";
-            this.btnEnregistrer.UseVisualStyleBackColor = false;
-            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
-            // 
             // Vue_Ajout_De_Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -254,6 +254,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.Font = new System.Drawing.Font("Montserrat", 7.8F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.Name = "Vue_Ajout_De_Patient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vue_Ajout_De_Patient";
             this.Load += new System.EventHandler(this.Vue_Ajout_De_Patient_Load);
             this.pNouveauPatient.ResumeLayout(false);

@@ -31,6 +31,8 @@ namespace Application_Ludophonie.Vue.Jeux
             this.utilisateur = utilisateur;
             rempliCbx();
 
+            lblMessage.Text = "";
+
         }
 
         /// <summary>

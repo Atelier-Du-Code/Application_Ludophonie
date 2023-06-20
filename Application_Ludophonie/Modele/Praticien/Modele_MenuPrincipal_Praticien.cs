@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace Application_Ludophonie.Modele.Praticien
 {
@@ -18,12 +19,21 @@ namespace Application_Ludophonie.Modele.Praticien
         private static string password = "";
         private static string database = "ludophonie";
 
+        /*
+        private static string server = "154.49.245.52";
+        private static string userid = "u607780247_testLudo";
+        private static string password = "gTyHI2QZez";
+        private static string database = "u607780247_testLudo";
+        */
+
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password + ";database=" + database + ";SslMode=none";
+
+
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
         // Page d'accueil - tabPage 1
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         /// <summary>
         /// Permet de récupérer toutes les séries effectuées pour tous les utilisateurs
         /// </summary>
@@ -272,10 +282,15 @@ namespace Application_Ludophonie.Modele.Praticien
         /// <returns></returns>
         public static bool creeUtilisateur(Utilisateur nouvelUtilisateur)
         {
+            Log.Logger = new LoggerConfiguration()
+               .MinimumLevel.Verbose()
+               .WriteTo.File("logs/logs_Debug.txt",
+               rollingInterval: RollingInterval.Day)
+               .CreateLogger();
             try
             {
-                string req = "INSERT INTO `utilisateurs`(`identifiant`, `nom`, `prenom`, `classe`, `password`, `idAvatar`, `idTypeUtilisateur`, `date_inscription`) VALUES ";
-                req += "(@identifiant, @nom, @prenom, @classe, @password, 1, 1, CURRENT_DATE())";
+                string req = "INSERT INTO utilisateurs (identifiant, nom, prenom, classe, password, idAvatar, idTypeUtilisateur, date_inscription) VALUES " +
+                    "(@identifiant, @nom, @prenom, @classe, @password, 1, 1, CURRENT_DATE()); ";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                         {
@@ -294,8 +309,9 @@ namespace Application_Ludophonie.Modele.Praticien
                 return true;
 
             }
-            catch
+            catch (Exception e)
             {
+                Log.Error(e.ToString());
                 return false;
             }
         }

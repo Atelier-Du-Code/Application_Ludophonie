@@ -12,11 +12,17 @@ namespace Application_Ludophonie.Modele.Jeux
     /// </summary>
     public static class Modele_Gestionnaire_De_Serie_Mot
     {
-
         private static string server = "127.0.0.1";
         private static string userid = "root";
         private static string password = "";
         private static string database = "ludophonie";
+
+        /*
+        private static string server = "154.49.245.52";
+        private static string userid = "u607780247_testLudo";
+        private static string password = "gTyHI2QZez";
+        private static string database = "u607780247_testLudo";
+        */
 
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password + ";database=" + database + ";SslMode=none";
 

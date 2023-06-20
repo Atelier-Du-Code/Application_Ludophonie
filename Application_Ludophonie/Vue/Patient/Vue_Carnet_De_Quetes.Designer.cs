@@ -37,7 +37,7 @@ namespace Application_Ludophonie.Vue.Patient
             // txtTitrePrincipal
             // 
             this.txtTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.txtTitrePrincipal.Location = new System.Drawing.Point(87, 61);
+            this.txtTitrePrincipal.Location = new System.Drawing.Point(88, 61);
             this.txtTitrePrincipal.Name = "txtTitrePrincipal";
             this.txtTitrePrincipal.Size = new System.Drawing.Size(538, 60);
             this.txtTitrePrincipal.TabIndex = 2;
@@ -50,7 +50,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.btnClose.Location = new System.Drawing.Point(310, 508);
+            this.btnClose.Location = new System.Drawing.Point(316, 584);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(82, 59);
             this.btnClose.TabIndex = 9;
@@ -65,9 +65,9 @@ namespace Application_Ludophonie.Vue.Patient
             this.lstbMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.lstbMissions.FormattingEnabled = true;
             this.lstbMissions.ItemHeight = 35;
-            this.lstbMissions.Location = new System.Drawing.Point(109, 156);
+            this.lstbMissions.Location = new System.Drawing.Point(115, 156);
             this.lstbMissions.Name = "lstbMissions";
-            this.lstbMissions.Size = new System.Drawing.Size(484, 319);
+            this.lstbMissions.Size = new System.Drawing.Size(484, 389);
             this.lstbMissions.TabIndex = 10;
             // 
             // Vue_Carnet_De_Quetes
@@ -75,7 +75,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(697, 621);
+            this.ClientSize = new System.Drawing.Size(697, 704);
             this.Controls.Add(this.lstbMissions);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtTitrePrincipal);

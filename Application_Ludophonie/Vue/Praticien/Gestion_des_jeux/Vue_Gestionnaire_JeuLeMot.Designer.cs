@@ -113,7 +113,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.dgvLstMots.RowTemplate.Height = 24;
             this.dgvLstMots.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvLstMots.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLstMots.Size = new System.Drawing.Size(830, 228);
+            this.dgvLstMots.Size = new System.Drawing.Size(830, 283);
             this.dgvLstMots.TabIndex = 25;
             // 
             // C_Mot
@@ -145,7 +145,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtbMot);
             this.panel1.Controls.Add(this.lblMot);
-            this.panel1.Location = new System.Drawing.Point(104, 525);
+            this.panel1.Location = new System.Drawing.Point(104, 585);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(830, 154);
@@ -256,7 +256,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             // 
             this.lblTitreCbxTitre.AutoSize = true;
             this.lblTitreCbxTitre.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.lblTitreCbxTitre.Location = new System.Drawing.Point(316, 143);
+            this.lblTitreCbxTitre.Location = new System.Drawing.Point(316, 136);
             this.lblTitreCbxTitre.Name = "lblTitreCbxTitre";
             this.lblTitreCbxTitre.Size = new System.Drawing.Size(58, 24);
             this.lblTitreCbxTitre.TabIndex = 27;
@@ -267,7 +267,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.cbxTriListes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTriListes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxTriListes.FormattingEnabled = true;
-            this.cbxTriListes.Location = new System.Drawing.Point(266, 172);
+            this.cbxTriListes.Location = new System.Drawing.Point(266, 165);
             this.cbxTriListes.Name = "cbxTriListes";
             this.cbxTriListes.Size = new System.Drawing.Size(153, 29);
             this.cbxTriListes.TabIndex = 28;
@@ -279,7 +279,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.btnSupprimer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupprimer.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnSupprimer.Location = new System.Drawing.Point(587, 165);
+            this.btnSupprimer.Location = new System.Drawing.Point(589, 158);
             this.btnSupprimer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(154, 36);
@@ -306,7 +306,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 16F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(313, 474);
+            this.label3.Location = new System.Drawing.Point(313, 534);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(393, 37);
             this.label3.TabIndex = 30;
@@ -317,7 +317,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(1031, 716);
+            this.ClientSize = new System.Drawing.Size(1031, 771);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.btnSupprimer);

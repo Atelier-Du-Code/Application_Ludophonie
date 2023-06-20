@@ -48,6 +48,8 @@ namespace Application_Ludophonie.Vue.Praticien
         private void Vue_Ajout_De_Patient_Load(object sender, EventArgs e)
         {
             lblMessage.Text = "";
+            txtbNom.Focus();
+            AcceptButton = btnEnregistrer;
             txtbMotDePasse.UseSystemPasswordChar = false;
             txtbMotDePasseConfirmation.UseSystemPasswordChar = false;
         }
@@ -69,6 +71,7 @@ namespace Application_Ludophonie.Vue.Praticien
                     if (lstPatients[i].Identifiant == txtbIdentifiant.Text)
                     {
                         bInfosIdentifiant = false;
+                        break;
                     }
                     else
                     {
@@ -117,14 +120,9 @@ namespace Application_Ludophonie.Vue.Praticien
                 lblMessage.Text = "Un des champs est vide";
             }
             else
-            {
-                verifieIdentifiant();
+            {               
 
-                if (verifieIdentifiant() == false)
-                {
-                    lblMessage.Text = "Identifiant non disponible";
-                }
-                else
+                if (verifieIdentifiant())
                 {
                     if (txtbMotDePasse.Text != txtbMotDePasseConfirmation.Text)
                     {
@@ -144,9 +142,7 @@ namespace Application_Ludophonie.Vue.Praticien
 
                             utilisateurAAjouter = new Utilisateur(0, "patient", identifiant, nom, prenom, classe, password, null);
 
-                            //this.WindowState = FormWindowState.Minimized;
                             Close();
-                                                        
                         }
                         else
                         {
@@ -155,6 +151,10 @@ namespace Application_Ludophonie.Vue.Praticien
                         }
 
                     }
+                }
+                else
+                {
+                    lblMessage.Text = "Identifiant non disponible";                    
                 }
 
             }

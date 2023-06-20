@@ -55,9 +55,9 @@ namespace Application_Ludophonie
             // 
             this.txtbMotDePasse.Font = new System.Drawing.Font("Montserrat", 10F);
             this.txtbMotDePasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.txtbMotDePasse.Location = new System.Drawing.Point(286, 531);
+            this.txtbMotDePasse.Location = new System.Drawing.Point(226, 531);
             this.txtbMotDePasse.Name = "txtbMotDePasse";
-            this.txtbMotDePasse.Size = new System.Drawing.Size(221, 28);
+            this.txtbMotDePasse.Size = new System.Drawing.Size(340, 28);
             this.txtbMotDePasse.TabIndex = 12;
             this.txtbMotDePasse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtbMotDePasse.UseSystemPasswordChar = true;
@@ -135,7 +135,7 @@ namespace Application_Ludophonie
             this.pIdentifiant.Controls.Add(this.panel1);
             this.pIdentifiant.Controls.Add(this.label2);
             this.pIdentifiant.Font = new System.Drawing.Font("Montserrat", 7.8F);
-            this.pIdentifiant.Location = new System.Drawing.Point(12, 12);
+            this.pIdentifiant.Location = new System.Drawing.Point(17, 12);
             this.pIdentifiant.Name = "pIdentifiant";
             this.pIdentifiant.Size = new System.Drawing.Size(778, 657);
             this.pIdentifiant.TabIndex = 16;
