@@ -131,7 +131,7 @@ namespace Application_Ludophonie
             // 
             // pIdentifiant
             // 
-            this.pIdentifiant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.pIdentifiant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pIdentifiant.Controls.Add(this.panel1);
             this.pIdentifiant.Controls.Add(this.label2);
             this.pIdentifiant.Font = new System.Drawing.Font("Montserrat", 7.8F);
