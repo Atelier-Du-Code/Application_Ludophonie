@@ -139,8 +139,11 @@ namespace Application_Ludophonie.Vue.Praticien
                             string prenom = txtbPrenom.Text;
                             string classe = txtbClasse.Text;
                             string password = txtbMotDePasse.Text;
+                            string urlAvatar = "https://i.pinimg.com/originals/69/4a/66/694a66860b36a48b6e58112dd16308c7.png";
 
-                            utilisateurAAjouter = new Utilisateur(0, "patient", identifiant, nom, prenom, classe, password, null);
+                            
+
+                            utilisateurAAjouter = new Utilisateur(0, "patient", identifiant, nom, prenom, classe, password, urlAvatar, 0, null);
 
                             Close();
                         }

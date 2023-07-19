@@ -13,21 +13,6 @@ namespace Application_Ludophonie.Modele
     /// </summary>
     public static class Modele_Authentification   
     {
-        
-        private static string server = "127.0.0.1";
-        private static string userid = "root";
-        private static string password = "";
-        private static string database="ludophonie";
-        
-        /*
-        private static string server = "154.49.245.52";
-        private static string userid = "u607780247_testLudo";
-        private static string password = "gTyHI2QZez";
-        private static string database = "u607780247_testLudo";
-        */
-
-        private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password + ";database=" + database + ";SslMode=none";
-        
         /// <summary>
         /// Permet de vérifier si un utilisateur existe
         /// </summary>
@@ -43,7 +28,7 @@ namespace Application_Ludophonie.Modele
                             {"@identifiant", unIdentifiant}
                         };
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, parameters);
 
             if (curs.Read())
@@ -73,11 +58,14 @@ namespace Application_Ludophonie.Modele
 
             Utilisateur UtilisateurAControler = null;
 
-            string req = "SELECT u.idUtilisateur,u.identifiant, u.nom, u.prenom, u.classe, u.password, avatars.url, type_utilisateur.type ";
+            string req = "SELECT u.idUtilisateur,u.identifiant, u.nom, u.prenom, u.classe, u.password, avatars.url, type_utilisateur.type, ";
+                req += "grade.libelle_grade,grade_utilisateur.scoreUtilisateur ";
                 req += "FROM utilisateurs AS u ";
                 req += "INNER JOIN avatars ON u.idAvatar = avatars.idAvatar ";
                 req += "INNER JOIN type_utilisateur ON u.idTypeUtilisateur = type_utilisateur.idTypeUtilisateur ";
-                req += "WHERE  u.identifiant = @identifiant ";
+                req += "INNER JOIN grade_utilisateur ON grade_utilisateur.idUtilisateur = u.idUtilisateur ";
+                req += "INNER JOIN grade ON grade.idGrade = grade_utilisateur.idGrade ";
+                req += "WHERE u.identifiant = @identifiant ";
                
 
             Dictionary<string, object> parameters = new Dictionary<string, object>
@@ -85,7 +73,7 @@ namespace Application_Ludophonie.Modele
                             {"@identifiant", unIdentifiant}
                         };
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, parameters);
 
             if (curs.Read())
@@ -98,9 +86,12 @@ namespace Application_Ludophonie.Modele
                 string password = ((string)curs.Field("password"));
                 string adresse_Avatar = ((string)curs.Field("url"));
                 string type_utilisateur = ((string)curs.Field("type"));
-                
+                int score_global = ((int)curs.Field("scoreUtilisateur"));
+                string grade = ((string)curs.Field("grade"));
 
-                UtilisateurAControler = new Utilisateur(idUtilisateur, type_utilisateur, identifiant, nom, prenom, classe, password, adresse_Avatar);
+
+                UtilisateurAControler = new Utilisateur(idUtilisateur, type_utilisateur, identifiant, nom, prenom, 
+                    classe, password, adresse_Avatar, score_global, grade);
             }
 
             curs.Close();

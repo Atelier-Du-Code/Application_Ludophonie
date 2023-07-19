@@ -24,16 +24,18 @@ namespace Application_Ludophonie.Vue.Patient
         Controleur_ModifAvatar controleur = new Controleur_ModifAvatar();
 
         int idUtilisateur;
+        int grade;
         List<Button> lstBtn = new List<Button>();
 
         /// <summary>
         /// Constructeur
         /// </summary>
         /// <param name="idutilisateur"></param>
-        public Vue_ModificationAvatar_Patient(int idutilisateur)
+        public Vue_ModificationAvatar_Patient(int idutilisateur, int grade)
         {
             InitializeComponent();
             this.idUtilisateur = idutilisateur;
+            this.grade = grade;
 
             lstBtn.Add(btnDefaut);
             lstBtn.Add(btnBrun);
@@ -41,6 +43,15 @@ namespace Application_Ludophonie.Vue.Patient
             lstBtn.Add(btnOrange);
             lstBtn.Add(btnRose);
             lstBtn.Add(btnVert);
+            
+
+            int nbAvatarPatient = controleur.compteAvatarDuPatient(grade+1);
+
+            for(int i = nbAvatarPatient; i<lstBtn.Count; i++)
+            {
+                lstBtn[i].Enabled = false;
+            }
+            
         }
 
         /// <summary>

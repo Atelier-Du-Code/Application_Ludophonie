@@ -36,5 +36,11 @@ namespace Application_Ludophonie.Controleur.Patient
             return bModif;
         }
 
+        public int compteAvatarDuPatient(int idGrade)
+        {
+            int nbAvatar = Modele_ModifAvatar.compteAvatarDuPatient(idGrade);
+            return nbAvatar;
+        }
+
     }
 }

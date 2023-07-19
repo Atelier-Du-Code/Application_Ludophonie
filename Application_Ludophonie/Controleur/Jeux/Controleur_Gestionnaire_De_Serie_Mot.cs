@@ -1,4 +1,6 @@
-﻿using Application_Ludophonie.Modele.Jeux;
+﻿using Application_Ludophonie.Metier;
+using Application_Ludophonie.Modele.Jeux;
+using Application_Ludophonie.Modele.Praticien;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +23,13 @@ namespace Application_Ludophonie.Controleur.Jeux
             List<string> toutesListes = Modele_Gestionnaire_De_Serie_Mot.recupereToutesLesListes();
 
             return toutesListes;
+        }
+
+        public List<Mission> recupereToutesMissionsPourUnJeu(int unIdUtilisateur, int idJeu)
+        {
+            List<Mission> lstMissions = Modele_Gestionnaire_De_Serie_Mot.recupereToutesMissionsPourUnJeu(unIdUtilisateur, idJeu);
+
+            return lstMissions;
         }
     }
 }

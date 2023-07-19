@@ -40,6 +40,8 @@ namespace Application_Ludophonie.Vue.Jeux
             this.btnEcouter = new System.Windows.Forms.Button();
             this.btnRetour = new System.Windows.Forms.Button();
             this.pSerieFinie = new System.Windows.Forms.Panel();
+            this.lblMotsAcquis = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSecondesFIn = new System.Windows.Forms.Label();
             this.lblMinureFin = new System.Windows.Forms.Label();
@@ -182,6 +184,8 @@ namespace Application_Ludophonie.Vue.Jeux
             // 
             // pSerieFinie
             // 
+            this.pSerieFinie.Controls.Add(this.lblMotsAcquis);
+            this.pSerieFinie.Controls.Add(this.label6);
             this.pSerieFinie.Controls.Add(this.panel2);
             this.pSerieFinie.Controls.Add(this.label1);
             this.pSerieFinie.Controls.Add(this.lblErreur);
@@ -189,18 +193,42 @@ namespace Application_Ludophonie.Vue.Jeux
             this.pSerieFinie.Controls.Add(this.btnNewSerie);
             this.pSerieFinie.Controls.Add(this.btnMenuPrincipal);
             this.pSerieFinie.Controls.Add(this.label4);
-            this.pSerieFinie.Location = new System.Drawing.Point(13, 13);
+            this.pSerieFinie.Location = new System.Drawing.Point(11, 13);
             this.pSerieFinie.Margin = new System.Windows.Forms.Padding(4);
             this.pSerieFinie.Name = "pSerieFinie";
             this.pSerieFinie.Size = new System.Drawing.Size(710, 658);
             this.pSerieFinie.TabIndex = 24;
+            // 
+            // lblMotsAcquis
+            // 
+            this.lblMotsAcquis.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMotsAcquis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.lblMotsAcquis.Location = new System.Drawing.Point(280, 431);
+            this.lblMotsAcquis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMotsAcquis.Name = "lblMotsAcquis";
+            this.lblMotsAcquis.Size = new System.Drawing.Size(145, 46);
+            this.lblMotsAcquis.TabIndex = 51;
+            this.lblMotsAcquis.Text = "53";
+            this.lblMotsAcquis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Montserrat", 14F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.label6.Location = new System.Drawing.Point(119, 403);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(467, 33);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "Ton nombre de mots acquis";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lblSecondesFIn);
             this.panel2.Controls.Add(this.lblMinureFin);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(256, 211);
+            this.panel2.Location = new System.Drawing.Point(254, 203);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(193, 63);
             this.panel2.TabIndex = 49;
@@ -208,6 +236,7 @@ namespace Application_Ludophonie.Vue.Jeux
             // lblSecondesFIn
             // 
             this.lblSecondesFIn.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecondesFIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.lblSecondesFIn.Location = new System.Drawing.Point(107, 8);
             this.lblSecondesFIn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSecondesFIn.Name = "lblSecondesFIn";
@@ -219,6 +248,7 @@ namespace Application_Ludophonie.Vue.Jeux
             // lblMinureFin
             // 
             this.lblMinureFin.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinureFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.lblMinureFin.Location = new System.Drawing.Point(10, 8);
             this.lblMinureFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMinureFin.Name = "lblMinureFin";
@@ -230,6 +260,7 @@ namespace Application_Ludophonie.Vue.Jeux
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.label8.Location = new System.Drawing.Point(62, 2);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
@@ -241,6 +272,7 @@ namespace Application_Ludophonie.Vue.Jeux
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.label1.Location = new System.Drawing.Point(279, 80);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -252,7 +284,8 @@ namespace Application_Ludophonie.Vue.Jeux
             // lblErreur
             // 
             this.lblErreur.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErreur.Location = new System.Drawing.Point(280, 344);
+            this.lblErreur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.lblErreur.Location = new System.Drawing.Point(280, 335);
             this.lblErreur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblErreur.Name = "lblErreur";
             this.lblErreur.Size = new System.Drawing.Size(145, 46);
@@ -263,7 +296,8 @@ namespace Application_Ludophonie.Vue.Jeux
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.label10.Location = new System.Drawing.Point(119, 311);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.label10.Location = new System.Drawing.Point(119, 307);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(467, 33);
@@ -277,7 +311,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.btnNewSerie.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnNewSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewSerie.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnNewSerie.Location = new System.Drawing.Point(238, 424);
+            this.btnNewSerie.Location = new System.Drawing.Point(238, 514);
             this.btnNewSerie.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnNewSerie.Name = "btnNewSerie";
             this.btnNewSerie.Size = new System.Drawing.Size(229, 43);
@@ -292,7 +326,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.btnMenuPrincipal.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuPrincipal.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(238, 477);
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(238, 567);
             this.btnMenuPrincipal.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnMenuPrincipal.Name = "btnMenuPrincipal";
             this.btnMenuPrincipal.Size = new System.Drawing.Size(229, 43);
@@ -305,7 +339,8 @@ namespace Application_Ludophonie.Vue.Jeux
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.label4.Location = new System.Drawing.Point(274, 176);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.label4.Location = new System.Drawing.Point(272, 168);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 33);
@@ -404,6 +439,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.Name = "Vue_Jeu_DuMot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vue_Jeu_DuMot";
+            this.Load += new System.EventHandler(this.Vue_Jeu_DuMot_Load);
             this.pSerieFinie.ResumeLayout(false);
             this.pSerieFinie.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -442,5 +478,7 @@ namespace Application_Ludophonie.Vue.Jeux
         private System.Windows.Forms.Label lblSecondesFIn;
         private System.Windows.Forms.Label lblMinureFin;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblMotsAcquis;
+        private System.Windows.Forms.Label label6;
     }
 }

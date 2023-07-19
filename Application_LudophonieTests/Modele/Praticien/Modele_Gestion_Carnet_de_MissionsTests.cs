@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AppOrthophonie.BDD;
+using Application_Ludophonie.Metier;
 
 namespace Application_Ludophonie.Modele.Praticien.Tests
 {
@@ -27,7 +28,7 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password_BDD
             + ";database=" + database + ";SslMode=none";
 
-        private static readonly BddMySql access = BddMySql.GetInstance(connectionString);
+        private static readonly BddMySql access = BddMySql.GetInstance();
 
         readonly int idUtilisateur = 2;
 
@@ -56,7 +57,7 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
         [TestMethod()]
         public void recupereToutesMissionsTest()
         {            
-            List<string> lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
+            List<Mission> lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
             Assert.AreNotEqual(0, lstMissions.Count, "Devrait réussir");
         }
 
@@ -67,11 +68,12 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
         public void enregistreUneMissionTest()
         {
             DebutTransaction();
-            List<string> lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
+            List<Mission> lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
             int nbMission_Avant = lstMissions.Count;
 
-            string texteMission = "C'est la mission";
-            Modele_Gestion_Carnet_de_Missions.enregistreUneMission(texteMission, idUtilisateur);
+            int idJeu = 1;
+            int idNbQuestions = 5;
+            Modele_Gestion_Carnet_de_Missions.enregistreUneMission(idUtilisateur, idJeu, idNbQuestions);
 
             lstMissions.Clear();
             lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
@@ -89,11 +91,11 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
         public void supprimeUneMissionTest()
         {
             DebutTransaction();
-            List<string> lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
+            List<Mission> lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
             int nbMission_Avant = lstMissions.Count;
             
-            string texteMission = lstMissions[0];
-            Modele_Gestion_Carnet_de_Missions.supprimeUneMission(texteMission, idUtilisateur);
+            int idMissionASupprimer = lstMissions[0].IdMission;
+            Modele_Gestion_Carnet_de_Missions.supprimeUneMission(idMissionASupprimer);
 
             lstMissions.Clear();
             lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
@@ -111,7 +113,7 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
         public void supprimeToutesMissionsTest()
         {
             DebutTransaction();
-            List<string> lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
+            List<Mission> lstMissions = Modele_Gestion_Carnet_de_Missions.recupereToutesMissions(idUtilisateur);
             int nbMission_Avant = lstMissions.Count;
            
             Modele_Gestion_Carnet_de_Missions.supprimeToutesMissions(idUtilisateur);

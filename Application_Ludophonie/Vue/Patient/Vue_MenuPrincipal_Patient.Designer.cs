@@ -36,6 +36,10 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnCarnetDeMission = new System.Windows.Forms.Button();
             this.btnJeuDuMot = new System.Windows.Forms.Button();
             this.txtTitrePrincipal = new System.Windows.Forms.Label();
+            this.lblNiveau_LeMot = new System.Windows.Forms.Label();
+            this.lblGrade = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnJeuLaSyllabe = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +88,7 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnCarnetDeMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarnetDeMission.Font = new System.Drawing.Font("Montserrat", 19F);
             this.btnCarnetDeMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
-            this.btnCarnetDeMission.Location = new System.Drawing.Point(150, 457);
+            this.btnCarnetDeMission.Location = new System.Drawing.Point(150, 441);
             this.btnCarnetDeMission.Name = "btnCarnetDeMission";
             this.btnCarnetDeMission.Size = new System.Drawing.Size(374, 62);
             this.btnCarnetDeMission.TabIndex = 10;
@@ -98,9 +102,9 @@ namespace Application_Ludophonie.Vue.Patient
             this.btnJeuDuMot.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnJeuDuMot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJeuDuMot.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.btnJeuDuMot.Location = new System.Drawing.Point(262, 539);
+            this.btnJeuDuMot.Location = new System.Drawing.Point(139, 592);
             this.btnJeuDuMot.Name = "btnJeuDuMot";
-            this.btnJeuDuMot.Size = new System.Drawing.Size(151, 107);
+            this.btnJeuDuMot.Size = new System.Drawing.Size(179, 74);
             this.btnJeuDuMot.TabIndex = 8;
             this.btnJeuDuMot.Text = "Jeu du mot";
             this.btnJeuDuMot.UseVisualStyleBackColor = false;
@@ -110,11 +114,55 @@ namespace Application_Ludophonie.Vue.Patient
             // 
             this.txtTitrePrincipal.AutoSize = true;
             this.txtTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.txtTitrePrincipal.Location = new System.Drawing.Point(145, 105);
+            this.txtTitrePrincipal.Location = new System.Drawing.Point(140, 48);
             this.txtTitrePrincipal.Name = "txtTitrePrincipal";
             this.txtTitrePrincipal.Size = new System.Drawing.Size(384, 60);
             this.txtTitrePrincipal.TabIndex = 7;
             this.txtTitrePrincipal.Text = "Tableau de bord";
+            // 
+            // lblNiveau_LeMot
+            // 
+            this.lblNiveau_LeMot.Font = new System.Drawing.Font("Montserrat", 13F);
+            this.lblNiveau_LeMot.Location = new System.Drawing.Point(139, 521);
+            this.lblNiveau_LeMot.Name = "lblNiveau_LeMot";
+            this.lblNiveau_LeMot.Size = new System.Drawing.Size(178, 68);
+            this.lblNiveau_LeMot.TabIndex = 14;
+            this.lblNiveau_LeMot.Text = "Niveau 2";
+            this.lblNiveau_LeMot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblGrade
+            // 
+            this.lblGrade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGrade.Font = new System.Drawing.Font("Montserrat SemiBold", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrade.Location = new System.Drawing.Point(202, 149);
+            this.lblGrade.Name = "lblGrade";
+            this.lblGrade.Size = new System.Drawing.Size(271, 51);
+            this.lblGrade.TabIndex = 15;
+            this.lblGrade.Text = "Grade : Farfadets";
+            this.lblGrade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 13F);
+            this.label3.Location = new System.Drawing.Point(495, 559);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 30);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Niveau 1";
+            // 
+            // btnJeuLaSyllabe
+            // 
+            this.btnJeuLaSyllabe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
+            this.btnJeuLaSyllabe.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.btnJeuLaSyllabe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJeuLaSyllabe.Font = new System.Drawing.Font("Montserrat", 14F);
+            this.btnJeuLaSyllabe.Location = new System.Drawing.Point(430, 592);
+            this.btnJeuLaSyllabe.Name = "btnJeuLaSyllabe";
+            this.btnJeuLaSyllabe.Size = new System.Drawing.Size(234, 74);
+            this.btnJeuLaSyllabe.TabIndex = 16;
+            this.btnJeuLaSyllabe.Text = "Jeu de la syllabe";
+            this.btnJeuLaSyllabe.UseVisualStyleBackColor = false;
             // 
             // Vue_MenuPrincipal_Patient
             // 
@@ -122,6 +170,10 @@ namespace Application_Ludophonie.Vue.Patient
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(697, 704);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnJeuLaSyllabe);
+            this.Controls.Add(this.lblGrade);
+            this.Controls.Add(this.lblNiveau_LeMot);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.btnModifAvatar);
             this.Controls.Add(this.pbAvatar);
@@ -148,5 +200,9 @@ namespace Application_Ludophonie.Vue.Patient
         private System.Windows.Forms.Button btnJeuDuMot;
         private System.Windows.Forms.Label txtTitrePrincipal;
         private System.Windows.Forms.PictureBox pbAvatar;
+        private System.Windows.Forms.Label lblNiveau_LeMot;
+        private System.Windows.Forms.Label lblGrade;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnJeuLaSyllabe;
     }
 }

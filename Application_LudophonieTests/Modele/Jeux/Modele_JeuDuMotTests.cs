@@ -25,7 +25,7 @@ namespace Application_Ludophonie.Modele.Jeux.Tests
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password_BDD
             + ";database=" + database + ";SslMode=none";
 
-        private static readonly BddMySql access = BddMySql.GetInstance(connectionString);
+        private static readonly BddMySql access = BddMySql.GetInstance();
 
         /// <summary>
         /// Permet de désactiver l'autocommit, commencer la transaction et de désactiver le contrôle des clés étrangères
@@ -120,9 +120,11 @@ namespace Application_Ludophonie.Modele.Jeux.Tests
             int nbErreur = 1;
             DateTime dateDuJour = DateTime.Today;
             DateTime timer = new DateTime(2023, 12, 1, 0, 0, 20);
+            int serieDemandee = 1;
+            int score = 200;
 
             //Création de la série
-            Modele_JeuDuMot.creationSerieEffectuees(idUtilisateur, idJeu, nbQuestionDeLaSerie, nbErreur, dateDuJour, timer);
+            Modele_JeuDuMot.creationSerieEffectuees(idUtilisateur, idJeu, nbQuestionDeLaSerie, nbErreur, dateDuJour, timer, serieDemandee, score);
 
             lstSeries.Clear();
             lstSeries = Modele_MenuPrincipal_Praticien.recupereToutesLesSeries();

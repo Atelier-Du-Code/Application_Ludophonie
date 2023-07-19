@@ -37,7 +37,7 @@ namespace Application_Ludophonie.Modele.Praticien
 
             string req = "SELECT nomJeu FROM jeux;";
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, null);
 
             while (curs.Read())
@@ -51,7 +51,7 @@ namespace Application_Ludophonie.Modele.Praticien
 
             return lstJeux;
         }
-
+        
         /// <summary>
         /// Permet de récupérer toutes les séries effectuées par un utilisateur
         /// </summary>
@@ -61,7 +61,7 @@ namespace Application_Ludophonie.Modele.Praticien
         {
             List<Serie> lstToutesSeriesUtilisateur = new List<Serie>();
 
-            string req = "SELECT idSerieEffectuee, idUtilisateur, jeux.nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer " +
+            string req = "SELECT idSerieEffectuee, idUtilisateur, jeux.nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer, serieDemandee, score " +
                 "FROM series_effectuees " +
                 "INNER JOIN jeux ON series_effectuees.idJeu = jeux.idJeu " +
                 "WHERE idUtilisateur=@idUtilisateur;";
@@ -71,7 +71,7 @@ namespace Application_Ludophonie.Modele.Praticien
                             {"@idUtilisateur", unIdUtilisateur}
                         };
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, parameters);
 
             while (curs.Read())
@@ -83,8 +83,11 @@ namespace Application_Ludophonie.Modele.Praticien
                 int nbErreur = ((int)curs.Field("nbErreur"));
                 DateTime dateDuJour = ((DateTime)curs.Field("dateDuJour"));
                 DateTime timer = ((DateTime)curs.Field("timer"));
+                int serieDemandee = ((int)curs.Field("serieDemandee"));
+                int score = ((int)curs.Field("score"));
 
-                lstToutesSeriesUtilisateur.Add(new Serie(idSerieEffectuee, idUtilisateur, null, null, jeu, nbQuestions, nbErreur, dateDuJour, timer));
+
+                lstToutesSeriesUtilisateur.Add(new Serie(idSerieEffectuee, idUtilisateur, null, null, null, jeu, nbQuestions, nbErreur, dateDuJour, timer, serieDemandee, score));
 
             }
 
@@ -104,7 +107,7 @@ namespace Application_Ludophonie.Modele.Praticien
         {
             List<Serie> lstToutesSeriesJeu = new List<Serie>();
 
-            string req = "SELECT idSerieEffectuee, idUtilisateur, jeux.nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer " +
+            string req = "SELECT idSerieEffectuee, idUtilisateur, jeux.nomJeu, nbQuestionsDeLaSerie, nbErreur, dateDuJour, timer, serieDemandee, score " +
                 "FROM series_effectuees " +
                 "INNER JOIN jeux ON series_effectuees.idJeu = jeux.idJeu " +
                 "WHERE idUtilisateur=@idUtilisateur AND jeux.nomJeu = @nomJeu;";
@@ -115,7 +118,7 @@ namespace Application_Ludophonie.Modele.Praticien
                             {"@nomJeu", nomJeu}
                         };
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, parameters);
 
             while (curs.Read())
@@ -127,15 +130,46 @@ namespace Application_Ludophonie.Modele.Praticien
                 int nbErreur = ((int)curs.Field("nbErreur"));
                 DateTime dateDuJour = ((DateTime)curs.Field("dateDuJour"));
                 DateTime timer = ((DateTime)curs.Field("timer"));
+                int serieDemandee = ((int)curs.Field("serieDemandee"));
+                int score = ((int)curs.Field("score"));
 
-                lstToutesSeriesJeu.Add(new Serie(idSerieEffectuee, idUtilisateur, null, null, jeu, nbQuestions, nbErreur, dateDuJour, timer));
+                lstToutesSeriesJeu.Add(new Serie(idSerieEffectuee, idUtilisateur, null, null, null, jeu, nbQuestions, nbErreur, dateDuJour, timer, serieDemandee, score));
 
             }
 
             curs.Close();
 
             return lstToutesSeriesJeu;
+        }
 
+        public static string recupereNiveauDeJeuPourUnPatient(int unIdUtilisateur, string nomJeu)
+        {
+            string leNiveau = "";
+            string req = "SELECT niveau.niveau " +
+                "FROM niveau " +
+                "INNER JOIN niveau_utilisateur_jeu ON niveau_utilisateur_jeu.idNiveau = niveau.idNiveau " +
+                "INNER JOIN jeux ON jeux.idJeu = niveau_utilisateur_jeu.idJeu " +
+                "WHERE niveau_utilisateur_jeu.idUtilisateur = @idUtilisateur AND jeux.nomJeu = @nomJeu;";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                        {
+                            {"@idUtilisateur", unIdUtilisateur},
+                            {"@nomJeu", nomJeu}
+                        };
+
+            BddMySql curs = BddMySql.GetInstance();
+            curs.ReqSelect(req, parameters);
+
+            if (curs.Read())
+            {
+                string niveau = ((string)curs.Field("niveau"));
+
+                leNiveau = niveau;
+            }
+
+            curs.Close();
+
+            return leNiveau;
         }
     }
 }

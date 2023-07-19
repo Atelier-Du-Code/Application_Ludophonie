@@ -29,7 +29,7 @@ namespace Application_Ludophonie.Modele.Tests
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password_BDD
             + ";database=" + database + ";SslMode=none";
 
-        private static readonly BddMySql access = BddMySql.GetInstance(connectionString);
+        private static readonly BddMySql access = BddMySql.GetInstance();
 
         /// <summary>
         /// Permet de désactiver l'autocommit, commencer la transaction et de désactiver le contrôle des clés étrangères
@@ -78,7 +78,7 @@ namespace Application_Ludophonie.Modele.Tests
 
             for (int i = 0; i<lstAvatars.Count; i++)
             {
-                if(lstAvatars[i].Url == utilisateur.urlAvatar)
+                if(lstAvatars[i].Url == utilisateur.UrlAvatar)
                 {
                     IdAvatar_Avant = lstAvatars[i].IdAvatar;
                 }
@@ -98,7 +98,7 @@ namespace Application_Ludophonie.Modele.Tests
             lstpatients = Modele_MenuPrincipal_Praticien.recupereTousLesPatients();
             Utilisateur utilisateurModifie = lstpatients[0];
 
-            bool identique = utilisateurModifie.urlAvatar.Equals(urlAvatar_Apres);
+            bool identique = utilisateurModifie.UrlAvatar.Equals(urlAvatar_Apres);
 
             Assert.AreEqual(true, identique, "Devrait fonctionner : Patient modifié");
 

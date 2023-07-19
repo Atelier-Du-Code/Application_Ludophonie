@@ -34,11 +34,20 @@ namespace Application_Ludophonie.Vue.Praticien
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnRetour = new System.Windows.Forms.Button();
-            this.lstBMissions = new System.Windows.Forms.ListBox();
-            this.txtbMission = new System.Windows.Forms.RichTextBox();
             this.lblMessage = new System.Windows.Forms.Label();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnToutSupprimer = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbxJeux = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.nudNbSeries = new System.Windows.Forms.NumericUpDown();
+            this.lstCBxMissions = new System.Windows.Forms.CheckedListBox();
+            this.cbxNbQuestions = new System.Windows.Forms.ComboBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNbSeries)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnregistrer
@@ -47,7 +56,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnEnregistrer.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnEnregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnregistrer.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnEnregistrer.Location = new System.Drawing.Point(400, 666);
+            this.btnEnregistrer.Location = new System.Drawing.Point(400, 689);
             this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(219, 43);
@@ -71,7 +80,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Montserrat SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(296, 483);
+            this.label9.Location = new System.Drawing.Point(296, 497);
             this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(427, 35);
@@ -104,28 +113,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnRetour.UseVisualStyleBackColor = false;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
-            // lstBMissions
-            // 
-            this.lstBMissions.Font = new System.Drawing.Font("Montserrat", 14F);
-            this.lstBMissions.FormattingEnabled = true;
-            this.lstBMissions.ItemHeight = 32;
-            this.lstBMissions.Location = new System.Drawing.Point(221, 256);
-            this.lstBMissions.Name = "lstBMissions";
-            this.lstBMissions.Size = new System.Drawing.Size(576, 164);
-            this.lstBMissions.TabIndex = 17;
-            // 
-            // txtbMission
-            // 
-            this.txtbMission.Location = new System.Drawing.Point(221, 537);
-            this.txtbMission.Name = "txtbMission";
-            this.txtbMission.Size = new System.Drawing.Size(576, 85);
-            this.txtbMission.TabIndex = 18;
-            this.txtbMission.Text = "";
-            this.txtbMission.TextChanged += new System.EventHandler(this.txtbMission_TextChanged);
-            // 
             // lblMessage
             // 
-            this.lblMessage.Location = new System.Drawing.Point(221, 628);
+            this.lblMessage.Location = new System.Drawing.Point(221, 642);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(576, 34);
             this.lblMessage.TabIndex = 19;
@@ -162,17 +152,102 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnToutSupprimer.UseVisualStyleBackColor = false;
             this.btnToutSupprimer.Click += new System.EventHandler(this.btnToutSupprimer_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(7, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 38);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Nombre de séries";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9F);
+            this.label2.Location = new System.Drawing.Point(156, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 32);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "de ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F);
+            this.label3.Location = new System.Drawing.Point(383, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 53);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "du jeu";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbxJeux
+            // 
+            this.cbxJeux.FormattingEnabled = true;
+            this.cbxJeux.Location = new System.Drawing.Point(446, 50);
+            this.cbxJeux.Name = "cbxJeux";
+            this.cbxJeux.Size = new System.Drawing.Size(148, 29);
+            this.cbxJeux.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(206, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(176, 38);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Nombre de questions";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cbxNbQuestions);
+            this.panel1.Controls.Add(this.nudNbSeries);
+            this.panel1.Controls.Add(this.cbxJeux);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(199, 539);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(618, 100);
+            this.panel1.TabIndex = 29;
+            // 
+            // nudNbSeries
+            // 
+            this.nudNbSeries.Location = new System.Drawing.Point(22, 50);
+            this.nudNbSeries.Name = "nudNbSeries";
+            this.nudNbSeries.Size = new System.Drawing.Size(128, 26);
+            this.nudNbSeries.TabIndex = 29;
+            // 
+            // lstCBxMissions
+            // 
+            this.lstCBxMissions.Font = new System.Drawing.Font("Montserrat", 11F);
+            this.lstCBxMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.lstCBxMissions.FormattingEnabled = true;
+            this.lstCBxMissions.Location = new System.Drawing.Point(221, 243);
+            this.lstCBxMissions.Name = "lstCBxMissions";
+            this.lstCBxMissions.Size = new System.Drawing.Size(596, 129);
+            this.lstCBxMissions.TabIndex = 30;
+            // 
+            // cbxNbQuestions
+            // 
+            this.cbxNbQuestions.FormattingEnabled = true;
+            this.cbxNbQuestions.Location = new System.Drawing.Point(210, 53);
+            this.cbxNbQuestions.Name = "cbxNbQuestions";
+            this.cbxNbQuestions.Size = new System.Drawing.Size(167, 29);
+            this.cbxNbQuestions.TabIndex = 30;
+            // 
             // Vue_Gestion_Carnets_De_Quetes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1031, 771);
+            this.Controls.Add(this.lstCBxMissions);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnToutSupprimer);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.txtbMission);
-            this.Controls.Add(this.lstBMissions);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -184,6 +259,8 @@ namespace Application_Ludophonie.Vue.Praticien
             this.Name = "Vue_Gestion_Carnets_De_Quetes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vue_Gestion_Carnets_De_Quetes";
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudNbSeries)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,10 +273,17 @@ namespace Application_Ludophonie.Vue.Praticien
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnRetour;
-        private System.Windows.Forms.ListBox lstBMissions;
-        private System.Windows.Forms.RichTextBox txtbMission;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnToutSupprimer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbxJeux;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown nudNbSeries;
+        private System.Windows.Forms.CheckedListBox lstCBxMissions;
+        private System.Windows.Forms.ComboBox cbxNbQuestions;
     }
 }

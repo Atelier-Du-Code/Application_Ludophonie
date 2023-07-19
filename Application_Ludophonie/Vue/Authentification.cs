@@ -23,7 +23,7 @@ namespace Application_Ludophonie
     {
         Controleur_Authentification controleur = new Controleur_Authentification();
         
-        Utilisateur utilisateurAIdentifier = new Utilisateur(0, null, null, null, null, null, null, null);
+        Utilisateur utilisateurAIdentifier = new Utilisateur(0, null, null, null, null, null, null, null, 0, null);
         
         /// <summary>
         /// Constructeur
@@ -76,7 +76,7 @@ namespace Application_Ludophonie
                     AcceptButton = btnConnexion;
 
                     lblBienvenue.Text = "Bienvenue " + utilisateurAIdentifier.Prenom;
-                    pbxAvatarIdentifie.ImageLocation = utilisateurAIdentifier.urlAvatar;
+                    pbxAvatarIdentifie.ImageLocation = utilisateurAIdentifier.UrlAvatar;
                 }
                 else
                 {

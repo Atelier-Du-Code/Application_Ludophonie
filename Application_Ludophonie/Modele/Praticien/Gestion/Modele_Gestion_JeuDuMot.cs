@@ -39,7 +39,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
                 "FROM lesmots " +
                 "INNER JOIN niveaudelistes ON lesmots.idListe = niveaudelistes.idListe; ";
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, null);
 
             while (curs.Read())
@@ -68,7 +68,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
 
             string req = "SELECT nom_liste FROM niveaudelistes;";
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, null);
 
             while (curs.Read())
@@ -101,7 +101,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
                  {"@liste", liste}
              };
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, parameters);
 
             while (curs.Read())
@@ -136,7 +136,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
 
                 };
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, parameters);
 
             while (curs.Read())
@@ -174,7 +174,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
                     {"@liste", liste}
                 };
 
-                BddMySql curs = BddMySql.GetInstance(connectionString);
+                BddMySql curs = BddMySql.GetInstance();
                 curs.ReqUpdate(req, parameters);
 
                 curs.Close();
@@ -204,7 +204,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
                 };
 
 
-                BddMySql curs = BddMySql.GetInstance(connectionString);
+                BddMySql curs = BddMySql.GetInstance();
                 curs.ReqUpdate(req, parameters);
 
                 curs.Close();
@@ -226,7 +226,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
             int dernierId = 0;
             string req = "SELECT MAX(idMot) AS dernierId FROM lesmots;";
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, null);
 
             while (curs.Read())
@@ -250,7 +250,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
             string req = "SELECT utilisateurs.idUtilisateur FROM utilisateurs WHERE utilisateurs.idTypeUtilisateur = 1;";
 
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, null);
 
             while (curs.Read())
@@ -286,7 +286,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
 
              };
 
-                BddMySql curs = BddMySql.GetInstance(connectionString);
+                BddMySql curs = BddMySql.GetInstance();
                 curs.ReqUpdate(req, parameters);
 
                 curs.Close();
@@ -317,7 +317,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
                      {"@idMot", idMot}
                 };
 
-                BddMySql curs = BddMySql.GetInstance(connectionString);
+                BddMySql curs = BddMySql.GetInstance();
                 curs.ReqUpdate(req, parameters);
 
                 curs.Close();
@@ -340,7 +340,7 @@ namespace Application_Ludophonie.Modele.Praticien.Gestion
 
             string req = "SELECT idAcquis FROM acquisition_lemot;";
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, null);
 
             while (curs.Read())

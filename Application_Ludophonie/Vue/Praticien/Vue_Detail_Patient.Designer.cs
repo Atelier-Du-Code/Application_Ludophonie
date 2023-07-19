@@ -51,24 +51,31 @@ namespace Application_Ludophonie.Vue.Praticien
             this.lblCboxJeux = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRetour = new System.Windows.Forms.Button();
+            this.lblGrade = new System.Windows.Forms.Label();
+            this.lblNiveauJeu = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblScoreGlobal = new System.Windows.Forms.Label();
+            this.C_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeries)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbxAvatar
             // 
             this.pbxAvatar.Image = global::Application_Ludophonie.Properties.Resources.brun;
-            this.pbxAvatar.Location = new System.Drawing.Point(197, 128);
+            this.pbxAvatar.Location = new System.Drawing.Point(125, 121);
             this.pbxAvatar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pbxAvatar.Name = "pbxAvatar";
-            this.pbxAvatar.Size = new System.Drawing.Size(128, 133);
+            this.pbxAvatar.Size = new System.Drawing.Size(157, 149);
             this.pbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxAvatar.TabIndex = 0;
             this.pbxAvatar.TabStop = false;
             // 
             // lblLeNom
             // 
-            this.lblLeNom.Location = new System.Drawing.Point(398, 131);
+            this.lblLeNom.Font = new System.Drawing.Font("Montserrat Medium", 9F);
+            this.lblLeNom.Location = new System.Drawing.Point(12, 8);
             this.lblLeNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLeNom.Name = "lblLeNom";
             this.lblLeNom.Size = new System.Drawing.Size(83, 22);
@@ -78,7 +85,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // lblNom
             // 
             this.lblNom.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.lblNom.Location = new System.Drawing.Point(396, 154);
+            this.lblNom.Location = new System.Drawing.Point(10, 31);
             this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(170, 41);
@@ -87,7 +94,8 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // lblLePrenom
             // 
-            this.lblLePrenom.Location = new System.Drawing.Point(612, 130);
+            this.lblLePrenom.Font = new System.Drawing.Font("Montserrat Medium", 9F);
+            this.lblLePrenom.Location = new System.Drawing.Point(226, 7);
             this.lblLePrenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLePrenom.Name = "lblLePrenom";
             this.lblLePrenom.Size = new System.Drawing.Size(160, 30);
@@ -97,7 +105,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // lblPrenom
             // 
             this.lblPrenom.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.lblPrenom.Location = new System.Drawing.Point(612, 154);
+            this.lblPrenom.Location = new System.Drawing.Point(226, 31);
             this.lblPrenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(168, 37);
@@ -106,7 +114,8 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // lblLaClasse
             // 
-            this.lblLaClasse.Location = new System.Drawing.Point(818, 128);
+            this.lblLaClasse.Font = new System.Drawing.Font("Montserrat Medium", 9F);
+            this.lblLaClasse.Location = new System.Drawing.Point(432, 5);
             this.lblLaClasse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLaClasse.Name = "lblLaClasse";
             this.lblLaClasse.Size = new System.Drawing.Size(63, 22);
@@ -116,7 +125,7 @@ namespace Application_Ludophonie.Vue.Praticien
             // lblClasse
             // 
             this.lblClasse.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.lblClasse.Location = new System.Drawing.Point(818, 153);
+            this.lblClasse.Location = new System.Drawing.Point(432, 30);
             this.lblClasse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClasse.Name = "lblClasse";
             this.lblClasse.Size = new System.Drawing.Size(144, 38);
@@ -125,13 +134,13 @@ namespace Application_Ludophonie.Vue.Praticien
             // 
             // lblIdentifiant
             // 
-            this.lblIdentifiant.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.lblIdentifiant.Location = new System.Drawing.Point(147, 261);
+            this.lblIdentifiant.Font = new System.Drawing.Font("Montserrat Medium", 12F);
+            this.lblIdentifiant.Location = new System.Drawing.Point(89, 273);
             this.lblIdentifiant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIdentifiant.Name = "lblIdentifiant";
             this.lblIdentifiant.Size = new System.Drawing.Size(229, 30);
             this.lblIdentifiant.TabIndex = 7;
-            this.lblIdentifiant.Text = "label7";
+            this.lblIdentifiant.Text = "Identifiant";
             this.lblIdentifiant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvSeries
@@ -155,7 +164,8 @@ namespace Application_Ludophonie.Vue.Praticien
             this.C_NbQuestionsDeLaSerie,
             this.C_NbErreurs,
             this.C_Timer,
-            this.C_Date});
+            this.C_Date,
+            this.C_Score});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(215)))), ((int)(((byte)(227)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 9F);
@@ -166,7 +176,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.dgvSeries.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSeries.EnableHeadersVisualStyles = false;
             this.dgvSeries.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvSeries.Location = new System.Drawing.Point(39, 335);
+            this.dgvSeries.Location = new System.Drawing.Point(66, 365);
             this.dgvSeries.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvSeries.MultiSelect = false;
             this.dgvSeries.Name = "dgvSeries";
@@ -189,8 +199,9 @@ namespace Application_Ludophonie.Vue.Praticien
             this.dgvSeries.RowTemplate.Height = 24;
             this.dgvSeries.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeries.Size = new System.Drawing.Size(917, 393);
+            this.dgvSeries.Size = new System.Drawing.Size(880, 335);
             this.dgvSeries.TabIndex = 21;
+            this.dgvSeries.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSeries_CellFormatting);
             // 
             // C_Nom
             // 
@@ -228,17 +239,17 @@ namespace Application_Ludophonie.Vue.Praticien
             this.cbxJeux.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxJeux.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.cbxJeux.FormattingEnabled = true;
-            this.cbxJeux.Location = new System.Drawing.Point(434, 281);
+            this.cbxJeux.Location = new System.Drawing.Point(296, 317);
             this.cbxJeux.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxJeux.Name = "cbxJeux";
             this.cbxJeux.Size = new System.Drawing.Size(150, 29);
             this.cbxJeux.TabIndex = 29;
-            this.cbxJeux.SelectedValueChanged += new System.EventHandler(this.cbxJeux_SelectedValueChanged);
+            this.cbxJeux.SelectedIndexChanged += new System.EventHandler(this.cbxJeux_SelectedIndexChanged);
             // 
             // lblCboxJeux
             // 
             this.lblCboxJeux.AutoSize = true;
-            this.lblCboxJeux.Location = new System.Drawing.Point(449, 257);
+            this.lblCboxJeux.Location = new System.Drawing.Point(314, 293);
             this.lblCboxJeux.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCboxJeux.Name = "lblCboxJeux";
             this.lblCboxJeux.Size = new System.Drawing.Size(110, 21);
@@ -265,9 +276,61 @@ namespace Application_Ludophonie.Vue.Praticien
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(139, 42);
             this.btnRetour.TabIndex = 30;
-            this.btnRetour.Text = "Quitter";
+            this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = false;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            // 
+            // lblGrade
+            // 
+            this.lblGrade.Font = new System.Drawing.Font("Montserrat Medium", 12F);
+            this.lblGrade.Location = new System.Drawing.Point(362, 128);
+            this.lblGrade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGrade.Name = "lblGrade";
+            this.lblGrade.Size = new System.Drawing.Size(552, 30);
+            this.lblGrade.TabIndex = 31;
+            this.lblGrade.Text = "Grade";
+            this.lblGrade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNiveauJeu
+            // 
+            this.lblNiveauJeu.Font = new System.Drawing.Font("Montserrat Medium", 12F);
+            this.lblNiveauJeu.Location = new System.Drawing.Point(475, 313);
+            this.lblNiveauJeu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNiveauJeu.Name = "lblNiveauJeu";
+            this.lblNiveauJeu.Size = new System.Drawing.Size(543, 30);
+            this.lblNiveauJeu.TabIndex = 32;
+            this.lblNiveauJeu.Text = "Niveau";
+            this.lblNiveauJeu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblLaClasse);
+            this.panel1.Controls.Add(this.lblLeNom);
+            this.panel1.Controls.Add(this.lblNom);
+            this.panel1.Controls.Add(this.lblLePrenom);
+            this.panel1.Controls.Add(this.lblPrenom);
+            this.panel1.Controls.Add(this.lblClasse);
+            this.panel1.Location = new System.Drawing.Point(362, 198);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(552, 72);
+            this.panel1.TabIndex = 33;
+            // 
+            // lblScoreGlobal
+            // 
+            this.lblScoreGlobal.Location = new System.Drawing.Point(565, 158);
+            this.lblScoreGlobal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblScoreGlobal.Name = "lblScoreGlobal";
+            this.lblScoreGlobal.Size = new System.Drawing.Size(160, 30);
+            this.lblScoreGlobal.TabIndex = 7;
+            this.lblScoreGlobal.Text = "52487956214";
+            this.lblScoreGlobal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // C_Score
+            // 
+            this.C_Score.HeaderText = "Score";
+            this.C_Score.MinimumWidth = 6;
+            this.C_Score.Name = "C_Score";
             // 
             // Vue_Detail_Patient
             // 
@@ -275,18 +338,16 @@ namespace Application_Ludophonie.Vue.Praticien
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1031, 771);
+            this.Controls.Add(this.lblScoreGlobal);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblNiveauJeu);
+            this.Controls.Add(this.lblGrade);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCboxJeux);
             this.Controls.Add(this.cbxJeux);
             this.Controls.Add(this.dgvSeries);
             this.Controls.Add(this.lblIdentifiant);
-            this.Controls.Add(this.lblClasse);
-            this.Controls.Add(this.lblLaClasse);
-            this.Controls.Add(this.lblPrenom);
-            this.Controls.Add(this.lblLePrenom);
-            this.Controls.Add(this.lblNom);
-            this.Controls.Add(this.lblLeNom);
             this.Controls.Add(this.pbxAvatar);
             this.Font = new System.Drawing.Font("Montserrat", 9F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
@@ -296,6 +357,7 @@ namespace Application_Ludophonie.Vue.Praticien
             this.Text = "Vue_Detail_Patient";
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeries)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,5 +383,10 @@ namespace Application_Ludophonie.Vue.Praticien
         private System.Windows.Forms.Label lblCboxJeux;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRetour;
+        private System.Windows.Forms.Label lblGrade;
+        private System.Windows.Forms.Label lblNiveauJeu;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblScoreGlobal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C_Score;
     }
 }

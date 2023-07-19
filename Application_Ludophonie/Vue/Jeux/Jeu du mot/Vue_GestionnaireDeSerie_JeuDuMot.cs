@@ -20,6 +20,8 @@ namespace Application_Ludophonie.Vue.Jeux
         Utilisateur utilisateur;
         Controleur_Gestionnaire_De_Serie_Mot controleur = new Controleur_Gestionnaire_De_Serie_Mot();
 
+        List<Mission> lstMissions = new List<Mission>();
+
         /// <summary>
         /// Constructeur
         /// </summary>
@@ -32,6 +34,7 @@ namespace Application_Ludophonie.Vue.Jeux
             rempliCbx();
 
             lblMessage.Text = "";
+            actualiseLstbDesMissions();
 
         }
 
@@ -53,6 +56,20 @@ namespace Application_Ludophonie.Vue.Jeux
             }           
         }
 
+        private void actualiseLstbDesMissions()
+        {
+            lstMissions.Clear();
+            lstbMissions.Items.Clear();
+
+            lstMissions = controleur.recupereToutesMissionsPourUnJeu(utilisateur.IdUtilisateur, 1);
+
+            for(int i = 0; i<lstMissions.Count; i++)
+            {
+                lstbMissions.Items.Add("Série de " + lstMissions[i].NbQuestions + " questions du " + lstMissions[i].Jeu);
+            }
+            
+        }
+
         private void cbxNiveau_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxNiveau.SelectedItem.ToString() == "Liste 2")
@@ -69,6 +86,8 @@ namespace Application_Ludophonie.Vue.Jeux
                 cbxNbQuestions.Items.Add(10);
             }
         }
+                
+
         /// <summary>
         /// Permet de commencer un série du "Jeu du mot"
         /// </summary>
@@ -84,6 +103,8 @@ namespace Application_Ludophonie.Vue.Jeux
             {
                 Vue_Jeu_DuMot fenetre_Vue_JeuDuMot = new Vue_Jeu_DuMot(utilisateur, cbxNiveau.SelectedItem.ToString(), (int)cbxNbQuestions.SelectedItem);
                 fenetre_Vue_JeuDuMot.ShowDialog();
+
+                actualiseLstbDesMissions();
             }
             
         }

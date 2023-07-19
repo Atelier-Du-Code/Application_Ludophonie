@@ -11,6 +11,14 @@ namespace AppOrthophonie.BDD
     /// </summary>
     public class BddMySql
     {
+        private static string server;
+        private static string userid;
+        private static string password;
+        private static string database;
+
+        private static readonly string emplacementBDD = "local";
+        
+
         /// <summary>
         /// Unique instance de la classe
         /// </summary>
@@ -19,7 +27,7 @@ namespace AppOrthophonie.BDD
         /// <summary>
         /// objet de connexion à la BDD à partir d'une chaîne de connexion
         /// </summary>
-        private readonly MySqlConnection connection;
+        private MySqlConnection connection;
 
         /// <summary>
         /// objet contenant le résultat d'une requête "select" (curseur)
@@ -34,27 +42,60 @@ namespace AppOrthophonie.BDD
         {
             try
             {
-                connection = new MySqlConnection(stringConnect);
+                connection = new MySqlConnection(chaineDeConnexion());
+
+                //Gestion du temps avant la fermeture de la connexion
+                MySqlConnectionStringBuilder constucteurDeConnexion = new MySqlConnectionStringBuilder();
+                constucteurDeConnexion.ConnectionTimeout = 1000;
+
                 connection.Open();
             }
             catch (MySqlException ex)
             {
                 ErreurGraveBddNonAccessible(ex);
-
-               
             }
         }
 
         /// <summary>
+        /// Configure la chaine de connexion avec un paramétrage de l'emplacemetn de la base de données : local ou distant
+        /// </summary>
+        /// <param name="emplacementBDD"></param>
+        /// <returns></returns>
+        private static string chaineDeConnexion()
+        {
+            string chaineDeConnexion = "server=" + server + ";user id=" + userid + ";password=" + password + ";database=" + database + ";SslMode=none";
+
+
+            if (emplacementBDD == "local")
+            {
+                server = "127.0.0.1";
+                userid = "root";
+                password = "";
+                database = "ludophonie";
+            }
+            else
+            {
+                server = "154.49.245.52";
+                userid = "u607780247_testLudo"; 
+                password = "gTyHI2QZez";
+                database = "u607780247_testLudo";
+
+
+                //server = 154.49.245.52; user id = u607780247_testLudo; database = u607780247_testLudo; persistsecurityinfo = True
+            }
+
+            return chaineDeConnexion;
+        }
+        /// <summary>
         /// Crée une instance unique de la classe
         /// </summary>
-        /// <param name="stringConnect">chaine de connexion</param>
+        /// <param name="">chaine de connexion</param>
         /// <returns>instance unique de la classe</returns>
-        public static BddMySql GetInstance(string stringConnect)
+        public static BddMySql GetInstance()
         {
             if (instance is null)
             {
-                instance = new BddMySql(stringConnect);
+                instance = new BddMySql(chaineDeConnexion());               
             }
             return instance;
         }
@@ -67,10 +108,11 @@ namespace AppOrthophonie.BDD
         public void ReqSelect(string stringQuery, Dictionary<string, object> parameters)
         {
             MySqlCommand command;
-
+            
             try
             {
                 command = new MySqlCommand(stringQuery, connection);
+                command.CommandTimeout = 1000;
                 if (!(parameters is null))
                 {
                     foreach (KeyValuePair<string, object> parameter in parameters)
@@ -143,6 +185,8 @@ namespace AppOrthophonie.BDD
             try
             {
                 command = new MySqlCommand(stringQuery, connection);
+                command.CommandTimeout = 3000;
+
                 if (!(parameters is null))
                 {
                     foreach (KeyValuePair<string, object> parameter in parameters)
@@ -171,6 +215,8 @@ namespace AppOrthophonie.BDD
         public void ReqControle(string stringQuery)
         {
             MySqlCommand command = new MySqlCommand(stringQuery, connection);
+            command.CommandTimeout = 1000;
+
             command.ExecuteNonQuery();
         }
 
@@ -182,6 +228,8 @@ namespace AppOrthophonie.BDD
             if (!(reader is null))
             {
                 reader.Close();
+                connection.Close();
+                instance = null;
             }
         }
 
@@ -190,10 +238,10 @@ namespace AppOrthophonie.BDD
         /// </summary>
         private void ErreurGraveBddNonAccessible(Exception ex)
         {
-            MessageBox.Show("Base de données non accessibles", "Erreur grave");
+            //MessageBox.Show("Base de données non accessibles", "Erreur grave");
             MessageBox.Show("Erreur MySQL : " + ex.Message);
             MessageBox.Show("Code d'erreur MySQL : " + ex.Source);
-            MessageBox.Show(ex.Message);
+           // MessageBox.Show(ex.Message);
             Environment.Exit(1);
         }
     }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Serilog;
+using SpeechLib;
 
 namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
 {
@@ -19,6 +20,10 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
     public partial class Vue_Gestionnaire_JeuLeMot : Form
     {
         Controleur_Gestion_JeuDuMot controleur = new Controleur_Gestion_JeuDuMot();
+
+        // Objets pour la synthèse vocale
+        private SpVoice voix = new SpVoice();
+        private SpeechVoiceSpeakFlags flags = SpeechVoiceSpeakFlags.SVSFlagsAsync;
 
         /// <summary>
         /// Constructeur
@@ -33,7 +38,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
 
         private void Vue_Gestionnaire_JeuLeMot_Load(object sender, EventArgs e)
         {
-            AcceptButton = btnEnregistrerNewMot;
+            AcceptButton = btnEnregistrer;
             lblMessage.Text = "";
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
@@ -52,7 +57,7 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnEnregistrerNewMot_Click(object sender, EventArgs e)
+        private void btnEnregistrer_Click(object sender, EventArgs e)
         {
             string liste = "";
             txtbMot.Focus();
@@ -87,7 +92,6 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             {
                 lblMessage.Text = "Au moins un champs du formulaire est vide";
             }
-
         }
 
         /// <summary>
@@ -242,6 +246,25 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
             }
         }
 
+        private void btnEcouter_Click(object sender, EventArgs e)
+        {
+            //voix.Speak(txtbMot.Text +"  "+ txtbContexte.Text, flags);
+
+            voix.Speak(txtbMot.Text, flags);
+            voix.Speak(txtbContexte.Text, flags);
+        }
+
+        private void dgvLstMots_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgvLstMots.SelectedRows.Count > 0)
+            {
+                txtbMot.Text = dgvLstMots.SelectedRows[0].Cells[0].Value.ToString();
+                txtbContexte.Text = dgvLstMots.SelectedRows[0].Cells[1].Value.ToString();
+                cbxTriListes.SelectedItem = dgvLstMots.SelectedRows[0].Cells[2].Value;
+            }
+            
+        }
+
         /// <summary>
         /// Permet de fermer la fenêtre
         /// </summary>
@@ -250,6 +273,11 @@ namespace Application_Ludophonie.Vue.Praticien.Gestion_des_jeux
         private void btnRetour_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void dgvLstMots_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         

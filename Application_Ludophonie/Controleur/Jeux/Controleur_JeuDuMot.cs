@@ -61,10 +61,72 @@ namespace Application_Ludophonie.Controleur.Jeux
         /// <param name="dateDuJour"></param>
         /// <param name="timer"></param>
         /// <returns></returns>
-        public bool creationSerieEffectuees(int idUtilisateur, int idjeu, int nbQuestionDeLaSerie, int nbErreur, DateTime dateDuJour, DateTime timer)
+        public bool creationSerieEffectuees(int idUtilisateur, int idjeu, int nbQuestionDeLaSerie, int nbErreur, DateTime dateDuJour, DateTime timer, int serieDemandee, int score)
         {
-            bool bSerieCree = Modele_JeuDuMot.creationSerieEffectuees(idUtilisateur, idjeu, nbQuestionDeLaSerie, nbErreur, dateDuJour, timer);
+            bool bSerieCree = Modele_JeuDuMot.creationSerieEffectuees(idUtilisateur, idjeu, nbQuestionDeLaSerie, nbErreur, dateDuJour, timer, serieDemandee, score);
             return bSerieCree;
         }
+
+        public bool verifieSiCEstUneMission(int nbQuestion, int idJeu, int idUtilisateur)
+        {
+            bool bCestUneMission = Modele_JeuDuMot.verifieSiCEstUneMission(nbQuestion, idJeu, idUtilisateur);
+            return bCestUneMission;
+        }
+
+        public int recupereNiveauDuJeuDuPatient(int idUtilisateur, int idJeu)
+        {
+            int niveau = Modele_JeuDuMot.recupereNiveauDuJeuDuPatient(idUtilisateur, idJeu);
+            return niveau;
+        }
+
+        public int recupereGainMission(int idNiveau, int idJeu)
+        {
+            int gain = Modele_JeuDuMot.recupereGainMission(idNiveau, idJeu);
+            return gain;
+        }
+
+        public int recupereGainSerie(int idNiveau, int idJeu)
+        {
+            int gain = Modele_JeuDuMot.recupereGainSerie(idNiveau, idJeu);
+            return gain;
+        }
+
+        public bool updateScoreGlobal(int idUtilisateur, int scoreGlobal)
+        {
+            bool bUpdate = Modele_JeuDuMot.updateScoreGlobal(idUtilisateur, scoreGlobal);
+            return bUpdate;
+        }
+
+
+        public int recupereScoreGlobalPatient(int idUtilisateur)
+        {
+            int score = Modele_JeuDuMot.recupereScoreGlobalPatient(idUtilisateur);
+            return score;
+        }
+
+        public Mission recupereUneMission(int nbQuestion, int idDuJeu, int idDeUtilisateur)
+        {
+            Mission mission = Modele_JeuDuMot.recupereUneMission(nbQuestion, idDuJeu, idDeUtilisateur);
+            return mission;
+        }
+
+        public bool updateCarnetDeMission(int idMission)
+        {
+            bool bUpdate = Modele_JeuDuMot.updateCarnetDeMission(idMission);
+            return bUpdate;
+        }
+
+        public int recupereNbMotsAcquisPatient(int idUtilisateur)
+        {
+            int nbMotsAcquis = Modele_JeuDuMot.recupereNbMotsAcquisPatient(idUtilisateur);
+            return nbMotsAcquis;
+        }
+
+        public int recupereNbMotsTotal()
+        {
+            int nbMots = Modele_JeuDuMot.recupereNbMotsTotal();
+            return nbMots;
+        }
     }
+
 }

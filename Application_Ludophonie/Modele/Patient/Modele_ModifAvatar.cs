@@ -35,9 +35,10 @@ namespace Application_Ludophonie.Modele
         {
             List<Avatar> lstAvatars = new List<Avatar>();
 
-            string req = "SELECT idAvatar, nom, url FROM avatars;";
+            string req = "SELECT idAvatar, nom, url, libelle_grade FROM avatars " +
+                "INNER JOIN grade ON grade.idGrade = avatars.idGrade";
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, null);
 
             while (curs.Read())
@@ -45,8 +46,9 @@ namespace Application_Ludophonie.Modele
                 int idAvatar = ((int)curs.Field("idAvatar"));
                 string nom = ((string)curs.Field("nom"));
                 string url = ((string)curs.Field("url"));
+                string libelle_grade = ((string)curs.Field("libelle_grade"));
 
-                lstAvatars.Add(new Avatar(idAvatar, nom, url));
+                lstAvatars.Add(new Avatar(idAvatar, nom, url, libelle_grade));
             }
 
             curs.Close();
@@ -71,7 +73,7 @@ namespace Application_Ludophonie.Modele
                             {"@idUtilisateur", idUtilisateur}
                         };
 
-                BddMySql curs = BddMySql.GetInstance(connectionString);
+                BddMySql curs = BddMySql.GetInstance();
                 curs.ReqUpdate(req, parameters);
 
                 curs.Close();
@@ -81,6 +83,30 @@ namespace Application_Ludophonie.Modele
             {
                 return false;
             }
+        }
+
+        public static int compteAvatarDuPatient(int idGrade)
+        {
+            int nbAvatarPatient = 0;
+
+            string req = "SELECT idAvatar, nom, url, idGrade FROM avatars WHERE idGrade < @idGrade;";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                        {
+                            {"@idGrade", idGrade},
+                        };
+
+            BddMySql curs = BddMySql.GetInstance();
+            curs.ReqSelect(req, parameters);
+
+            while (curs.Read())
+            {            
+                nbAvatarPatient++;
+            }
+
+            curs.Close();
+            return nbAvatarPatient;
+            
         }
     }
 }

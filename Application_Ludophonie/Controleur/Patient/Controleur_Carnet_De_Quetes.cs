@@ -1,4 +1,5 @@
-﻿using Application_Ludophonie.Modele.Patient;
+﻿using Application_Ludophonie.Metier;
+using Application_Ludophonie.Modele.Patient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,10 @@ namespace Application_Ludophonie.Controleur.Patient
         /// </summary>
         /// <param name="idUtilisateur"></param>
         /// <returns></returns>
-        public List<string>recupereLstMissions(int idUtilisateur)
+        public List<Mission> recupereToutesMissions(int idUtilisateur)
         {
             
-            List<string> lstMissions = Modele_Carnet_de_quetes.recupereLstMissions(idUtilisateur);
+            List<Mission> lstMissions = Modele_Carnet_de_quetes.recupereToutesMissions(idUtilisateur);
 
             return lstMissions;
         }

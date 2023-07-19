@@ -17,11 +17,12 @@ namespace Application_Ludophonie.Metier
         /// <param name="idAvatar"></param>
         /// <param name="nom"></param>
         /// <param name="url"></param>
-        public Avatar(int idAvatar, string nom, string url)
+        public Avatar(int idAvatar, string nom, string url, string grade)
         {
             this.IdAvatar = idAvatar;
             this.Nom = nom;
             this.Url = url;
+            this.Grade = grade;
         }
 
         /// <summary>
@@ -38,5 +39,7 @@ namespace Application_Ludophonie.Metier
         /// Porte l'url de localisation de l'avatar
         /// </summary>
         public string Url { get; set; }
+
+        public string Grade { get; set; }
     }
 }

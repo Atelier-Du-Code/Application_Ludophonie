@@ -24,17 +24,21 @@ namespace Application_Ludophonie.Metier
         /// <param name="nbErreurs"></param>
         /// <param name="dateDuJour"></param>
         /// <param name="timer"></param>
-        public Serie(int idSerie, int idUtilisateur, string nom, string prenom, string jeu, int nbQuestionSerie, int nbErreurs, DateTime dateDuJour, DateTime timer)
+        public Serie(int idSerie, int idUtilisateur, string nom, string prenom, string grade, string jeu, int nbQuestionSerie, int nbErreurs, DateTime dateDuJour, DateTime timer, int serieDemandee, int score)
         {
             this.IdSerie = idSerie;
             this.IdUtilisateur = idUtilisateur;
             this.Nom = nom;
             this.Prenom = prenom;
+            this.Grade = grade;
             this.Jeu = jeu;
             this.NbQuestionSerie = nbQuestionSerie;
             this.NbErreurs = nbErreurs;
             this.DateDuJour = dateDuJour;
             this.Timer = timer;
+            this.SerieDemandee = serieDemandee;
+            this.Score = score;
+            
         }
 
         /// <summary>
@@ -57,6 +61,7 @@ namespace Application_Ludophonie.Metier
         /// </summary>
         public string Prenom { get; set; }
 
+        public string Grade { get; set; }
         /// <summary>
         /// Porte le nom du jeu de la série 
         /// </summary>
@@ -81,5 +86,9 @@ namespace Application_Ludophonie.Metier
         /// Porte le temps que le patient a mis pour résoudre la série
         /// </summary>
         public DateTime Timer;
+
+        public int SerieDemandee { get; set; }
+
+        public int Score { get; set; }
     }
 }

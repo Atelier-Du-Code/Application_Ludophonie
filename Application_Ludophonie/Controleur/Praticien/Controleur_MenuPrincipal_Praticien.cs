@@ -30,6 +30,7 @@ namespace Application_Ludophonie.Controleur.Praticien
             return lstToutesLesSeriesEffectuees;
         }
 
+        
         /// <summary>
         /// Permet de récupérer toutes les séries effectuées aujourd'hui
         /// </summary>
@@ -187,6 +188,18 @@ namespace Application_Ludophonie.Controleur.Praticien
             return bSupprime;
         }
 
+        public bool creationGrade(int idUtilisateur)
+        {
+            bool bCree = Modele_MenuPrincipal_Praticien.creationGrade(idUtilisateur);
+            return bCree;
+        }
+
+        public bool creationNiveau(int idUtilisateur, int idJeu)
+        {
+            bool bCree = Modele_MenuPrincipal_Praticien.creationNiveau(idUtilisateur, idJeu);
+            return bCree;
+        }
+
         /// <summary>
         /// Permet de supprimer une mission du carnet de mission d'un patient
         /// </summary>
@@ -198,6 +211,17 @@ namespace Application_Ludophonie.Controleur.Praticien
             return bSupprime;
         }
 
+        public bool SupprimeSonGrade(Utilisateur utilisateurASupprimer)
+        {
+            bool bSupprime = Modele_MenuPrincipal_Praticien.SupprimeSonGrade(utilisateurASupprimer);
+            return bSupprime;
+        }
+
+        public bool SupprimeSonNiveau(Utilisateur utilisateurASupprimer)
+        {
+            bool bSupprime = Modele_MenuPrincipal_Praticien.SupprimeSonNiveau(utilisateurASupprimer);
+            return bSupprime;
+        }
         /// <summary>
         /// Permet de récupérer le dernier patient enregistré
         /// </summary>
@@ -207,8 +231,63 @@ namespace Application_Ludophonie.Controleur.Praticien
             int plusGrandIdPatient = Modele_MenuPrincipal_Praticien.recuperePlusGrandIdPatient();
             return plusGrandIdPatient;
         }
-    }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        // Gestion des grades - tabPage 4
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public List<Grade> recupereTousLesGrades()
+        {
+            List<Grade> lstGrades = Modele_MenuPrincipal_Praticien.recupereTousLesGrades();
+
+            return lstGrades;
+        }
 
 
+        public List<Avatar> recupereTousLesAvatarsDuGrade(string grade)
+        {
+            List<Avatar> lstTousAvatarsDuGrade = Modele_MenuPrincipal_Praticien.recupereTousLesAvatarsDuGrade(grade);
 
+            return lstTousAvatarsDuGrade;
+        }
+
+        public bool modifieGrade(int idGrade, string libelle_grade, int score_palier)
+        {
+            bool bModifGrade = Modele_MenuPrincipal_Praticien.modifieGrade(idGrade, libelle_grade, score_palier);
+
+            return bModifGrade;
+        }
+
+        public List<string> recupereTousLesJeux()
+        {
+            List<string> lstTousLesJeux = Modele_MenuPrincipal_Praticien.recupereTousLesJeux();
+
+            return lstTousLesJeux;
+        }
+
+        public List<string> recupereLesNiveauxPourUnJeu(string nomDuJeu)
+        {
+            List<string> lstTousLesNiveauxDuJeu = Modele_MenuPrincipal_Praticien.recupereLesNiveauxPourUnJeu(nomDuJeu);
+
+            return lstTousLesNiveauxDuJeu;
+        }
+
+        public List<int> recupereLesGainsDUnNiveauPourUnJeu(string nomDuNiveau, string nomDuJeu)
+        {
+            List<int> lstGainsDUnNiveauPourUnJeu = Modele_MenuPrincipal_Praticien.recupereLesGainsDUnNiveauPourUnJeu(nomDuNiveau, nomDuJeu);
+            return lstGainsDUnNiveauPourUnJeu;
+        }
+
+        public int recuperePalierNbAcquisNiveau(string nomDuNiveau, string nomDuJeu)
+        {
+            int palier_nbAcquis = Modele_MenuPrincipal_Praticien.recuperePalierNbAcquisNiveau(nomDuNiveau, nomDuJeu);
+            return palier_nbAcquis;
+        }
+
+        public bool modifieNiveau(string libelleNiveau, string nomDuJeu, int palier_nbAcquis, int gainMission, int gainSerie, int hierarchie)
+        {
+            bool bModif = Modele_MenuPrincipal_Praticien.modifieNiveau(libelleNiveau, nomDuJeu, palier_nbAcquis, gainMission, gainSerie, hierarchie);
+            return bModif;
+        }
+    }    
 }

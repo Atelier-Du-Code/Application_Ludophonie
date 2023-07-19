@@ -19,7 +19,8 @@ namespace Application_Ludophonie.Vue.Praticien
     {
         private Controleur_Gestion_Carnet__De_Mission controleur = new Controleur_Gestion_Carnet__De_Mission();
 
-        private List<string> lstMissions = new List<string>();
+        private List<Mission> lstMissions = new List<Mission>();
+        List<string> lstJeux = new List<string>();
 
         private int idUtilisateurEnCours;
 
@@ -33,15 +34,16 @@ namespace Application_Ludophonie.Vue.Praticien
             lblMessage.Text = "";
 
             this.idUtilisateurEnCours = idUtilisateurEnCours;
-            actualiseListeMissions();     
-            
-            lstBMissions.TextAl
-        }        
+            actualiseListeMissions();
+            actualiseCbxJeux();
+            actualiseCbxNbQuestions();
+
+        }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Gestion de l'ajout d'une mission
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        
         /// <summary>
         /// Permet d'enregistrer une nouvelle mission pour le patient en cours
         /// </summary>
@@ -49,13 +51,22 @@ namespace Application_Ludophonie.Vue.Praticien
         /// <param name="e"></param>
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
-            string mission = txtbMission.Text;
-            txtbMission.Text = "";
+            int nbSerie = (int)nudNbSeries.Value;
+            int nbQuestions = (int)cbxNbQuestions.SelectedItem;
+            bool bEnregistrer = true;
 
-            bool bEnregistrer = controleur.enregistreMissions(mission, idUtilisateurEnCours);
+            for (int i = 0; i<nbSerie; i++)
+            {
+                bEnregistrer = controleur.enregistreMissions(idUtilisateurEnCours, cbxJeux.SelectedIndex+1, nbQuestions);
+            }
+            
             if(bEnregistrer)
             {
                 lblMessage.Text = "La mission a bien été enregistrée";
+
+                cbxNbQuestions.SelectedItem = 0;
+                nudNbSeries.Value = 0;
+                cbxJeux.SelectedIndex = 0;
             }
             else
             {
@@ -71,9 +82,9 @@ namespace Application_Ludophonie.Vue.Praticien
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            if(lstBMissions.SelectedIndex > 0)
+            if(lstCBxMissions.SelectedIndex > 0)
             {
-                bool bSupprimer = controleur.supprimeUneMission(lstBMissions.SelectedItem.ToString(), idUtilisateurEnCours);
+                bool bSupprimer = controleur.supprimeUneMission(lstMissions[lstCBxMissions.SelectedIndex].IdMission);
 
                 if(bSupprimer)
                 {
@@ -114,23 +125,34 @@ namespace Application_Ludophonie.Vue.Praticien
             lstMissions.Clear();
             lstMissions = controleur.recupereToutesMissions(idUtilisateurEnCours);
 
-            lstBMissions.Items.Clear();
+            lstCBxMissions.Items.Clear();
+
             for (int i = 0; i < lstMissions.Count; i++)
             {
-                lstBMissions.Items.Add(lstMissions[i]);
+                lstCBxMissions.Items.Add("Série de " + lstMissions[i].NbQuestions + " questions du "+ lstMissions[i].Jeu);
+
+                if(lstMissions[i].MissionValide == 1)
+                {
+                    lstCBxMissions.SetItemChecked(i, true);
+                }
             }
         }
 
-        /// <summary>
-        /// Permet de vider le label de message lorsqu'une lettre est écrite dans le textBox d'ajout de mission
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txtbMission_TextChanged(object sender, EventArgs e)
-        {
-            lblMessage.Text = "";
+        private void actualiseCbxJeux()
+        {            
+            lstJeux = controleur.recupereTousLesJeux();
+
+            for (int i = 0; i < lstJeux.Count; i++)
+            {
+                cbxJeux.Items.Add(lstJeux[i]);
+            }
         }
 
+        private void actualiseCbxNbQuestions()
+        {
+            cbxNbQuestions.Items.Add(1);
+            cbxNbQuestions.Items.Add(5);
+        }
         /// <summary>
         /// Permet de fermer la page
         /// </summary>

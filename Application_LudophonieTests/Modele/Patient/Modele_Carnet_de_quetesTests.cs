@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AppOrthophonie.BDD;
+using Application_Ludophonie.Metier;
 
 namespace Application_Ludophonie.Modele.Patient.Tests
 {
@@ -27,7 +28,7 @@ namespace Application_Ludophonie.Modele.Patient.Tests
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password_BDD
             + ";database=" + database + ";SslMode=none";
 
-        private static readonly BddMySql access = BddMySql.GetInstance(connectionString);
+        private static readonly BddMySql access = BddMySql.GetInstance();
 
         /// <summary>
         /// Permet de vérifier que la méthode du modèle renvoie toutes les missions de la base
@@ -36,7 +37,7 @@ namespace Application_Ludophonie.Modele.Patient.Tests
         public void recupereLstMissionsTest()
         {
             int idUtilisateur = 2;
-            List<string> lstMissions = Modele_Carnet_de_quetes.recupereLstMissions(idUtilisateur);
+            List<Mission> lstMissions = Modele_Carnet_de_quetes.recupereToutesMissions(idUtilisateur);
             Assert.AreNotEqual(0, lstMissions.Count, "Devrait réussir");
         }
     }

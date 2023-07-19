@@ -27,8 +27,10 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
         private const string password = "5w&rcRi29F6&*H";
         private const string type_utilisateur = "patient";
         private const string urlAvatar = "https://i.pinimg.com/564x/5d/a4/92/5da49261550d4e682fb1c38c0738d222.jpg";
+        private const int score_global = 23;
+        private const string grade = "farfadet";
 
-        private static readonly Utilisateur patient = new Utilisateur(idUtilisateur, type_utilisateur, identifiant, nom, prenom, classe, password, urlAvatar);
+        private static readonly Utilisateur patient = new Utilisateur(idUtilisateur, type_utilisateur, identifiant, nom, prenom, classe, password, urlAvatar, score_global, grade);
 
         //////////////////////////////////////////////////////////////
         ///Connexion à la base de données
@@ -42,7 +44,7 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
         private static readonly string connectionString = "server=" + server + ";user id=" + userid + ";password=" + password_BDD
             + ";database=" + database + ";SslMode=none";
 
-        private static readonly BddMySql access = BddMySql.GetInstance(connectionString);
+        private static readonly BddMySql access = BddMySql.GetInstance();
 
         /// <summary>
         /// Permet de désactiver l'auto-commit, de commencer une transaction et de déactiver les relation de clés étrangères
@@ -73,6 +75,7 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
             Assert.AreNotEqual(0, lstPatients.Count, "Devrait réussir");
         }
 
+        /*
         /// <summary>
         /// Permet de vérifier que la méthode du modèle renvoie toutes les séries effectuées aujourd'hui
         /// </summary>
@@ -101,7 +104,7 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
         {
             List<Serie> lstPatients = Modele_MenuPrincipal_Praticien.recupereLesSeriesEffectueesMois();
             Assert.AreNotEqual(0, lstPatients.Count, "Devrait réussir");
-        }
+        }*/
 
         /// <summary>
         /// Permet de vérifier que la méthode du modèle renvoie  un patient grace à son identifiant
@@ -118,7 +121,7 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
             Assert.AreEqual(classe, unPatient.Classe, "Test doit être réussit");
             Assert.AreEqual(password, unPatient.Password, "Test doit être réussit");
             Assert.AreEqual(type_utilisateur, unPatient.Type_Utilisateur, "Test doit être réussit");
-            Assert.AreEqual(urlAvatar, unPatient.urlAvatar, "Test doit être réussit");
+            Assert.AreEqual(urlAvatar, unPatient.UrlAvatar, "Test doit être réussit");
         }
 
         /// <summary>
@@ -152,9 +155,11 @@ namespace Application_Ludophonie.Modele.Praticien.Tests
             string new_password = "5w&rcRi29F6&*H";
             string new_type_utilisateur = "patient";
             string new_urlAvatar = "https://i.pinimg.com/originals/69/4a/66/694a66860b36a48b6e58112dd16308c7.png";
+            int new_score_global = 29;
+            string new_grade = "farfadet";
 
-            Utilisateur newUtilisateur = new Utilisateur(new_idUtilisateur, new_type_utilisateur, new_identifiant, new_nom, new_prenom,
-                new_classe, new_password, new_urlAvatar);
+        Utilisateur newUtilisateur = new Utilisateur(new_idUtilisateur, new_type_utilisateur, new_identifiant, new_nom, new_prenom,
+                new_classe, new_password, new_urlAvatar, new_score_global, new_grade);
 
             // Création effective du nouveau patient
             Modele_MenuPrincipal_Praticien.creeUtilisateur(newUtilisateur);

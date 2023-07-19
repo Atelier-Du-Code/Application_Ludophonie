@@ -21,8 +21,12 @@ namespace Application_Ludophonie.Vue.Patient
         Utilisateur utilisateurEnCours;
         controleur_MenuPatient controleur = new controleur_MenuPatient();
 
-
         Vue_ModificationAvatar_Patient fenetre_Vue_ModificationAvatar;
+
+        string grade_String;
+        int grade_int;
+
+        string niveau;
 
         /// <summary>
         /// Constructeur 
@@ -33,8 +37,31 @@ namespace Application_Ludophonie.Vue.Patient
             InitializeComponent();
             this.utilisateurEnCours = utilisateurEnCours;
 
-            pbAvatar.ImageLocation = utilisateurEnCours.urlAvatar;
+            pbAvatar.ImageLocation = utilisateurEnCours.UrlAvatar;
+
+            initialiseGrade();
+            initialiseNiveau();
+            btnJeuLaSyllabe.Enabled = false;
+
+            lblGrade.Text = "Grade : " + grade_String;
+            lblNiveau_LeMot.Text = "Niveau : " + niveau;
+
         }
+
+        private void initialiseGrade()
+        {
+            grade_String = controleur.recupereLeGradeString(utilisateurEnCours.IdUtilisateur);
+
+            grade_int = controleur.recupereLeGradeInt(utilisateurEnCours.IdUtilisateur);
+
+        }
+
+        private void initialiseNiveau()
+        {
+            niveau = controleur.recupereNiveauPatient(utilisateurEnCours.IdUtilisateur);
+        }
+
+       
 
         /// <summary>
         /// Permet d'ouvrir le carnet de missions pour le patient en cours
@@ -43,7 +70,7 @@ namespace Application_Ludophonie.Vue.Patient
         /// <param name="e"></param>
         private void btnCarnetDeMission_Click(object sender, EventArgs e)
         {
-            Vue_Carnet_De_Quetes fenetre_Carnet_De_Mission = new Vue_Carnet_De_Quetes(utilisateurEnCours.IdUtilisateur);
+            Vue_Carnet_De_Missions fenetre_Carnet_De_Mission = new Vue_Carnet_De_Missions(utilisateurEnCours.IdUtilisateur);
             fenetre_Carnet_De_Mission.Show();
         }
 
@@ -65,7 +92,7 @@ namespace Application_Ludophonie.Vue.Patient
         /// <param name="e"></param>
         private void btnModifAvatar_Click(object sender, EventArgs e)
         {
-            fenetre_Vue_ModificationAvatar = new Vue_ModificationAvatar_Patient(utilisateurEnCours.IdUtilisateur);
+            fenetre_Vue_ModificationAvatar = new Vue_ModificationAvatar_Patient(utilisateurEnCours.IdUtilisateur, grade_int);
             fenetre_Vue_ModificationAvatar.ShowDialog();
             
             pbAvatar.ImageLocation = controleur.recupereAvatar(utilisateurEnCours.IdUtilisateur).Url;
@@ -80,5 +107,7 @@ namespace Application_Ludophonie.Vue.Patient
         {
             Close();
         }
+
+        
     }
 }

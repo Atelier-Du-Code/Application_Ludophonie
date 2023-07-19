@@ -22,7 +22,7 @@ namespace Application_Ludophonie.Metier
 		/// <param name="classe"></param>
 		/// <param name="password"></param>
 		/// <param name="urlAvatar"></param>
-        public Utilisateur(int idUtilisateur, string type_utilisateur, string identifiant, string nom, string prenom, string classe, string password, string urlAvatar)
+        public Utilisateur(int idUtilisateur, string type_utilisateur, string identifiant, string nom, string prenom, string classe, string password, string urlAvatar, int score_global, string grade)
 		{
 			this.IdUtilisateur = idUtilisateur;
 			this.Type_Utilisateur = type_utilisateur;
@@ -31,7 +31,10 @@ namespace Application_Ludophonie.Metier
 			this.Prenom = prenom;
 			this.Classe = classe;
 			this.Password = password;
-			this.urlAvatar = urlAvatar;			
+			this.UrlAvatar = urlAvatar;
+			this.Score_Global = score_global;
+			this.Grade = grade;
+			
 		}
 
 		/// <summary>
@@ -72,11 +75,29 @@ namespace Application_Ludophonie.Metier
 		/// <summary>
 		/// Porte l'url de localisation de l'avatar de l'utilisateur 
 		/// </summary>
-		public string urlAvatar { get; set; }
+		public string UrlAvatar { get; set; }
 
 		/// <summary>
 		/// Porte la date d'inscription de l'utilisateur 
 		/// </summary>
 		public DateTime DateInscription { get; set; }
+
+		public int Score_Global { get; set; }
+
+		public string Grade { get; set; }
 	}
 }
+
+/*
+
+grade.libelle_grade,grade_utilisateur.scoreUtilisateur
+
+req += "INNER JOIN grade_utilisateur ON grade_utilisateur.idUtilisateur = utilisateurs.idUtilisateur ";
+req += "INNER JOIN grade ON grade.idGrade = grade_utilisateur.idGrade ";
+
+int score_global = ((int)curs.Field("scoreUtilisateur"));
+string grade = ((string)curs.Field("grade"));
+
+score_global, grade
+
+*/

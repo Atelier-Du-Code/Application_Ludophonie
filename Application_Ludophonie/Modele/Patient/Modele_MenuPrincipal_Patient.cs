@@ -45,7 +45,7 @@ namespace Application_Ludophonie.Modele.Patient
                      {"@idAvatar", idAvatar}
                 };
 
-                BddMySql curs = BddMySql.GetInstance(connectionString);
+                BddMySql curs = BddMySql.GetInstance();
                 curs.ReqUpdate(req, parameters);
 
                 curs.Close();
@@ -67,8 +67,9 @@ namespace Application_Ludophonie.Modele.Patient
         public static Avatar recupereAvatar(int idUtilisateur)
         {
             Avatar unAvatar = null;
-            string req = "SELECT avatars.idAvatar, avatars.nom, avatars.url " +
+            string req = "SELECT avatars.idAvatar, avatars.nom, avatars.url, grade.libelle_grade " +
                 "FROM avatars " +
+                "INNER JOIN grade ON grade.idGrade = avatars.idGrade " +
                 "INNER JOIN utilisateurs ON avatars.idAvatar = utilisateurs.idAvatar " +
                 "WHERE utilisateurs.IdUtilisateur = @idUtilisateur; ";
 
@@ -77,7 +78,7 @@ namespace Application_Ludophonie.Modele.Patient
                      {"@idUtilisateur", idUtilisateur}                   
                 };
 
-            BddMySql curs = BddMySql.GetInstance(connectionString);
+            BddMySql curs = BddMySql.GetInstance();
             curs.ReqSelect(req, parameters);
 
             if(curs.Read())
@@ -85,13 +86,95 @@ namespace Application_Ludophonie.Modele.Patient
                 int idAvatar = ((int)curs.Field("idAvatar"));
                 string nom = ((string)curs.Field("nom"));
                 string url = ((string)curs.Field("url"));
+                string libelle_grade = ((string)curs.Field("libelle_grade"));
 
-                unAvatar = new Avatar(idAvatar, nom, url);
+                unAvatar = new Avatar(idAvatar, nom, url, libelle_grade);
             }
 
             curs.Close();
 
             return unAvatar;
+        }
+
+        public static string recupereLeGradeString(int idUtilisateur)
+        {
+            string grade = "";
+
+            string req = "SELECT libelle_grade FROM grade INNER JOIN grade_utilisateur ON grade_utilisateur.idGrade = grade.idGrade " +
+                "WHERE grade_utilisateur.idUtilisateur = @idUtilisateur";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                     {"@idUtilisateur", idUtilisateur}
+                };
+
+            BddMySql curs = BddMySql.GetInstance();
+            curs.ReqSelect(req, parameters);
+
+            if (curs.Read())
+            {   
+                string libelle_grade = ((string)curs.Field("libelle_grade"));
+
+                grade = libelle_grade;
+            }
+
+            curs.Close();
+
+            return grade;
+        }
+
+        public static int recupereLeGradeInt(int idUtilisateur)
+        {
+            int grade = 0;
+
+            string req = "SELECT idGrade FROM grade_utilisateur WHERE grade_utilisateur.idUtilisateur = @idUtilisateur;";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                     {"@idUtilisateur", idUtilisateur}
+                };
+
+            BddMySql curs = BddMySql.GetInstance();
+            curs.ReqSelect(req, parameters);
+
+            if (curs.Read())
+            {
+                int idGrade = ((int)curs.Field("idGrade"));
+
+                grade = idGrade;
+            }
+
+            curs.Close();
+
+            return grade;
+        }
+
+        public static string recupereNiveauPatient(int idUtilisateur)
+        {
+            string niveauPatient = "";
+
+            string req = "SELECT niveau FROM niveau " +
+                "INNER JOIN niveau_utilisateur_jeu ON niveau_utilisateur_jeu.idNiveau = niveau.idNiveau " +
+                "WHERE niveau_utilisateur_jeu.idUtilisateur = 2 AND niveau_utilisateur_jeu.idJeu = 1; ";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                     {"@idUtilisateur", idUtilisateur}
+                };
+
+            BddMySql curs = BddMySql.GetInstance();
+            curs.ReqSelect(req, parameters);
+
+            if (curs.Read())
+            {
+                string niveau = ((string)curs.Field("niveau"));
+
+                niveauPatient = niveau;
+            }
+
+            curs.Close();
+
+            return niveauPatient;
         }
     }
 }

@@ -23,8 +23,18 @@ namespace Application_Ludophonie
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-                        
-            Application.Run(new Authentification());            
+
+            
+            Utilisateur praticien = new Utilisateur(1, "praticien", "felix_pellerin", "Pellerin", "Felix", "", "59@h7a?b5eRVZ&", "https://i.pinimg.com/originals/69/4a/66/694a66860b36a48b6e58112dd16308c7.png", 2000000000, "praticien");
+
+            Application.Run(new Vue_MenuPrincipal_Praticien(praticien));
+            
+            /*
+            Utilisateur patient = new Utilisateur(2, "patient", "jade_vidal", "Jade", "Pellerin", "", "5w&rcRi29F6&*H", "https://i.pinimg.com/originals/69/4a/66/694a66860b36a48b6e58112dd16308c7.png", 200, "farfadet");
+            Application.Run(new Vue_MenuPrincipal_Patient(patient));
+            */
+
+            //Application.Run(new Authentification());   
         }
     }
 }

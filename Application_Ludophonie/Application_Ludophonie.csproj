@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Manon Avaullée\Desktop\</PublishUrl>
+    <PublishUrl>C:\Users\Manon Avaullée\Desktop\Ludophonie\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDD\BddMySql.cs" />
+    <Compile Include="BDD\GestionBddMySQL.cs" />
     <Compile Include="Controleur\Controleur_Authentification.cs" />
     <Compile Include="Controleur\Jeux\Controleur_Gestionnaire_De_Serie_Mot.cs" />
     <Compile Include="Controleur\Jeux\Controleur_JeuDuMot.cs" />
@@ -148,8 +149,10 @@
     <Compile Include="Controleur\Praticien\Gestion\Controleur_Gestion_JeuDuMot.cs" />
     <Compile Include="Metier\Avatar.cs" />
     <Compile Include="Metier\Chrono.cs" />
+    <Compile Include="Metier\Grade.cs" />
     <Compile Include="Metier\Image.cs" />
     <Compile Include="Metier\MelangeurDeListe.cs" />
+    <Compile Include="Metier\Mission.cs" />
     <Compile Include="Metier\Mot.cs" />
     <Compile Include="Metier\Serie.cs" />
     <Compile Include="Metier\Son.cs" />
@@ -184,11 +187,11 @@
     <Compile Include="Vue\Jeux\Jeu du mot\Vue_Jeu_DuMot.Designer.cs">
       <DependentUpon>Vue_Jeu_DuMot.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vue\Patient\Vue_Carnet_De_Quetes.cs">
+    <Compile Include="Vue\Patient\Vue_Carnet_De_Missions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vue\Patient\Vue_Carnet_De_Quetes.Designer.cs">
-      <DependentUpon>Vue_Carnet_De_Quetes.cs</DependentUpon>
+    <Compile Include="Vue\Patient\Vue_Carnet_De_Missions.Designer.cs">
+      <DependentUpon>Vue_Carnet_De_Missions.cs</DependentUpon>
     </Compile>
     <Compile Include="Vue\Patient\Vue_MenuPrincipal_Patient.cs">
       <SubType>Form</SubType>
@@ -251,8 +254,8 @@
     <EmbeddedResource Include="Vue\Jeux\Jeu du mot\Vue_Jeu_DuMot.resx">
       <DependentUpon>Vue_Jeu_DuMot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vue\Patient\Vue_Carnet_De_Quetes.resx">
-      <DependentUpon>Vue_Carnet_De_Quetes.cs</DependentUpon>
+    <EmbeddedResource Include="Vue\Patient\Vue_Carnet_De_Missions.resx">
+      <DependentUpon>Vue_Carnet_De_Missions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vue\Patient\Vue_MenuPrincipal_Patient.resx">
       <DependentUpon>Vue_MenuPrincipal_Patient.cs</DependentUpon>

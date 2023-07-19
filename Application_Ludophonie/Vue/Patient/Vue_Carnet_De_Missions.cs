@@ -1,4 +1,5 @@
 ﻿using Application_Ludophonie.Controleur.Patient;
+using Application_Ludophonie.Metier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace Application_Ludophonie.Vue.Patient
     /// <summary>
     /// Vue - Carnet de missions - Côté patient
     /// </summary>
-    public partial class Vue_Carnet_De_Quetes : Form
+    public partial class Vue_Carnet_De_Missions : Form
     {
         Controleur_Carnet_De_Quetes controleur = new Controleur_Carnet_De_Quetes();
 
@@ -24,7 +25,7 @@ namespace Application_Ludophonie.Vue.Patient
         /// Constructeur
         /// </summary>
         /// <param name="idUtilisateur"></param>
-        public Vue_Carnet_De_Quetes(int idUtilisateur)
+        public Vue_Carnet_De_Missions(int idUtilisateur)
         {
             InitializeComponent();
 
@@ -37,16 +38,21 @@ namespace Application_Ludophonie.Vue.Patient
         /// </summary>
         public void rempliLstb()
         {
-            List<string> lstMissions = new List<string>();
+            List<Mission> lstMissions = new List<Mission>();
 
             lstMissions.Clear();
-            lstbMissions.Items.Clear();
+            ckLstbMissions.Items.Clear();
 
-            lstMissions = controleur.recupereLstMissions(idUtilisateur);
+            lstMissions = controleur.recupereToutesMissions(idUtilisateur);
 
             for(int i=0; i<lstMissions.Count; i++)
             {
-                lstbMissions.Items.Add(lstMissions[i]);
+                ckLstbMissions.Items.Add("Série de " + lstMissions[i].NbQuestions + " questions du " + lstMissions[i].Jeu);
+
+                if (lstMissions[i].MissionValide == 1)
+                {
+                    ckLstbMissions.SetItemChecked(i, true);
+                }
             }
         }
 

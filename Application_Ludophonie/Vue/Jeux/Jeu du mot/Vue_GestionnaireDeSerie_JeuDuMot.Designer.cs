@@ -38,6 +38,10 @@ namespace Application_Ludophonie.Vue.Jeux
             this.btnDebutSerie = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lstbMissions = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRetour
@@ -57,7 +61,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.cbxNbQuestions.Font = new System.Drawing.Font("Montserrat", 10F);
             this.cbxNbQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.cbxNbQuestions.FormattingEnabled = true;
-            this.cbxNbQuestions.Location = new System.Drawing.Point(245, 391);
+            this.cbxNbQuestions.Location = new System.Drawing.Point(241, 490);
             this.cbxNbQuestions.Margin = new System.Windows.Forms.Padding(4);
             this.cbxNbQuestions.Name = "cbxNbQuestions";
             this.cbxNbQuestions.Size = new System.Drawing.Size(218, 32);
@@ -67,7 +71,7 @@ namespace Application_Ludophonie.Vue.Jeux
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Montserrat", 11F);
-            this.label3.Location = new System.Drawing.Point(326, 258);
+            this.label3.Location = new System.Drawing.Point(322, 357);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 26);
@@ -78,7 +82,7 @@ namespace Application_Ludophonie.Vue.Jeux
             // 
             this.txtNbQuestions.AutoSize = true;
             this.txtNbQuestions.Font = new System.Drawing.Font("Montserrat", 11F);
-            this.txtNbQuestions.Location = new System.Drawing.Point(245, 362);
+            this.txtNbQuestions.Location = new System.Drawing.Point(241, 461);
             this.txtNbQuestions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtNbQuestions.Name = "txtNbQuestions";
             this.txtNbQuestions.Size = new System.Drawing.Size(218, 26);
@@ -92,7 +96,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.cbxNiveau.Font = new System.Drawing.Font("Montserrat", 10F);
             this.cbxNiveau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.cbxNiveau.FormattingEnabled = true;
-            this.cbxNiveau.Location = new System.Drawing.Point(248, 289);
+            this.cbxNiveau.Location = new System.Drawing.Point(244, 388);
             this.cbxNiveau.Margin = new System.Windows.Forms.Padding(4);
             this.cbxNiveau.Name = "cbxNiveau";
             this.cbxNiveau.Size = new System.Drawing.Size(213, 32);
@@ -103,7 +107,7 @@ namespace Application_Ludophonie.Vue.Jeux
             // 
             this.txtTitrePrincipal.AutoSize = true;
             this.txtTitrePrincipal.Font = new System.Drawing.Font("Montserrat SemiBold", 25.8F, System.Drawing.FontStyle.Bold);
-            this.txtTitrePrincipal.Location = new System.Drawing.Point(126, 150);
+            this.txtTitrePrincipal.Location = new System.Drawing.Point(128, 83);
             this.txtTitrePrincipal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtTitrePrincipal.Name = "txtTitrePrincipal";
             this.txtTitrePrincipal.Size = new System.Drawing.Size(456, 60);
@@ -116,7 +120,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.btnDebutSerie.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnDebutSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDebutSerie.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnDebutSerie.Location = new System.Drawing.Point(245, 486);
+            this.btnDebutSerie.Location = new System.Drawing.Point(241, 585);
             this.btnDebutSerie.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDebutSerie.Name = "btnDebutSerie";
             this.btnDebutSerie.Size = new System.Drawing.Size(218, 43);
@@ -131,7 +135,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.btnQuitter.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitter.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.btnQuitter.Location = new System.Drawing.Point(521, 13);
+            this.btnQuitter.Location = new System.Drawing.Point(524, 13);
             this.btnQuitter.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(162, 43);
@@ -142,12 +146,41 @@ namespace Application_Ludophonie.Vue.Jeux
             // 
             // lblMessage
             // 
-            this.lblMessage.Location = new System.Drawing.Point(34, 436);
+            this.lblMessage.Location = new System.Drawing.Point(30, 535);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(640, 45);
             this.lblMessage.TabIndex = 17;
             this.lblMessage.Text = "label1";
             this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lstbMissions);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(53, 164);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(584, 183);
+            this.panel1.TabIndex = 18;
+            // 
+            // lstbMissions
+            // 
+            this.lstbMissions.FormattingEnabled = true;
+            this.lstbMissions.ItemHeight = 21;
+            this.lstbMissions.Location = new System.Drawing.Point(23, 51);
+            this.lstbMissions.Name = "lstbMissions";
+            this.lstbMissions.Size = new System.Drawing.Size(536, 109);
+            this.lstbMissions.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(184, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 27);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Séries demandées";
             // 
             // Vue_GestionnaireDeSerie_JeuDuLot
             // 
@@ -155,6 +188,7 @@ namespace Application_Ludophonie.Vue.Jeux
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(697, 704);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnDebutSerie);
@@ -170,6 +204,8 @@ namespace Application_Ludophonie.Vue.Jeux
             this.Name = "Vue_GestionnaireDeSerie_JeuDuLot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vue_GestionnaireDeSerie_JeuDuLot";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +222,8 @@ namespace Application_Ludophonie.Vue.Jeux
         private System.Windows.Forms.Button btnDebutSerie;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox lstbMissions;
+        private System.Windows.Forms.Label label1;
     }
 }

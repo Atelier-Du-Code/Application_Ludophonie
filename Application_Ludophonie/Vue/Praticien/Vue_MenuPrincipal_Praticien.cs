@@ -41,21 +41,34 @@ namespace Application_Ludophonie.Vue.Praticien
 
         private List<Utilisateur> lstTousLesPatients = new List<Utilisateur>();
 
-        Utilisateur patientEnCours;
-        Utilisateur utilisateurAModifier;
         /// <summary>
         /// Permet l'échange du nouveau patient entre la vue de création d'un nouveau patient et du menu principal
         /// </summary>
         public Utilisateur nouvelUtilisateur;
 
-       // private bool bIdentifiantValide = true;
+        Utilisateur patientEnCours;
+        Utilisateur utilisateurAModifier;
+
+        // private bool bIdentifiantValide = true;
         private bool bInfosIdentifiant = true;
         private bool bInfosMotDePasse = true;
         private bool bUtilisateurCree;
 
-
-
         string identifiantPatientEnCours;
+
+        ///////////////////////////////////////////////////////
+        ///Gestion des variables de la gestion des grades
+        ///////////////////////////////////////////////////////
+
+        List<Grade> lstTousGrades = new List<Grade>();
+        List<Avatar> lstTousAvatarsGrades = new List<Avatar>();
+
+        ///////////////////////////////////////////////////////
+        ///Gestion des variables de la gestion des niveaux
+        ///////////////////////////////////////////////////////
+        
+        List<string> lstJeux = new List<string>();
+        List<string> lstTousLesNiveauxDuJeu = new List<string>();
 
         /// <summary>
         /// Contructeur de la classe : Vue_MenuPrincipal_Praticien
@@ -96,6 +109,20 @@ namespace Application_Ludophonie.Vue.Praticien
                 .CreateLogger();
 
             lblMeessageSuppression.Text = "";
+
+            //Initialisation tabPage 4
+
+            lblMessage_Grades.Text = "";
+            actualiseLstbGrades();
+
+            //Initialisation tabPage 5
+
+            actualiseCbxJeux();
+            lblmessage_Niveaux.Text = "";
+            txtbIntituleNiveaux.Text = "";
+            nudPalierNombreAcquis.Value = 0;
+            nudGainMission.Value = 0;
+            nudGainSerie.Value = 0;
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -104,6 +131,9 @@ namespace Application_Ludophonie.Vue.Praticien
 
         //Initialisation tabPage 1 - Accueil
 
+        string couleur = "";
+        int ligneDGV = 0;
+
         private void actualiseDgvSeriesEffectuees()
         {
             lstToutesSeriesEffectuees = controleur.recupereToutesLesSeries();
@@ -111,13 +141,31 @@ namespace Application_Ludophonie.Vue.Praticien
             for (int i = 0; i < lstToutesSeriesEffectuees.Count; i++)
             {
                 dgvDernieresSeries.Rows.Add(lstToutesSeriesEffectuees[i].DateDuJour.ToString("d"),
-                    lstToutesSeriesEffectuees[i].Nom,
-                    lstToutesSeriesEffectuees[i].Prenom,
-                    lstToutesSeriesEffectuees[i].Jeu,
-                    lstToutesSeriesEffectuees[i].NbQuestionSerie,
-                    lstToutesSeriesEffectuees[i].NbErreurs,
-                    lstToutesSeriesEffectuees[i].Timer.ToString("mm:ss"));
+                   lstToutesSeriesEffectuees[i].Nom,
+                   lstToutesSeriesEffectuees[i].Prenom,
+                   lstToutesSeriesEffectuees[i].Grade,
+                   lstToutesSeriesEffectuees[i].Jeu,
+                   lstToutesSeriesEffectuees[i].NbQuestionSerie,
+                   lstToutesSeriesEffectuees[i].NbErreurs,
+                   lstToutesSeriesEffectuees[i].Timer.ToString("mm:ss"),
+                   lstToutesSeriesEffectuees[i].SerieDemandee
+                   );
+
+                if (lstToutesSeriesEffectuees[i].SerieDemandee == 1)
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192);
+                }
+                else
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(242, 250, 252);
+                }
             }
+        }
+
+        private void dgvDernieresSeries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            ligneDGV = e.RowIndex;           
+
         }
 
         //Initialisation tabPage 2 - Catalogue des patients
@@ -139,6 +187,89 @@ namespace Application_Ludophonie.Vue.Praticien
                     );
             }
         }
+
+        //Initialisation tabPage 4 - Gestion des grades
+
+        private void actualiseLstbGrades()
+        {
+            lstTousGrades.Clear();
+            lstTousGrades = controleur.recupereTousLesGrades();
+            lstbGrades.Items.Clear();
+
+            for (int i = 0; i < lstTousGrades.Count; i++)
+            {
+                lstbGrades.Items.Add(lstTousGrades[i].Libelle_Grade);
+            }
+        }
+
+        private void actualiseListeDesAvatarsDuGrade(string grade)
+        {
+            lstTousAvatarsGrades.Clear();
+            lstTousAvatarsGrades = controleur.recupereTousLesAvatarsDuGrade(grade);
+
+            List<PictureBox> lstBoxAvatars = new List<PictureBox>();
+
+            //Préparation de la liste des pictureBox qui acceuilleront les avatars
+            for (int i = 0; i < lstTousAvatarsGrades.Count; i++)
+            {
+                lstBoxAvatars.Add(configBoxAvatar());                
+            }
+
+            //On remplit les pictureBox avec les images des avatars
+            for (int i = 0; i < lstTousAvatarsGrades.Count; i++)
+            {
+                lstBoxAvatars[i].ImageLocation = lstTousAvatarsGrades[i].Url;
+            }
+
+            //On remplit flpAvatarDuGrade avec les picturebox contenant les avatars
+
+            for (int i = 0; i < lstTousAvatarsGrades.Count; i++)
+            {
+                flpAvatarDuGrade.Controls.Add(lstBoxAvatars[i]);
+            }
+
+        }      
+
+        private PictureBox configBoxAvatar()
+        {
+            PictureBox boxAvatar = new PictureBox();
+
+            //Hauteur
+            boxAvatar.Height = 130;
+            //largeur
+            boxAvatar.Width = 140;
+
+            boxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+            return boxAvatar;
+        }
+
+        //Initialisation tabPage 5 - Gestion des niveaux
+
+        private void actualiseCbxJeux()
+        {
+            cbxJeux.Items.Clear();            
+            lstJeux.Clear();
+
+            lstJeux = controleur.recupereTousLesJeux();
+
+            for(int i = 0; i< lstJeux.Count; i++)
+            {
+                cbxJeux.Items.Add(lstJeux[i]);
+            }
+        }
+        private void actualiseLstbNiveaux()
+        {
+            lstbNiveaux.Items.Clear();
+            lstTousLesNiveauxDuJeu.Clear();
+
+            lstTousLesNiveauxDuJeu = controleur.recupereLesNiveauxPourUnJeu(cbxJeux.SelectedItem.ToString());
+
+            for (int i = 0; i < lstTousLesNiveauxDuJeu.Count; i++)
+            {
+                lstbNiveaux.Items.Add(lstTousLesNiveauxDuJeu[i]);
+            }
+        }
+
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
         //Menu de navigation 
@@ -168,9 +299,19 @@ namespace Application_Ludophonie.Vue.Praticien
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnGestion_Click(object sender, EventArgs e)
+        private void btnGestionJeux_Click(object sender, EventArgs e)
         {
             tbc_MenuPrincipal.SelectedTab = tabPage3;
+        }
+
+        private void btnGestionGrades_Click(object sender, EventArgs e)
+        {
+            tbc_MenuPrincipal.SelectedTab = tabPage4;
+        }
+
+        private void btnGestionNIveaux_Click(object sender, EventArgs e)
+        {
+            tbc_MenuPrincipal.SelectedTab = tabPage5;
         }
 
         /// <summary>
@@ -186,7 +327,7 @@ namespace Application_Ludophonie.Vue.Praticien
         //////////////////////////////////////////////////////////////////////////////////////////////////
         // Page d'accueil - tabPage 1
         //////////////////////////////////////////////////////////////////////////////////////////////////
-
+        
         /// <summary>
         /// Permet de n'afficher que les séries ayant été faites aujourd'hui
         /// </summary>
@@ -201,9 +342,20 @@ namespace Application_Ludophonie.Vue.Praticien
 
             for (int i = 0; i < lstSeriesEffectueesAujourdhui.Count; i++)
             {
-                dgvDernieresSeries.Rows.Add(lstSeriesEffectueesAujourdhui[i].DateDuJour.ToString("d"), lstSeriesEffectueesAujourdhui[i].Nom, lstSeriesEffectueesAujourdhui[i].Prenom, lstSeriesEffectueesAujourdhui[i].Jeu, lstSeriesEffectueesAujourdhui[i].NbQuestionSerie, lstSeriesEffectueesAujourdhui[i].NbErreurs, lstSeriesEffectueesAujourdhui[i].Timer.ToString("mm:ss"));
+                dgvDernieresSeries.Rows.Add(lstSeriesEffectueesAujourdhui[i].DateDuJour.ToString("d"), lstSeriesEffectueesAujourdhui[i].Nom, lstSeriesEffectueesAujourdhui[i].Prenom, lstSeriesEffectueesAujourdhui[i].Grade, lstSeriesEffectueesAujourdhui[i].Jeu, lstSeriesEffectueesAujourdhui[i].NbQuestionSerie, lstSeriesEffectueesAujourdhui[i].NbErreurs, lstSeriesEffectueesAujourdhui[i].Timer.ToString("mm:ss"));
                 nbSeries++;
+
+                if (lstToutesSeriesEffectuees[i].SerieDemandee == 1)
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192);
+                }
+                else
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(242, 250, 252);
+                }
             }
+
+            
 
             lblNbSerieEffectuees.Text = nbSeries.ToString();
         }
@@ -222,9 +374,18 @@ namespace Application_Ludophonie.Vue.Praticien
 
             for (int i = 0; i < lstSeriesEffectueesAujourdhui.Count; i++)
             {
-                dgvDernieresSeries.Rows.Add(lstSeriesEffectueesAujourdhui[i].DateDuJour.ToString("d"), lstSeriesEffectueesAujourdhui[i].Nom, lstSeriesEffectueesAujourdhui[i].Prenom, lstSeriesEffectueesAujourdhui[i].Jeu, lstSeriesEffectueesAujourdhui[i].NbQuestionSerie, lstSeriesEffectueesAujourdhui[i].NbErreurs, lstSeriesEffectueesAujourdhui[i].Timer.ToString("mm:ss"));
+                dgvDernieresSeries.Rows.Add(lstSeriesEffectueesAujourdhui[i].DateDuJour.ToString("d"), lstSeriesEffectueesAujourdhui[i].Nom, lstSeriesEffectueesAujourdhui[i].Prenom, lstSeriesEffectueesAujourdhui[i].Grade, lstSeriesEffectueesAujourdhui[i].Jeu, lstSeriesEffectueesAujourdhui[i].NbQuestionSerie, lstSeriesEffectueesAujourdhui[i].NbErreurs, lstSeriesEffectueesAujourdhui[i].Timer.ToString("mm:ss"));
                 nbSeries++;
-            }
+
+                if (lstToutesSeriesEffectuees[i].SerieDemandee == 1)
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192);
+                }
+                else
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(242, 250, 252);
+                }
+            }          
 
             lblNbSerieEffectuees.Text = nbSeries.ToString();
         }
@@ -244,9 +405,18 @@ namespace Application_Ludophonie.Vue.Praticien
 
             for (int i = 0; i < lstSeriesEffectueesSemaine.Count; i++)
             {
-                dgvDernieresSeries.Rows.Add(lstSeriesEffectueesSemaine[i].DateDuJour.ToString("d"), lstSeriesEffectueesSemaine[i].Nom, lstSeriesEffectueesSemaine[i].Prenom, lstSeriesEffectueesSemaine[i].Jeu, lstSeriesEffectueesSemaine[i].NbQuestionSerie, lstSeriesEffectueesSemaine[i].NbErreurs, lstSeriesEffectueesSemaine[i].Timer.ToString("mm:ss"));
+                dgvDernieresSeries.Rows.Add(lstSeriesEffectueesSemaine[i].DateDuJour.ToString("d"), lstSeriesEffectueesSemaine[i].Nom, lstSeriesEffectueesSemaine[i].Prenom, lstSeriesEffectueesSemaine[i].Grade, lstSeriesEffectueesSemaine[i].Jeu, lstSeriesEffectueesSemaine[i].NbQuestionSerie, lstSeriesEffectueesSemaine[i].NbErreurs, lstSeriesEffectueesSemaine[i].Timer.ToString("mm:ss"));
                 nbSeries++;
-            }
+
+                if (lstToutesSeriesEffectuees[i].SerieDemandee == 1)
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192);
+                }
+                else
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(242, 250, 252);
+                }
+            }            
 
             lblNbSerieEffectuees.Text = nbSeries.ToString();
         }
@@ -266,10 +436,20 @@ namespace Application_Ludophonie.Vue.Praticien
 
             for (int i = 0; i < lstSeriesEffectueesMois.Count; i++)
             {
-                dgvDernieresSeries.Rows.Add(lstSeriesEffectueesMois[i].DateDuJour.ToString("d"), lstSeriesEffectueesMois[i].Nom, lstSeriesEffectueesMois[i].Prenom, lstSeriesEffectueesMois[i].Jeu, lstSeriesEffectueesMois[i].NbQuestionSerie, lstSeriesEffectueesMois[i].NbErreurs, lstSeriesEffectueesMois[i].Timer.ToString("mm:ss"));
+                dgvDernieresSeries.Rows.Add(lstSeriesEffectueesMois[i].DateDuJour.ToString("d"), lstSeriesEffectueesMois[i].Nom, lstSeriesEffectueesMois[i].Prenom, lstSeriesEffectueesMois[i].Grade, lstSeriesEffectueesMois[i].Jeu, lstSeriesEffectueesMois[i].NbQuestionSerie, lstSeriesEffectueesMois[i].NbErreurs, lstSeriesEffectueesMois[i].Timer.ToString("mm:ss"));
                 nbSeries++;
+
+                if (lstToutesSeriesEffectuees[i].SerieDemandee == 1)
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192);
+                }
+                else
+                {
+                    dgvDernieresSeries.Rows[ligneDGV].DefaultCellStyle.BackColor = Color.FromArgb(242, 250, 252);
+                }
             }
 
+            
             lblNbSerieEffectuees.Text = nbSeries.ToString();
         }
 
@@ -319,10 +499,14 @@ namespace Application_Ludophonie.Vue.Praticien
             if (bUtilisateurCree)
             {
                 lblMessage.Text = "L'utilisateur a été créé";
+                
+                creationTupleBdd_AcquisitionLemot();
+                creationTupleBdd_Grade();
+                creationTupleBDD_Niveaux();
 
-                creationTupleBdd();
-                videLesChamps();
                 actualiseDgvPatient();
+                videLesChamps();
+                
                 btnModifierPatient.Enabled = false;
 
                 Log.Information("Un patient à été créé");
@@ -330,7 +514,7 @@ namespace Application_Ludophonie.Vue.Praticien
             else
             {
 
-                lblMessage.Text = "Le nouveau patient n'a pas pus être créé";
+                lblMeessageSuppression.Text = "Le nouveau patient n'a pas pus être créé";
                 Log.Error("la création d'un nouveau patient a échouée");
             }
 
@@ -571,7 +755,7 @@ namespace Application_Ludophonie.Vue.Praticien
         /// <summary>
         /// Création des tuples correspondant à un profil qui viens d'être créé
         /// </summary>
-        private void creationTupleBdd()
+        private void creationTupleBdd_AcquisitionLemot()
         {   
             List<int> lstTousIdMots = controleur.recupereTousIdLesMots();
                         
@@ -580,8 +764,28 @@ namespace Application_Ludophonie.Vue.Praticien
             for (int i = 0; i < lstTousIdMots.Count; i++)
             {
                 controleur.creationAcquisition_leMot(plusGrandIdPatient, lstTousIdMots[i], 1);
-            }            
+            }
         }
+
+        private void creationTupleBdd_Grade()
+        {
+            int plusGrandIdPatient = controleur.recuperePlusGrandIdPatient();
+
+            bool bCreationGrade = controleur.creationGrade(plusGrandIdPatient);
+        }
+
+        public void creationTupleBDD_Niveaux()
+        {
+            int plusGrandIdPatient = controleur.recuperePlusGrandIdPatient();
+            int nbJeux = 1;
+
+            for (int i = 0; i<lstJeux.Count; i++)
+            {
+                bool bCreation = controleur.creationNiveau(plusGrandIdPatient, nbJeux++);
+            }
+        }
+
+
 
         /// <summary>
         /// Permet de fermer le panneau d'ajout ou de modification d'un patient
@@ -719,7 +923,11 @@ namespace Application_Ludophonie.Vue.Praticien
 
                 bool bSupprimeUtilisateur = controleur.SupprimeUtilisateur(patientEnCours.IdUtilisateur);
 
-                if(bSupprimerSesAcquisitions && bSupprimerMissions && bSupprimeSesSeries && bSupprimeUtilisateur)
+                bool bsupprimeGrade = controleur.SupprimeSonGrade(patientEnCours);
+
+                bool bSupprimeNiveaux = controleur.SupprimeSonNiveau(patientEnCours);
+
+                if(bSupprimerSesAcquisitions && bSupprimerMissions && bSupprimeSesSeries && bSupprimeUtilisateur && bsupprimeGrade && bSupprimeNiveaux)
                 {
                     Log.Information("l'utilisateur " + utilisateurAModifier.Identifiant + " a bien été supprimé");
 
@@ -753,6 +961,138 @@ namespace Application_Ludophonie.Vue.Praticien
             
         }
 
-        
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        // Gestion des grades - tabPage 4 
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+
+        int indexGradeSelectionne;
+
+        private void lstbGrades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblMessage_Grades.Text = "";            
+            string grade = lstbGrades.SelectedItem.ToString();
+            flpAvatarDuGrade.Controls.Clear();
+            actualiseListeDesAvatarsDuGrade(grade);
+
+            indexGradeSelectionne = lstbGrades.SelectedIndex;
+
+            if (indexGradeSelectionne > -1)
+            {
+                txtbModifGrades.Text = lstTousGrades[indexGradeSelectionne].Libelle_Grade;
+                nudScorePalier.Value = lstTousGrades[indexGradeSelectionne].Score_Palier;
+
+                pModifGrade.Visible = true;
+            }
+            else
+            {
+                lblMessage_Grades.Text = "Veillez à sélectionner un grade à modifier";
+            }
+        }
+        /*
+        private void btnModification_Click(object sender, EventArgs e)
+        {
+            indexGradeSelectionne = lstbGrades.SelectedIndex;
+
+            if(indexGradeSelectionne > -1)
+            {
+                txtbModifGrades.Text = lstTousGrades[indexGradeSelectionne].Libelle_Grade;
+                nudScorePalier.Value = lstTousGrades[indexGradeSelectionne].Score_Palier;
+
+                pModifGrade.Visible = true;
+            }
+            else
+            {
+                lblMessage_Grades.Text = "Veillez à sélectionner un grade à modifier";
+            }
+
+
+            
+        }*/
+
+        private void btnModifGrades_Click(object sender, EventArgs e)
+        {
+            int index = indexGradeSelectionne + 2;
+            string libelle_grade = txtbModifGrades.Text;
+            int score_pallier = (int)nudScorePalier.Value;
+
+            Grade gradeAModifier = new Grade(index, libelle_grade, score_pallier);
+
+            bool bModifGrade = controleur.modifieGrade(index, libelle_grade, score_pallier);
+
+            if(bModifGrade)
+            {
+                lblMessage_Grades.Text = "Le grade a bien été modifié";
+                pModifGrade.Visible = false;
+                
+                actualiseLstbGrades();
+            }
+            else
+            {
+                lblMessage_Grades.Text = "Le grade n'a pas pus être modifié";
+            }
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        // Gestion des niveaux - tabPage 5 
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void cbxJeux_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            lstbNiveaux.Items.Clear();
+
+            lblmessage_Niveaux.Text = "";
+            txtbIntituleNiveaux.Text = "";
+            nudPalierNombreAcquis.Value = 0;
+            nudGainMission.Value = 0;
+            nudGainSerie.Value = 0;
+
+            //afficher les niveaux du jeu selectionné dans la listbox
+            string nomJeu = cbxJeux.SelectedItem.ToString();
+
+            //Récupérer les niveaux du jeu
+            lstTousLesNiveauxDuJeu = controleur.recupereLesNiveauxPourUnJeu(cbxJeux.SelectedItem.ToString());
+
+            for(int i = 0; i<lstTousLesNiveauxDuJeu.Count; i++)
+            {
+                lstbNiveaux.Items.Add(lstTousLesNiveauxDuJeu[i]);
+            }
+                       
+        }
+
+        private void lstbNiveaux_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblmessage_Niveaux.Text = "";
+            //remplir le libellé du niveau avec ses gains pour une mission et pour une série non demandée
+
+            txtbIntituleNiveaux.Text = lstbNiveaux.SelectedItem.ToString();
+
+            //Récupérer les gains missions et série non demandées
+            List<int> lstGains = new List<int>();
+            lstGains = controleur.recupereLesGainsDUnNiveauPourUnJeu(lstbNiveaux.SelectedItem.ToString(), cbxJeux.SelectedItem.ToString());
+
+            nudGainMission.Value = lstGains[0];
+            nudGainSerie.Value = lstGains[1];
+
+            //Récupération du pallier de d'éléments acquis du niveau
+            int palier_nbAcquis = controleur.recuperePalierNbAcquisNiveau(lstbNiveaux.SelectedItem.ToString(), cbxJeux.SelectedItem.ToString());
+            nudPalierNombreAcquis.Value = palier_nbAcquis;
+        }
+
+        private void btnEnregistrer_Click(object sender, EventArgs e)
+        {            
+            int nbAcquis = (int)nudPalierNombreAcquis.Value;
+            bool bModif = controleur.modifieNiveau(txtbIntituleNiveaux.Text, cbxJeux.SelectedItem.ToString(), (int)nudPalierNombreAcquis.Value, (int)nudGainMission.Value, (int)nudGainSerie.Value, lstbNiveaux.SelectedIndex + 1);
+           
+            if(bModif)
+            {
+                lblmessage_Niveaux.Text = "Le niveau a bien été modifié";
+                actualiseLstbNiveaux();
+            }
+            else
+            {
+                lblmessage_Niveaux.Text = "Le niveau n'a pas pu être modifié";
+            }
+            
+        }       
     }
 }

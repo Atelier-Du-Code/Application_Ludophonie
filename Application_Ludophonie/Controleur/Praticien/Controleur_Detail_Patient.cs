@@ -23,7 +23,7 @@ namespace Application_Ludophonie.Controleur.Praticien
 
             return lstJeux;
         }
-
+        
         /// <summary>
         /// Permet de récupérer toutes les séries d'un utilisateur
         /// </summary>
@@ -35,7 +35,7 @@ namespace Application_Ludophonie.Controleur.Praticien
 
             return lstToutesSeries;
         }
-
+        
         /// <summary>
         /// Permet de récupérer toutes les séries d'un jeu pour un patient
         /// </summary>
@@ -47,6 +47,12 @@ namespace Application_Ludophonie.Controleur.Praticien
             List<Serie> lstSeriesJeu = Modele_Detail_Patient.recupereToutesSeriesJeu(unIdUtilisateur, nomJeu);
 
             return lstSeriesJeu;
+        }
+
+        public string recupereNiveauDeJeuPourUnPatient(int unIdUtilisateur, string nomJeu)
+        {
+            string niveau = Modele_Detail_Patient.recupereNiveauDeJeuPourUnPatient(unIdUtilisateur, nomJeu);
+            return niveau;
         }
     }
 }

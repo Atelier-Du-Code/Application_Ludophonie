@@ -23,5 +23,25 @@ namespace Application_Ludophonie.Controleur.Patient
             Avatar unAvatar = Modele_MenuPrincipal_Patient.recupereAvatar(idUtilisateur);
             return unAvatar;
         }
+
+        public string recupereLeGradeString(int idUtilisateur)
+        {
+            string grade = Modele_MenuPrincipal_Patient.recupereLeGradeString(idUtilisateur);
+            return grade;
+        }
+
+        public int recupereLeGradeInt(int idUtilisateur)
+        {
+            int grade = Modele_MenuPrincipal_Patient.recupereLeGradeInt(idUtilisateur);
+            return grade;
+        }
+
+        public string recupereNiveauPatient(int idUtilisateur)
+        {
+            string niveau = Modele_MenuPrincipal_Patient.recupereNiveauPatient(idUtilisateur);
+            return niveau;
+        }
     }
+
+    
 }

@@ -23,9 +23,11 @@ namespace Application_Ludophonie.Modele.Tests
         private const string password = "5w&rcRi29F6&*H";
         private const string type_utilisateur = "patient";
         private const string urlAvatar = "https://i.pinimg.com/originals/69/4a/66/694a66860b36a48b6e58112dd16308c7.png";
+        private const int score_global = 23;
+        private const string grade = "farfadet";
 
 
-        private static readonly Utilisateur patient = new Utilisateur(idUtilisateur, type_utilisateur, identifiant, nom, prenom, classe, password, urlAvatar);
+        private static readonly Utilisateur patient = new Utilisateur(idUtilisateur, type_utilisateur, identifiant, nom, prenom, classe, password, urlAvatar, score_global, grade);
 
 
         /// <summary>

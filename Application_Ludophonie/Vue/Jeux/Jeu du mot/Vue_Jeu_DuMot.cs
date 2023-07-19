@@ -401,7 +401,8 @@ namespace Application_Ludophonie.Vue.Jeux
 
                         lblErreur.Text = erreur.ToString();
                         lblMinureFin.Text = temps.Minute.ToString();
-                        lblSecondesFIn.Text = temps.Second.ToString();
+                        lblSecondesFIn.Text = temps.Second.ToString();                        
+
 
                         passeLesEtoilesEnJaune();
                         son.finDeSerie();
@@ -418,6 +419,12 @@ namespace Application_Ludophonie.Vue.Jeux
 
                         updateDeLaBaseAvecMotsDeLaSerie();
                         creeLaSerie(erreur, temps);
+
+
+                        int nbMotsAcquis = controleur.recupereNbMotsAcquisPatient(utilisateur.IdUtilisateur);
+                        int nbMotsTotal = controleur.recupereNbMotsTotal();
+
+                        lblMotsAcquis.Text = nbMotsAcquis + " / " + nbMotsTotal;
                     }
                     else
                     {
@@ -487,8 +494,54 @@ namespace Application_Ludophonie.Vue.Jeux
         /// <param name="temps"></param>
         private void creeLaSerie(int nbErreur, DateTime temps)
         {
+            int score = 0;
+            int serieDemandee = 0;
+            Mission mission = null;
+
+            //Vérifie si la série effectuée est une mission (nbQuestions, jeu)
+            bool bEstUneMission = controleur.verifieSiCEstUneMission(nbQuestionsSerie, 1, utilisateur.IdUtilisateur);
+
+            int niveau = controleur.recupereNiveauDuJeuDuPatient(utilisateur.IdUtilisateur, 1);
+
+            //Suivant si elle est demandée, attribuer un score pour score global
+            if (bEstUneMission)
+            {
+                score = controleur.recupereGainMission(niveau, 1);
+                serieDemandee = 1;
+
+                mission = controleur.recupereUneMission(nbQuestionsSerie, 1, utilisateur.IdUtilisateur);
+            }
+            else
+            {
+                score = controleur.recupereGainSerie(niveau, 1);
+                serieDemandee = 0;
+            }
+
+            //Création de la série
             DateTime dateDuJour = DateTime.Today;
-            bool bCreation = controleur.creationSerieEffectuees(utilisateur.IdUtilisateur, 1, nbQuestionsSerie, nbErreur, dateDuJour, temps);
+            bool bCreation = controleur.creationSerieEffectuees(utilisateur.IdUtilisateur, 1, nbQuestionsSerie, nbErreur, dateDuJour, temps, serieDemandee, score);
+
+            //mise a jour du carnet de mission
+
+            if(bEstUneMission)
+            {
+                bool bUpdateMission = controleur.updateCarnetDeMission(mission.IdMission);
+            }
+            
+
+            //Mise a jour du score global
+            int scoreGlobalPatient = controleur.recupereScoreGlobalPatient(utilisateur.IdUtilisateur);
+            scoreGlobalPatient = scoreGlobalPatient + score;
+            if(bCreation)
+            {
+                ///Mise a jour du score global
+                bool bUpdate = controleur.updateScoreGlobal(utilisateur.IdUtilisateur, scoreGlobalPatient);
+            }
+            else
+            {
+              
+            }
+
         }
 
         /// <summary>
@@ -531,6 +584,11 @@ namespace Application_Ludophonie.Vue.Jeux
             {
                 e.Handled = true;
             }
+        }
+
+        private void Vue_Jeu_DuMot_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
